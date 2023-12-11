@@ -1,0 +1,260 @@
+name: aeotec-nano-dimmer
+components:
+- id: main
+  label: "Switch"
+  capabilities:
+  - id: switch
+    version: 1
+  - id: switchLevel
+    version: 1
+  - id: powerMeter
+    version: 1
+  - id: energyMeter
+    version: 1
+  - id: refresh
+    version: 1
+  categories:
+  - name: Switch
+preferences:
+  - title: "3. Overload Protection"
+    name: overloadProtection
+    description: "Determines if Load is turned off if more then 1.5A current is used for more than 30 seconds."
+    required: true
+    preferenceType: enumeration
+    definition:
+      options:
+        0: "Disable"
+        1: "Enable"
+      default: 0
+  - title: "4. Overheat Protection"
+    name: overheatProtection
+    description: "Determines if Nano Dimmer turns of if internal temperature rises above 100 C."
+    required: true
+    preferenceType: enumeration
+    definition:
+      options:
+        0: "Disable"
+        1: "Enable"
+      default: 0
+  - title: "20. Output power after power restore"
+    name: ledAfterPower
+    description: "Determines what happens to the output state after a power restoration"
+    required: true
+    preferenceType: enumeration
+    definition:
+      options:
+        0: "Last Status"
+        1: "Always On"
+        2: "Always Off"
+      default: 0
+  - title: "80. Automatic Report Type"
+    name: autoReportType
+    description: "Type of report is sent by HDSS when status changes by hub or button press"
+    required: true
+    preferenceType: enumeration
+    definition:
+      options:
+        0: "Nothing"
+        1: "Hail CC"
+        2: "Basic CC Report"
+        3: "Multilevel Dimming Report"
+        4: "Hail CC Report"
+      default: 3
+  - title: "81. Association Group 3"
+    name: s1Control
+    description: "Type of type of control is sent out for Association Group 3 when S1 is controlled"
+    required: true
+    preferenceType: enumeration
+    definition:
+      options:
+        0: "Nothing"
+        1: "Basic"
+        2: "Multilevel Dimming"
+      default: 1
+  - title: "82. Association Group 4"
+    name: s2Control
+    description: "Type of type of control is sent out for Association Group 3 when S2 is controlled"
+    required: true
+    preferenceType: enumeration
+    definition:
+      options:
+        0: "Nothing"
+        1: "Basic"
+        2: "Multilevel Dimming"
+      default: 1
+  - title: "90. Enable/Disable Threshold Report"
+    name: powerThreshold
+    description: "Disable or Enable Threshold reporting"
+    required: true
+    preferenceType: enumeration
+    definition:
+      options:
+        0: "Disable"
+        1: "Enable"
+      default: 0
+  - title: "91. Watt Threshold"
+    name: wattThreshold
+    description: "This value is the minimum change in Watt needed to induce a report."
+    required: true
+    preferenceType: integer
+    definition:
+      minimum: 0
+      maximum: 144
+      default: 25
+  - title: "92. Percentage Watt Threshold"
+    name: percentageThreshold
+    description: "This value is the minimum change in Watt needed in percentage to induce a report."
+    required: true
+    preferenceType: integer
+    definition:
+      minimum: 0
+      maximum: 100
+      default: 5
+  - title: "101. Group 1 Sensors"
+    name: group1Sensors
+    description: "Group 1 sensor reports."
+    required: true
+    preferenceType: integer
+    definition:
+      minimum: 0
+      maximum: 15
+      default: 12
+  - title: "111. Group 1 sensor report time"
+    name: group1Time
+    description: "set timed report of Group 1 sensor in seconds"
+    required: true
+    preferenceType: integer
+    definition:
+      minimum: 0
+      maximum: 86400
+      default: 300
+  - title: "120. S1 External Switch Mode"
+    name: s1External
+    description: "Determines the type of switch attached to S1 external switch"
+    required: true
+    preferenceType: enumeration
+    definition:
+      options:
+        0: "Unidentified"
+        1: "Toggle Switch"
+        2: "NC Momentary Switch"
+        3: "NO Momentary Switch"
+        4: "Detect Switch"
+      default: 1
+  - title: "121. S2 External Switch Mode"
+    name: s2External
+    description: "Determines the type of switch attached to S2 external switch"
+    required: true
+    preferenceType: enumeration
+    definition:
+      options:
+        0: "Unidentified"
+        1: "Toggle Switch"
+        2: "NC Momentary Switch"
+        3: "NO Momentary Switch"
+        4: "Detect Switch"
+      default: 1
+  - title: "123. S1 External Switch Setting"
+    name: s1Setting
+    description: "Determines what S1 external switch can do"
+    required: true
+    preferenceType: enumeration
+    definition:
+      options:
+        0: "Disable"
+        1: "Only controls load"
+        2: "Only controls Group 3"
+        3: "Contols both Load and Group 3"
+      default: 1
+  - title: "124. S2 External Switch Setting"
+    name: s2Setting
+    description: "Determines what S1 external switch can do"
+    required: true
+    preferenceType: enumeration
+    definition:
+      options:
+        0: "Disable"
+        1: "Only controls load"
+        2: "Only controls Group 4"
+        3: "Contols both Load and Group 4"
+      default: 1
+  - title: "125. Dimming Speed"
+    name: dimSpeed
+    description: "Sets the dimming speed in seconds."
+    required: true
+    preferenceType: integer
+    definition:
+      minimum: 1
+      maximum: 10
+      default: 3
+  - title: "129. Dimming Principle"
+    name: dimType
+    description: "Sets the type of output signal from Nano Dimmer."
+    required: true
+    preferenceType: enumeration
+    definition:
+      options:
+        0: "Trailing Edge Mode"
+        1: "Leading Edge Mode"
+      default: 1
+  - title: "131. Minimum dimming"
+    name: minDim
+    description: "Sets the minimum dim level at 1% (Not linear)"
+    required: true
+    preferenceType: integer
+    definition:
+      minimum: 0
+      maximum: 99
+      default: 0
+  - title: "132. Maximum dimming"
+    name: maxDim
+    description: "Sets the maximum dim level at 100% (Not linear)"
+    required: true
+    preferenceType: integer
+    definition:
+      minimum: 0
+      maximum: 99
+      default: 99
+  - title: "249. Load Calibration Setting"
+    name: loadDetection
+    description: "Determines method to allow Nano Dimmer calibration to the connected load"
+    required: true
+    preferenceType: enumeration
+    definition:
+      options:
+        0: "Disable Calibration"
+        1: "Calibrate once upon re-power"
+        2: "Always calibrate when re-powered"
+      default: 2
+  - title: "Association Group 1: Lifeline"
+    name: assocGroup1
+    description: "Enter a comma delimited list of hex IDs to be sent general notifications (5 node max)"
+    required: true
+    preferenceType: string
+    definition:
+      stringType: text
+      default: ""
+  - title: "Group 2: Forward"
+    name: assocGroup2
+    description: "Enter a comma delimited list of hex IDs to be sent general notifications (5 node max)"
+    required: true
+    preferenceType: string
+    definition:
+      stringType: text
+      default: ""
+  - title: "Association Group 3: S1 External"
+    name: assocGroup3
+    description: "Enter a comma delimited list of hex IDs to be sent general notifications (5 node max)"
+    required: true
+    preferenceType: string
+    definition:
+      stringType: text
+      default: ""
+  - title: "Association Group 4: S2 External"
+    name: assocGroup4
+    description: "Enter a comma delimited list of hex IDs to be sent general notifications (5 node max)"
+    required: true
+    preferenceType: string
+    definition:
+      stringType: text
+      default: ""

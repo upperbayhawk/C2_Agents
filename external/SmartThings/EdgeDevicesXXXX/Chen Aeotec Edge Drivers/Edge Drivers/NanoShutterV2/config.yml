@@ -1,0 +1,4 @@
+name: 'Aeotec Nano Shutter V2'
+packageKey: 'aeotec-nano-shutter-v2'
+permissions:
+  zwave: {}

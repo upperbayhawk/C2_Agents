@@ -1,0 +1,498 @@
+/*
+ * SmartThings API
+ *
+ * # Overview  This is the reference documentation for the SmartThings API.  The SmartThings API, a RESTful API, provides a method for your integration to communicate with the SmartThings Platform. The API is the core of the platform. It is used to control devices, create Automations, manage Locations, retrieve user and device information; if you want to communicate with the SmartThings platform, you’ll be using the SmartThings API. All responses are sent as [JSON](http://www.json.org/).  The SmartThings API consists of several endpoints, including Rules, Locations, Devices, and more. Even though each of these endpoints are not standalone APIs, you may hear them referred to as such. For example, the Rules API is used to build Automations.  # Authentication  Before using the SmartThings API, you’ll need to obtain an Authorization Token. All SmartThings resources are protected with [OAuth 2.0 Bearer Tokens](https://tools.ietf.org/html/rfc6750#section-2.1) sent on the request as an `Authorization: Bearer <TOKEN>` header. Operations require specific OAuth scopes that specify the exact permissions authorized by the user.  ## Authorization token types  There are two types of tokens:   * SmartApp tokens   * Personal access tokens (PAT).  ### SmartApp tokens  SmartApp tokens are used to communicate between third-party integrations, or SmartApps, and the SmartThings API. When a SmartApp is called by the SmartThings platform, it is sent an authorization token that can be used to interact with the SmartThings API.  ### Personal access tokens  Personal access tokens are used to authorize interaction with the API for non-SmartApp use cases. When creating personal access tokens, you can specifiy the permissions granted to the token. These permissions define the OAuth2 scopes for the personal access token.  Personal access tokesn can be created and managed on the [personal access tokens page](https://account.smartthings.com/tokens).  ## OAuth2 scopes  Operations may be protected by one or more OAuth security schemes, which specify the required permissions. Each scope for a given scheme is required. If multiple schemes are specified (uncommon), you may use either scheme.  SmartApp token scopes are derived from the permissions requested by the SmartApp and granted by the end-user during installation. Personal access token scopes are associated with the specific permissions authorized when the token is created.  Scopes are generally in the form `permission:entity-type:entity-id`.  **An `*` used for the `entity-id` specifies that the permission may be applied to all entities that the token type has access to, or may be replaced with a specific ID.**  For more information about authrization and permissions, visit the [Authorization section](https://developer-preview.smartthings.com/docs/advanced/authorization-and-permissions) in the SmartThings documentation.  <!- - ReDoc-Inject: <security-definitions> - ->  # Errors  The SmartThings API uses conventional HTTP response codes to indicate the success or failure of a request.  In general:  * A `2XX` response code indicates success * A `4XX` response code indicates an error given the inputs for the request * A `5XX` response code indicates a failure on the SmartThings platform  API errors will contain a JSON response body with more information about the error:  ```json {   \"requestId\": \"031fec1a-f19f-470a-a7da-710569082846\"   \"error\": {     \"code\": \"ConstraintViolationError\",     \"message\": \"Validation errors occurred while process your request.\",     \"details\": [       { \"code\": \"PatternError\", \"target\": \"latitude\", \"message\": \"Invalid format.\" },       { \"code\": \"SizeError\", \"target\": \"name\", \"message\": \"Too small.\" },       { \"code\": \"SizeError\", \"target\": \"description\", \"message\": \"Too big.\" }     ]   } } ```  ## Error Response Body  The error response attributes are:  | Property | Type | Required | Description | | - -- | - -- | - -- | - -- | | requestId | String | No | A request identifier that can be used to correlate an error to additional logging on the SmartThings servers. | error | Error | **Yes** | The Error object, documented below.  ## Error Object  The Error object contains the following attributes:  | Property | Type | Required | Description | | - -- | - -- | - -- | - -- | | code | String | **Yes** | A SmartThings-defined error code that serves as a more specific indicator of the error than the HTTP error code specified in the response. See [SmartThings Error Codes](#section/Errors/SmartThings-Error-Codes) for more information. | message | String | **Yes** | A description of the error, intended to aid debugging of error responses. | target | String | No | The target of the error. For example, this could be the name of the property that caused the error. | details | Error[] | No | An array of Error objects that typically represent distinct, related errors that occurred during the request. As an optional attribute, this may be null or an empty array.  ## Standard HTTP Error Codes  The following table lists the most common HTTP error responses:  | Code | Name | Description | | - -- | - -- | - -- | | 400 | Bad Request | The client has issued an invalid request. This is commonly used to specify validation errors in a request payload. | 401 | Unauthorized | Authorization for the API is required, but the request has not been authenticated. | 403 | Forbidden | The request has been authenticated but does not have appropriate permissions, or a requested resource is not found. | 404 | Not Found | The requested path does not exist. | 406 | Not Acceptable | The client has requested a MIME type via the Accept header for a value not supported by the server. | 415 | Unsupported Media Type | The client has defined a contentType header that is not supported by the server. | 422 | Unprocessable Entity | The client has made a valid request, but the server cannot process it. This is often used for APIs for which certain limits have been exceeded. | 429 | Too Many Requests | The client has exceeded the number of requests allowed for a given time window. | 500 | Internal Server Error | An unexpected error on the SmartThings servers has occurred. These errors are generally rare. | 501 | Not Implemented | The client request was valid and understood by the server, but the requested feature has yet to be implemented. These errors are generally rare.  ## SmartThings Error Codes  SmartThings specifies several standard custom error codes. These provide more information than the standard HTTP error response codes. The following table lists the standard SmartThings error codes and their descriptions:  | Code | Typical HTTP Status Codes | Description | | - -- | - -- | - -- | | PatternError | 400, 422 | The client has provided input that does not match the expected pattern. | ConstraintViolationError | 422 | The client has provided input that has violated one or more constraints. | NotNullError | 422 | The client has provided a null input for a field that is required to be non-null. | NullError | 422 | The client has provided an input for a field that is required to be null. | NotEmptyError | 422 | The client has provided an empty input for a field that is required to be non-empty. | SizeError | 400, 422 | The client has provided a value that does not meet size restrictions. | Unexpected Error | 500 | A non-recoverable error condition has occurred. A problem occurred on the SmartThings server that is no fault of the client. | UnprocessableEntityError | 422 | The client has sent a malformed request body. | TooManyRequestError | 429 | The client issued too many requests too quickly. | LimitError | 422 | The client has exceeded certain limits an API enforces. | UnsupportedOperationError | 400, 422 | The client has issued a request to a feature that currently isn't supported by the SmartThings platform. These errors are generally rare.  ## Custom Error Codes  An API may define its own error codes where appropriate. Custom error codes are documented in each API endpoint's documentation section.  # Warnings The SmartThings API issues warning messages via standard HTTP Warning headers. These messages do not represent a request failure, but provide additional information that the requester might want to act upon. For example, a warning will be issued if you are using an old API version.  # API Versions  The SmartThings API supports both path and header-based versioning. The following are equivalent:  - https://api.smartthings.com/v1/locations - https://api.smartthings.com/locations with header `Accept: application/vnd.smartthings+json;v=1`  Currently, only version 1 is available.  # Paging  Operations that return a list of objects return a paginated response. The `_links` object contains the items returned, and links to the next and previous result page, if applicable.  ```json {   \"items\": [     {       \"locationId\": \"6b3d1909-1e1c-43ec-adc2-5f941de4fbf9\",       \"name\": \"Home\"     },     {       \"locationId\": \"6b3d1909-1e1c-43ec-adc2-5f94d6g4fbf9\",       \"name\": \"Work\"     }     ....   ],   \"_links\": {     \"next\": {       \"href\": \"https://api.smartthings.com/v1/locations?page=3\"     },     \"previous\": {       \"href\": \"https://api.smartthings.com/v1/locations?page=1\"     }   } } ```  # Allowed Permissions  The response payload to a request for a SmartThings entity (e.g. a location or a device) may contain an `allowed` list property.  This list contains strings called **action identifiers** (such as `w:locations`) that provide information about what actions are permitted by the user's token on that entity at the time the request was processed.  The action identifiers are defined in the API documentation for the 200 response of the particular endpoint queried. For each documented action identifier (e.g. `w:locations`), you will find a description of the user action (e.g. \"edit the name of the location\") associated with that identifier. The endpoint documentation will contain a complete list of the action identifiers that may appear in the allowed list property.  If the `allowed` list property is present in the response payload: * the user action documented for an action identifier present in the list is permitted for the user on the entity at the time the request is processed * the user action documented for an action identifier **not** present in the list is **not** permitted to the user on the entity at the time the request is processed  If the `allowed` list property is **not** present or has a `null` value in the response payload, then the response provides **no information** about any user actions being permissible except that the user has permission to view the returned entity.  The response provides **no information** about the permissibility of user actions that are not specifically mentioned in the documentation for the particular endpoint.  The table below is a high-level guide to interpreting action identifiers.  It does not indicate that any given endpoint will document or return any of the action identifiers listed below. Remember that the endpoint API documentation is the final source of truth for interpreting action identifiers in a response payload.  | Action Identifier Format | Examples | Meaning | | - -- | - -- | - -- | | `w:grant:`\\<grant type> | `w:grant:share` on a location payload | User may **bestow** the grant type on the entity to another user (e.g. through an invitation.) | | `r:`\\<child type> | `r:devices` on a location payload | User may **list and view** child type entities of the returned entity.  NOTE: there may be finer-grained controls on the child type entities. | | `l:`\\<child type> | `l:devices` on a location payload | User may **list and summarize** child type entities of the returned entity.  NOTE: there may be finer-grained controls on the child type entities.  This is weaker than `r:`\\<child type> and rarely used. | | `w:`\\<child type> | `w:devices` on a location payload | User may **create** entities of the child type as children of the returned entity. | | `x:`\\<child type> | `x:devices` on a location payload | User may **execute commands** on child type entities of the returned entity.  NOTE: there may be finer-grained controls on the child type entities. | | `r:`\\<entity type> | `r:locations` on a location payload | This will only be returned in a list/summary response and only in a case when the list/summary is designed not to show all the details of the entity. | | `w:`\\<entity type> | `w:locations` on a location payload<br/>`w:devices` on a device payload | User may **edit** specificly-documented properties of the returned entity. | | `x:`\\<entity type> | `x:devices` on a device payload | user may **execute commands** on the returned entity.  NOTE: there may be finer-grained controls on the children of the entity. | | `d:`\\<entity type> | `d:locations` on a location payload | User may **delete** the returned entity. | | `r:`\\<entity type>`:`\\<attribute group> | `r:locations:currentMode` on a location payload | User may **view** the specified (and clearly-documented) attribute or attribute group of the returned entity. | | `w:`\\<entity type>`:`\\<attribute group> | `w:locations:geo` on a location payload | User may **edit** the specified (and clearly-documented) attribute or attribute group of the returned entity. | | `x:`\\<entity type>`:`\\<attribute group> | `x:devices:switch` on a device payload | User may **execute commands** on the specified (and clearly-documented) attribute or attribute group of the returned entity. |  # Localization  Some SmartThings APIs support localization. Specific information regarding localization endpoints are documented in the API itself. However, the following applies to all endpoints that support localization.  ## Fallback Patterns  When making a request with the `Accept-Language` header, the following fallback pattern is observed: 1. Response will be translated with exact locale tag. 2. If a translation does not exist for the requested language and region, the translation for the language will be returned. 3. If a translation does not exist for the language, English (en) will be returned. 4. Finally, an untranslated response will be returned in the absense of the above translations.  ## Accept-Language Header The format of the `Accept-Language` header follows what is defined in [RFC 7231, section 5.3.5](https://tools.ietf.org/html/rfc7231#section-5.3.5)  ## Content-Language The `Content-Language` header should be set on the response from the server to indicate which translation was given back to the client. The absense of the header indicates that the server did not recieve a request with the `Accept-Language` header set. 
+ *
+ * The version of the OpenAPI document: 1.0-PREVIEW
+ * Generated by: https://github.com/openapitools/openapi-generator.git
+ */
+
+
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Text;
+using System.Text.RegularExpressions;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
+using System.ComponentModel.DataAnnotations;
+using OpenAPIDateConverter = SmartThingsNet.Client.OpenAPIDateConverter;
+
+namespace SmartThingsNet.Model
+{
+    /// <summary>
+    /// InstalledApp
+    /// </summary>
+    [DataContract(Name = "InstalledApp")]
+    public partial class InstalledApp : IEquatable<InstalledApp>, IValidatableObject
+    {
+
+        /// <summary>
+        /// Gets or Sets InstalledAppType
+        /// </summary>
+        [DataMember(Name = "installedAppType", IsRequired = true, EmitDefaultValue = false)]
+        public InstalledAppType InstalledAppType { get; set; }
+
+        /// <summary>
+        /// Gets or Sets InstalledAppStatus
+        /// </summary>
+        [DataMember(Name = "installedAppStatus", IsRequired = true, EmitDefaultValue = false)]
+        public InstalledAppStatus InstalledAppStatus { get; set; }
+        /// <summary>
+        /// An App maybe associated to many classifications.  A classification drives how the integration is presented to the user in the SmartThings mobile clients.  These classifications include: * AUTOMATION - Denotes an integration that should display under the \&quot;Automation\&quot; tab in mobile clients. * SERVICE - Denotes an integration that is classified as a \&quot;Service\&quot;. * DEVICE - Denotes an integration that should display under the \&quot;Device\&quot; tab in mobile clients. * CONNECTED_SERVICE - Denotes an integration that should display under the \&quot;Connected Services\&quot; menu in mobile clients. * HIDDEN - Denotes an integration that should not display in mobile clients 
+        /// </summary>
+        /// <value>An App maybe associated to many classifications.  A classification drives how the integration is presented to the user in the SmartThings mobile clients.  These classifications include: * AUTOMATION - Denotes an integration that should display under the \&quot;Automation\&quot; tab in mobile clients. * SERVICE - Denotes an integration that is classified as a \&quot;Service\&quot;. * DEVICE - Denotes an integration that should display under the \&quot;Device\&quot; tab in mobile clients. * CONNECTED_SERVICE - Denotes an integration that should display under the \&quot;Connected Services\&quot; menu in mobile clients. * HIDDEN - Denotes an integration that should not display in mobile clients </value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum ClassificationsEnum
+        {
+            /// <summary>
+            /// Enum AUTOMATION for value: AUTOMATION
+            /// </summary>
+            [EnumMember(Value = "AUTOMATION")]
+            AUTOMATION = 1,
+
+            /// <summary>
+            /// Enum SERVICE for value: SERVICE
+            /// </summary>
+            [EnumMember(Value = "SERVICE")]
+            SERVICE = 2,
+
+            /// <summary>
+            /// Enum DEVICE for value: DEVICE
+            /// </summary>
+            [EnumMember(Value = "DEVICE")]
+            DEVICE = 3,
+
+            /// <summary>
+            /// Enum CONNECTEDSERVICE for value: CONNECTED_SERVICE
+            /// </summary>
+            [EnumMember(Value = "CONNECTED_SERVICE")]
+            CONNECTEDSERVICE = 4,
+
+            /// <summary>
+            /// Enum HIDDEN for value: HIDDEN
+            /// </summary>
+            [EnumMember(Value = "HIDDEN")]
+            HIDDEN = 5,
+
+            /// <summary>
+            /// Enum LABS for value: LABS
+            /// </summary>
+            [EnumMember(Value = "LABS")]
+            LABS = 6
+
+        }
+
+
+
+        /// <summary>
+        /// An App maybe associated to many classifications.  A classification drives how the integration is presented to the user in the SmartThings mobile clients.  These classifications include: * AUTOMATION - Denotes an integration that should display under the \&quot;Automation\&quot; tab in mobile clients. * SERVICE - Denotes an integration that is classified as a \&quot;Service\&quot;. * DEVICE - Denotes an integration that should display under the \&quot;Device\&quot; tab in mobile clients. * CONNECTED_SERVICE - Denotes an integration that should display under the \&quot;Connected Services\&quot; menu in mobile clients. * HIDDEN - Denotes an integration that should not display in mobile clients 
+        /// </summary>
+        /// <value>An App maybe associated to many classifications.  A classification drives how the integration is presented to the user in the SmartThings mobile clients.  These classifications include: * AUTOMATION - Denotes an integration that should display under the \&quot;Automation\&quot; tab in mobile clients. * SERVICE - Denotes an integration that is classified as a \&quot;Service\&quot;. * DEVICE - Denotes an integration that should display under the \&quot;Device\&quot; tab in mobile clients. * CONNECTED_SERVICE - Denotes an integration that should display under the \&quot;Connected Services\&quot; menu in mobile clients. * HIDDEN - Denotes an integration that should not display in mobile clients </value>
+        [DataMember(Name = "classifications", IsRequired = true, EmitDefaultValue = false)]
+        public List<ClassificationsEnum> Classifications { get; set; }
+        /// <summary>
+        /// Denotes the principal type to be used with the app.  Default is LOCATION.
+        /// </summary>
+        /// <value>Denotes the principal type to be used with the app.  Default is LOCATION.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum PrincipalTypeEnum
+        {
+            /// <summary>
+            /// Enum LOCATION for value: LOCATION
+            /// </summary>
+            [EnumMember(Value = "LOCATION")]
+            LOCATION = 1,
+
+            /// <summary>
+            /// Enum USERLEVEL for value: USER_LEVEL
+            /// </summary>
+            [EnumMember(Value = "USER_LEVEL")]
+            USERLEVEL = 2
+
+        }
+
+
+        /// <summary>
+        /// Denotes the principal type to be used with the app.  Default is LOCATION.
+        /// </summary>
+        /// <value>Denotes the principal type to be used with the app.  Default is LOCATION.</value>
+        [DataMember(Name = "principalType", IsRequired = true, EmitDefaultValue = false)]
+        public PrincipalTypeEnum PrincipalType { get; set; }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InstalledApp" /> class.
+        /// </summary>
+        [JsonConstructorAttribute]
+        protected InstalledApp() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InstalledApp" /> class.
+        /// </summary>
+        /// <param name="installedAppId">The ID of the installed app. (required).</param>
+        /// <param name="installedAppType">installedAppType (required).</param>
+        /// <param name="installedAppStatus">installedAppStatus (required).</param>
+        /// <param name="displayName">A user defined name for the installed app. May be null..</param>
+        /// <param name="appId">The ID of the app. (required).</param>
+        /// <param name="referenceId">A reference to an upstream system.  For example, Behaviors would reference the behaviorId. May be null. .</param>
+        /// <param name="locationId">The ID of the location to which the installed app may belong..</param>
+        /// <param name="owner">owner (required).</param>
+        /// <param name="notices">notices (required).</param>
+        /// <param name="createdDate">A UTC ISO-8601 Date-Time String (required).</param>
+        /// <param name="lastUpdatedDate">A UTC ISO-8601 Date-Time String (required).</param>
+        /// <param name="ui">ui.</param>
+        /// <param name="iconImage">iconImage.</param>
+        /// <param name="classifications">An App maybe associated to many classifications.  A classification drives how the integration is presented to the user in the SmartThings mobile clients.  These classifications include: * AUTOMATION - Denotes an integration that should display under the \&quot;Automation\&quot; tab in mobile clients. * SERVICE - Denotes an integration that is classified as a \&quot;Service\&quot;. * DEVICE - Denotes an integration that should display under the \&quot;Device\&quot; tab in mobile clients. * CONNECTED_SERVICE - Denotes an integration that should display under the \&quot;Connected Services\&quot; menu in mobile clients. * HIDDEN - Denotes an integration that should not display in mobile clients  (required).</param>
+        /// <param name="principalType">Denotes the principal type to be used with the app.  Default is LOCATION. (required).</param>
+        /// <param name="restrictionTier">Restriction tier of the install, if any..</param>
+        /// <param name="singleInstance">Inform the installation systems that the associated app can only be installed once within a user&#39;s account.  (required) (default to false).</param>
+        public InstalledApp(Guid installedAppId = default(Guid), InstalledAppType installedAppType = default(InstalledAppType), InstalledAppStatus installedAppStatus = default(InstalledAppStatus), string displayName = default(string), string appId = default(string), string referenceId = default(string), Guid locationId = default(Guid), Owner owner = default(Owner), List<Notice> notices = default(List<Notice>), DateTime createdDate = default(DateTime), DateTime lastUpdatedDate = default(DateTime), InstalledAppUi ui = default(InstalledAppUi), InstalledAppIconImage iconImage = default(InstalledAppIconImage), List<ClassificationsEnum> classifications = default(List<ClassificationsEnum>), PrincipalTypeEnum principalType = default(PrincipalTypeEnum), int restrictionTier = default(int), bool singleInstance = false)
+        {
+            this.InstalledAppId = installedAppId;
+            this.InstalledAppType = installedAppType;
+            this.InstalledAppStatus = installedAppStatus;
+            // to ensure "appId" is required (not null)
+            if (appId == null) {
+                throw new ArgumentNullException("appId is a required property for InstalledApp and cannot be null");
+            }
+            this.AppId = appId;
+            // to ensure "owner" is required (not null)
+            if (owner == null) {
+                throw new ArgumentNullException("owner is a required property for InstalledApp and cannot be null");
+            }
+            this.Owner = owner;
+            // to ensure "notices" is required (not null)
+            if (notices == null) {
+                throw new ArgumentNullException("notices is a required property for InstalledApp and cannot be null");
+            }
+            this.Notices = notices;
+            this.CreatedDate = createdDate;
+            this.LastUpdatedDate = lastUpdatedDate;
+            // to ensure "classifications" is required (not null)
+            if (classifications == null) {
+                throw new ArgumentNullException("classifications is a required property for InstalledApp and cannot be null");
+            }
+            this.Classifications = classifications;
+            this.PrincipalType = principalType;
+            this.SingleInstance = singleInstance;
+            this.DisplayName = displayName;
+            this.ReferenceId = referenceId;
+            this.LocationId = locationId;
+            this.Ui = ui;
+            this.IconImage = iconImage;
+            this.RestrictionTier = restrictionTier;
+        }
+
+        /// <summary>
+        /// The ID of the installed app.
+        /// </summary>
+        /// <value>The ID of the installed app.</value>
+        [DataMember(Name = "installedAppId", IsRequired = true, EmitDefaultValue = false)]
+        public Guid InstalledAppId { get; set; }
+
+        /// <summary>
+        /// A user defined name for the installed app. May be null.
+        /// </summary>
+        /// <value>A user defined name for the installed app. May be null.</value>
+        [DataMember(Name = "displayName", EmitDefaultValue = false)]
+        public string DisplayName { get; set; }
+
+        /// <summary>
+        /// The ID of the app.
+        /// </summary>
+        /// <value>The ID of the app.</value>
+        [DataMember(Name = "appId", IsRequired = true, EmitDefaultValue = false)]
+        public string AppId { get; set; }
+
+        /// <summary>
+        /// A reference to an upstream system.  For example, Behaviors would reference the behaviorId. May be null. 
+        /// </summary>
+        /// <value>A reference to an upstream system.  For example, Behaviors would reference the behaviorId. May be null. </value>
+        [DataMember(Name = "referenceId", EmitDefaultValue = false)]
+        public string ReferenceId { get; set; }
+
+        /// <summary>
+        /// The ID of the location to which the installed app may belong.
+        /// </summary>
+        /// <value>The ID of the location to which the installed app may belong.</value>
+        [DataMember(Name = "locationId", EmitDefaultValue = false)]
+        public Guid LocationId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Owner
+        /// </summary>
+        [DataMember(Name = "owner", IsRequired = true, EmitDefaultValue = false)]
+        public Owner Owner { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Notices
+        /// </summary>
+        [DataMember(Name = "notices", IsRequired = true, EmitDefaultValue = false)]
+        public List<Notice> Notices { get; set; }
+
+        /// <summary>
+        /// A UTC ISO-8601 Date-Time String
+        /// </summary>
+        /// <value>A UTC ISO-8601 Date-Time String</value>
+        [DataMember(Name = "createdDate", IsRequired = true, EmitDefaultValue = false)]
+        public DateTime CreatedDate { get; set; }
+
+        /// <summary>
+        /// A UTC ISO-8601 Date-Time String
+        /// </summary>
+        /// <value>A UTC ISO-8601 Date-Time String</value>
+        [DataMember(Name = "lastUpdatedDate", IsRequired = true, EmitDefaultValue = false)]
+        public DateTime LastUpdatedDate { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Ui
+        /// </summary>
+        [DataMember(Name = "ui", EmitDefaultValue = false)]
+        public InstalledAppUi Ui { get; set; }
+
+        /// <summary>
+        /// Gets or Sets IconImage
+        /// </summary>
+        [DataMember(Name = "iconImage", EmitDefaultValue = false)]
+        public InstalledAppIconImage IconImage { get; set; }
+
+        /// <summary>
+        /// Restriction tier of the install, if any.
+        /// </summary>
+        /// <value>Restriction tier of the install, if any.</value>
+        [DataMember(Name = "restrictionTier", EmitDefaultValue = false)]
+        public int RestrictionTier { get; set; }
+
+        /// <summary>
+        /// Inform the installation systems that the associated app can only be installed once within a user&#39;s account. 
+        /// </summary>
+        /// <value>Inform the installation systems that the associated app can only be installed once within a user&#39;s account. </value>
+        [DataMember(Name = "singleInstance", IsRequired = true, EmitDefaultValue = true)]
+        public bool SingleInstance { get; set; }
+
+        /// <summary>
+        /// Returns the string presentation of the object
+        /// </summary>
+        /// <returns>String presentation of the object</returns>
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append("class InstalledApp {\n");
+            sb.Append("  InstalledAppId: ").Append(InstalledAppId).Append("\n");
+            sb.Append("  InstalledAppType: ").Append(InstalledAppType).Append("\n");
+            sb.Append("  InstalledAppStatus: ").Append(InstalledAppStatus).Append("\n");
+            sb.Append("  DisplayName: ").Append(DisplayName).Append("\n");
+            sb.Append("  AppId: ").Append(AppId).Append("\n");
+            sb.Append("  ReferenceId: ").Append(ReferenceId).Append("\n");
+            sb.Append("  LocationId: ").Append(LocationId).Append("\n");
+            sb.Append("  Owner: ").Append(Owner).Append("\n");
+            sb.Append("  Notices: ").Append(Notices).Append("\n");
+            sb.Append("  CreatedDate: ").Append(CreatedDate).Append("\n");
+            sb.Append("  LastUpdatedDate: ").Append(LastUpdatedDate).Append("\n");
+            sb.Append("  Ui: ").Append(Ui).Append("\n");
+            sb.Append("  IconImage: ").Append(IconImage).Append("\n");
+            sb.Append("  Classifications: ").Append(Classifications).Append("\n");
+            sb.Append("  PrincipalType: ").Append(PrincipalType).Append("\n");
+            sb.Append("  RestrictionTier: ").Append(RestrictionTier).Append("\n");
+            sb.Append("  SingleInstance: ").Append(SingleInstance).Append("\n");
+            sb.Append("}\n");
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// Returns the JSON string presentation of the object
+        /// </summary>
+        /// <returns>JSON string presentation of the object</returns>
+        public virtual string ToJson()
+        {
+            return Newtonsoft.Json.JsonConvert.SerializeObject(this, Newtonsoft.Json.Formatting.Indented);
+        }
+
+        /// <summary>
+        /// Returns true if objects are equal
+        /// </summary>
+        /// <param name="input">Object to be compared</param>
+        /// <returns>Boolean</returns>
+        public override bool Equals(object input)
+        {
+            return this.Equals(input as InstalledApp);
+        }
+
+        /// <summary>
+        /// Returns true if InstalledApp instances are equal
+        /// </summary>
+        /// <param name="input">Instance of InstalledApp to be compared</param>
+        /// <returns>Boolean</returns>
+        public bool Equals(InstalledApp input)
+        {
+            if (input == null)
+            {
+                return false;
+            }
+            return 
+                (
+                    this.InstalledAppId == input.InstalledAppId ||
+                    (this.InstalledAppId != null &&
+                    this.InstalledAppId.Equals(input.InstalledAppId))
+                ) && 
+                (
+                    this.InstalledAppType == input.InstalledAppType ||
+                    this.InstalledAppType.Equals(input.InstalledAppType)
+                ) && 
+                (
+                    this.InstalledAppStatus == input.InstalledAppStatus ||
+                    this.InstalledAppStatus.Equals(input.InstalledAppStatus)
+                ) && 
+                (
+                    this.DisplayName == input.DisplayName ||
+                    (this.DisplayName != null &&
+                    this.DisplayName.Equals(input.DisplayName))
+                ) && 
+                (
+                    this.AppId == input.AppId ||
+                    (this.AppId != null &&
+                    this.AppId.Equals(input.AppId))
+                ) && 
+                (
+                    this.ReferenceId == input.ReferenceId ||
+                    (this.ReferenceId != null &&
+                    this.ReferenceId.Equals(input.ReferenceId))
+                ) && 
+                (
+                    this.LocationId == input.LocationId ||
+                    (this.LocationId != null &&
+                    this.LocationId.Equals(input.LocationId))
+                ) && 
+                (
+                    this.Owner == input.Owner ||
+                    (this.Owner != null &&
+                    this.Owner.Equals(input.Owner))
+                ) && 
+                (
+                    this.Notices == input.Notices ||
+                    this.Notices != null &&
+                    input.Notices != null &&
+                    this.Notices.SequenceEqual(input.Notices)
+                ) && 
+                (
+                    this.CreatedDate == input.CreatedDate ||
+                    (this.CreatedDate != null &&
+                    this.CreatedDate.Equals(input.CreatedDate))
+                ) && 
+                (
+                    this.LastUpdatedDate == input.LastUpdatedDate ||
+                    (this.LastUpdatedDate != null &&
+                    this.LastUpdatedDate.Equals(input.LastUpdatedDate))
+                ) && 
+                (
+                    this.Ui == input.Ui ||
+                    (this.Ui != null &&
+                    this.Ui.Equals(input.Ui))
+                ) && 
+                (
+                    this.IconImage == input.IconImage ||
+                    (this.IconImage != null &&
+                    this.IconImage.Equals(input.IconImage))
+                ) && 
+                (
+                    this.Classifications == input.Classifications ||
+                    this.Classifications.SequenceEqual(input.Classifications)
+                ) && 
+                (
+                    this.PrincipalType == input.PrincipalType ||
+                    this.PrincipalType.Equals(input.PrincipalType)
+                ) && 
+                (
+                    this.RestrictionTier == input.RestrictionTier ||
+                    this.RestrictionTier.Equals(input.RestrictionTier)
+                ) && 
+                (
+                    this.SingleInstance == input.SingleInstance ||
+                    this.SingleInstance.Equals(input.SingleInstance)
+                );
+        }
+
+        /// <summary>
+        /// Gets the hash code
+        /// </summary>
+        /// <returns>Hash code</returns>
+        public override int GetHashCode()
+        {
+            unchecked // Overflow is fine, just wrap
+            {
+                int hashCode = 41;
+                if (this.InstalledAppId != null)
+                {
+                    hashCode = (hashCode * 59) + this.InstalledAppId.GetHashCode();
+                }
+                hashCode = (hashCode * 59) + this.InstalledAppType.GetHashCode();
+                hashCode = (hashCode * 59) + this.InstalledAppStatus.GetHashCode();
+                if (this.DisplayName != null)
+                {
+                    hashCode = (hashCode * 59) + this.DisplayName.GetHashCode();
+                }
+                if (this.AppId != null)
+                {
+                    hashCode = (hashCode * 59) + this.AppId.GetHashCode();
+                }
+                if (this.ReferenceId != null)
+                {
+                    hashCode = (hashCode * 59) + this.ReferenceId.GetHashCode();
+                }
+                if (this.LocationId != null)
+                {
+                    hashCode = (hashCode * 59) + this.LocationId.GetHashCode();
+                }
+                if (this.Owner != null)
+                {
+                    hashCode = (hashCode * 59) + this.Owner.GetHashCode();
+                }
+                if (this.Notices != null)
+                {
+                    hashCode = (hashCode * 59) + this.Notices.GetHashCode();
+                }
+                if (this.CreatedDate != null)
+                {
+                    hashCode = (hashCode * 59) + this.CreatedDate.GetHashCode();
+                }
+                if (this.LastUpdatedDate != null)
+                {
+                    hashCode = (hashCode * 59) + this.LastUpdatedDate.GetHashCode();
+                }
+                if (this.Ui != null)
+                {
+                    hashCode = (hashCode * 59) + this.Ui.GetHashCode();
+                }
+                if (this.IconImage != null)
+                {
+                    hashCode = (hashCode * 59) + this.IconImage.GetHashCode();
+                }
+                hashCode = (hashCode * 59) + this.Classifications.GetHashCode();
+                hashCode = (hashCode * 59) + this.PrincipalType.GetHashCode();
+                hashCode = (hashCode * 59) + this.RestrictionTier.GetHashCode();
+                hashCode = (hashCode * 59) + this.SingleInstance.GetHashCode();
+                return hashCode;
+            }
+        }
+
+        /// <summary>
+        /// To validate all properties of the instance
+        /// </summary>
+        /// <param name="validationContext">Validation context</param>
+        /// <returns>Validation Result</returns>
+        public IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> Validate(ValidationContext validationContext)
+        {
+            // DisplayName (string) maxLength
+            if (this.DisplayName != null && this.DisplayName.Length > 100)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for DisplayName, length must be less than 100.", new [] { "DisplayName" });
+            }
+
+            yield break;
+        }
+    }
+
+}

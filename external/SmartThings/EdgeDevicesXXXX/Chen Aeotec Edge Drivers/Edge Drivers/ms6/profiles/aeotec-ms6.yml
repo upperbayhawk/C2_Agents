@@ -1,0 +1,104 @@
+name: aeotec-ms6
+components:
+- id: main
+  capabilities:
+  - id: motionSensor
+    version: 1
+  - id: temperatureMeasurement
+    version: 1
+  - id: relativeHumidityMeasurement
+    version: 1
+  - id: illuminanceMeasurement
+    version: 1
+  - id: ultravioletIndex
+    version: 1
+  - id: tamperAlert
+    version: 1
+  - id: battery
+    version: 1
+  - id: refresh
+    version: 1
+  categories:
+  - name: MotionSensor
+preferences:
+  - title: "3. Motion Timeout"
+    name: motionTimeout
+    description: "Sets the time in seconds to determine when to timeout motion when no motion present."
+    required: true
+    preferenceType: integer
+    definition:
+      minimum: 10
+      maximum: 3600
+      default: 240
+  - title: "4. Motion Sensitivity"
+    name: motionSensitivity
+    description: "Determines how sensitive motion sensor is where 0 is disabled and 5 is max"
+    required: true
+    preferenceType: integer
+    definition:
+      minimum: 0
+      maximum: 5
+      default: 5
+  - title: "81. LED Enable/Disable"
+    name: ledEnable
+    description: "Enable/disable the Motion trigger LED flashes for MultiSensor"
+    required: true
+    preferenceType: enumeration
+    definition:
+      options:
+        0: "Enable"
+        1: "Disable"
+      default: 0
+  - title: "101. Group 1 Sensors"
+    name: sensorReport
+    description: "Determines what sensors are reported. 1 = battery, 16 = UV, 32 = Temp, 64 = Humidity, 128 = Light"
+    required: true
+    preferenceType: integer
+    definition:
+      minimum: 0
+      maximum: 241
+      default: 241
+  - title: "111. Group 1 Report Time"
+    name: sensorTime
+    description: "Determines how often sensors are reported in seconds."
+    required: true
+    preferenceType: integer
+    definition:
+      minimum: 0
+      maximum: 86400
+      default: 3600
+  - title: "201. Temperature Offset"
+    name: offsetTemp
+    description: "Offsets the temperature value (value*0.1)"
+    required: true
+    preferenceType: integer
+    definition:
+      minimum: -128
+      maximum: 127
+      default: 0
+  - title: "202. Humidiity Offset"
+    name: offsetHum
+    description: "Offsets the humidity value"
+    required: true
+    preferenceType: integer
+    definition:
+      minimum: -50
+      maximum: 50
+      default: 0
+  - title: "203. Light Offset"
+    name: offsetLight
+    description: "Offsets the light sensor value"
+    required: true
+    preferenceType: integer
+    definition:
+      minimum: -1000
+      maximum: 1000
+      default: 0
+  - title: "Association Group 1: Lifeline"
+    name: assocGroup1
+    description: "Enter a comma delimited list of hex IDs to be sent general notifications (5 node max)"
+    required: true
+    preferenceType: string
+    definition:
+      stringType: text
+      default: ""

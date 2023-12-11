@@ -1,0 +1,217 @@
+name: aeotec-trisensor
+components:
+- id: main
+  capabilities:
+  - id: motionSensor
+    version: 1
+  - id: battery
+    version: 1
+  - id: illuminanceMeasurement
+    version: 1
+  - id: temperatureMeasurement
+    version: 1
+  - id: refresh
+    version: 1
+  categories:
+  - name: MotionSensor
+preferences:
+  - title: "1. Motion Retrigger"
+    name: motionRetrigger
+    description: "Sets the time to allow a motion re-trigger before motion is timed out."
+    required: true
+    preferenceType: integer
+    definition:
+      minimum: 0
+      maximum: 32767
+      default: 30
+  - title: "2. Motion Timeout"
+    name: motionTimeout
+    description: "Sets the time in seconds to determine when to timeout motion when no motion present."
+    required: true
+    preferenceType: integer
+    definition:
+      minimum: 1
+      maximum: 32767
+      default: 240
+  - title: "3. Motion Sensitivity"
+    name: motionSensitivity
+    description: "Determines how sensitive motion sensor is where 0 is disabled and 11 is max"
+    required: true
+    preferenceType: integer
+    definition:
+      minimum: 0
+      maximum: 11
+      default: 11
+  - title: "10. LED Enable/Disable"
+    name: ledEnable
+    description: "Enable/disable the LED flashes for TriSensor"
+    required: true
+    preferenceType: enumeration
+    definition:
+      options:
+        0: "Disable"
+        1: "Enable"
+      default: 1
+  - title: "11. Motion LED Color"
+    name: ledMotion
+    description: "Sets the color of Motion trigger LED flash"
+    required: true
+    preferenceType: enumeration
+    definition:
+      options:
+        0: "Disable"
+        1: "Red"
+        2: "Green"
+        3: "Blue"
+        4: "Yellow"
+        5: "Pink"
+        6: "Cyan"
+        7: "Purple"
+        8: "Orange"
+      default: 2
+  - title: "12. Temp LED Color"
+    name: ledTemp
+    description: "Sets the color of Temperature report LED flash"
+    required: true
+    preferenceType: enumeration
+    definition:
+      options:
+        0: "Disable"
+        1: "Red"
+        2: "Green"
+        3: "Blue"
+        4: "Yellow"
+        5: "Pink"
+        6: "Cyan"
+        7: "Purple"
+        8: "Orange"
+      default: 0
+  - title: "13. Lux LED Color"
+    name: ledLux
+    description: "Sets the color of Light Sensor report LED flash"
+    required: true
+    preferenceType: enumeration
+    definition:
+      options:
+        0: "Disable"
+        1: "Red"
+        2: "Green"
+        3: "Blue"
+        4: "Yellow"
+        5: "Pink"
+        6: "Cyan"
+        7: "Purple"
+        8: "Orange"
+      default: 0
+  - title: "14. Battery LED Color"
+    name: ledBattery
+    description: "Sets the color of Battery Sensor report LED flash"
+    required: true
+    preferenceType: enumeration
+    definition:
+      options:
+        0: "Disable"
+        1: "Red"
+        2: "Green"
+        3: "Blue"
+        4: "Yellow"
+        5: "Pink"
+        6: "Cyan"
+        7: "Purple"
+        8: "Orange"
+      default: 0
+  - title: "15. Wakeup LED Color"
+    name: ledWakeUp
+    description: "Sets the color of Wakeup report LED flash"
+    required: true
+    preferenceType: enumeration
+    definition:
+      options:
+        0: "Disable"
+        1: "Red"
+        2: "Green"
+        3: "Blue"
+        4: "Yellow"
+        5: "Pink"
+        6: "Cyan"
+        7: "Purple"
+        8: "Orange"
+      default: 4
+  - title: "21. Temp Threshold"
+    name: threshTemp
+    description: "Determines amount of change needed for temperature to report (value*0.1)"
+    required: true
+    preferenceType: integer
+    definition:
+      minimum: 0
+      maximum: 250
+      default: 11
+  - title: "22. Light Threshold"
+    name: threshLight
+    description: "Determines amount of change needed for light to report"
+    required: true
+    preferenceType: integer
+    definition:
+      minimum: 0
+      maximum: 10000
+      default: 100
+  - title: "23. Temperature Timed Report"
+    name: intervalTemp
+    description: "Determines how often temperature should report in seconds"
+    required: true
+    preferenceType: integer
+    definition:
+      minimum: 1
+      maximum: 32767
+      default: 3600
+  - title: "24. Light Timed Report"
+    name: intervalLight
+    description: "Determines how often light should report in seconds"
+    required: true
+    preferenceType: integer
+    definition:
+      minimum: 1
+      maximum: 32767
+      default: 3600
+  - title: "30. Temperature Offset"
+    name: offsetTemp
+    description: "Offsets the temperature value (value*0.1)"
+    required: true
+    preferenceType: integer
+    definition:
+      minimum: -200
+      maximum: 200
+      default: 0
+  - title: "31. Light Offset"
+    name: offsetLight
+    description: "Offsets the light sensor value"
+    required: true
+    preferenceType: integer
+    definition:
+      minimum: -1000
+      maximum: 1000
+      default: 0
+  - title: "Association Group 1: Lifeline"
+    name: assocGroup1
+    description: "Enter a comma delimited list of hex IDs to be sent general notifications (5 node max)"
+    required: true
+    preferenceType: string
+    definition:
+      stringType: text
+      default: ""
+  - title: "Association Group 2: Motion"
+    name: assocGroup2
+    description: "Enter a comma delimited list of hex IDs to be sent general notifications (5 node max)"
+    required: true
+    preferenceType: string
+    definition:
+      stringType: text
+      default: ""
+  - title: "Association Group 3: Temp"
+    name: assocGroup3
+    description: "Enter a comma delimited list of hex IDs to be sent general notifications (5 node max)"
+    required: true
+    preferenceType: string
+    definition:
+      stringType: text
+      default: ""

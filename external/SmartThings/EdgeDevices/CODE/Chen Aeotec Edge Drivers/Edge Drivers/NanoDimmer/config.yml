@@ -1,0 +1,4 @@
+name: 'Aeotec Nano Dimmer'
+packageKey: 'aeotec-nano-dimmer'
+permissions:
+  zwave: {}

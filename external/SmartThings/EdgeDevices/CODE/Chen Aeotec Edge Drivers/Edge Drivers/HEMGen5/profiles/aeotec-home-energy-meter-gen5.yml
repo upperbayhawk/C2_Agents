@@ -1,0 +1,72 @@
+name: aeotec-home-energy-meter-gen5
+components:
+- id: main
+  label: "Meter"
+  capabilities:
+  - id: powerMeter
+    version: 1
+  - id: energyMeter
+    version: 1
+  - id: refresh
+    version: 1
+  categories:
+  - name: CurbPowerMeter
+preferences:
+  - title: "2. Solar Reading"
+    name: selectiveReporting
+    description: "Determines how the HEM Gen5 should report"
+    required: true
+    preferenceType: enumeration
+    definition:
+      options:
+        0: "Always positive"
+        1: "Sum of readings"
+        2: "Only positive report"
+        3: "Only negative report"
+      default: 1
+  - title: "3. Threshold Reading"
+    name: thresholdWatt
+    description: "Determines if watt is reported based on change in power (recommended: disable)"
+    required: true
+    preferenceType: enumeration
+    definition:
+      options:
+        0: "Disable"
+        1: "Enable"
+      default: 0
+  - title: "13. CRC-16"
+    name: crcSixteen
+    description: "Determines if Meter is CRC16 encapsulated (keep disabled)"
+    required: true
+    preferenceType: enumeration
+    definition:
+      options:
+        0: "Disable"
+        1: "Enable"
+      default: 0
+  - title: "101. Sensor Reports"
+    name: group1Sensors
+    description: "Group 1 sensor reports"
+    required: true
+    preferenceType: integer
+    definition:
+      minimum: 0
+      maximum: 265277391
+      default: 3
+  - title: "111. Group 1 sensor report time"
+    name: group1Time
+    description: "set timed report of Group 1 sensor in seconds"
+    required: true
+    preferenceType: integer
+    definition:
+      minimum: 0
+      maximum: 86400
+      default: 300
+  - title: "Association Group 1: Lifeline"
+    name: assocGroup1
+    description: "Enter a comma delimited list of hex IDs to be sent general notifications (5 node max)"
+    required: true
+    preferenceType: string
+    definition:
+      stringType: text
+      default: ""

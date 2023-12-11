@@ -1,0 +1,128 @@
+name: aeotec-aerq
+components:
+- id: main
+  capabilities:
+  - id: temperatureMeasurement
+    version: 1
+  - id: relativeHumidityMeasurement
+    version: 1
+  - id: dewPoint
+    version: 1
+  - id: battery
+    version: 1
+  - id: refresh
+    version: 1
+  categories:
+  - name: Thermostat
+preferences:
+  - title: "1. Threshold Temperature"
+    name: selectiveTemp
+    description: "Determines if temperature should report if change passes (value*0.1)"
+    required: true
+    preferenceType: integer
+    definition:
+      minimum: 0
+      maximum: 100
+      default: 20
+  - title: "2. Threshold Humidity"
+    name: selectiveHum
+    description: "Determines if temperature should report if change passes humidity value"
+    required: true
+    preferenceType: integer
+    definition:
+      minimum: 0
+      maximum: 20
+      default: 5
+  - title: "3. Threshold Time"
+    name: selectiveTime
+    description: "Determines check timeframe in minutes using parameter 1 and 2"
+    required: true
+    preferenceType: integer
+    definition:
+      minimum: 1
+      maximum: 255
+      default: 15
+  - title: "4. Periodically Report sensors"
+    name: periodicTime
+    description: "Sets the time that aerQ reports automatically in seconds"
+    required: true
+    preferenceType: integer
+    definition:
+      minimum: 30
+      maximum: 65535
+      default: 43200
+  - title: "14. Offset Temperature"
+    name: offsetTemp
+    description: "Offset temperature value (value*0.1)"
+    required: true
+    preferenceType: integer
+    definition:
+      minimum: -200
+      maximum: 200
+      default: 0
+  - title: "15. Offset Humdity Value"
+    name: offsetHum
+    description: "Offset humidity value from -50% to +50%"
+    required: true
+    preferenceType: integer
+    definition:
+      minimum: -50
+      maximum: 50
+      default: 0
+  - title: "16. Group Time Check"
+    name: waterTime
+    description: "Offset humidity value from -50% to +50%"
+    required: true
+    preferenceType: integer
+    definition:
+      minimum: 1
+      maximum: 255
+      default: 15
+  - title: "Association Group 1: Lifeline"
+    name: assocGroup1
+    description: "Enter a comma delimited list of hex IDs to be sent general notifications (5 node max)"
+    required: true
+    preferenceType: string
+    definition:
+      stringType: text
+      default: ""
+  - title: "Association Group 2: High Temp"
+    name: assocGroup2
+    description: "Enter a comma delimited list of hex IDs to be sent general notifications (5 node max)"
+    required: true
+    preferenceType: string
+    definition:
+      stringType: text
+      default: ""
+  - title: "Association Group 3: Low Temp"
+    name: assocGroup3
+    description: "Enter a comma delimited list of hex IDs to be sent general notifications (5 node max)"
+    required: true
+    preferenceType: string
+    definition:
+      stringType: text
+      default: ""
+  - title: "Association Group 4: High Humidity"
+    name: assocGroup4
+    description: "Enter a comma delimited list of hex IDs to be sent general notifications (5 node max)"
+    required: true
+    preferenceType: string
+    definition:
+      stringType: text
+      default: ""
+  - title: "Association Group 5: Low Humidity"
+    name: assocGroup5
+    description: "Enter a comma delimited list of hex IDs to be sent general notifications (5 node max)"
+    required: true
+    preferenceType: string
+    definition:
+      stringType: text
+      default: ""
+  - title: "Association Group 6: Air Temperature"
+    name: assocGroup6
+    description: "Enter a comma delimited list of hex IDs to be sent general notifications (5 node max)"
+    required: true
+    preferenceType: string
+    definition:
+      stringType: text
+      default: ""

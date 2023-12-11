@@ -1,0 +1,36 @@
+ 
+ #remove!
+ #private power data
+            self.channel_id = 1114974
+            self.channel_key = "USI884Q84ANQ0HBX"
+            self.field = 1
+            self.num_of_values = 100
+
+
+Test ubergeek-1-0-0
+Fill out weatherman prompts
+For Generic time series
+
+REVIEW code
+CODE FREEZE
+GIT CODE from CODE
+
+Clone to weatherman-1-0-0
+
+Clone to thingspeak-1-0-0
+
+Clone to plainman-1-0-0
+
+Clone to Powerman Home
+
+Gridman
+
+Clone
+ChatterboxGPT to GridmanPump
+
+Add...
+DA load forecast
+Wind generation
+Solar generation
+Five min load forecast
+

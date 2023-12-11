@@ -1,0 +1,4 @@
+name: 'Z-Wave Legacy Sensor'
+packageKey: 'zwave-legacy-sensor'
+permissions:
+  zwave: {}

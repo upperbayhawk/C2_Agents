@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<appSettings>
+	<!-- Agent Assistants-->
+    <add key="hasEventAssistant" value="true" />
+    <add key="hasEtherReadTestAccessorAssistant" value="false" />
+    <add key="hasEtherWriteTestAccessorAssistant" value="false" />
+    <add key="hasSimulatorAssistant" value="true"/>
+	<add key="hasCacheAssistant" value="true"/>
+	<add key="hasWeatherServiceAssistant" value="false"/>
+    <add key="hasMqttSubscriberAssistant" value="true"/>
+    <add key="hasMqttPublisherAssistant" value="true"/>
+	<add key="hasThingSpeakReadAccessorAssistant" value="true"/>
+	<add key="hasThingSpeakWriteAccessorAssistant" value="true"/>
+	<add key="hasManualInputAssistant" value="true"/>
+	<!-- MQTT Parameters-->
+	<add key="MqttRemoteIpAddress" value="192.168.0.109"/>
+	<add key="MqttPort" value="1883"/>
+	<add key="MqttLoginName" value="Dave"/>
+	<!-- Ethereum Parameters-->
+	<add key="EthereumOracleName" value="HawksNest"/>
+	<add key="EthereumOracleName" value="HawksNest"/>
+    <add key="EthereumServerURL" value="http://127.0.0.1:7545"/>
+    <add key="EthereumExternalPrivateKey" value="0xd43f027259ea6565a31f38703662891f841cdbd8d8516d8eac631ca5287e5879"/>
+    <add key="EthereumExternalAddress" value="0x1B380f810C56A379a4BAb290252Ae95d5Cab8Eba"/>
+    <add key="EthereumContractAddress" value="0x1303c0AeC5276B013faF7C118539EcD90634730F"/>
+	<!-- Ethereum Parameters-->
+	<add key="ThingSpeakReferenceServerURL" value="https://api.thingspeak.com/channels/"/>
+	<add key="WattsAtCampDavid" value="channelID=1114974,fieldID=1,readKey=USI884Q84ANQ0HBX"/>
+	<add key="WattsMirrorAtCampDavid" value="channelID=1111475,fieldID=1,writeKey=QN271S8WTAKN3P8S"/>
+	<add key="ThingSpeakWriteTag1" value="channelID=5252525,fieldID=1,writeKey=kjhhk"/>
+	<!-- Voice Parameters-->
+	<add key="ManualInputData" value="The Virus is nasty!"/>
+    <add key="VoiceCommandFile" value="D:\\bin\\scripts\\AlexaTestCommands.txt"/>
+	<!-- Texting Parameters-->
+	<add key="SMSAccountEnabled" value="false"/>
+    <add key="SMSAccountName" value="davidhardin2"/>
+    <add key="SMSAccountKey" value="eWymWS3pHCqvewP8NqKdc2DnvCABDE"/>
+    <add key="SMSTargetPhoneNumber" value="17745715386"/>
+	<add key="ReloadCacheOnStart" value="true"/>
+	<add key="CacheDataFile" value="D:\\bin\\cache\\DataVariableCache.txt"/>
+	<add key="zipCode" value="19958"/>
+    <add key="location" value="Boggs Lane"/>
+    <add key="weatherStationID" value="KTAN"/>
+    <add key="weatherAlertZone" value="DEZ004"/>
+    <add key="period" value="10000"/>
+    <add key="traceMode" value="trace"/>
+    <add key="logicalPathName" value="/TestSystem/TestAgent"/>
+	<add key="voice" value="Microsoft Zira Desktop"/>
+	<add key="vocalName" value="Natasha"/>
+    <add key="role" value="HouseSpeaker"/>
+    <add key="startupMessage" value="Hi Dave, Current for carbon is starting up."/>
+    <add key="shutdownMessage" value="Hi Dave, Current for carbon is shutting down."/>
+</appSettings>

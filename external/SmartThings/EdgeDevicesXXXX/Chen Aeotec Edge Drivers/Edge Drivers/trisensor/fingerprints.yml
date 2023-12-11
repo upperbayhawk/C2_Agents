@@ -1,0 +1,19 @@
+zwaveManufacturer:
+  - id: "Aeotec/TriSensor/US"
+    deviceLabel: Aeotec TriSensor
+    manufacturerId: 0x0371
+    productType: 0x0102
+    productId: 0x0005
+    deviceProfileName: aeotec-trisensor
+  - id: "Aeotec/TriSensor/EU"
+    deviceLabel: Aeotec TriSensor
+    manufacturerId: 0x0371
+    productType: 0x0002
+    productId: 0x0005
+    deviceProfileName: aeotec-trisensor
+  - id: "Aeotec/TriSensor/AU"
+    deviceLabel: Aeotec TriSensor
+    manufacturerId: 0x0371
+    productType: 0x0202
+    productId: 0x0005
+    deviceProfileName: aeotec-trisensor

@@ -1,0 +1,4 @@
+name: 'Aeotec Home Energy Meter Gen5'
+packageKey: 'aeotec-home-energy-meter-gen5'
+permissions:
+  zwave: {}

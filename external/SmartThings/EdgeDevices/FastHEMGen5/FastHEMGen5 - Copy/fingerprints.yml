@@ -1,0 +1,31 @@
+zwaveManufacturer:
+  - id: "AeotecEnergyMonitor/US"
+    deviceLabel: Aeotec Energy Monitor
+    manufacturerId: 0x0086
+    productType: 0x0102
+    productId: 0x005F
+    deviceProfileName: aeotec-home-energy-meter-gen5
+  - id: "AeotecEnergyMonitor/EU"
+    deviceLabel: Aeotec Energy Monitor
+    manufacturerId: 0x0086
+    productType: 0x0002
+    productId: 0x005F
+    deviceProfileName: aeotec-home-energy-meter-gen5
+  - id: "AeotecEnergyMonitor2/US"
+    deviceLabel: Aeotec Energy Monitor
+    manufacturerId: 0x0086
+    productType: 0x0102
+    productId: 0x001C
+    deviceProfileName: aeotec-home-energy-meter-gen5
+  - id: "AeotecEnergyMonitor2/EU"
+    deviceLabel: Aeotec Energy Monitor
+    manufacturerId: 0x0086
+    productType: 0x0002
+    productId: 0x001C
+    deviceProfileName: aeotec-home-energy-meter-gen5
+  - id: "AeotecEnergyMonitor2/AU"
+    deviceLabel: Aeotec Energy Monitor
+    manufacturerId: 0x0086
+    productType: 0x0202
+    productId: 0x001C
+    deviceProfileName: aeotec-home-energy-meter-gen5

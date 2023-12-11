@@ -1,0 +1,7 @@
+zwaveManufacturer:
+  - id: "Aeotec/Smart Switch 7/EU"
+    deviceLabel: Aeotec Smart Switch 7 EU
+    manufacturerId: 0x0371
+    productType: 0x0003
+    productId: 0x00AF
+    deviceProfileName: aeotec-smart-switch-7-eu
