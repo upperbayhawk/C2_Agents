@@ -58,7 +58,7 @@ namespace ChatterBoxGPT
 
            
             Console.Clear();
-            Console.WriteLine("Select PJM dataset for analysis");
+            Console.WriteLine("Select PJM dataset to be fed to GPT");
             Console.WriteLine("1. PJMFiveMinLoadForecast");
             Console.WriteLine("2. PJMHourLoadMetered");
             Console.WriteLine("3. PJMInstLoad");
