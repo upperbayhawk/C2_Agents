@@ -93,6 +93,10 @@ namespace ChatterBoxGPT
                     Console.WriteLine("PJMUnverifiedFiveMinLmp selected.");
                     break;
                 case "6":
+                    // Code for Option 3
+                    Console.WriteLine("PJMOperationsSummary selected.");
+                    break;
+                case "7":
                     exit = true;
                     break;
                 default:
@@ -168,6 +172,17 @@ namespace ChatterBoxGPT
                     double dVal = pJMUnverifiedFiveMinLmp.GetLastValue(json);
                     Console.WriteLine("Last value: " + dVal.ToString());
                     pJMUnverifiedFiveMinLmp.WriteCsvToFile(json, ".\\GptPromptDataCSV.txt");
+                }
+
+                if (userInput == "6")
+                {
+
+                    PJMOperationsSummary pJMOperationsSummary = new PJMOperationsSummary();
+                    string json = pJMOperationsSummary.GetJson("MIDATL", 1);
+                    pJMOperationsSummary.WriteJsonToFile(json, ".\\GptPromptDataReal.txt");
+                    double dVal = pJMOperationsSummary.GetLastValue(json);
+                    Console.WriteLine("Last value: " + dVal.ToString());
+                    pJMOperationsSummary.WriteCsvToFile(json, ".\\GptPromptDataCSV.txt");
                 }
 
                 string promptText = File.ReadAllText(".\\GptPromptTextForecast.Txt");

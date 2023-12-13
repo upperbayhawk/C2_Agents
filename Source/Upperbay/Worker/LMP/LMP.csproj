@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="NEISORealTimeLMP.cs" />
+    <Compile Include="PJMOperationsSummary.cs" />
     <Compile Include="PJMUnverifiedFiveMinLmp.cs" />
     <Compile Include="PJMLoadForecastSevenDay.cs" />
     <Compile Include="PJMInstLoad.cs" />
