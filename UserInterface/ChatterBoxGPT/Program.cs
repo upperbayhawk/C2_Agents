@@ -61,12 +61,14 @@ namespace ChatterBoxGPT
             Console.WriteLine("Select PJM dataset to be fed to GPT");
             Console.WriteLine("1. PJMFiveMinLoadForecast");
             Console.WriteLine("2. PJMHourLoadMetered");
-            Console.WriteLine("3. PJMInstLoad");
-            Console.WriteLine("4. PJMLoadForecastSevenDay");
-            Console.WriteLine("5. PJMUnverifiedFiveMinLmp");
-            Console.WriteLine("6. Exit");
+            Console.WriteLine("3. PJMHourLoadPrelim");
+            Console.WriteLine("4. PJMInstLoad");
+            Console.WriteLine("5. PJMLoadForecastSevenDay");
+            Console.WriteLine("6. PJMUnverifiedFiveMinLmp");
+            Console.WriteLine("7. PJMOperationsSummary");
+            Console.WriteLine("8. Exit");
 
-            Console.Write("Enter your choice (1-6): ");
+            Console.Write("Enter your choice (1-8): ");
 
             userInput = Console.ReadLine();
 

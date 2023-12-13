@@ -238,14 +238,16 @@ namespace Upperbay.Worker.LMP
 
                     using (TextWriter writer1 = File.CreateText((filename)))
                     {
-                        writer1.WriteLine("time,load");
+                        writer1.WriteLine("time,load,sched capacity,unsched capacity");
                         for (int i = 0; i < numOfRows; i++)
                         {
                             string time1 = myRootObject.items[i].projected_peak_datetime_ept.ToString();
                             string load1 = myRootObject.items[i].pjm_load_forecast.ToString();
-                            writer1.WriteLine("\"" + time1 + "\",\"" + load1 + "\"");
-                            writer.WriteLine("\"" + time1 + "\",\"" + load1 + "\"");
-                            Log2.Info(time1 + "," + load1);
+                            string capsched = myRootObject.items[i].internal_scheduled_capacity.ToString();
+                            string capunsched = myRootObject.items[i].unscheduled_steam_capacity.ToString();
+                            writer1.WriteLine("\"" + time1 + "\",\"" + load1 + "\",\"" + capsched + "\",\"" + capunsched + "\""); 
+                            writer.WriteLine("\"" + time1 + "\",\"" + load1 + "\",\"" + capsched + "\",\"" + capunsched + "\"");
+                            Log2.Info("\"" + time1 + "\",\"" + load1 + "\",\"" + capsched + "\",\"" + capunsched + "\"");
                         }
                     }
                 }
