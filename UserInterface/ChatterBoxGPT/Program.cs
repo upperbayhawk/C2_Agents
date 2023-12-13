@@ -57,7 +57,7 @@ namespace ChatterBoxGPT
             string userInput = null;
 
            
-            Console.Clear();
+           // Console.Clear();
             Console.WriteLine("Select PJM dataset to be fed to GPT");
             Console.WriteLine("1. PJMFiveMinLoadForecast");
             Console.WriteLine("2. PJMHourLoadMetered");
@@ -82,21 +82,25 @@ namespace ChatterBoxGPT
                     break;
                 case "3":
                     // Code for Option 3
-                    Console.WriteLine("PJMInstLoad selected.");
+                    Console.WriteLine("PJMHourLoadPrelim selected.");
                     break;
                 case "4":
                     // Code for Option 3
-                    Console.WriteLine("PJMLoadForecastSevenDay selected.");
+                    Console.WriteLine("PJMInstLoad selected.");
                     break;
                 case "5":
                     // Code for Option 3
-                    Console.WriteLine("PJMUnverifiedFiveMinLmp selected.");
+                    Console.WriteLine("PJMLoadForecastSevenDay selected.");
                     break;
                 case "6":
                     // Code for Option 3
-                    Console.WriteLine("PJMOperationsSummary selected.");
+                    Console.WriteLine("PJMUnverifiedFiveMinLmp selected.");
                     break;
                 case "7":
+                    // Code for Option 3
+                    Console.WriteLine("PJMOperationsSummary selected.");
+                    break;
+                case "8":
                     exit = true;
                     break;
                 default:
@@ -144,6 +148,17 @@ namespace ChatterBoxGPT
                 if (userInput == "3")
                 {
 
+                    PJMHourLoadPrelim pJMHourLoadPrelim = new PJMHourLoadPrelim();
+                    string json = pJMHourLoadPrelim.GetJson("DPLCO", 100);
+                    pJMHourLoadPrelim.WriteJsonToFile(json, ".\\GptPromptDataReal.txt");
+                    double dVal = pJMHourLoadPrelim.GetLastValue(json);
+                    Console.WriteLine("Last value: " + dVal.ToString());
+                    pJMHourLoadPrelim.WriteCsvToFile(json, ".\\GptPromptDataCSV.txt");
+                }
+
+                if (userInput == "4")
+                {
+
                     PJMInstLoad pJMInstLoad = new PJMInstLoad();
                     string json = pJMInstLoad.GetJson("DPL", 100);
                     pJMInstLoad.WriteJsonToFile(json, ".\\GptPromptDataReal.txt");
@@ -152,7 +167,7 @@ namespace ChatterBoxGPT
                     pJMInstLoad.WriteCsvToFile(json, ".\\GptPromptDataCSV.txt");
                 }
 
-                if (userInput == "4")
+                if (userInput == "5")
                 {
 
                     PJMLoadForecastSevenDay pJMLoadForecastSevenDay = new PJMLoadForecastSevenDay();
@@ -163,7 +178,7 @@ namespace ChatterBoxGPT
                     pJMLoadForecastSevenDay.WriteCsvToFile(json, ".\\GptPromptDataCSV.txt");
                 }
 
-                if (userInput == "5")
+                if (userInput == "6")
                 {
 
                     PJMUnverifiedFiveMinLmp pJMUnverifiedFiveMinLmp = new PJMUnverifiedFiveMinLmp();
@@ -174,7 +189,7 @@ namespace ChatterBoxGPT
                     pJMUnverifiedFiveMinLmp.WriteCsvToFile(json, ".\\GptPromptDataCSV.txt");
                 }
 
-                if (userInput == "6")
+                if (userInput == "7")
                 {
 
                     PJMOperationsSummary pJMOperationsSummary = new PJMOperationsSummary();
@@ -184,6 +199,7 @@ namespace ChatterBoxGPT
                     Console.WriteLine("Last value: " + dVal.ToString());
                     pJMOperationsSummary.WriteCsvToFile(json, ".\\GptPromptDataCSV.txt");
                 }
+
 
                 string promptText = File.ReadAllText(".\\GptPromptTextForecast.Txt");
 
