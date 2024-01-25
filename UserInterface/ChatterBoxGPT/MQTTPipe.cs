@@ -29,8 +29,8 @@ namespace ChatterBoxGPT
     public class MQTTPipe
     {
         private static IManagedMqttClient mqttLocal;
-        private static string MQTT_TOPIC_TOASSISTANT = "openai/assistant/OmniBus-1-0-0/ToAssistant";
-        private static string MQTT_TOPIC_TOCLIENT = "openai/assistant/OmniBus-1-0-0/ToClient";
+        private static string MQTT_TOPIC_TOASSISTANT = "openai/assistant/GridLoadMan-1-0-0/ToAssistant";
+        private static string MQTT_TOPIC_TOCLIENT = "openai/assistant/GridLoadMan-1-0-0/ToClient";
         
         private static ConcurrentQueue<string> queue = new ConcurrentQueue<string>();
 
