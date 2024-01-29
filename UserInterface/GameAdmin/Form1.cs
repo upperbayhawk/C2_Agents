@@ -92,14 +92,19 @@ namespace CurrentForCarbon
             Log2.Info("maxEthereumSlices = {0}", maxEthereumSlices);
             uint slices = uint.Parse(maxEthereumSlices);
             GameAllStatistics.InitAll();
+            int sleepyTime = 1000;
             for (uint i = 0; i < slices; i++)
             {
                 gameLedger.LogAllPlayers(i);
+                System.Threading.Thread.Sleep(sleepyTime);
                 gameLedger.LogAllEvents(i);
+                System.Threading.Thread.Sleep(sleepyTime);
                 gameLedger.LogAllResults(i);
+                System.Threading.Thread.Sleep(sleepyTime);
                 gameLedger.LogAllCombinedEventResults(i);
+                System.Threading.Thread.Sleep(sleepyTime);
             }
-           
+
 
             //gameLedger.LogPlayer(this.textBoxPlayerIdentifier.Text);
             //gameLedger.LogEvent(xx);
@@ -124,14 +129,18 @@ namespace CurrentForCarbon
 
             if (iSlice == 0)
                 GameAllStatistics.InitAll();
-            
+            int sleepyTime = 1000;
             gameLedger.LogAllPlayers(iSlice);
+            System.Threading.Thread.Sleep(sleepyTime);
             //MessageBox.Show("Wait for Players completion", "Get Slice From Ethereum", buttons);
             gameLedger.LogAllEvents(iSlice);
+            System.Threading.Thread.Sleep(sleepyTime);
             //MessageBox.Show("Wait for Events completion", "Get Slice From Ethereum", buttons);
             gameLedger.LogAllResults(iSlice);
+            System.Threading.Thread.Sleep(sleepyTime);
             //MessageBox.Show("Wait for Results completion", "Get Slice From Ethereum", buttons);
             gameLedger.LogAllCombinedEventResults(iSlice);
+            System.Threading.Thread.Sleep(sleepyTime);
             //MessageBox.Show("Wait for CombinedEventResults completion", "Get Slice From Ethereum", buttons);
 
             //MessageBox.Show("Please check log directory for completion", "Get Slice From Ethereum", buttons);
@@ -149,14 +158,18 @@ namespace CurrentForCarbon
         {
             MessageBoxButtons buttons = MessageBoxButtons.OK;
             GameLedger gameLedger = new GameLedger();
-            
             GameAllStatistics.InitAll();
+            int sleepyTime = 1000;
             for (uint i = 0; i < 5; i++)
             {
                 gameLedger.LogAllPlayers(i);
+                System.Threading.Thread.Sleep(sleepyTime); 
                 gameLedger.LogAllEvents(i);
+                System.Threading.Thread.Sleep(sleepyTime); 
                 gameLedger.LogAllResults(i);
+                System.Threading.Thread.Sleep(sleepyTime); 
                 gameLedger.LogAllCombinedEventResults(i);
+                System.Threading.Thread.Sleep(sleepyTime);
             }
             MessageBox.Show("Please check log directory for completion", "Get Slices 0:5 From Ethereum", buttons);
         }
@@ -172,12 +185,17 @@ namespace CurrentForCarbon
             MessageBoxButtons buttons = MessageBoxButtons.OK;
             GameLedger gameLedger = new GameLedger();
 
+            int sleepyTime = 1000;
             for (uint i = 5; i < 10; i++)
             {
                 gameLedger.LogAllPlayers(i);
+                System.Threading.Thread.Sleep(sleepyTime);
                 gameLedger.LogAllEvents(i);
+                System.Threading.Thread.Sleep(sleepyTime);
                 gameLedger.LogAllResults(i);
+                System.Threading.Thread.Sleep(sleepyTime);
                 gameLedger.LogAllCombinedEventResults(i);
+                System.Threading.Thread.Sleep(sleepyTime);
             }
             MessageBox.Show("Please check log directory for completion", "Get Slices 5:9 From Ethereum", buttons);
         }
@@ -193,12 +211,17 @@ namespace CurrentForCarbon
             MessageBoxButtons buttons = MessageBoxButtons.OK;
             GameLedger gameLedger = new GameLedger();
 
+            int sleepyTime = 1000;
             for (uint i = 10; i < 15; i++)
             {
                 gameLedger.LogAllPlayers(i);
+                System.Threading.Thread.Sleep(sleepyTime);
                 gameLedger.LogAllEvents(i);
+                System.Threading.Thread.Sleep(sleepyTime);
                 gameLedger.LogAllResults(i);
+                System.Threading.Thread.Sleep(sleepyTime);
                 gameLedger.LogAllCombinedEventResults(i);
+                System.Threading.Thread.Sleep(sleepyTime);
             }
             MessageBox.Show("Please check log directory for completion", "Get Slices 10:14 From Ethereum", buttons);
         }
@@ -213,12 +236,17 @@ namespace CurrentForCarbon
             MessageBoxButtons buttons = MessageBoxButtons.OK;
             GameLedger gameLedger = new GameLedger();
 
+            int sleepyTime = 1000;
             for (uint i = 15; i < 20; i++)
             {
                 gameLedger.LogAllPlayers(i);
+                System.Threading.Thread.Sleep(sleepyTime);
                 gameLedger.LogAllEvents(i);
+                System.Threading.Thread.Sleep(sleepyTime);
                 gameLedger.LogAllResults(i);
+                System.Threading.Thread.Sleep(sleepyTime);
                 gameLedger.LogAllCombinedEventResults(i);
+                System.Threading.Thread.Sleep(sleepyTime);
             }
             MessageBox.Show("Please check log directory for completion", "Get Slices 15:19 From Ethereum", buttons);
         }
@@ -234,12 +262,17 @@ namespace CurrentForCarbon
             MessageBoxButtons buttons = MessageBoxButtons.OK;
             GameLedger gameLedger = new GameLedger();
 
+            int sleepyTime = 1000;
             for (uint i = 20; i < 25; i++)
             {
                 gameLedger.LogAllPlayers(i);
+                System.Threading.Thread.Sleep(sleepyTime);
                 gameLedger.LogAllEvents(i);
+                System.Threading.Thread.Sleep(sleepyTime);
                 gameLedger.LogAllResults(i);
+                System.Threading.Thread.Sleep(sleepyTime);
                 gameLedger.LogAllCombinedEventResults(i);
+                System.Threading.Thread.Sleep(sleepyTime);
             }
             MessageBox.Show("Please check log directory for completion", "Get Slices 20:24 From Ethereum", buttons);
         }
@@ -255,12 +288,18 @@ namespace CurrentForCarbon
             MessageBoxButtons buttons = MessageBoxButtons.OK;
             GameLedger gameLedger = new GameLedger();
 
+            int sleepyTime = 1000;
             for (uint i = 25; i < 30; i++)
             {
+                System.Threading.Thread.Sleep(sleepyTime);
                 gameLedger.LogAllPlayers(i);
+                System.Threading.Thread.Sleep(sleepyTime);
                 gameLedger.LogAllEvents(i);
+                System.Threading.Thread.Sleep(sleepyTime);
                 gameLedger.LogAllResults(i);
+                System.Threading.Thread.Sleep(sleepyTime);
                 gameLedger.LogAllCombinedEventResults(i);
+                System.Threading.Thread.Sleep(sleepyTime);
             }
             MessageBox.Show("Please check log directory for completion", "Get Slices 25:29 From Ethereum", buttons);
         }

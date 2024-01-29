@@ -61,7 +61,7 @@ namespace Upperbay.Core.Library
             {
                 //System Parameters
                 //case "ClusterName": val = "BETA1"; break;
-                case "ClusterName": val = "VOLTA_BETA1"; break;
+                case "ClusterName": val = "VOLTA_BETA2"; break;
                 case "ClusterVersion": val = "0.6.9"; break;
                 //
                 case "Period": val = "5000"; break;
@@ -242,6 +242,27 @@ namespace Upperbay.Core.Library
                 VOLTA_BETA1.Add("LMPKey", "312249d38ae6410bbd6ea56f8343eef8");
                 VOLTA_BETA1.Add("LMPNode", "49955");
                 _clusterParameters.Add(cluster, VOLTA_BETA1);
+
+                cluster = "VOLTA_BETA2";
+                Dictionary<string, string> VOLTA_BETA2 = new Dictionary<string, string>();
+                VOLTA_BETA2.Add("EthereumContractAddress", "0xaB5B2Cf8D5ba4e58Dd7c1aE3799d6c1a642d2E6a");
+                VOLTA_BETA2.Add("RemoteEthereumServerURL", "http://www.mauiview.com:8545");
+                VOLTA_BETA2.Add("EthereumChainId", "73799");
+                VOLTA_BETA2.Add("EthereumClusterKey", "0x0949a8d20891952dbc52ec59a2aaf36dcd97b5a114103ba4c949fdc0652a2a7f");
+                VOLTA_BETA2.Add("EthereumClusterAddress", "0x47b03cb6a335A15a87Fb63AE295add5aFB0539ed");
+                VOLTA_BETA2.Add("MqttCloudSecureLoginName", "pearlygates");
+                VOLTA_BETA2.Add("MqttCloudSecurePassword", "pearlygates");
+                VOLTA_BETA2.Add("MqttCloudSecureIpAddress", "spectacular-waiter.cloudmqtt.com");
+                VOLTA_BETA2.Add("MqttCloudSecurePort", "1883");
+                VOLTA_BETA2.Add("MqttCloudIpAddress", "spectacular-waiter.cloudmqtt.com");
+                VOLTA_BETA2.Add("MqttCloudPort", "1883");
+                VOLTA_BETA2.Add("SMSAccountName", "davidhardin2");
+                VOLTA_BETA2.Add("SMSAccountKey", "eWymWS3pHCqvewP8NqKdc2DnvCABDE");
+                VOLTA_BETA2.Add("LMPRTO", "PJM");
+                VOLTA_BETA2.Add("LMPKey", "312249d38ae6410bbd6ea56f8343eef8");
+                VOLTA_BETA2.Add("LMPNode", "49955");
+                _clusterParameters.Add(cluster, VOLTA_BETA2);
+
 
                 cluster = "EWC_BETA1";
                 Dictionary<string, string> EWC_BETA1 = new Dictionary<string, string>();
