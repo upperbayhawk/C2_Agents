@@ -359,3 +359,33 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/bin/Upperbay.Agent.Cell.dll
+/bin/Upperbay.Agent.Colony.exe
+/bin/Upperbay.Agent.ColonyMatrix.dll
+/bin/Upperbay.Agent.ConfigurationSettings.dll
+/bin/Upperbay.Agent.Interfaces.dll
+/bin/Upperbay.AgentObject.ClusterAgent.dll
+/bin/Upperbay.Assistant.Cache.dll
+/bin/Upperbay.Assistant.CloudMqttPublisher.dll
+/bin/Upperbay.Assistant.CloudMqttSecureSubscriber.dll
+/bin/Upperbay.Assistant.EtherReadAccessor.dll
+/bin/Upperbay.Assistant.EtherWriteAccessor.dll
+/bin/Upperbay.Assistant.EventReactor.dll
+/bin/Upperbay.Assistant.GameEventReactor.dll
+/bin/Upperbay.Assistant.ManualInput.dll
+/bin/Upperbay.Assistant.MqttPublisher.dll
+/bin/Upperbay.Assistant.MqttSubscriber.dll
+/bin/Upperbay.Assistant.Simulator.dll
+/bin/Upperbay.Assistant.SmartthingsPublisher.dll
+/bin/Upperbay.Assistant.ThingSpeakReadAccessor.dll
+/bin/Upperbay.Assistant.ThingSpeakWriteAccessor.dll
+/bin/Upperbay.Assistant.VariableProcessor.dll
+/bin/Upperbay.Assistant.WeatherService.dll
+/bin/Upperbay.Core.Library.dll
+/bin/Upperbay.Core.Logging.dll
+/bin/Upperbay.Worker.AstronomyClock.dll
+/bin/Upperbay.Worker.JSON.dll
+/bin/Upperbay.Worker.MQTT.dll
+/bin/Upperbay.Worker.PostOffice.dll
+/bin/Upperbay.Worker.Timers.dll
+/bin/Upperbay.Worker.Voice.dll
