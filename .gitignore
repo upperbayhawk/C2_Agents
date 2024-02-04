@@ -389,3 +389,9 @@ FodyWeavers.xsd
 /bin/Upperbay.Worker.PostOffice.dll
 /bin/Upperbay.Worker.Timers.dll
 /bin/Upperbay.Worker.Voice.dll
+/bin/GameStarter.exe
+/bin/LMP.dll
+/bin/Upperbay.Worker.EtherAccess.dll
+/bin/Upperbay.Worker.Hasher.dll
+/bin/Upperbay.Worker.ODBC.dll
+/bin/Upperbay.Worker.ThingSpeak.dll
