@@ -4,6 +4,7 @@
 // Written by Dave Hardin <dave@upperbay.com>, 2001-2020
 
 using System;
+using System.ServiceModel.Channels;
 
 namespace Upperbay.Agent.Interfaces
 {
@@ -21,7 +22,7 @@ namespace Upperbay.Agent.Interfaces
         bool OnCellInitialize(IHostColonyServices hostServices);
     }
 
- 
+
     /// <summary>
     /// The executable Agent Interface for command and control
     /// </summary>
@@ -277,9 +278,10 @@ namespace Upperbay.Agent.Interfaces
         public const string GAME_WINNER_TOPIC = "CurrentForCarbon/Game/Winner";
         public const string DATAVARIABLE_TOPIC = "DataVariable/All";
         public const string COMMAND_TOPIC = "CommandVariable/All";
-        public const string EVENT_TOPIC = "EventVariable/All";
+        public const string EVENT_TOPIC = "EventVariable/ALL";
         public const string GAME_COMMAND_TOPIC = "CurrentForCarbon/Game/Command/ALL";
         public const string GAME_PLAYER_CONFIDENTIAL_TOPIC = "CurrentForCarbon/Game/Player/ALL";
+        public const string C2AGENT_INCOMING_TOPIC = "C2Agent";
     }
 
 
@@ -335,7 +337,7 @@ namespace Upperbay.Agent.Interfaces
         public int BonusPool { get { return this.bonuspool; } set { this.bonuspool = value; } }
 
         private string prestartalert = "true";
-        public  string PreStartAlert { get { return this.prestartalert; } set { this.prestartalert = value; } }
+        public string PreStartAlert { get { return this.prestartalert; } set { this.prestartalert = value; } }
 
         // Placeholders
         private string status = "OK";
@@ -421,7 +423,7 @@ namespace Upperbay.Agent.Interfaces
 
         private double percentpoints = 1.0;
         public double PercentPoints { get { return this.percentpoints; } set { this.percentpoints = value; } }
-        
+
         private double wattpoints = 1.0;
         public double WattPoints { get { return this.wattpoints; } set { this.wattpoints = value; } }
 
@@ -580,10 +582,10 @@ namespace Upperbay.Agent.Interfaces
 
     }
 
-        /// <summary>
-        /// NOT IMPLEMENTED - Place Holder
-        /// </summary>
-        [Serializable]
+    /// <summary>
+    /// NOT IMPLEMENTED - Place Holder
+    /// </summary>
+    [Serializable]
     public class CommandVariable
     {
         private string gamename = "NA";
@@ -647,7 +649,7 @@ namespace Upperbay.Agent.Interfaces
             this.StartTime = DateTime.Now;
         }
 
-        
+
     }
     /// <summary>
     /// 
@@ -716,7 +718,35 @@ namespace Upperbay.Agent.Interfaces
         public GamePlayerConfidential()
         {
         }
+    }
+
+
+    /// <summary>
+    /// 
+    /// </summary>
+    [Serializable]
+    public class GridPeakDetectedObject
+    {
+        public string type_name;
+
+        public string agent_name;
+
+        public string message;
+
+        public string start_date_time;
+
+        public string duration_mins;
+
+        public string peak_lmp;
+
+        public string grid_node;
+
+        public GridPeakDetectedObject()
+        {
+        }
+
 
     }
     #endregion
 }
+

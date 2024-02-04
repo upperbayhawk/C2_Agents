@@ -103,6 +103,7 @@ namespace Upperbay.Assistant
                             MqttLocalDriver.MqttSubscribeAsync(TOPICS.DATAVARIABLE_TOPIC);
                             MqttLocalDriver.MqttSubscribeAsync(TOPICS.COMMAND_TOPIC);
                             MqttLocalDriver.MqttSubscribeAsync(TOPICS.EVENT_TOPIC);
+                            MqttLocalDriver.MqttSubscribeAsync(TOPICS.C2AGENT_INCOMING_TOPIC);
                             MqttLocalDriver.MqttSubscribeAsync("CREATEGAME");
 
                             Log2.Debug("{0}: MqttPublisher: MqttLocalDriver.MqttInitializeAsync Started", _myAgentObjectName);
@@ -125,6 +126,7 @@ namespace Upperbay.Assistant
                             MqttRemoteDriver.MqttSubscribeAsync(TOPICS.DATAVARIABLE_TOPIC);
                             MqttRemoteDriver.MqttSubscribeAsync(TOPICS.COMMAND_TOPIC);
                             MqttRemoteDriver.MqttSubscribeAsync(TOPICS.EVENT_TOPIC);
+                            MqttRemoteDriver.MqttSubscribeAsync(TOPICS.C2AGENT_INCOMING_TOPIC);
 
                             Log2.Debug("MqttPublisher: MqttRemoteDriver.MqttInitializeAsync Started");
                         }

@@ -92,7 +92,7 @@ namespace CurrentForCarbon
             Log2.Info("maxEthereumSlices = {0}", maxEthereumSlices);
             uint slices = uint.Parse(maxEthereumSlices);
             GameAllStatistics.InitAll();
-            int sleepyTime = 1000;
+            int sleepyTime = 5000;
             for (uint i = 0; i < slices; i++)
             {
                 gameLedger.LogAllPlayers(i);
@@ -129,7 +129,7 @@ namespace CurrentForCarbon
 
             if (iSlice == 0)
                 GameAllStatistics.InitAll();
-            int sleepyTime = 1000;
+            int sleepyTime = 5000;
             gameLedger.LogAllPlayers(iSlice);
             System.Threading.Thread.Sleep(sleepyTime);
             //MessageBox.Show("Wait for Players completion", "Get Slice From Ethereum", buttons);
@@ -159,7 +159,7 @@ namespace CurrentForCarbon
             MessageBoxButtons buttons = MessageBoxButtons.OK;
             GameLedger gameLedger = new GameLedger();
             GameAllStatistics.InitAll();
-            int sleepyTime = 1000;
+            int sleepyTime = 5000;
             for (uint i = 0; i < 5; i++)
             {
                 gameLedger.LogAllPlayers(i);
@@ -185,7 +185,7 @@ namespace CurrentForCarbon
             MessageBoxButtons buttons = MessageBoxButtons.OK;
             GameLedger gameLedger = new GameLedger();
 
-            int sleepyTime = 1000;
+            int sleepyTime = 5000;
             for (uint i = 5; i < 10; i++)
             {
                 gameLedger.LogAllPlayers(i);
@@ -211,7 +211,7 @@ namespace CurrentForCarbon
             MessageBoxButtons buttons = MessageBoxButtons.OK;
             GameLedger gameLedger = new GameLedger();
 
-            int sleepyTime = 1000;
+            int sleepyTime = 5000;
             for (uint i = 10; i < 15; i++)
             {
                 gameLedger.LogAllPlayers(i);
@@ -236,7 +236,7 @@ namespace CurrentForCarbon
             MessageBoxButtons buttons = MessageBoxButtons.OK;
             GameLedger gameLedger = new GameLedger();
 
-            int sleepyTime = 1000;
+            int sleepyTime = 5000;
             for (uint i = 15; i < 20; i++)
             {
                 gameLedger.LogAllPlayers(i);
@@ -262,7 +262,7 @@ namespace CurrentForCarbon
             MessageBoxButtons buttons = MessageBoxButtons.OK;
             GameLedger gameLedger = new GameLedger();
 
-            int sleepyTime = 1000;
+            int sleepyTime = 5000;
             for (uint i = 20; i < 25; i++)
             {
                 gameLedger.LogAllPlayers(i);
@@ -288,7 +288,7 @@ namespace CurrentForCarbon
             MessageBoxButtons buttons = MessageBoxButtons.OK;
             GameLedger gameLedger = new GameLedger();
 
-            int sleepyTime = 1000;
+            int sleepyTime = 5000;
             for (uint i = 25; i < 30; i++)
             {
                 System.Threading.Thread.Sleep(sleepyTime);
@@ -860,7 +860,7 @@ namespace CurrentForCarbon
                         //Log2.Debug("ETH GamePlayerConfidential Transaction Sent: {0}", gamePlayerConfidentialJson);
                         //index++;
                         //Sleep 10 mins
-                        //Thread.Sleep(1000);
+                        //Thread.Sleep(5000);
                         //string display = gamePlayerConfidential.GamePlayerName + " Registering";
                         //DialogResult dialogResult = MessageBox.Show(display, "RegisterSqlPlayers", MessageBoxButtons.OKCancel);
                         //if (dialogResult == DialogResult.Cancel)

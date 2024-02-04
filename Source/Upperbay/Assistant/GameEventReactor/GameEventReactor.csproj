@@ -115,6 +115,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameStarter.cs" />
     <Compile Include="GameStatus.cs" />
     <Compile Include="GameLedger.cs" />
     <Compile Include="GamePlayer.cs" />

@@ -14,6 +14,7 @@ using Upperbay.Agent.Interfaces;
 using Upperbay.Worker.Voice;
 using Upperbay.Worker.Timers;
 using Upperbay.Worker.PostOffice;
+using Upperbay.Worker.JSON;
 using Upperbay.Agent.ColonyMatrix;
 using Upperbay.Assistant;
 
@@ -236,6 +237,10 @@ namespace Upperbay.AgentObject
         [Ua("smartthings_publish")]
         public DataVariable BeatThePeakLevel { get { return this._beat_the_peak_level; } set { this._beat_the_peak_level = value; } }
 
+        private DataVariable _gridPeakDetected = new DataVariable("GridPeakDetected", "GridPeakDetected", "AI peak detector interface", "json");
+        [Ua("subscribe")]
+        public DataVariable GridPeakDetected { get { return this._gridPeakDetected; } set { this._gridPeakDetected = value; } }
+
         #endregion
 
 
@@ -293,6 +298,11 @@ namespace Upperbay.AgentObject
                 Log2.Info("Service Running in ADMIN ONLY Mode");
             }
 
+            string aiGameEnable = MyAppConfig.GetParameter("AIGameEnable");
+            if (aiGameEnable == "true")
+            {
+                Log2.Info("Service Running in AI GAME ENABLE!");
+            }
 
             _variableProcessorAssistant = new VariableProcessor();
             _variableProcessorAssistant.Initialize(this._agentPassPort.ClassName, _agentName, this);
@@ -334,6 +344,11 @@ namespace Upperbay.AgentObject
             {
                 Log2.Error("Voice Synth Died: ", ex);
             }
+
+            GridPeakDetected.Value = "";
+            GridPeakDetected.LastValue = "X";
+            GridPeakDetected.ChangeFlag = true;
+
 
             BeatThePeak.Value = "off";
             BeatThePeak.LastValue = "on";
@@ -488,7 +503,59 @@ namespace Upperbay.AgentObject
                         //}
                         CurrentForCarbonWatts.ChangeFlag = false;
                     }
+                    //---------------------------------
 
+                    try
+                    {
+                        //Log2.Debug("GridPeakDetected.Value = {0}", GridPeakDetected.Value);
+                        //if (GridPeakDetected.Value.Length > 0)
+                        //{
+                        //    JsonGridPeakDetected jsonGridPeakDetected = new JsonGridPeakDetected();
+                        //    GridPeakDetectedObject gridPeakDetectedObject = jsonGridPeakDetected.Json2GridPeakDetected(GridPeakDetected.Value);
+                        //    Log2.Debug("agent_name: " + gridPeakDetectedObject.agent_name);
+                        //    Log2.Debug("message: " + gridPeakDetectedObject.message);
+                        //    Log2.Debug("start_date_time: " + gridPeakDetectedObject.start_date_time);
+                        //    Log2.Debug("duration_mins: " + gridPeakDetectedObject.duration_mins);
+                        //    Log2.Debug("peak_lmp: " + gridPeakDetectedObject.peak_lmp);
+                        //}
+
+
+                        if (GridPeakDetected.Value != GridPeakDetected.LastValue)
+                        {
+                            Log2.Debug("NEW PEAK! GridPeakDetected.Value = {0}", GridPeakDetected.Value);
+                            GridPeakDetected.LastValue = GridPeakDetected.Value;
+                            GridPeakDetected.ChangeFlag = true;
+                            JsonGridPeakDetected jsonGridPeakDetected = new JsonGridPeakDetected();
+                            GridPeakDetectedObject gridPeakDetectedObject = jsonGridPeakDetected.Json2GridPeakDetected(GridPeakDetected.Value);
+                            Log2.Debug("agent_name: " + gridPeakDetectedObject.agent_name);
+                            Log2.Debug("message: " + gridPeakDetectedObject.message);
+                            Log2.Debug("start_date_time: " + gridPeakDetectedObject.start_date_time);
+                            Log2.Debug("duration_mins: " + gridPeakDetectedObject.duration_mins);
+                            Log2.Debug("peak_lmp: " + gridPeakDetectedObject.peak_lmp);
+
+                            
+                            if (GameStarter.CreateGameJson(gridPeakDetectedObject))
+                            {
+                                string aiGameEnable = MyAppConfig.GetParameter("AIGameEnable");
+                                if (aiGameEnable == "true")
+                                    GameStarter.StartGame();
+                            }
+                            Log2.Info("Game Started");
+                        }
+                        else
+                        {
+                            GridPeakDetected.ChangeFlag = false;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Log2.Error("GridPeak Error" + ex.Message);
+                    }
+                    
+
+
+
+                    //---------------------------------
                     BeatThePeak.Value = GameStatus.GetState();
                     if (BeatThePeak.Value != BeatThePeak.LastValue)
                     {

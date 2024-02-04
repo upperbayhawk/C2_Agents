@@ -130,9 +130,9 @@ namespace Upperbay.Worker.MQTT
                             dv = jdv.Json2DataVariable(payload);
                             DataVariableCache.PutObject(dv.ExternalName, dv, (int)hash);
                             Log2.Trace("Remote DV Updated {0} {1}", dv.ExternalName, hash);
-                            Log2.Trace("Remote Now Dumping");
+                            //Log2.Trace("Remote Now Dumping");
 
-                            DataVariableCache.DumpCache();
+                            //DataVariableCache.DumpCache();
                         }
                         else if (receivedTopic.Equals(TOPICS.COMMAND_TOPIC))
                         {
@@ -151,7 +151,7 @@ namespace Upperbay.Worker.MQTT
                             Log2.Trace("Remote DV Updated {0} {1}", dv.ExternalName, hash);
                             Log2.Trace("Remote Now Dumping");
 
-                            DataVariableCache.DumpCache();
+                            //DataVariableCache.DumpCache();
                         }
                         else if (receivedTopic.Equals(TOPICS.GAME_START_TOPIC))
                         {
@@ -183,6 +183,45 @@ namespace Upperbay.Worker.MQTT
                             //DataVariableCache.PutObject(dv.ExternalName, dv, (int)hash);
                             //Log2.Trace("Local DV Updated {0} {1}", dv.ExternalName, hash);
                             //Log2.Trace("Local Now Dumping");
+                        }
+                        else if (receivedTopic.Equals(TOPICS.C2AGENT_INCOMING_TOPIC))
+                        {
+                            JsonDataVariable jsonDataVariable = new JsonDataVariable();
+                            DataVariable dataVariable = new DataVariable();
+
+                            JsonGridPeakDetected jsonGridPeakDetected = new JsonGridPeakDetected();
+
+                            string payload = Encoding.UTF8.GetString(e.ApplicationMessage.Payload);
+                            Log2.Debug("Remote XDATA Topic: {0}. Message Received: {1}", receivedTopic, payload);
+
+                            GridPeakDetectedObject gridPeakDetected = jsonGridPeakDetected.Json2GridPeakDetected(payload);
+                            Log2.Debug("GOT PEAK FROM " + gridPeakDetected.agent_name);
+
+                            Int32 hash = payload.GetHashCode();
+                            Log2.Debug("Remote XDATA Payload Hash {0}", hash.ToString());
+                            dataVariable.TagName = gridPeakDetected.type_name;
+                            dataVariable.ExternalName = gridPeakDetected.type_name;
+                            dataVariable.Value = payload;
+                            dataVariable.Description = "A peak has been detected.";
+                            DataVariableCache.PutObject(dataVariable.ExternalName, dataVariable, (int)hash);
+                            Log2.Debug("Remote XDATA DV Updated {0} {1}", dataVariable.ExternalName, hash);
+
+
+                            //JsonDataVariable jdv = new JsonDataVariable();
+                            //DataVariable dv = new DataVariable();
+                            //string payload = Encoding.UTF8.GetString(e.ApplicationMessage.Payload);
+                            //Log2.Trace("Remote XDATAVARIABLE Topic: {0}. Message Received: {1}", receivedTopic, payload);
+                            ////TODO: Send Data to TankFarm!!!!
+                            ////DataHasher hasher = new DataHasher();
+                            ////int hashCode = hasher.HashDataJson(payload);
+                            //Int32 hash = payload.GetHashCode();
+                            //Log2.Trace("Remote Payload Hash {0}", hash.ToString());
+                            //dv = jdv.Json2DataVariable(payload);
+                            //DataVariableCache.PutObject(dv.ExternalName, dv, (int)hash);
+                            //Log2.Trace("Remote DV Updated {0} {1}", dv.ExternalName, hash);
+                            //Log2.Trace("Remote Now Dumping");
+
+                            //DataVariableCache.DumpCache();
                         }
                     }
                 }

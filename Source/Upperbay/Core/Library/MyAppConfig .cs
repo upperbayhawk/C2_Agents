@@ -65,6 +65,7 @@ namespace Upperbay.Core.Library
                 case "ClusterVersion": val = "0.6.9"; break;
                 //
                 case "Period": val = "5000"; break;
+                case "AIGameEnable": val = "true"; break;
                 //MQTT Local Parameters
                 case "MqttLocalEnable": val = "true"; break;
                 case "MqttLocalIpAddress": val = "localhost"; break;

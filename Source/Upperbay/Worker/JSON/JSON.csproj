@@ -125,6 +125,7 @@
     <Compile Include="JsonGameResultVariable.cs" />
     <Compile Include="JsonGameEventVariable.cs" />
     <Compile Include="JsonEventVariable.cs" />
+    <Compile Include="JsonGridPeakDetected.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="JsonDataVariable.cs" />
   </ItemGroup>
