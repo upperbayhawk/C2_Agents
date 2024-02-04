@@ -539,6 +539,8 @@ namespace Upperbay.AgentObject
                                 string aiGameEnable = MyAppConfig.GetParameter("AIGameEnable");
                                 if (aiGameEnable == "true")
                                     GameStarter.StartGame();
+                                else
+                                    Log2.Info("AIGameEnable is false so game has not been started.");
                             }
                             Log2.Info("Game Started");
                         }
