@@ -193,12 +193,50 @@ namespace Upperbay.Worker.LMP
             return lastValue;
         }
 
-      /// <summary>
-      /// 
-      /// </summary>
-      /// <param name="jsonString"></param>
-      /// <param name="filename"></param>
-      /// <returns></returns>
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="jsonResponse"></param>
+        /// <returns></returns>
+        public double GetFirstValue(string jsonResponse)
+        {
+            double lastValue = 0;
+            double firstValue = 0;
+
+            try
+            {
+                Rootobject myRootObject = JsonConvert.DeserializeObject<Rootobject>(jsonResponse);
+
+                int numOfRows = myRootObject.items.Length;
+                Log2.Debug("PJM Response Rows: {0}", numOfRows.ToString());
+                if (numOfRows > 0)
+                {
+                    //Console.WriteLine(myRootObject.items[0].datetime_beginning_ept.ToString());
+                    //Console.WriteLine(myRootObject.items[0].total_lmp_rt.ToString());
+                    Log2.Debug("PJM Response Start Time: {0}", myRootObject.items[0].forecast_datetime_beginning_ept.ToString());
+                    Log2.Debug("PJM Response Start Value: {0}", myRootObject.items[0].forecast_load_mw.ToString());
+                    firstValue = myRootObject.items[0].forecast_load_mw;
+                    lastValue = myRootObject.items[numOfRows - 1].forecast_load_mw;
+                    Log2.Debug("PJM Response First Value: {0}", firstValue.ToString());
+                    Log2.Debug("PJM Response Last Value: {0}", lastValue.ToString());
+                }
+                else
+                    Log2.Debug("PJM Response: Zero Rows Returned");
+            }
+            catch (Exception ex)
+            {
+                Log2.Error("PJM Response ERROR: {0}", ex.ToString());
+            }
+            return firstValue;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="jsonString"></param>
+        /// <param name="filename"></param>
+        /// <returns></returns>
         public bool WriteJsonToFile(string jsonString, string filename)
         {
             try
@@ -225,17 +263,32 @@ namespace Upperbay.Worker.LMP
       /// <param name="jsonString"></param>
       /// <param name="filename"></param>
       /// <returns></returns>
-        public bool WriteCsvToFile(string jsonString, string filename)
+        public bool WriteJsonToCsv(string jsonString, string filename)
         {
             try
             {
+
+                string archiveDirectory = "C:\\LMP_ARCHIVE";
+                string archivePath = "C:\\LMP_ARCHIVE\\PjmLoadForecastSevenDayArchive.csv";
+
+                if (!Directory.Exists(archiveDirectory))
+                {
+                    Directory.CreateDirectory(archiveDirectory);
+                   Log2.Info("Directory created successfully: " + archiveDirectory);
+                }
+
+                if (!File.Exists(archivePath))
+                    File.Create(archivePath).Close();
+
                 Rootobject myRootObject = JsonConvert.DeserializeObject<Rootobject>(jsonString);
 
                 Log2.Info("PJM TotalRows Response Rows: {0}", myRootObject.totalRows.ToString());
                 Log2.Info("PJM ItemsRows Response Rows: {0}", myRootObject.items.Length.ToString());
                 int numOfRows = myRootObject.items.Length;
 
-                using (TextWriter writer = File.AppendText(("C:\\DATA_ARCHIVE\\PjmFiveMinuteLoadArchive.csv")))
+               
+
+                using (TextWriter writer = File.AppendText((archivePath)))
                 {
                     string time = myRootObject.items[0].forecast_datetime_beginning_ept.ToString();
                     string price = myRootObject.items[0].forecast_load_mw.ToString();
@@ -262,5 +315,78 @@ namespace Upperbay.Worker.LMP
             }
             return true;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="jsonString"></param>
+        /// <param name="filename"></param>
+        /// <returns></returns>
+        public bool WriteCurrentDayLoadJsonToCsv(string jsonString, string filename)
+        {
+            try
+            {
+
+                string archiveDirectory = "C:\\LMP_ARCHIVE";
+                string archivePath = "C:\\LMP_ARCHIVE\\PjmCurrentDayLoadArchive.csv";
+
+                
+
+                if (!Directory.Exists(archiveDirectory))
+                {
+                    Directory.CreateDirectory(archiveDirectory);
+                    Log2.Info("Directory created successfully: " + archiveDirectory);
+                }
+
+                if (!File.Exists(archivePath))
+                    File.Create(archivePath).Close();
+
+                Rootobject myRootObject = JsonConvert.DeserializeObject<Rootobject>(jsonString);
+
+                Log2.Info("PJM TotalRows Response Rows: {0}", myRootObject.totalRows.ToString());
+                Log2.Info("PJM ItemsRows Response Rows: {0}", myRootObject.items.Length.ToString());
+                int numOfRows = myRootObject.items.Length;
+
+
+                DateTime myDateTime = DateTime.Now;
+
+                using (TextWriter writer = File.AppendText((archivePath)))
+                {
+                    string time = myRootObject.items[0].forecast_datetime_beginning_ept.ToString();
+                    string price = myRootObject.items[0].forecast_load_mw.ToString();
+                    //writer.WriteLine("\"" + time + "\",\"" + price + "\"");
+
+                    using (TextWriter writer1 = File.CreateText((filename)))
+                    {
+                        writer1.WriteLine("time,load");
+                        for (int i = 0; i < numOfRows; i++)
+                        {
+                            DateTime pjmDateTime = myRootObject.items[i].forecast_datetime_beginning_ept;
+                            //Console.WriteLine("pjm day: " + pjmDateTime.Day.ToString());
+                            //Console.WriteLine("my day: " + myDateTime.Day.ToString());
+
+                            if (pjmDateTime.Day == myDateTime.Day)
+                            {
+                                if (pjmDateTime >= myDateTime)
+                                {
+                                    string time1 = myRootObject.items[i].forecast_datetime_beginning_ept.ToString();
+                                    string load1 = myRootObject.items[i].forecast_load_mw.ToString();
+                                    writer1.WriteLine("\"" + time1 + "\",\"" + load1 + "\"");
+                                    writer.WriteLine("\"" + time1 + "\",\"" + load1 + "\"");
+                                    Log2.Info(time1 + "," + load1);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Log2.Error("WriteCsvToFile ERROR: {0}", ex.ToString());
+                return false;
+            }
+            return true;
+        }
+
     }
 }

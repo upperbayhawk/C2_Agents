@@ -47,7 +47,7 @@ namespace ChatterBoxGPT
 
             DateTime originalDateTime = DateTime.Now;
 
-            MQTTPipe.MqttInitializeAsync("localhost",
+            MQTTPipe.MqttInitializeAsync("192.168.0.131",
                                              "",
                                              "",
                                              1883);
@@ -130,10 +130,10 @@ namespace ChatterBoxGPT
                 {
                     PJMFiveMinLoadForecast pJMFiveMinLoadForecast = new PJMFiveMinLoadForecast();
                     string json = pJMFiveMinLoadForecast.GetJson("MID_ATLANTIC_REGION", 100);
-                    pJMFiveMinLoadForecast.WriteJsonToFile(json, ".\\GptPromptDataReal.txt");
+                    pJMFiveMinLoadForecast.WriteJsonToFile(json, ".\\data\\GptPromptDataReal.txt");
                     double dVal = pJMFiveMinLoadForecast.GetLastValue(json);
                     Console.WriteLine("Last value: " + dVal.ToString());
-                    pJMFiveMinLoadForecast.WriteCsvToFile(json, ".\\GptPromptDataCSV.txt");
+                    pJMFiveMinLoadForecast.WriteCsvToFile(json, ".\\data\\GptPromptDataCSV.txt");
                 }
 
                 if (userInput == "2")
@@ -141,10 +141,10 @@ namespace ChatterBoxGPT
 
                     PJMHourLoadMetered pJMHourLoadMetered = new PJMHourLoadMetered();
                     string json = pJMHourLoadMetered.GetJson("DPLCO", 100);
-                    pJMHourLoadMetered.WriteJsonToFile(json, ".\\GptPromptDataReal.txt");
+                    pJMHourLoadMetered.WriteJsonToFile(json, ".\\data\\GptPromptDataReal.txt");
                     double dVal = pJMHourLoadMetered.GetLastValue(json);
                     Console.WriteLine("Last value: " + dVal.ToString());
-                    pJMHourLoadMetered.WriteCsvToFile(json, ".\\GptPromptDataCSV.txt");
+                    pJMHourLoadMetered.WriteCsvToFile(json, ".\\data\\GptPromptDataCSV.txt");
                 }
 
                 if (userInput == "3")
@@ -152,10 +152,10 @@ namespace ChatterBoxGPT
 
                     PJMHourLoadPrelim pJMHourLoadPrelim = new PJMHourLoadPrelim();
                     string json = pJMHourLoadPrelim.GetJson("DPLCO", 100);
-                    pJMHourLoadPrelim.WriteJsonToFile(json, ".\\GptPromptDataReal.txt");
+                    pJMHourLoadPrelim.WriteJsonToFile(json, ".\\data\\GptPromptDataReal.txt");
                     double dVal = pJMHourLoadPrelim.GetLastValue(json);
                     Console.WriteLine("Last value: " + dVal.ToString());
-                    pJMHourLoadPrelim.WriteCsvToFile(json, ".\\GptPromptDataCSV.txt");
+                    pJMHourLoadPrelim.WriteCsvToFile(json, ".\\data\\GptPromptDataCSV.txt");
                 }
 
                 if (userInput == "4")
@@ -163,10 +163,10 @@ namespace ChatterBoxGPT
 
                     PJMInstLoad pJMInstLoad = new PJMInstLoad();
                     string json = pJMInstLoad.GetJson("DPL", 100);
-                    pJMInstLoad.WriteJsonToFile(json, ".\\GptPromptDataReal.txt");
+                    pJMInstLoad.WriteJsonToFile(json, ".\\data\\GptPromptDataReal.txt");
                     double dVal = pJMInstLoad.GetLastValue(json);
                     Console.WriteLine("Last value: " + dVal.ToString());
-                    pJMInstLoad.WriteCsvToFile(json, ".\\GptPromptDataCSV.txt");
+                    pJMInstLoad.WriteCsvToFile(json, ".\\data\\GptPromptDataCSV.txt");
                 }
 
                 if (userInput == "5")
@@ -174,10 +174,13 @@ namespace ChatterBoxGPT
 
                     PJMLoadForecastSevenDay pJMLoadForecastSevenDay = new PJMLoadForecastSevenDay();
                     string json = pJMLoadForecastSevenDay.GetJson("RTO_COMBINED", 200);
-                    pJMLoadForecastSevenDay.WriteJsonToFile(json, ".\\GptPromptDataReal.txt");
-                    double dVal = pJMLoadForecastSevenDay.GetLastValue(json);
-                    Console.WriteLine("Last value: " + dVal.ToString());
-                    pJMLoadForecastSevenDay.WriteCsvToFile(json, ".\\GptPromptDataCSV.txt");
+                    pJMLoadForecastSevenDay.WriteJsonToFile(json, ".\\data\\GptPromptDataReal.txt");
+                    double dfirstVal = pJMLoadForecastSevenDay.GetFirstValue(json);
+                    Console.WriteLine("First value: " + dfirstVal.ToString());
+                    double dlastVal = pJMLoadForecastSevenDay.GetLastValue(json);
+                    Console.WriteLine("Last value: " + dlastVal.ToString());
+                    //pJMLoadForecastSevenDay.WriteJsonToCsv(json, ".\\data\\GptPromptDataCSV.txt");
+                    pJMLoadForecastSevenDay.WriteCurrentDayLoadJsonToCsv(json, ".\\data\\GptPromptDataCSV.txt");
                 }
 
                 if (userInput == "6")
@@ -185,10 +188,10 @@ namespace ChatterBoxGPT
 
                     PJMUnverifiedFiveMinLmp pJMUnverifiedFiveMinLmp = new PJMUnverifiedFiveMinLmp();
                     string json = pJMUnverifiedFiveMinLmp.GetJson("49955", 100);
-                    pJMUnverifiedFiveMinLmp.WriteJsonToFile(json, ".\\GptPromptDataReal.txt");
+                    pJMUnverifiedFiveMinLmp.WriteJsonToFile(json, ".\\data\\GptPromptDataReal.txt");
                     double dVal = pJMUnverifiedFiveMinLmp.GetLastValue(json);
                     Console.WriteLine("Last value: " + dVal.ToString());
-                    pJMUnverifiedFiveMinLmp.WriteCsvToFile(json, ".\\GptPromptDataCSV.txt");
+                    pJMUnverifiedFiveMinLmp.WriteCsvToFile(json, ".\\data\\GptPromptDataCSV.txt");
                 }
 
                 if (userInput == "7")
@@ -196,21 +199,21 @@ namespace ChatterBoxGPT
 
                     PJMOperationsSummary pJMOperationsSummary = new PJMOperationsSummary();
                     string json = pJMOperationsSummary.GetJson("MIDATL", 1);
-                    pJMOperationsSummary.WriteJsonToFile(json, ".\\GptPromptDataReal.txt");
+                    pJMOperationsSummary.WriteJsonToFile(json, ".\\data\\GptPromptDataReal.txt");
                     double dVal = pJMOperationsSummary.GetLastValue(json);
                     Console.WriteLine("Last value: " + dVal.ToString());
-                    pJMOperationsSummary.WriteCsvToFile(json, ".\\GptPromptDataCSV.txt");
+                    pJMOperationsSummary.WriteCsvToFile(json, ".\\data\\GptPromptDataCSV.txt");
                 }
 
 
-                string promptText = File.ReadAllText(".\\GptPromptTextForecast.Txt");
+                string promptText = File.ReadAllText(".\\data\\GptPromptTextLoadForecast.Txt");
 
-                string promptData = File.ReadAllText(".\\GptPromptDataCSV.Txt");
+                string promptData = File.ReadAllText(".\\data\\GptPromptDataCSV.Txt");
                 string prompt = promptText + " " + promptData;
                 Log2.Info(prompt);
 
-                TimeSeriesDataAnalyzer.Run(".\\GptPromptDataCSV.Txt");
-                LinearRegression.Run(".\\GptPromptDataCSV.Txt");
+                TimeSeriesDataAnalyzer.Run(".\\data\\GptPromptDataCSV.Txt");
+                LinearRegression.Run(".\\data\\GptPromptDataCSV.Txt");
 
 
                 Console.WriteLine("Letting GPT analyze the Grid Data");
