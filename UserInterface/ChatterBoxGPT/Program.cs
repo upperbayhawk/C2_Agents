@@ -222,10 +222,10 @@ namespace ChatterBoxGPT
 
                     PJMOperationsSummary pJMOperationsSummary = new PJMOperationsSummary();
                     string json = pJMOperationsSummary.GetJson("MIDATL", 1);
-                    pJMOperationsSummary.WriteJsonToFile(json, ".\\data\\OperationsSummary.json");
+                    pJMOperationsSummary.WriteJsonToFile(json, ".\\data\\PJMOperationsSummary.json");
                     double dVal = pJMOperationsSummary.GetLastValue(json);
                     Console.WriteLine("Last value: " + dVal.ToString());
-                    pJMOperationsSummary.WriteCsvToFile(json, ".\\data\\OperationsSummary.csv");
+                    //pJMOperationsSummary.WriteCsvToFile(json, ".\\data\\PJMOperationsSummary.csv");
                 }
 
               
