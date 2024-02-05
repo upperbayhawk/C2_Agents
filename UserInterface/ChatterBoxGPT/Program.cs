@@ -168,9 +168,9 @@ namespace ChatterBoxGPT
                     PJMFiveMinLoadForecast pJMFiveMinLoadForecast = new PJMFiveMinLoadForecast();
                     string json = pJMFiveMinLoadForecast.GetJson("MID_ATLANTIC_REGION", 100);
                     pJMFiveMinLoadForecast.WriteJsonToFile(json, ".\\data\\PJMFiveMinLoadForecast.json");
-                    double dVal = pJMFiveMinLoadForecast.GetLastValue(json);
-                    Console.WriteLine("Last value: " + dVal.ToString());
-                    pJMFiveMinLoadForecast.WriteCsvToFile(json, ".\\data\\PJMFiveMinLoadForcast.csv");
+                    double dlastVal = pJMFiveMinLoadForecast.GetLastValue(json);
+                    Console.WriteLine("Last value: " + dlastVal.ToString());
+                    //pJMFiveMinLoadForecast.WriteCsvToFile(json, ".\\data\\PJMFiveMinLoadForcast.csv");
                 }
 
                 if (userInput == "3")
@@ -179,9 +179,9 @@ namespace ChatterBoxGPT
                     PJMUnverifiedFiveMinLmp pJMUnverifiedFiveMinLmp = new PJMUnverifiedFiveMinLmp();
                     string json = pJMUnverifiedFiveMinLmp.GetJson("49955", 100);
                     pJMUnverifiedFiveMinLmp.WriteJsonToFile(json, ".\\data\\PJMUnverifiedFiveMinLmp.json");
-                    double dVal = pJMUnverifiedFiveMinLmp.GetLastValue(json);
-                    Console.WriteLine("Last value: " + dVal.ToString());
-                    pJMUnverifiedFiveMinLmp.WriteCsvToFile(json, ".\\data\\PJMUnverifiesFiveMinLmp.csv");
+                    double dlastVal = pJMUnverifiedFiveMinLmp.GetLastValue(json);
+                    Console.WriteLine("Last value: " + dlastVal.ToString());
+                    //pJMUnverifiedFiveMinLmp.WriteCsvToFile(json, ".\\data\\PJMUnverifiesFiveMinLmp.csv");
                 }
 
                 if (userInput == "4")
@@ -190,9 +190,9 @@ namespace ChatterBoxGPT
                     PJMHourLoadMetered pJMHourLoadMetered = new PJMHourLoadMetered();
                     string json = pJMHourLoadMetered.GetJson("DPLCO", 100);
                     pJMHourLoadMetered.WriteJsonToFile(json, ".\\data\\PJMHourLoadMetered.json");
-                    double dVal = pJMHourLoadMetered.GetLastValue(json);
-                    Console.WriteLine("Last value: " + dVal.ToString());
-                    pJMHourLoadMetered.WriteCsvToFile(json, ".\\data\\PJMHourLoadMetered.csv");
+                    double dlastVal = pJMHourLoadMetered.GetLastValue(json);
+                    Console.WriteLine("Last value: " + dlastVal.ToString());
+                    //pJMHourLoadMetered.WriteCsvToFile(json, ".\\data\\PJMHourLoadMetered.csv");
                 }
 
                 if (userInput == "5")
@@ -201,9 +201,9 @@ namespace ChatterBoxGPT
                     PJMHourLoadPrelim pJMHourLoadPrelim = new PJMHourLoadPrelim();
                     string json = pJMHourLoadPrelim.GetJson("DPLCO", 100);
                     pJMHourLoadPrelim.WriteJsonToFile(json, ".\\data\\PJMHourLoadPrelim.json");
-                    double dVal = pJMHourLoadPrelim.GetLastValue(json);
-                    Console.WriteLine("Last value: " + dVal.ToString());
-                    pJMHourLoadPrelim.WriteCsvToFile(json, ".\\data\\PJMHourLoadPrelim.csv");
+                    double dlastVal = pJMHourLoadPrelim.GetLastValue(json);
+                    Console.WriteLine("Last value: " + dlastVal.ToString());
+                    //pJMHourLoadPrelim.WriteCsvToFile(json, ".\\data\\PJMHourLoadPrelim.csv");
                 }
 
                 if (userInput == "6")
@@ -212,9 +212,9 @@ namespace ChatterBoxGPT
                     PJMInstLoad pJMInstLoad = new PJMInstLoad();
                     string json = pJMInstLoad.GetJson("DPL", 100);
                     pJMInstLoad.WriteJsonToFile(json, ".\\data\\PJMInstLoad.json");
-                    double dVal = pJMInstLoad.GetLastValue(json);
-                    Console.WriteLine("Last value: " + dVal.ToString());
-                    pJMInstLoad.WriteCsvToFile(json, ".\\data\\PJMInstLoad.csv");
+                    double dlastVal = pJMInstLoad.GetLastValue(json);
+                    Console.WriteLine("Last value: " + dlastVal.ToString());
+                    //pJMInstLoad.WriteCsvToFile(json, ".\\data\\PJMInstLoad.csv");
                 }
 
                 if (userInput == "7")
@@ -223,8 +223,8 @@ namespace ChatterBoxGPT
                     PJMOperationsSummary pJMOperationsSummary = new PJMOperationsSummary();
                     string json = pJMOperationsSummary.GetJson("MIDATL", 1);
                     pJMOperationsSummary.WriteJsonToFile(json, ".\\data\\PJMOperationsSummary.json");
-                    double dVal = pJMOperationsSummary.GetLastValue(json);
-                    Console.WriteLine("Last value: " + dVal.ToString());
+                    double dlastVal = pJMOperationsSummary.GetLastValue(json);
+                    Console.WriteLine("Last value: " + dlastVal.ToString());
                     //pJMOperationsSummary.WriteCsvToFile(json, ".\\data\\PJMOperationsSummary.csv");
                 }
 
