@@ -108,6 +108,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="NEISORealTimeLMP.cs" />
+    <Compile Include="PJMDayAheadHourlyLMP.cs" />
     <Compile Include="PJMHourLoadPrelim.cs" />
     <Compile Include="PJMOperationsSummary.cs" />
     <Compile Include="PJMUnverifiedFiveMinLmp.cs" />

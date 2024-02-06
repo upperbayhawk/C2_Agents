@@ -156,6 +156,7 @@
     <Content Include="Prompts\PromptPJMHourLoadMetered.txt" />
     <Content Include="Prompts\PromptPJMHourLoadPrelim.txt" />
     <Content Include="Prompts\PromptPJMInstLoad.txt" />
+    <Content Include="Prompts\PromptPJMDayAheadHourlyLMP.txt" />
     <Content Include="Prompts\PromptPJMLoadForecastSevenDay.txt" />
     <Content Include="Prompts\PromptPJMOperationsSummary.txt" />
     <Content Include="Prompts\PromptPJMUnverifiedFiveMinLmp.txt" />

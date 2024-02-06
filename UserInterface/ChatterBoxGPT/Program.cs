@@ -19,33 +19,81 @@ namespace ChatterBoxGPT
     { 
        static async Task Main(string[] args)
        {
-            int sleepMinutes = 0;
-
             MyAppConfig.SetMyAppConfig("ClusterAgent");
             //string traceMode = MyAppConfig.GetParameter("TraceMode");
             string traceMode = "trace";
             Log2.LogInit("ChatterBoxGPT", "ClusterAgent", traceMode);
             Log2.Info("DebugLevel = " + traceMode);
 
+            // --------------------------------------
+            int sleepMinutes = 0;
 
-            if (args == null)
+            // Check if there are any command-line arguments
+            if (args.Length == 0)
             {
-                
+     
             }
-            else
+
+            // Loop through each command-line argument
+            for (int i = 0; i < args.Length; i++)
             {
-                // Step 2: print length, and loop over all arguments.
-                Log2.Info("args length is " + args.Length);
-                
-                for (int i = 0; i < args.Length; i++)
+                string arg = args[i];
+
+                // You can perform different actions based on the argument value
+                if (arg.StartsWith("--"))
                 {
-                    string argument = args[i];
-                    Log2.Info("args index " + i);
-                    Log2.Info(" is [" + argument + "]");
-                    sleepMinutes = int.Parse(argument);
+                    // Handle long options (e.g., --help, --version)
+                    if (arg == "--help")
+                    {
+                        Console.WriteLine("Displaying help information: TBD");
+                        // Add your help logic here
+                        return;
+                    }
+                    else if (arg == "--version")
+                    {
+                        Console.WriteLine("Version 0.6.9");
+                        return;
+                        // Add your version logic here
+                    }
+                    // Add more options as needed
+                    else
+                    {
+                        Console.WriteLine($"Unknown option: {arg}");
+                    }
+                }
+                else if (arg.StartsWith("-"))
+                {
+                    // Handle short options (e.g., -f, -v)
+                    // Add your short option logic here
+                    if (arg == "-m")
+                    {
+                        sleepMinutes = int.Parse(arg);
+                    }
+                    else if (arg == "-h")
+                    {
+                        int sleepHours = int.Parse(arg);
+                        sleepMinutes = sleepHours * 60;
+                    }
+                    //else if (arg == "-t")
+                    //{
+                    //    int sleepHours = int.Parse(arg);
+                    //    sleepMinutes = sleepHours * 60;
+                    //}
+                    // Add more options as needed
+                    else
+                    {
+                        Console.WriteLine($"Unknown option: {arg}");
+                    }
+                }
+                else
+                {
+                    // Handle positional arguments (non-option arguments)
+                    Console.WriteLine($"Positional argument {i + 1}: {arg}");
+                    // Add your positional argument logic here
                 }
             }
 
+            //---------------------------------------
             DateTime originalDateTime = DateTime.Now;
 
             MQTTPipe.MqttInitializeAsync("192.168.0.131",
@@ -56,20 +104,20 @@ namespace ChatterBoxGPT
 
             bool exit = false;
             string userInput = null;
-
-           
-           // Console.Clear();
+                       
+            // Console.Clear();
             Console.WriteLine("Select PJM dataset to be fed to GPT");
             Console.WriteLine("1. PJMLoadForecastSevenDay");
-            Console.WriteLine("2. PJMFiveMinLoadForecast");
-            Console.WriteLine("3. PJMUnverifiedFiveMinLmp");
-            Console.WriteLine("4. PJMHourLoadMetered");
-            Console.WriteLine("5. PJMHourLoadPrelim");
-            Console.WriteLine("6. PJMInstLoad");
-            Console.WriteLine("7. PJMOperationsSummary");
-            Console.WriteLine("8. Exit");
+            Console.WriteLine("2. PJMDayAheadHourlyLmp");
+            Console.WriteLine("3. PJMFiveMinLoadForecast");
+            Console.WriteLine("4. PJMUnverifiedFiveMinLmp");
+            Console.WriteLine("5. PJMHourLoadMetered");
+            Console.WriteLine("6. PJMHourLoadPrelim");
+            Console.WriteLine("7. PJMInstLoad");
+            Console.WriteLine("8. PJMOperationsSummary");
+            Console.WriteLine("9. Exit");
 
-            Console.Write("Enter your choice (1-8): ");
+            Console.Write("Enter your choice (1-9): ");
 
             userInput = Console.ReadLine();
 
@@ -81,29 +129,33 @@ namespace ChatterBoxGPT
                     break;
                 case "2":
                     // Code for Option 1
-                    Console.WriteLine("PJMFiveMinLoadForecast selected.");
+                    Console.WriteLine("PJMDayAheadHourlyLmp selected.");
                     break;
                 case "3":
-                    // Code for Option 3
-                    Console.WriteLine("PJMUnverifiedFiveMinLmp selected.");
+                    // Code for Option 1
+                    Console.WriteLine("PJMFiveMinLoadForecast selected.");
                     break;
                 case "4":
                     // Code for Option 3
-                    Console.WriteLine("PJMHourLoadMetered selected.");
+                    Console.WriteLine("PJMUnverifiedFiveMinLmp selected.");
                     break;
                 case "5":
                     // Code for Option 3
-                    Console.WriteLine("PJMHourLoadPrelim selected.");
+                    Console.WriteLine("PJMHourLoadMetered selected.");
                     break;
                 case "6":
                     // Code for Option 3
-                    Console.WriteLine("PJMInstLoad selected.");
+                    Console.WriteLine("PJMHourLoadPrelim selected.");
                     break;
                 case "7":
                     // Code for Option 3
-                    Console.WriteLine("PJMOperationsSummary selected.");
+                    Console.WriteLine("PJMInstLoad selected.");
                     break;
                 case "8":
+                    // Code for Option 3
+                    Console.WriteLine("PJMOperationsSummary selected.");
+                    break;
+                case "9":
                     exit = true;
                     break;
                 default:
@@ -118,18 +170,12 @@ namespace ChatterBoxGPT
             {
                 DateTime startTime = DateTime.Now;
 
-                //PJMRealTimeLMP pjmRealTimeLMP = new PJMRealTimeLMP();
-                //pjmRealTimeLMP.GetPJMRealTimeLMPHistory(".\\GptPromptDataReal.txt");
-
-                //PJMRealTimeRTLoad pjmRealTimeRTLoad = new PJMRealTimeRTLoad();
-                //pjmRealTimeRTLoad.GetPJMRealTimeLoadForecastHistory(".\\GptPromptDataReal.txt");
-                ///////////////////////////////////////////
-
                 Console.WriteLine("Getting Grid Data");
 
 
                 if (userInput == "1")
                 {
+                    //PJMLoadForecastSevenDay
 
                     PJMLoadForecastSevenDay pJMLoadForecastSevenDay = new PJMLoadForecastSevenDay();
                     string json = pJMLoadForecastSevenDay.GetJson("RTO_COMBINED", 200);
@@ -165,6 +211,43 @@ namespace ChatterBoxGPT
 
                 if (userInput == "2")
                 {
+                    //PJMDayAheadHourlyLMP
+
+                    PJMDayAheadHourlyLMP pJMDayAheadHourlyLMP = new PJMDayAheadHourlyLMP();
+                    string json = pJMDayAheadHourlyLMP.GetJson("1", 24);
+                    if (json != null)
+                    {
+                        pJMDayAheadHourlyLMP.WriteJsonToFile(json, ".\\data\\PJMDayAheadHourlyLMP.json");
+                        //double dlastVal = pJMGayAheadHourlyLmp.GetLastValue(json);
+                        //Console.WriteLine("Last value: " + dlastVal.ToString());
+                        pJMDayAheadHourlyLMP.WriteCurrentDayAheadHourlyLMPToCsv(json, ".\\data\\PJMDayAheadHourlyLMP.csv");
+
+                        string promptText = File.ReadAllText(".\\prompts\\PromptPJMDayAheadHourlyLMP.Txt");
+                        string promptData = File.ReadAllText(".\\data\\PJMDayAheadHourlyLMP.csv");
+                        string prompt = promptText + " " + promptData;
+                        Log2.Info(prompt);
+
+                        TimeSeriesDataAnalyzer.Run(".\\data\\PJMDayAheadHourlyLMP.csv");
+                        LinearRegression.Run(".\\data\\PJMDayAheadHourlyLMP.csv");
+
+                        Console.WriteLine("Letting GPT analyze the Grid Data");
+
+                        DateTime startGPTDateTime = DateTime.Now;
+                        string customFormat = startGPTDateTime.ToString("yyyy-MM-dd HH:mm:ss");
+
+                        Log2.Info("To Brain: " + customFormat + ": " + prompt);
+                        Console.WriteLine("To Brain: " + customFormat + ": " + prompt);
+                        Console.WriteLine("WAITING...");
+                        MQTTPipe.PublishMessage(prompt);
+                        string response = MQTTPipe.ReadMessage();
+                        Log2.Info("From Brain: " + customFormat + ": " + response);
+                        Console.WriteLine("From Brain: " + customFormat + ": " + response);
+                    }
+                }
+
+
+                if (userInput == "3")
+                {
                     PJMFiveMinLoadForecast pJMFiveMinLoadForecast = new PJMFiveMinLoadForecast();
                     string json = pJMFiveMinLoadForecast.GetJson("MID_ATLANTIC_REGION", 100);
                     pJMFiveMinLoadForecast.WriteJsonToFile(json, ".\\data\\PJMFiveMinLoadForecast.json");
@@ -173,7 +256,7 @@ namespace ChatterBoxGPT
                     //pJMFiveMinLoadForecast.WriteCsvToFile(json, ".\\data\\PJMFiveMinLoadForcast.csv");
                 }
 
-                if (userInput == "3")
+                if (userInput == "4")
                 {
 
                     PJMUnverifiedFiveMinLmp pJMUnverifiedFiveMinLmp = new PJMUnverifiedFiveMinLmp();
@@ -184,7 +267,7 @@ namespace ChatterBoxGPT
                     //pJMUnverifiedFiveMinLmp.WriteCsvToFile(json, ".\\data\\PJMUnverifiesFiveMinLmp.csv");
                 }
 
-                if (userInput == "4")
+                if (userInput == "5")
                 {
 
                     PJMHourLoadMetered pJMHourLoadMetered = new PJMHourLoadMetered();
@@ -195,7 +278,7 @@ namespace ChatterBoxGPT
                     //pJMHourLoadMetered.WriteCsvToFile(json, ".\\data\\PJMHourLoadMetered.csv");
                 }
 
-                if (userInput == "5")
+                if (userInput == "6")
                 {
 
                     PJMHourLoadPrelim pJMHourLoadPrelim = new PJMHourLoadPrelim();
@@ -206,7 +289,7 @@ namespace ChatterBoxGPT
                     //pJMHourLoadPrelim.WriteCsvToFile(json, ".\\data\\PJMHourLoadPrelim.csv");
                 }
 
-                if (userInput == "6")
+                if (userInput == "7")
                 {
 
                     PJMInstLoad pJMInstLoad = new PJMInstLoad();
@@ -217,7 +300,7 @@ namespace ChatterBoxGPT
                     //pJMInstLoad.WriteCsvToFile(json, ".\\data\\PJMInstLoad.csv");
                 }
 
-                if (userInput == "7")
+                if (userInput == "8")
                 {
 
                     PJMOperationsSummary pJMOperationsSummary = new PJMOperationsSummary();
