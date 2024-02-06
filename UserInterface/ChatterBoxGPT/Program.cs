@@ -129,7 +129,7 @@ namespace ChatterBoxGPT
                     break;
                 case "2":
                     // Code for Option 1
-                    Console.WriteLine("PJMDayAheadHourlyLmp selected.");
+                    Console.WriteLine("PJMDayAheadHourlyLMP selected.");
                     break;
                 case "3":
                     // Code for Option 1
@@ -179,34 +179,37 @@ namespace ChatterBoxGPT
 
                     PJMLoadForecastSevenDay pJMLoadForecastSevenDay = new PJMLoadForecastSevenDay();
                     string json = pJMLoadForecastSevenDay.GetJson("RTO_COMBINED", 200);
-                    pJMLoadForecastSevenDay.WriteJsonToFile(json, ".\\data\\PJMLoadForeCastSevenDay.json");
-                    double dfirstVal = pJMLoadForecastSevenDay.GetFirstValue(json);
-                    Console.WriteLine("First value: " + dfirstVal.ToString());
-                    double dlastVal = pJMLoadForecastSevenDay.GetLastValue(json);
-                    Console.WriteLine("Last value: " + dlastVal.ToString());
-                    //pJMLoadForecastSevenDay.WriteJsonToCsv(json, ".\\data\\GptPromptDataCSV.txt");
-                    pJMLoadForecastSevenDay.WriteCurrentDayLoadJsonToCsv(json, ".\\data\\PJMLoadForecastSevenDay.csv");
+                    if (json != null)
+                    {
+                        pJMLoadForecastSevenDay.WriteJsonToFile(json, ".\\data\\PJMLoadForeCastSevenDay.json");
+                        double dfirstVal = pJMLoadForecastSevenDay.GetFirstValue(json);
+                        Console.WriteLine("First value: " + dfirstVal.ToString());
+                        double dlastVal = pJMLoadForecastSevenDay.GetLastValue(json);
+                        Console.WriteLine("Last value: " + dlastVal.ToString());
+                        //pJMLoadForecastSevenDay.WriteJsonToCsv(json, ".\\data\\GptPromptDataCSV.txt");
+                        pJMLoadForecastSevenDay.WriteCurrentDayLoadJsonToCsv(json, ".\\data\\PJMLoadForecastSevenDay.csv");
 
-                    string promptText = File.ReadAllText(".\\prompts\\PromptPJMLoadForecastSevenDay.Txt");
-                    string promptData = File.ReadAllText(".\\data\\PJMLoadForecastSevenDay.csv");
-                    string prompt = promptText + " " + promptData;
-                    Log2.Info(prompt);
+                        string promptText = File.ReadAllText(".\\prompts\\PromptPJMLoadForecastSevenDay.Txt");
+                        string promptData = File.ReadAllText(".\\data\\PJMLoadForecastSevenDay.csv");
+                        string prompt = promptText + " " + promptData;
+                        Log2.Info(prompt);
 
-                    TimeSeriesDataAnalyzer.Run(".\\data\\PJMLoadForecastSevenDay.csv");
-                    LinearRegression.Run(".\\data\\PJMLoadForecastSevenDay.csv");
+                        TimeSeriesDataAnalyzer.Run(".\\data\\PJMLoadForecastSevenDay.csv");
+                        LinearRegression.Run(".\\data\\PJMLoadForecastSevenDay.csv");
 
-                    Console.WriteLine("Letting GPT analyze the Grid Data");
+                        Console.WriteLine("Letting GPT analyze the Grid Data");
 
-                    DateTime startGPTDateTime = DateTime.Now;
-                    string customFormat = startGPTDateTime.ToString("yyyy-MM-dd HH:mm:ss");
+                        DateTime startGPTDateTime = DateTime.Now;
+                        string customFormat = startGPTDateTime.ToString("yyyy-MM-dd HH:mm:ss");
 
-                    Log2.Info("To Brain: " + customFormat + ": " + prompt);
-                    Console.WriteLine("To Brain: " + customFormat + ": " + prompt);
-                    Console.WriteLine("WAITING...");
-                    MQTTPipe.PublishMessage(prompt);
-                    string response = MQTTPipe.ReadMessage();
-                    Log2.Info("From Brain: " + customFormat + ": " + response);
-                    Console.WriteLine("From Brain: " + customFormat + ": " + response);
+                        Log2.Info("To Brain: " + customFormat + ": " + prompt);
+                        Console.WriteLine("To Brain: " + customFormat + ": " + prompt);
+                        Console.WriteLine("WAITING...");
+                        MQTTPipe.PublishMessage(prompt);
+                        string response = MQTTPipe.ReadMessage();
+                        Log2.Info("From Brain: " + customFormat + ": " + response);
+                        Console.WriteLine("From Brain: " + customFormat + ": " + response);
+                    }
                 }
 
                 if (userInput == "2")
