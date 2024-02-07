@@ -10,6 +10,8 @@ using Upperbay.Core.Logging;
 using Upperbay.Core.Library;
 using Upperbay.Worker.LMP;
 using System.Net.NetworkInformation;
+using Newtonsoft.Json.Linq;
+using System.Security.Claims;
 
 
 namespace ChatterBoxGPT
@@ -27,6 +29,7 @@ namespace ChatterBoxGPT
 
             // --------------------------------------
             int sleepMinutes = 0;
+            string wakeTime = null;
 
             // Check if there are any command-line arguments
             if (args.Length == 0)
@@ -74,11 +77,13 @@ namespace ChatterBoxGPT
                         int sleepHours = int.Parse(arg);
                         sleepMinutes = sleepHours * 60;
                     }
-                    //else if (arg == "-t")
-                    //{
-                    //    int sleepHours = int.Parse(arg);
-                    //    sleepMinutes = sleepHours * 60;
-                    //}
+                    else if (arg == "-t")
+                    {
+                        DateTime myWakeTime = DateTime.Parse(arg);
+                        wakeTime = arg;
+                        TimeSpan timeSpan = myWakeTime - DateTime.Now;
+                        sleepMinutes = (int)Math.Ceiling(timeSpan.TotalMinutes);
+                    }
                     // Add more options as needed
                     else
                     {
@@ -320,10 +325,18 @@ namespace ChatterBoxGPT
                 {
                     break;
                 }
-                else if ((sleepMinutes < 0) || (sleepMinutes > 240))
+                else if (wakeTime != null)
                 {
-                    Log2.Error("SleepMinutes = " + sleepMinutes);
-                    break;
+                    DateTime mywakeTime = DateTime.Parse(wakeTime);
+                    TimeSpan timeSpan = mywakeTime - DateTime.Now;
+                    sleepMinutes = (int)Math.Ceiling(timeSpan.TotalMinutes);
+                    Log2.Info("SleepMinutes = " + sleepMinutes);
+                    Console.WriteLine("Cycling every " + sleepMinutes + " Mins");
+                    int timeToSleep = sleepMinutes * 60000;
+                    DateTime alarm = DateTime.Now.AddMilliseconds(timeToSleep);
+                    Console.WriteLine("Sleeping for " + timeToSleep.ToString() + " Mils. Will Wake Up at " + alarm.ToShortTimeString());
+                    Thread.Sleep(timeToSleep);
+                    Console.WriteLine("Awake");
                 }
                 else
                 {
@@ -333,10 +346,10 @@ namespace ChatterBoxGPT
                     TimeSpan executionTime = endTime - startTime;
                     
                     int timeToSleep = Math.Max(0, DesiredFrequency - (int)executionTime.TotalMilliseconds);
-                    DateTime wakeTime = DateTime.Now.AddMilliseconds(timeToSleep);
+                    DateTime alarm = DateTime.Now.AddMilliseconds(timeToSleep);
 
                     Console.WriteLine("Cycling every " + sleepMinutes + " Mins");
-                    Console.WriteLine("Sleeping for " + timeToSleep + " Mils. Will Wake Up at " + wakeTime.ToShortTimeString());
+                    Console.WriteLine("Sleeping for " + timeToSleep + " Mils. Will Wake Up at " + alarm.ToShortTimeString());
                     Thread.Sleep(timeToSleep);
 
                     Console.WriteLine("Awake");
