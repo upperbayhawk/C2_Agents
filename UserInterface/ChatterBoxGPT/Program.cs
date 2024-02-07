@@ -29,7 +29,7 @@ namespace ChatterBoxGPT
 
             // --------------------------------------
             int sleepMinutes = 0;
-            string wakeTime = null;
+            string timeString = null;
 
             // Check if there are any command-line arguments
             if (args.Length == 0)
@@ -70,19 +70,25 @@ namespace ChatterBoxGPT
                     // Add your short option logic here
                     if (arg == "-m")
                     {
-                        sleepMinutes = int.Parse(arg);
+                        sleepMinutes = int.Parse(args[i + 1]);
+                        Console.WriteLine("SleepMinutes = " + sleepMinutes);
                     }
                     else if (arg == "-h")
                     {
-                        int sleepHours = int.Parse(arg);
+                        int sleepHours = int.Parse(args[i + 1]);
                         sleepMinutes = sleepHours * 60;
+                        Console.WriteLine("SleepMinutes = " + sleepMinutes);
                     }
                     else if (arg == "-t")
                     {
-                        DateTime myWakeTime = DateTime.Parse(arg);
-                        wakeTime = arg;
-                        TimeSpan timeSpan = myWakeTime - DateTime.Now;
-                        sleepMinutes = (int)Math.Ceiling(timeSpan.TotalMinutes);
+                        timeString = args[i + 1];
+                        string[] timeComponents = timeString.Split(':');
+                        if (timeComponents.Length != 2 || !int.TryParse(timeComponents[0], out int hour) || !int.TryParse(timeComponents[1], out int minute))
+                        {
+                            Console.WriteLine("Invalid time string format: " + timeString);
+                            return;
+                        }
+                        Console.WriteLine("WakeTime = " + timeString);
                     }
                     // Add more options as needed
                     else
@@ -325,13 +331,23 @@ namespace ChatterBoxGPT
                 {
                     break;
                 }
-                else if (wakeTime != null)
+                else if (timeString != null)
                 {
-                    DateTime mywakeTime = DateTime.Parse(wakeTime);
-                    TimeSpan timeSpan = mywakeTime - DateTime.Now;
+
+                    DateTime tomorrow = DateTime.Today.AddDays(1);
+                    string[] timeComponents = timeString.Split(':');
+                    if (timeComponents.Length != 2 || !int.TryParse(timeComponents[0], out int hour) || !int.TryParse(timeComponents[1], out int minute))
+                    {
+                        Console.WriteLine("Invalid time string format.");
+                        return;
+                    }
+                    DateTime tomorrowAtTime = new DateTime(tomorrow.Year, tomorrow.Month, tomorrow.Day, hour, minute, 0);
+
+                    TimeSpan timeSpan = tomorrowAtTime - DateTime.Now;
                     sleepMinutes = (int)Math.Ceiling(timeSpan.TotalMinutes);
                     Log2.Info("SleepMinutes = " + sleepMinutes);
                     Console.WriteLine("Cycling every " + sleepMinutes + " Mins");
+
                     int timeToSleep = sleepMinutes * 60000;
                     DateTime alarm = DateTime.Now.AddMilliseconds(timeToSleep);
                     Console.WriteLine("Sleeping for " + timeToSleep.ToString() + " Mils. Will Wake Up at " + alarm.ToShortTimeString());
