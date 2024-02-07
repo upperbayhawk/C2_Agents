@@ -286,7 +286,7 @@ namespace Upperbay.Core.Library
 
                 cluster = "VOLTA_BETA4";
                 Dictionary<string, string> VOLTA_BETA4 = new Dictionary<string, string>();
-                VOLTA_BETA4.Add("EthereumContractAddress", "0xB99b29a8b95Bd776ef204AF35075E1f44F48aA1E");
+                VOLTA_BETA4.Add("EthereumContractAddress", "0x5B8C0a8914c8ebA00dA4328ba5F02d719D3e053c");
                 VOLTA_BETA4.Add("RemoteEthereumServerURL", "http://www.mauiview.com:8545");
                 VOLTA_BETA4.Add("EthereumChainId", "73799");
                 VOLTA_BETA4.Add("EthereumClusterKey", "0x0949a8d20891952dbc52ec59a2aaf36dcd97b5a114103ba4c949fdc0652a2a7f");
@@ -308,7 +308,7 @@ namespace Upperbay.Core.Library
 
                 cluster = "VOLTA_BETA5";
                 Dictionary<string, string> VOLTA_BETA5 = new Dictionary<string, string>();
-                VOLTA_BETA5.Add("EthereumContractAddress", "0xB99b29a8b95Bd776ef204AF35075E1f44F48aA1E");
+                VOLTA_BETA5.Add("EthereumContractAddress", "0x36228475Bf4ed21ACb0EEBbF943192d2d657ce5A");
                 VOLTA_BETA5.Add("RemoteEthereumServerURL", "http://www.mauiview.com:8545");
                 VOLTA_BETA5.Add("EthereumChainId", "73799");
                 VOLTA_BETA5.Add("EthereumClusterKey", "0x0949a8d20891952dbc52ec59a2aaf36dcd97b5a114103ba4c949fdc0652a2a7f");
@@ -330,7 +330,7 @@ namespace Upperbay.Core.Library
            
                 cluster = "VOLTA_BETA6";
                 Dictionary<string, string> VOLTA_BETA6 = new Dictionary<string, string>();
-                VOLTA_BETA6.Add("EthereumContractAddress", "0xB99b29a8b95Bd776ef204AF35075E1f44F48aA1E");
+                VOLTA_BETA6.Add("EthereumContractAddress", "0xb1066c5A5f580d3BCFb415B9862De886ab716D55");
                 VOLTA_BETA6.Add("RemoteEthereumServerURL", "http://www.mauiview.com:8545");
                 VOLTA_BETA6.Add("EthereumChainId", "73799");
                 VOLTA_BETA6.Add("EthereumClusterKey", "0x0949a8d20891952dbc52ec59a2aaf36dcd97b5a114103ba4c949fdc0652a2a7f");
@@ -348,6 +348,25 @@ namespace Upperbay.Core.Library
                 VOLTA_BETA6.Add("LMPNode", "49955");
                 _clusterParameters.Add(cluster, VOLTA_BETA6);
 
+                cluster = "VOLTA_BETA7";
+                Dictionary<string, string> VOLTA_BETA7 = new Dictionary<string, string>();
+                VOLTA_BETA7.Add("EthereumContractAddress", "0x1fE012B3664914725a4CB86952341fF9fe84319E");
+                VOLTA_BETA7.Add("RemoteEthereumServerURL", "http://www.mauiview.com:8545");
+                VOLTA_BETA7.Add("EthereumChainId", "73799");
+                VOLTA_BETA7.Add("EthereumClusterKey", "0x0949a8d20891952dbc52ec59a2aaf36dcd97b5a114103ba4c949fdc0652a2a7f");
+                VOLTA_BETA7.Add("EthereumClusterAddress", "0x47b03cb6a335A15a87Fb63AE295add5aFB0539ed");
+                VOLTA_BETA7.Add("MqttCloudSecureLoginName", "pearlygates");
+                VOLTA_BETA7.Add("MqttCloudSecurePassword", "pearlygates");
+                VOLTA_BETA7.Add("MqttCloudSecureIpAddress", "spectacular-waiter.cloudmqtt.com");
+                VOLTA_BETA7.Add("MqttCloudSecurePort", "1883");
+                VOLTA_BETA7.Add("MqttCloudIpAddress", "spectacular-waiter.cloudmqtt.com");
+                VOLTA_BETA7.Add("MqttCloudPort", "1883");
+                VOLTA_BETA7.Add("SMSAccountName", "davidhardin2");
+                VOLTA_BETA7.Add("SMSAccountKey", "eWymWS3pHCqvewP8NqKdc2DnvCABDE");
+                VOLTA_BETA7.Add("LMPRTO", "PJM");
+                VOLTA_BETA7.Add("LMPKey", "312249d38ae6410bbd6ea56f8343eef8");
+                VOLTA_BETA7.Add("LMPNode", "49955");
+                _clusterParameters.Add(cluster, VOLTA_BETA7);
 
 
                 cluster = "EWC_BETA1";
