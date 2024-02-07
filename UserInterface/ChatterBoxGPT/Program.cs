@@ -327,7 +327,7 @@ namespace ChatterBoxGPT
 
               
                 ///////////////////////////////////////
-                if (sleepMinutes == 0)
+                if ((sleepMinutes == 0) && (timeString == null))
                 {
                     break;
                 }
