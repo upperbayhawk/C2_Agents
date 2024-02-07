@@ -104,6 +104,670 @@ namespace Upperbay.Worker.EtherAccess
     {
         //Properties
         private string ContractABI = @"[{'inputs':[],'stateMutability':'nonpayable','type':'constructor'},{'anonymous':false,'inputs':[{'indexed':true,'internalType':'string','name':'oracleNameIdx','type':'string'},{'indexed':false,'internalType':'string','name':'oracleName','type':'string'},{'indexed':false,'internalType':'uint256','name':'seqNumber','type':'uint256'},{'indexed':false,'internalType':'address','name':'oracleAddress','type':'address'},{'indexed':false,'internalType':'string','name':'time','type':'string'}],'name':'OracleDockEvent','type':'event'},{'anonymous':false,'inputs':[{'indexed':true,'internalType':'string','name':'oracleNameIdx','type':'string'},{'indexed':false,'internalType':'string','name':'oracleName','type':'string'},{'indexed':false,'internalType':'uint256','name':'seqNumber','type':'uint256'},{'indexed':false,'internalType':'address','name':'oracleAddress','type':'address'},{'indexed':false,'internalType':'string','name':'time','type':'string'}],'name':'OracleGetDataEvent','type':'event'},{'anonymous':false,'inputs':[{'indexed':true,'internalType':'string','name':'oracleNameIdx','type':'string'},{'indexed':false,'internalType':'string','name':'oracleName','type':'string'},{'indexed':false,'internalType':'uint256','name':'seqNumber','type':'uint256'},{'indexed':false,'internalType':'address','name':'oracleAddress','type':'address'},{'indexed':false,'internalType':'string','name':'time','type':'string'}],'name':'OraclePingEvent','type':'event'},{'anonymous':false,'inputs':[{'indexed':true,'internalType':'string','name':'oracleNameIdx','type':'string'},{'indexed':false,'internalType':'string','name':'oracleName','type':'string'},{'indexed':false,'internalType':'uint256','name':'seqNumber','type':'uint256'},{'indexed':false,'internalType':'address','name':'oracleAddress','type':'address'},{'indexed':false,'internalType':'string','name':'time','type':'string'}],'name':'OracleUndockEvent','type':'event'},{'anonymous':false,'inputs':[{'indexed':true,'internalType':'address','name':'previousOwner','type':'address'},{'indexed':true,'internalType':'address','name':'newOwner','type':'address'}],'name':'OwnershipTransferred','type':'event'},{'inputs':[],'name':'HasDataReadyFlag','outputs':[{'internalType':'bool','name':'','type':'bool'}],'stateMutability':'view','type':'function'},{'inputs':[],'name':'HasDockedOracleFlag','outputs':[{'internalType':'bool','name':'','type':'bool'}],'stateMutability':'view','type':'function'},{'inputs':[{'internalType':'string','name':'_name','type':'string'},{'internalType':'string','name':'_description','type':'string'},{'internalType':'string','name':'_accessPath','type':'string'},{'internalType':'string','name':'_creationTime','type':'string'}],'name':'addDataItem','outputs':[{'internalType':'bytes32','name':'','type':'bytes32'}],'stateMutability':'nonpayable','type':'function'},{'inputs':[],'name':'addTestData','outputs':[],'stateMutability':'nonpayable','type':'function'},{'inputs':[{'internalType':'bytes32','name':'_dataItemId','type':'bytes32'}],'name':'dataItemExists','outputs':[{'internalType':'bool','name':'','type':'bool'}],'stateMutability':'view','type':'function'},{'inputs':[{'internalType':'string','name':'_oracleName','type':'string'},{'internalType':'string','name':'_oracleNameHash','type':'string'},{'internalType':'uint256','name':'_seqNumber','type':'uint256'},{'internalType':'address','name':'_oracleAddress','type':'address'}],'name':'dockOracle','outputs':[{'internalType':'string','name':'','type':'string'}],'stateMutability':'payable','type':'function'},{'inputs':[],'name':'getAddress','outputs':[{'internalType':'address','name':'','type':'address'}],'stateMutability':'view','type':'function'},{'inputs':[],'name':'getAllDataItems','outputs':[{'internalType':'bytes32[]','name':'','type':'bytes32[]'}],'stateMutability':'view','type':'function'},{'inputs':[{'internalType':'bytes32','name':'_dataItemId','type':'bytes32'}],'name':'getDataItem','outputs':[{'components':[{'internalType':'bytes32','name':'id','type':'bytes32'},{'internalType':'string','name':'name','type':'string'},{'internalType':'string','name':'description','type':'string'},{'internalType':'string','name':'externalName','type':'string'},{'internalType':'string','name':'value','type':'string'},{'internalType':'string','name':'externalValue','type':'string'},{'internalType':'string','name':'quality','type':'string'},{'internalType':'string','name':'updateTime','type':'string'},{'internalType':'string','name':'serverTime','type':'string'},{'internalType':'string','name':'creationTime','type':'string'},{'internalType':'string','name':'accessPath','type':'string'},{'internalType':'enum DataPumpOracle.DataItemOutcome','name':'outcome','type':'uint8'}],'internalType':'struct DataPumpOracle.DataItem','name':'','type':'tuple'}],'stateMutability':'view','type':'function'},{'inputs':[{'internalType':'bytes32','name':'_dataItemId','type':'bytes32'}],'name':'getDataItemValue','outputs':[{'internalType':'string','name':'','type':'string'}],'stateMutability':'view','type':'function'},{'inputs':[{'internalType':'bool','name':'_pending','type':'bool'}],'name':'getMostRecentDataItem','outputs':[{'components':[{'internalType':'bytes32','name':'id','type':'bytes32'},{'internalType':'string','name':'name','type':'string'},{'internalType':'string','name':'description','type':'string'},{'internalType':'string','name':'externalName','type':'string'},{'internalType':'string','name':'value','type':'string'},{'internalType':'string','name':'externalValue','type':'string'},{'internalType':'string','name':'quality','type':'string'},{'internalType':'string','name':'updateTime','type':'string'},{'internalType':'string','name':'serverTime','type':'string'},{'internalType':'string','name':'creationTime','type':'string'},{'internalType':'string','name':'accessPath','type':'string'},{'internalType':'enum DataPumpOracle.DataItemOutcome','name':'outcome','type':'uint8'}],'internalType':'struct DataPumpOracle.DataItem','name':'','type':'tuple'}],'stateMutability':'view','type':'function'},{'inputs':[],'name':'getPendingDataItems','outputs':[{'internalType':'bytes32[]','name':'','type':'bytes32[]'}],'stateMutability':'view','type':'function'},{'inputs':[],'name':'kill','outputs':[],'stateMutability':'nonpayable','type':'function'},{'inputs':[],'name':'owner','outputs':[{'internalType':'address','name':'','type':'address'}],'stateMutability':'view','type':'function'},{'inputs':[{'internalType':'string','name':'_oracleName','type':'string'},{'internalType':'uint256','name':'_seqNumber','type':'uint256'},{'internalType':'address','name':'_oracleAddress','type':'address'}],'name':'pingOracle','outputs':[{'internalType':'string','name':'','type':'string'}],'stateMutability':'payable','type':'function'},{'inputs':[{'internalType':'bytes32','name':'_dataItemId','type':'bytes32'},{'internalType':'string','name':'_value','type':'string'}],'name':'setDataItemValueById','outputs':[{'internalType':'string','name':'','type':'string'}],'stateMutability':'payable','type':'function'},{'inputs':[{'internalType':'string','name':'_name','type':'string'},{'internalType':'string','name':'_value','type':'string'}],'name':'setDataItemValueByName','outputs':[{'internalType':'string','name':'','type':'string'}],'stateMutability':'payable','type':'function'},{'inputs':[],'name':'testConnection','outputs':[{'internalType':'bool','name':'','type':'bool'}],'stateMutability':'pure','type':'function'},{'inputs':[{'internalType':'address','name':'newOwner','type':'address'}],'name':'transferOwnership','outputs':[],'stateMutability':'nonpayable','type':'function'},{'inputs':[{'internalType':'string','name':'_oracleName','type':'string'},{'internalType':'uint256','name':'_seqNumber','type':'uint256'},{'internalType':'address','name':'_oracleAddress','type':'address'}],'name':'undockOracle','outputs':[{'internalType':'string','name':'','type':'string'}],'stateMutability':'payable','type':'function'}]";
+        private string ContractABI_HARDHAT = @"[
+    {
+      ""inputs"": [],
+      ""stateMutability"": ""nonpayable"",
+      ""type"": ""constructor""
+    },
+    {
+      ""anonymous"": false,
+      ""inputs"": [
+        {
+          ""indexed"": true,
+          ""internalType"": ""uint256"",
+          ""name"": ""slice"",
+          ""type"": ""uint256""
+        },
+        {
+          ""indexed"": true,
+          ""internalType"": ""bytes32"",
+          ""name"": ""gamePlayerIDIdx"",
+          ""type"": ""bytes32""
+        },
+        {
+          ""indexed"": false,
+          ""internalType"": ""string"",
+          ""name"": ""gamePlayerID"",
+          ""type"": ""string""
+        },
+        {
+          ""indexed"": false,
+          ""internalType"": ""string"",
+          ""name"": ""gameEventID"",
+          ""type"": ""string""
+        },
+        {
+          ""indexed"": false,
+          ""internalType"": ""string"",
+          ""name"": ""gameEventStartTime"",
+          ""type"": ""string""
+        },
+        {
+          ""indexed"": false,
+          ""internalType"": ""string"",
+          ""name"": ""gameEventDuration"",
+          ""type"": ""string""
+        },
+        {
+          ""indexed"": false,
+          ""internalType"": ""string"",
+          ""name"": ""pointsPerWatt"",
+          ""type"": ""string""
+        },
+        {
+          ""indexed"": false,
+          ""internalType"": ""string"",
+          ""name"": ""averagePowerInWatts"",
+          ""type"": ""string""
+        },
+        {
+          ""indexed"": false,
+          ""internalType"": ""string"",
+          ""name"": ""baselineAveragePowerInWatts"",
+          ""type"": ""string""
+        },
+        {
+          ""indexed"": false,
+          ""internalType"": ""string"",
+          ""name"": ""deltaAveragePowerInWatts"",
+          ""type"": ""string""
+        },
+        {
+          ""indexed"": false,
+          ""internalType"": ""string"",
+          ""name"": ""wattPoints"",
+          ""type"": ""string""
+        },
+        {
+          ""indexed"": false,
+          ""internalType"": ""string"",
+          ""name"": ""awardValue"",
+          ""type"": ""string""
+        }
+      ],
+      ""name"": ""GameCombinedEventResultEvent"",
+      ""type"": ""event""
+    },
+    {
+      ""anonymous"": false,
+      ""inputs"": [
+        {
+          ""indexed"": true,
+          ""internalType"": ""uint256"",
+          ""name"": ""slice"",
+          ""type"": ""uint256""
+        },
+        {
+          ""indexed"": false,
+          ""internalType"": ""string"",
+          ""name"": ""gameEventID"",
+          ""type"": ""string""
+        },
+        {
+          ""indexed"": false,
+          ""internalType"": ""string"",
+          ""name"": ""gameEventName"",
+          ""type"": ""string""
+        },
+        {
+          ""indexed"": false,
+          ""internalType"": ""string"",
+          ""name"": ""gameEventType"",
+          ""type"": ""string""
+        },
+        {
+          ""indexed"": false,
+          ""internalType"": ""string"",
+          ""name"": ""gameEventStartTime"",
+          ""type"": ""string""
+        },
+        {
+          ""indexed"": false,
+          ""internalType"": ""string"",
+          ""name"": ""gameEventEndTime"",
+          ""type"": ""string""
+        },
+        {
+          ""indexed"": false,
+          ""internalType"": ""string"",
+          ""name"": ""gameEventDuration"",
+          ""type"": ""string""
+        },
+        {
+          ""indexed"": false,
+          ""internalType"": ""string"",
+          ""name"": ""dollarPerPoint"",
+          ""type"": ""string""
+        },
+        {
+          ""indexed"": false,
+          ""internalType"": ""string"",
+          ""name"": ""pointsPerWatt"",
+          ""type"": ""string""
+        },
+        {
+          ""indexed"": false,
+          ""internalType"": ""string"",
+          ""name"": ""pointsPerPercent"",
+          ""type"": ""string""
+        }
+      ],
+      ""name"": ""GameEventEvent"",
+      ""type"": ""event""
+    },
+    {
+      ""anonymous"": false,
+      ""inputs"": [
+        {
+          ""indexed"": true,
+          ""internalType"": ""uint256"",
+          ""name"": ""slice"",
+          ""type"": ""uint256""
+        },
+        {
+          ""indexed"": false,
+          ""internalType"": ""string"",
+          ""name"": ""gamePlayerID"",
+          ""type"": ""string""
+        },
+        {
+          ""indexed"": false,
+          ""internalType"": ""string"",
+          ""name"": ""dataConnectionString"",
+          ""type"": ""string""
+        },
+        {
+          ""indexed"": false,
+          ""internalType"": ""address"",
+          ""name"": ""gamePlayerAddress"",
+          ""type"": ""address""
+        },
+        {
+          ""indexed"": false,
+          ""internalType"": ""string"",
+          ""name"": ""status"",
+          ""type"": ""string""
+        }
+      ],
+      ""name"": ""GamePlayerEvent"",
+      ""type"": ""event""
+    },
+    {
+      ""anonymous"": false,
+      ""inputs"": [
+        {
+          ""indexed"": true,
+          ""internalType"": ""uint256"",
+          ""name"": ""slice"",
+          ""type"": ""uint256""
+        },
+        {
+          ""indexed"": true,
+          ""internalType"": ""bytes32"",
+          ""name"": ""gamePlayerIDIdx"",
+          ""type"": ""bytes32""
+        },
+        {
+          ""indexed"": false,
+          ""internalType"": ""string"",
+          ""name"": ""gameEventStartTime"",
+          ""type"": ""string""
+        },
+        {
+          ""indexed"": false,
+          ""internalType"": ""string"",
+          ""name"": ""gamePlayerID"",
+          ""type"": ""string""
+        },
+        {
+          ""indexed"": false,
+          ""internalType"": ""string"",
+          ""name"": ""gameEventID"",
+          ""type"": ""string""
+        },
+        {
+          ""indexed"": false,
+          ""internalType"": ""string"",
+          ""name"": ""averagePowerInWatts"",
+          ""type"": ""string""
+        },
+        {
+          ""indexed"": false,
+          ""internalType"": ""string"",
+          ""name"": ""baselineAveragePowerInWatts"",
+          ""type"": ""string""
+        },
+        {
+          ""indexed"": false,
+          ""internalType"": ""string"",
+          ""name"": ""deltaAveragePowerInWatts"",
+          ""type"": ""string""
+        },
+        {
+          ""indexed"": false,
+          ""internalType"": ""string"",
+          ""name"": ""percentPoints"",
+          ""type"": ""string""
+        },
+        {
+          ""indexed"": false,
+          ""internalType"": ""string"",
+          ""name"": ""wattPoints"",
+          ""type"": ""string""
+        },
+        {
+          ""indexed"": false,
+          ""internalType"": ""string"",
+          ""name"": ""totalPointsAwarded"",
+          ""type"": ""string""
+        },
+        {
+          ""indexed"": false,
+          ""internalType"": ""string"",
+          ""name"": ""awardValue"",
+          ""type"": ""string""
+        }
+      ],
+      ""name"": ""GameResultEvent"",
+      ""type"": ""event""
+    },
+    {
+      ""anonymous"": false,
+      ""inputs"": [
+        {
+          ""indexed"": true,
+          ""internalType"": ""address"",
+          ""name"": ""previousOwner"",
+          ""type"": ""address""
+        },
+        {
+          ""indexed"": true,
+          ""internalType"": ""address"",
+          ""name"": ""newOwner"",
+          ""type"": ""address""
+        }
+      ],
+      ""name"": ""OwnershipTransferred"",
+      ""type"": ""event""
+    },
+    {
+      ""inputs"": [
+        {
+          ""internalType"": ""string"",
+          ""name"": ""gameEventID"",
+          ""type"": ""string""
+        },
+        {
+          ""internalType"": ""string"",
+          ""name"": ""gameEventName"",
+          ""type"": ""string""
+        },
+        {
+          ""internalType"": ""string"",
+          ""name"": ""gameEventType"",
+          ""type"": ""string""
+        },
+        {
+          ""internalType"": ""string"",
+          ""name"": ""gameEventStartTime"",
+          ""type"": ""string""
+        },
+        {
+          ""internalType"": ""string"",
+          ""name"": ""gameEventEndTime"",
+          ""type"": ""string""
+        },
+        {
+          ""internalType"": ""string"",
+          ""name"": ""gameEventDuration"",
+          ""type"": ""string""
+        },
+        {
+          ""internalType"": ""string"",
+          ""name"": ""dollarPerPoint"",
+          ""type"": ""string""
+        },
+        {
+          ""internalType"": ""string"",
+          ""name"": ""pointsPerWatt"",
+          ""type"": ""string""
+        },
+        {
+          ""internalType"": ""string"",
+          ""name"": ""pointsPerPercent"",
+          ""type"": ""string""
+        }
+      ],
+      ""name"": ""AddGameEvent"",
+      ""outputs"": [],
+      ""stateMutability"": ""nonpayable"",
+      ""type"": ""function""
+    },
+    {
+      ""inputs"": [
+        {
+          ""internalType"": ""string"",
+          ""name"": ""gamePlayerID"",
+          ""type"": ""string""
+        },
+        {
+          ""internalType"": ""address"",
+          ""name"": ""playerAddress"",
+          ""type"": ""address""
+        },
+        {
+          ""internalType"": ""string"",
+          ""name"": ""dataConnectionString"",
+          ""type"": ""string""
+        }
+      ],
+      ""name"": ""AddGamePlayer"",
+      ""outputs"": [],
+      ""stateMutability"": ""nonpayable"",
+      ""type"": ""function""
+    },
+    {
+      ""inputs"": [
+        {
+          ""internalType"": ""string"",
+          ""name"": ""gamePlayerID"",
+          ""type"": ""string""
+        },
+        {
+          ""internalType"": ""string"",
+          ""name"": ""gameEventID"",
+          ""type"": ""string""
+        },
+        {
+          ""internalType"": ""address"",
+          ""name"": ""gamePlayerAddress"",
+          ""type"": ""address""
+        },
+        {
+          ""internalType"": ""string"",
+          ""name"": ""averagePowerInWatts"",
+          ""type"": ""string""
+        },
+        {
+          ""internalType"": ""string"",
+          ""name"": ""baselineAveragePowerInWatts"",
+          ""type"": ""string""
+        },
+        {
+          ""internalType"": ""string"",
+          ""name"": ""deltaAveragePowerInWatts"",
+          ""type"": ""string""
+        },
+        {
+          ""internalType"": ""string"",
+          ""name"": ""percentPoints"",
+          ""type"": ""string""
+        },
+        {
+          ""internalType"": ""string"",
+          ""name"": ""wattPoints"",
+          ""type"": ""string""
+        },
+        {
+          ""internalType"": ""string"",
+          ""name"": ""totalPointsAwarded"",
+          ""type"": ""string""
+        },
+        {
+          ""internalType"": ""string"",
+          ""name"": ""awardValue"",
+          ""type"": ""string""
+        }
+      ],
+      ""name"": ""AddGameResult"",
+      ""outputs"": [],
+      ""stateMutability"": ""nonpayable"",
+      ""type"": ""function""
+    },
+    {
+      ""inputs"": [],
+      ""name"": ""EventCount"",
+      ""outputs"": [
+        {
+          ""internalType"": ""uint256"",
+          ""name"": """",
+          ""type"": ""uint256""
+        }
+      ],
+      ""stateMutability"": ""view"",
+      ""type"": ""function""
+    },
+    {
+      ""inputs"": [
+        {
+          ""internalType"": ""bytes32"",
+          ""name"": ""_gameEventIDHash"",
+          ""type"": ""bytes32""
+        }
+      ],
+      ""name"": ""GameEventExists"",
+      ""outputs"": [
+        {
+          ""internalType"": ""bool"",
+          ""name"": """",
+          ""type"": ""bool""
+        }
+      ],
+      ""stateMutability"": ""view"",
+      ""type"": ""function""
+    },
+    {
+      ""inputs"": [
+        {
+          ""internalType"": ""bytes32"",
+          ""name"": ""_gamePlayerIDHash"",
+          ""type"": ""bytes32""
+        }
+      ],
+      ""name"": ""GamePlayerExists"",
+      ""outputs"": [
+        {
+          ""internalType"": ""bool"",
+          ""name"": """",
+          ""type"": ""bool""
+        }
+      ],
+      ""stateMutability"": ""view"",
+      ""type"": ""function""
+    },
+    {
+      ""inputs"": [
+        {
+          ""internalType"": ""bytes32"",
+          ""name"": ""_gameResultIDHash"",
+          ""type"": ""bytes32""
+        }
+      ],
+      ""name"": ""GameResultExists"",
+      ""outputs"": [
+        {
+          ""internalType"": ""bool"",
+          ""name"": """",
+          ""type"": ""bool""
+        }
+      ],
+      ""stateMutability"": ""view"",
+      ""type"": ""function""
+    },
+    {
+      ""inputs"": [],
+      ""name"": ""HasResultReadyFlag"",
+      ""outputs"": [
+        {
+          ""internalType"": ""bool"",
+          ""name"": """",
+          ""type"": ""bool""
+        }
+      ],
+      ""stateMutability"": ""view"",
+      ""type"": ""function""
+    },
+    {
+      ""inputs"": [],
+      ""name"": ""PlayerCount"",
+      ""outputs"": [
+        {
+          ""internalType"": ""uint256"",
+          ""name"": """",
+          ""type"": ""uint256""
+        }
+      ],
+      ""stateMutability"": ""view"",
+      ""type"": ""function""
+    },
+    {
+      ""inputs"": [],
+      ""name"": ""ResultCount"",
+      ""outputs"": [
+        {
+          ""internalType"": ""uint256"",
+          ""name"": """",
+          ""type"": ""uint256""
+        }
+      ],
+      ""stateMutability"": ""view"",
+      ""type"": ""function""
+    },
+    {
+      ""inputs"": [
+        {
+          ""internalType"": ""string"",
+          ""name"": ""source"",
+          ""type"": ""string""
+        }
+      ],
+      ""name"": ""StringToBytes32"",
+      ""outputs"": [
+        {
+          ""internalType"": ""bytes32"",
+          ""name"": ""result"",
+          ""type"": ""bytes32""
+        }
+      ],
+      ""stateMutability"": ""pure"",
+      ""type"": ""function""
+    },
+    {
+      ""inputs"": [
+        {
+          ""internalType"": ""string"",
+          ""name"": ""playerID"",
+          ""type"": ""string""
+        },
+        {
+          ""internalType"": ""string"",
+          ""name"": ""status"",
+          ""type"": ""string""
+        }
+      ],
+      ""name"": ""UpdatePlayerStatus"",
+      ""outputs"": [],
+      ""stateMutability"": ""nonpayable"",
+      ""type"": ""function""
+    },
+    {
+      ""inputs"": [
+        {
+          ""internalType"": ""string"",
+          ""name"": ""resultID"",
+          ""type"": ""string""
+        },
+        {
+          ""internalType"": ""string"",
+          ""name"": ""status"",
+          ""type"": ""string""
+        }
+      ],
+      ""name"": ""UpdateResultsStatus"",
+      ""outputs"": [],
+      ""stateMutability"": ""nonpayable"",
+      ""type"": ""function""
+    },
+    {
+      ""inputs"": [],
+      ""name"": ""_contractName"",
+      ""outputs"": [
+        {
+          ""internalType"": ""string"",
+          ""name"": """",
+          ""type"": ""string""
+        }
+      ],
+      ""stateMutability"": ""view"",
+      ""type"": ""function""
+    },
+    {
+      ""inputs"": [],
+      ""name"": ""addTestData"",
+      ""outputs"": [],
+      ""stateMutability"": ""nonpayable"",
+      ""type"": ""function""
+    },
+    {
+      ""inputs"": [],
+      ""name"": ""getAddress"",
+      ""outputs"": [
+        {
+          ""internalType"": ""address"",
+          ""name"": """",
+          ""type"": ""address""
+        }
+      ],
+      ""stateMutability"": ""view"",
+      ""type"": ""function""
+    },
+    {
+      ""inputs"": [],
+      ""name"": ""kill"",
+      ""outputs"": [],
+      ""stateMutability"": ""nonpayable"",
+      ""type"": ""function""
+    },
+    {
+      ""inputs"": [],
+      ""name"": ""owner"",
+      ""outputs"": [
+        {
+          ""internalType"": ""address"",
+          ""name"": """",
+          ""type"": ""address""
+        }
+      ],
+      ""stateMutability"": ""view"",
+      ""type"": ""function""
+    },
+    {
+      ""inputs"": [],
+      ""name"": ""testConnection"",
+      ""outputs"": [
+        {
+          ""internalType"": ""bool"",
+          ""name"": """",
+          ""type"": ""bool""
+        }
+      ],
+      ""stateMutability"": ""pure"",
+      ""type"": ""function""
+    },
+    {
+      ""inputs"": [
+        {
+          ""internalType"": ""address"",
+          ""name"": ""newOwner"",
+          ""type"": ""address""
+        }
+      ],
+      ""name"": ""transferOwnership"",
+      ""outputs"": [],
+      ""stateMutability"": ""nonpayable"",
+      ""type"": ""function""
+    }]";
         private string EthereumOracleName = "Upperbay Systems DataPump Oracle";
         private string EthereumOracleNameHash = null;
         private string EthereumNodeURL = null;
