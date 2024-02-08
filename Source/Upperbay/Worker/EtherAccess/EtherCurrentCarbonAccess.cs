@@ -429,6 +429,7 @@ namespace Upperbay.Worker.EtherAccess
 
 
                         Log2.Trace("AddPlayerFromConfidential:addGamePlayerFunction.SendTransactionAsync Returned");
+                        Thread.Sleep(1000);
                     }
                     catch(Exception ex)
                     {

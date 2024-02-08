@@ -105,7 +105,7 @@ namespace ChatterBoxGPT
             }
 
             //---------------------------------------
-            DateTime originalDateTime = DateTime.Now;
+            DateTime anchorDateTime = DateTime.Now;
 
             MQTTPipe.MqttInitializeAsync("192.168.0.131",
                                              "",
@@ -343,7 +343,7 @@ namespace ChatterBoxGPT
                     }
                     DateTime tomorrowAtTime = new DateTime(tomorrow.Year, tomorrow.Month, tomorrow.Day, hour, minute, 0);
 
-                    TimeSpan timeSpan = tomorrowAtTime - DateTime.Now;
+                    TimeSpan timeSpan = tomorrowAtTime - anchorDateTime;
                     sleepMinutes = (int)Math.Ceiling(timeSpan.TotalMinutes);
                     Log2.Info("SleepMinutes = " + sleepMinutes);
                     Console.WriteLine("Cycling every " + sleepMinutes + " Mins");
