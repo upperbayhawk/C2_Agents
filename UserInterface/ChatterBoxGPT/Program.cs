@@ -105,7 +105,7 @@ namespace ChatterBoxGPT
             }
 
             //---------------------------------------
-            DateTime anchorDateTime = DateTime.Now;
+           
 
             MQTTPipe.MqttInitializeAsync("192.168.0.131",
                                              "",
@@ -179,7 +179,7 @@ namespace ChatterBoxGPT
 
             while (true)
             {
-                DateTime startTime = DateTime.Now;
+                DateTime anchorDateTime = DateTime.Now;
 
                 Console.WriteLine("Getting Grid Data");
 
@@ -356,11 +356,12 @@ namespace ChatterBoxGPT
                 }
                 else
                 {
-                    Log2.Info("Sleepytime Minutes = " + sleepMinutes);
                     int DesiredFrequency = sleepMinutes * 60 * 1000;
                     DateTime endTime = DateTime.Now;
-                    TimeSpan executionTime = endTime - startTime;
-                    
+                    TimeSpan executionTime = endTime - anchorDateTime;
+                    Log2.Info("Execution Time = " + executionTime.ToString());
+                    Log2.Info("Sleepytime Minutes = " + sleepMinutes);
+
                     int timeToSleep = Math.Max(0, DesiredFrequency - (int)executionTime.TotalMilliseconds);
                     DateTime alarm = DateTime.Now.AddMilliseconds(timeToSleep);
 
