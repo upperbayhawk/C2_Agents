@@ -333,6 +333,10 @@ namespace ChatterBoxGPT
                 }
                 else if (timeString != null)
                 {
+                    DateTime endTime = DateTime.Now;
+                    TimeSpan executionTime = endTime - anchorDateTime;
+                    Log2.Info("Execution Time = " + executionTime.ToString());
+                    Console.WriteLine("Execution Time = " + executionTime.ToString());
 
                     DateTime tomorrow = DateTime.Today.AddDays(1);
                     string[] timeComponents = timeString.Split(':');
@@ -343,7 +347,7 @@ namespace ChatterBoxGPT
                     }
                     DateTime tomorrowAtTime = new DateTime(tomorrow.Year, tomorrow.Month, tomorrow.Day, hour, minute, 0);
 
-                    TimeSpan timeSpan = tomorrowAtTime - anchorDateTime;
+                    TimeSpan timeSpan = tomorrowAtTime - DateTime.Now;
                     sleepMinutes = (int)Math.Ceiling(timeSpan.TotalMinutes);
                     Log2.Info("SleepMinutes = " + sleepMinutes);
                     Console.WriteLine("Cycling every " + sleepMinutes + " Mins");
@@ -360,6 +364,7 @@ namespace ChatterBoxGPT
                     DateTime endTime = DateTime.Now;
                     TimeSpan executionTime = endTime - anchorDateTime;
                     Log2.Info("Execution Time = " + executionTime.ToString());
+                    Console.WriteLine("Execution Time = " + executionTime.ToString());
                     Log2.Info("Sleepytime Minutes = " + sleepMinutes);
 
                     int timeToSleep = Math.Max(0, DesiredFrequency - (int)executionTime.TotalMilliseconds);
