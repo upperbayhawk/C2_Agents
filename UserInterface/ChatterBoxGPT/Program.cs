@@ -346,34 +346,32 @@ namespace ChatterBoxGPT
                         return;
                     }
                     DateTime tomorrowAtTime = new DateTime(tomorrow.Year, tomorrow.Month, tomorrow.Day, hour, minute, 0);
-
                     TimeSpan timeSpan = tomorrowAtTime - DateTime.Now;
-                    sleepMinutes = (int)Math.Ceiling(timeSpan.TotalMinutes);
-                    Log2.Info("SleepMinutes = " + sleepMinutes);
-                    Console.WriteLine("Cycling every " + sleepMinutes + " Mins");
 
-                    int timeToSleep = sleepMinutes * 60000;
-                    DateTime alarm = DateTime.Now.AddMilliseconds(timeToSleep);
-                    Console.WriteLine("Sleeping for " + timeToSleep.ToString() + " Mils. Will Wake Up at " + alarm.ToShortTimeString());
+                    int timeToSleep = (int)Math.Ceiling(timeSpan.TotalMilliseconds);
+                    DateTime alarm = DateTime.Now.AddMilliseconds(timeSpan.TotalMilliseconds);
+                    Console.WriteLine("Sleeping, will wake up at " + alarm.ToLongTimeString());
                     Thread.Sleep(timeToSleep);
                     Console.WriteLine("Awake");
                 }
                 else
                 {
-                    int DesiredFrequency = sleepMinutes * 60 * 1000;
                     DateTime endTime = DateTime.Now;
                     TimeSpan executionTime = endTime - anchorDateTime;
                     Log2.Info("Execution Time = " + executionTime.ToString());
                     Console.WriteLine("Execution Time = " + executionTime.ToString());
-                    Log2.Info("Sleepytime Minutes = " + sleepMinutes);
 
-                    int timeToSleep = Math.Max(0, DesiredFrequency - (int)executionTime.TotalMilliseconds);
+                    Log2.Info("Sleepytime Minutes = " + sleepMinutes);
+                    Console.WriteLine("Cycling every " + sleepMinutes + " Mins");
+
+                    int periodMilliseconds = sleepMinutes * 60 * 1000;
+                    double millisecondsTillAlarm = periodMilliseconds - executionTime.TotalMilliseconds;
+
+                    int timeToSleep = (int)Math.Ceiling(millisecondsTillAlarm);
                     DateTime alarm = DateTime.Now.AddMilliseconds(timeToSleep);
 
-                    Console.WriteLine("Cycling every " + sleepMinutes + " Mins");
-                    Console.WriteLine("Sleeping for " + timeToSleep + " Mils. Will Wake Up at " + alarm.ToShortTimeString());
+                    Console.WriteLine("Sleeping for " + timeToSleep + " Mils. Will Wake Up at " + alarm.ToLongTimeString());
                     Thread.Sleep(timeToSleep);
-
                     Console.WriteLine("Awake");
                 }
                
