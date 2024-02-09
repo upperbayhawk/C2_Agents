@@ -522,27 +522,30 @@ namespace Upperbay.AgentObject
 
                         if (GridPeakDetected.Value != GridPeakDetected.LastValue)
                         {
-                            Log2.Debug("NEW PEAK! GridPeakDetected.Value = {0}", GridPeakDetected.Value);
-                            GridPeakDetected.LastValue = GridPeakDetected.Value;
-                            GridPeakDetected.ChangeFlag = true;
-                            JsonGridPeakDetected jsonGridPeakDetected = new JsonGridPeakDetected();
-                            GridPeakDetectedObject gridPeakDetectedObject = jsonGridPeakDetected.Json2GridPeakDetected(GridPeakDetected.Value);
-                            Log2.Debug("agent_name: " + gridPeakDetectedObject.agent_name);
-                            Log2.Debug("message: " + gridPeakDetectedObject.message);
-                            Log2.Debug("start_date_time: " + gridPeakDetectedObject.start_date_time);
-                            Log2.Debug("duration_mins: " + gridPeakDetectedObject.duration_mins);
-                            Log2.Debug("peak_lmp: " + gridPeakDetectedObject.peak_lmp);
-
-                            
-                            if (GameStarter.CreateGameJson(gridPeakDetectedObject))
+                            if (GridPeakDetected.Value != "")
                             {
-                                string aiGameEnable = MyAppConfig.GetParameter("AIGameEnable");
-                                if (aiGameEnable == "true")
-                                    GameStarter.StartGame();
-                                else
-                                    Log2.Info("AIGameEnable is false so game has not been started.");
+                                Log2.Debug("NEW PEAK! GridPeakDetected.Value = {0}", GridPeakDetected.Value);
+                                GridPeakDetected.LastValue = GridPeakDetected.Value;
+                                GridPeakDetected.ChangeFlag = true;
+                                JsonGridPeakDetected jsonGridPeakDetected = new JsonGridPeakDetected();
+                                GridPeakDetectedObject gridPeakDetectedObject = jsonGridPeakDetected.Json2GridPeakDetected(GridPeakDetected.Value);
+                                Log2.Debug("agent_name: " + gridPeakDetectedObject.agent_name);
+                                Log2.Debug("message: " + gridPeakDetectedObject.message);
+                                Log2.Debug("start_date_time: " + gridPeakDetectedObject.start_date_time);
+                                Log2.Debug("duration_mins: " + gridPeakDetectedObject.duration_mins);
+                                Log2.Debug("peak_lmp: " + gridPeakDetectedObject.peak_lmp);
+
+
+                                if (GameStarter.CreateGameJson(gridPeakDetectedObject))
+                                {
+                                    string aiGameEnable = MyAppConfig.GetParameter("AIGameEnable");
+                                    if (aiGameEnable == "true")
+                                        GameStarter.StartGame();
+                                    else
+                                        Log2.Info("AIGameEnable is false so game has not been started.");
+                                }
+                                Log2.Info("Game Started");
                             }
-                            Log2.Info("Game Started");
                         }
                         else
                         {

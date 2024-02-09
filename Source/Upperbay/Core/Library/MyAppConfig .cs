@@ -61,7 +61,7 @@ namespace Upperbay.Core.Library
             {
                 //System Parameters
                 //case "ClusterName": val = "BETA1"; break;
-                case "ClusterName": val = "VOLTA_BETA3"; break;
+                case "ClusterName": val = "VOLTA_BETA2"; break;
                 case "ClusterVersion": val = "0.6.9"; break;
                 //
                 case "Period": val = "5000"; break;
