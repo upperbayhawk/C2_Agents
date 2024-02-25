@@ -159,13 +159,15 @@ namespace CurrentForCarbon
             MessageBoxButtons buttons = MessageBoxButtons.OK;
             GameLedger gameLedger = new GameLedger();
             GameAllStatistics.InitAll();
+
             int sleepyTime = 5000;
+            gameLedger.LogAllPlayers(0);
+            System.Threading.Thread.Sleep(sleepyTime);
+            gameLedger.LogAllEvents(0);
+            System.Threading.Thread.Sleep(sleepyTime);
+
             for (uint i = 0; i < 5; i++)
             {
-                gameLedger.LogAllPlayers(i);
-                System.Threading.Thread.Sleep(sleepyTime); 
-                gameLedger.LogAllEvents(i);
-                System.Threading.Thread.Sleep(sleepyTime); 
                 gameLedger.LogAllResults(i);
                 System.Threading.Thread.Sleep(sleepyTime); 
                 gameLedger.LogAllCombinedEventResults(i);
@@ -188,10 +190,10 @@ namespace CurrentForCarbon
             int sleepyTime = 5000;
             for (uint i = 5; i < 10; i++)
             {
-                gameLedger.LogAllPlayers(i);
-                System.Threading.Thread.Sleep(sleepyTime);
-                gameLedger.LogAllEvents(i);
-                System.Threading.Thread.Sleep(sleepyTime);
+                //gameLedger.LogAllPlayers(i);
+                //System.Threading.Thread.Sleep(sleepyTime);
+                //gameLedger.LogAllEvents(i);
+                //System.Threading.Thread.Sleep(sleepyTime);
                 gameLedger.LogAllResults(i);
                 System.Threading.Thread.Sleep(sleepyTime);
                 gameLedger.LogAllCombinedEventResults(i);
@@ -214,10 +216,10 @@ namespace CurrentForCarbon
             int sleepyTime = 5000;
             for (uint i = 10; i < 15; i++)
             {
-                gameLedger.LogAllPlayers(i);
-                System.Threading.Thread.Sleep(sleepyTime);
-                gameLedger.LogAllEvents(i);
-                System.Threading.Thread.Sleep(sleepyTime);
+                //gameLedger.LogAllPlayers(i);
+                //System.Threading.Thread.Sleep(sleepyTime);
+                //gameLedger.LogAllEvents(i);
+                //System.Threading.Thread.Sleep(sleepyTime);
                 gameLedger.LogAllResults(i);
                 System.Threading.Thread.Sleep(sleepyTime);
                 gameLedger.LogAllCombinedEventResults(i);
@@ -239,10 +241,10 @@ namespace CurrentForCarbon
             int sleepyTime = 5000;
             for (uint i = 15; i < 20; i++)
             {
-                gameLedger.LogAllPlayers(i);
-                System.Threading.Thread.Sleep(sleepyTime);
-                gameLedger.LogAllEvents(i);
-                System.Threading.Thread.Sleep(sleepyTime);
+                //gameLedger.LogAllPlayers(i);
+                //System.Threading.Thread.Sleep(sleepyTime);
+                //gameLedger.LogAllEvents(i);
+                //System.Threading.Thread.Sleep(sleepyTime);
                 gameLedger.LogAllResults(i);
                 System.Threading.Thread.Sleep(sleepyTime);
                 gameLedger.LogAllCombinedEventResults(i);
@@ -265,10 +267,10 @@ namespace CurrentForCarbon
             int sleepyTime = 5000;
             for (uint i = 20; i < 25; i++)
             {
-                gameLedger.LogAllPlayers(i);
-                System.Threading.Thread.Sleep(sleepyTime);
-                gameLedger.LogAllEvents(i);
-                System.Threading.Thread.Sleep(sleepyTime);
+                //gameLedger.LogAllPlayers(i);
+                //System.Threading.Thread.Sleep(sleepyTime);
+                //gameLedger.LogAllEvents(i);
+                //System.Threading.Thread.Sleep(sleepyTime);
                 gameLedger.LogAllResults(i);
                 System.Threading.Thread.Sleep(sleepyTime);
                 gameLedger.LogAllCombinedEventResults(i);
@@ -291,10 +293,10 @@ namespace CurrentForCarbon
             int sleepyTime = 5000;
             for (uint i = 25; i < 30; i++)
             {
-                System.Threading.Thread.Sleep(sleepyTime);
-                gameLedger.LogAllPlayers(i);
-                System.Threading.Thread.Sleep(sleepyTime);
-                gameLedger.LogAllEvents(i);
+                //System.Threading.Thread.Sleep(sleepyTime);
+                //gameLedger.LogAllPlayers(i);
+                //System.Threading.Thread.Sleep(sleepyTime);
+                //gameLedger.LogAllEvents(i);
                 System.Threading.Thread.Sleep(sleepyTime);
                 gameLedger.LogAllResults(i);
                 System.Threading.Thread.Sleep(sleepyTime);

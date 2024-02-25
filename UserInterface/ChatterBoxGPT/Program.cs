@@ -350,9 +350,9 @@ namespace ChatterBoxGPT
 
                     int timeToSleep = (int)Math.Ceiling(timeSpan.TotalMilliseconds);
                     DateTime alarm = DateTime.Now.AddMilliseconds(timeSpan.TotalMilliseconds);
-                    Console.WriteLine("Sleeping, will wake up at " + alarm.ToLongTimeString());
+                    Console.WriteLine("Sleeping, will wake up at " + alarm.ToLongDateString() + " " + alarm.ToLongTimeString());
                     Thread.Sleep(timeToSleep);
-                    Console.WriteLine("Awake");
+                    Console.WriteLine("Awake at " + alarm.ToLongDateString() + " " + alarm.ToLongTimeString());
                 }
                 else
                 {
@@ -370,12 +370,12 @@ namespace ChatterBoxGPT
                     int timeToSleep = (int)Math.Ceiling(millisecondsTillAlarm);
                     DateTime alarm = DateTime.Now.AddMilliseconds(timeToSleep);
 
-                    Console.WriteLine("Sleeping for " + timeToSleep + " Mils. Will Wake Up at " + alarm.ToLongTimeString());
+                    Console.WriteLine("Sleeping for " + timeToSleep + " Mils. Will Wake Up at " + alarm.ToLongDateString() + " " + alarm.ToLongTimeString());
                     Thread.Sleep(timeToSleep);
-                    Console.WriteLine("Awake");
-                }
+                    Console.WriteLine("Awake at "+ alarm.ToLongDateString() + " " + alarm.ToLongTimeString());
+                } //end else
                
-            }
+            }// end while
            
        }
    }
