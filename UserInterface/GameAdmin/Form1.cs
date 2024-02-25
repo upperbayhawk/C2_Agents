@@ -130,12 +130,12 @@ namespace CurrentForCarbon
             if (iSlice == 0)
                 GameAllStatistics.InitAll();
             int sleepyTime = 5000;
+            gameLedger.LogAllEvents(iSlice);
+            //MessageBox.Show("Wait for Events completion", "Get Slice From Ethereum", buttons);
+            System.Threading.Thread.Sleep(20000);
             gameLedger.LogAllPlayers(iSlice);
             System.Threading.Thread.Sleep(sleepyTime);
             //MessageBox.Show("Wait for Players completion", "Get Slice From Ethereum", buttons);
-            gameLedger.LogAllEvents(iSlice);
-            System.Threading.Thread.Sleep(sleepyTime);
-            //MessageBox.Show("Wait for Events completion", "Get Slice From Ethereum", buttons);
             gameLedger.LogAllResults(iSlice);
             System.Threading.Thread.Sleep(sleepyTime);
             //MessageBox.Show("Wait for Results completion", "Get Slice From Ethereum", buttons);
