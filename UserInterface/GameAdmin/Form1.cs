@@ -161,11 +161,10 @@ namespace CurrentForCarbon
             GameAllStatistics.InitAll();
 
             int sleepyTime = 5000;
+            gameLedger.LogAllEvents(0);
+            System.Threading.Thread.Sleep(20000);
             gameLedger.LogAllPlayers(0);
             System.Threading.Thread.Sleep(sleepyTime);
-            gameLedger.LogAllEvents(0);
-            System.Threading.Thread.Sleep(sleepyTime);
-
             for (uint i = 0; i < 5; i++)
             {
                 gameLedger.LogAllResults(i);
