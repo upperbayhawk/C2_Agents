@@ -86,7 +86,7 @@ namespace Upperbay.Worker.MQTT
                     .WithClientId(clientId)
                     .WithCredentials(mymqttUser, mymqttPassword)
                     .WithTcpServer(mymqttURI, mymqttPort)
-                    //.WithTls()
+                    .WithTls()
                      .WithCommunicationTimeout(TimeSpan.FromSeconds(10))
                      // .WithAuthentication()
                      .WithKeepAlivePeriod(TimeSpan.FromSeconds(20))
