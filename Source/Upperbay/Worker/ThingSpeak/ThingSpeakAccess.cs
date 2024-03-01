@@ -1,8 +1,11 @@
-﻿// Copyright (C) Upperbay Systems, LLC - All Rights Reserved
-// Unauthorized copying of this file, via any medium is strictly prohibited
-// Proprietary and confidential
-// Written by Dave Hardin <dave@upperbay.com>, 2001-2020
-
+﻿//==================================================================
+//Author: Dave Hardin, Upperbay Systems LLC
+//Author URL: https://upperbay.com
+//License: MIT
+//Date: 2001-2024
+//Description: 
+//Notes:
+//==================================================================
 using System;
 using System.Net;
 using System.IO;

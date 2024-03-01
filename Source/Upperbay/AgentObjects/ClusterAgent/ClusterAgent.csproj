@@ -249,6 +249,7 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>copy *.* ..\..\..\..\..\..\bin</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
 </Project>

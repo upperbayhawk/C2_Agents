@@ -1,4 +1,12 @@
-﻿using System;
+﻿//==================================================================
+//Author: Dave Hardin, Upperbay Systems LLC
+//Author URL: https://upperbay.com
+//License: MIT
+//Date: 2001-2024
+//Description: 
+//Notes:
+//==================================================================
+using System;
 using System.IO;
 using TextMagicClient.Api;
 using TextMagicClient.Client;

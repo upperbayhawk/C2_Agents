@@ -1,22 +1,11 @@
-﻿// Copyright (C) Upperbay Systems, LLC - All Rights Reserved
-// Unauthorized copying of this file, via any medium is strictly prohibited
-// Proprietary and confidential
-// Written by Dave Hardin <dave@upperbay.com>, 2001-2020
-
-#region Version Header
-/// <remarks>
-///     $Workfile: Utilities.cs $
-///   Description: This class implements general purpose utility functions required throughout the project.
-///        Author: Dave Hardin     Docs: Dave Hardin
-///       Created: 08/01/2008
-///      $Modtime: 08/21/2008$
-///     $Revision: 0 $
-///     Copyright: © 2003 - 2008 Upperbay Associates, LLC
-/// </remarks>
-#endregion
-
-
-
+﻿//==================================================================
+//Author: Dave Hardin, Upperbay Systems LLC
+//Author URL: https://upperbay.com
+//License: MIT
+//Date: 2001-2024
+//Description: 
+//Notes:
+//==================================================================
 using System;
 using System.Collections;
 using System.Reflection;

@@ -1,4 +1,12 @@
-﻿using System.Reflection;
+﻿//==================================================================
+//Author: Dave Hardin, Upperbay Systems LLC
+//Author URL: https://upperbay.com
+//License: MIT
+//Date: 2001-2024
+//Description: 
+//Notes:
+//==================================================================
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 

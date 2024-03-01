@@ -1,4 +1,12 @@
-﻿namespace CurrentForCarbon
+﻿//==================================================================
+//Author: Dave Hardin, Upperbay Systems LLC
+//Author URL: https://upperbay.com
+//License: MIT
+//Date: 2001-2024
+//Description: 
+//Notes:
+//==================================================================
+namespace CurrentForCarbon
 {
     partial class Form1
     {
