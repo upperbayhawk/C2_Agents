@@ -4,7 +4,8 @@
 //License: MIT
 //Date: 2001-2024
 //Description: 
-//Notes:
+//Notes: Colonies no longer work!!!! One Service and One Agent in config file.
+//  See edit below to name Service based on installation directory
 //==================================================================
 using System;
 using System.Configuration;
@@ -115,10 +116,11 @@ namespace Upperbay.Agent.Colony
                     //this.serviceInstallers[i].ServiceName = colony.ColonyName + "." + service.ServiceName;
                     //this.serviceInstallers[i].DisplayName = colony.ColonyName + "." + service.DisplayName;
                     //this.serviceInstallers[i].Description = service.Description;
-
+                    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                     /*---------------------------------------*/
-                    // OVERRIDE
-                    //Service Name from directory
+                    // OVERRIDE!! this breaks multiple Services!!!
+                    // Service Name from directory, not from config file!
+                    // Needed for cloning Current For Carbon game agents
                     string currentDir = Directory.GetCurrentDirectory();
                     Log2.Debug("Current Dir Name = " + currentDir);
                     DirectoryInfo dir = new DirectoryInfo(currentDir);
@@ -129,6 +131,7 @@ namespace Upperbay.Agent.Colony
                     this.serviceInstallers[i].DisplayName = dirName;
                     this.serviceInstallers[i].Description = "The Game";
                     /*---------------------------------------*/
+                    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
                     // this.serviceInstallers[i].ServicesDependedOn = service.Description;
 
