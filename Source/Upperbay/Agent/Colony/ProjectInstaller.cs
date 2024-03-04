@@ -129,7 +129,7 @@ namespace Upperbay.Agent.Colony
 
                     this.serviceInstallers[i].ServiceName = dirName;
                     this.serviceInstallers[i].DisplayName = dirName;
-                    this.serviceInstallers[i].Description = "The Game";
+                    this.serviceInstallers[i].Description = "The Grid Game";
                     /*---------------------------------------*/
                     //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
