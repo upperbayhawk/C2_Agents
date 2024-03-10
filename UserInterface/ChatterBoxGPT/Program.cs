@@ -134,9 +134,10 @@ namespace ChatterBoxGPT
             Console.WriteLine("6. PJMHourLoadPrelim");
             Console.WriteLine("7. PJMInstLoad");
             Console.WriteLine("8. PJMOperationsSummary");
-            Console.WriteLine("9. Exit");
+            Console.WriteLine("9. PJMLoadAndLmp");
+            Console.WriteLine("10. Exit");
 
-            Console.Write("Enter your choice (1-9): ");
+            Console.Write("Enter your choice (1-10): ");
 
             userInput = Console.ReadLine();
 
@@ -175,6 +176,10 @@ namespace ChatterBoxGPT
                     Console.WriteLine("PJMOperationsSummary selected.");
                     break;
                 case "9":
+                    // Code for Option 3
+                    Console.WriteLine("PJMLoadAndLmp selected.");
+                    break;
+                case "10":
                     exit = true;
                     break;
                 default:
@@ -240,8 +245,8 @@ namespace ChatterBoxGPT
                     if (json != null)
                     {
                         pJMDayAheadHourlyLMP.WriteJsonToFile(json, ".\\data\\PJMDayAheadHourlyLMP.json");
-                        //double dlastVal = pJMGayAheadHourlyLmp.GetLastValue(json);
-                        //Console.WriteLine("Last value: " + dlastVal.ToString());
+                        double dFirstVal = pJMDayAheadHourlyLMP.GetFirstValue(json);
+                        Console.WriteLine("First value: " + dFirstVal.ToString());
                         pJMDayAheadHourlyLMP.WriteCurrentDayAheadHourlyLMPToCsv(json, ".\\data\\PJMDayAheadHourlyLMP.csv");
 
                         string promptText = File.ReadAllText(".\\prompts\\PromptPJMDayAheadHourlyLMP.Txt");
@@ -333,7 +338,63 @@ namespace ChatterBoxGPT
                     //pJMOperationsSummary.WriteCsvToFile(json, ".\\data\\PJMOperationsSummary.csv");
                 }
 
-              
+                if (userInput == "9")
+                {
+
+                    //PJMLoadAndLmp
+
+                    PJMLoadForecastSevenDay pJMLoadForecastSevenDay = new PJMLoadForecastSevenDay();
+                    string jsonLoad = pJMLoadForecastSevenDay.GetJson("RTO_COMBINED", 200);
+                    if (jsonLoad != null)
+                    {
+                        pJMLoadForecastSevenDay.WriteJsonToFile(jsonLoad, ".\\data\\PJMLoadForeCastSevenDay.json");
+                        double dfirstVal = pJMLoadForecastSevenDay.GetFirstValue(jsonLoad);
+                        Console.WriteLine("First value: " + dfirstVal.ToString());
+                        double dlastVal = pJMLoadForecastSevenDay.GetLastValue(jsonLoad);
+                        Console.WriteLine("Last value: " + dlastVal.ToString());
+                        //pJMLoadForecastSevenDay.WriteJsonToCsv(json, ".\\data\\GptPromptDataCSV.txt");
+                        pJMLoadForecastSevenDay.WriteCurrentDayLoadJsonToCsv(jsonLoad, ".\\data\\PJMLoadForecastSevenDay.csv");
+
+                        //PJMDayAheadHourlyLMP
+
+                        PJMDayAheadHourlyLMP pJMDayAheadHourlyLMP = new PJMDayAheadHourlyLMP();
+                        string jsonLMP = pJMDayAheadHourlyLMP.GetJson("1", 24);
+                        if (jsonLMP != null)
+                        {
+                            pJMDayAheadHourlyLMP.WriteJsonToFile(jsonLMP, ".\\data\\PJMDayAheadHourlyLMP.json");
+                            double dFirstVal = pJMDayAheadHourlyLMP.GetFirstValue(jsonLMP);
+                            Console.WriteLine("First value: " + dFirstVal.ToString());
+                            pJMDayAheadHourlyLMP.WriteCurrentDayAheadHourlyLMPToCsv(jsonLMP, ".\\data\\PJMDayAheadHourlyLMP.csv");
+
+                            CsvMerge csvMerge = new CsvMerge();
+                            csvMerge.MergeFiles(".\\data\\PJMLoadForecastSevenDay.csv",
+                                                ".\\data\\PJMDayAheadHourlyLMP.csv",
+                                                ".\\data\\PJMLoadAndLMP.csv");
+
+                            string promptText = File.ReadAllText(".\\prompts\\PromptPJMLoadAndLMP.Txt");
+                            string promptData = File.ReadAllText(".\\data\\PJMLoadAndLMP.csv");
+                            string prompt = promptText + " " + promptData;
+                            Log2.Info(prompt);
+
+                            //TimeSeriesDataAnalyzer.Run(".\\data\\PJMDayAheadHourlyLMP.csv");
+                            //LinearRegression.Run(".\\data\\PJMDayAheadHourlyLMP.csv");
+
+                            Console.WriteLine("Letting GPT analyze the Grid Data");
+
+                            DateTime startGPTDateTime = DateTime.Now;
+                            string customFormat = startGPTDateTime.ToString("yyyy-MM-dd HH:mm:ss");
+
+                            Log2.Info("To Brain: " + customFormat + ": " + prompt);
+                            Console.WriteLine("To Brain: " + customFormat + ": " + prompt);
+                            Console.WriteLine("WAITING...");
+                            MQTTPipe.PublishMessage(prompt);
+                            string response = MQTTPipe.ReadMessage();
+                            Log2.Info("From Brain: " + customFormat + ": " + response);
+                            Console.WriteLine("From Brain: " + customFormat + ": " + response);
+                        }
+                    }
+                }
+
                 ///////////////////////////////////////
                 if ((sleepMinutes == 0) && (timeString == null))
                 {
