@@ -107,7 +107,7 @@ namespace Upperbay.Assistant
                 _gameLevel = "0";
           
         }
-        
+
         private static string _gameLevel = "0";
         private static string _gameJson;
         private static GameEventVariable _gameEventVariable;
