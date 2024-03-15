@@ -349,8 +349,8 @@ namespace Upperbay.AgentObject
                 Log2.Error("Voice Synth Died: ", ex);
             }
 
-            GridPeakDetected.Value = "";
-            GridPeakDetected.LastValue = "";
+            GridPeakDetected.Value = "NOGAME";
+            GridPeakDetected.LastValue = "NOGAME";
             GridPeakDetected.ChangeFlag = false;
 
 
@@ -510,7 +510,7 @@ namespace Upperbay.AgentObject
 
                     try
                     {
-                        if (GridPeakDetected.Value != "")
+                        if (GridPeakDetected.Value != "NOGAME") 
                         {
                             // if the game is new
                             if (GridPeakDetected.Value != GridPeakDetected.LastValue)
@@ -563,12 +563,12 @@ namespace Upperbay.AgentObject
                                     {
                                         GameStarter.StartGame();
                                         Log2.Info("Game Started");
-                                        GridPeakDetected.Value = "";
+                                        GridPeakDetected.Value = "NOGAME";
                                     }
                                     else
                                     {
                                         Log2.Info("AIGameEnable is false so game has not been started.");
-                                        GridPeakDetected.Value = "";
+                                        GridPeakDetected.Value = "NOGAME";
                                     }
                                 }
                             }
