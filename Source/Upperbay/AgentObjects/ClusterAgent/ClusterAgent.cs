@@ -20,6 +20,7 @@ using Upperbay.Worker.PostOffice;
 using Upperbay.Worker.JSON;
 using Upperbay.Agent.ColonyMatrix;
 using Upperbay.Assistant;
+using System.Globalization;
 
 
 
@@ -349,8 +350,8 @@ namespace Upperbay.AgentObject
             }
 
             GridPeakDetected.Value = "";
-            GridPeakDetected.LastValue = "X";
-            GridPeakDetected.ChangeFlag = true;
+            GridPeakDetected.LastValue = "";
+            GridPeakDetected.ChangeFlag = false;
 
 
             BeatThePeak.Value = "off";
@@ -486,7 +487,6 @@ namespace Upperbay.AgentObject
                     Log2.Trace("CurrentForCarbonWatts Quality = {0}", CurrentForCarbonWatts.Quality);
                     Log2.Trace("CurrentForCarbonWatts Time= {0}", CurrentForCarbonWatts.UpdateTime.ToString());
 
-
                     if (CurrentForCarbonWatts.ChangeFlag == true) // read change flag
                     {
                      
@@ -510,57 +510,74 @@ namespace Upperbay.AgentObject
 
                     try
                     {
-                        //Log2.Debug("GridPeakDetected.Value = {0}", GridPeakDetected.Value);
-                        //if (GridPeakDetected.Value.Length > 0)
-                        //{
-                        //    JsonGridPeakDetected jsonGridPeakDetected = new JsonGridPeakDetected();
-                        //    GridPeakDetectedObject gridPeakDetectedObject = jsonGridPeakDetected.Json2GridPeakDetected(GridPeakDetected.Value);
-                        //    Log2.Debug("agent_name: " + gridPeakDetectedObject.agent_name);
-                        //    Log2.Debug("message: " + gridPeakDetectedObject.message);
-                        //    Log2.Debug("start_date_time: " + gridPeakDetectedObject.start_date_time);
-                        //    Log2.Debug("duration_mins: " + gridPeakDetectedObject.duration_mins);
-                        //    Log2.Debug("peak_lmp: " + gridPeakDetectedObject.peak_lmp);
-                        //}
-
-
-                        if (GridPeakDetected.Value != GridPeakDetected.LastValue)
+                        if (GridPeakDetected.Value != "")
                         {
-                            if (GridPeakDetected.Value != "")
+                            // if the game is new
+                            if (GridPeakDetected.Value != GridPeakDetected.LastValue)
                             {
-                                Log2.Debug("NEW PEAK! GridPeakDetected.Value = {0}", GridPeakDetected.Value);
                                 GridPeakDetected.LastValue = GridPeakDetected.Value;
                                 GridPeakDetected.ChangeFlag = true;
-                                JsonGridPeakDetected jsonGridPeakDetected = new JsonGridPeakDetected();
-                                GridPeakDetectedObject gridPeakDetectedObject = jsonGridPeakDetected.Json2GridPeakDetected(GridPeakDetected.Value);
+                                JsonGridPeakDetected jsonNewGridPeakDetected = new JsonGridPeakDetected();
+                                GridPeakDetectedObject gridNewPeakDetectedObject = jsonNewGridPeakDetected.Json2GridPeakDetected(GridPeakDetected.Value);
+                                Log2.Debug("NEW GridPeakDetected.Value = {0}", GridPeakDetected.Value);
+                                Log2.Debug("agent_name: " + gridNewPeakDetectedObject.agent_name);
+                                Log2.Debug("message: " + gridNewPeakDetectedObject.message);
+                                Log2.Debug("start_date_time: " + gridNewPeakDetectedObject.start_date_time);
+                                Log2.Debug("duration_mins: " + gridNewPeakDetectedObject.duration_mins);
+                                Log2.Debug("peak_lmp: " + gridNewPeakDetectedObject.peak_lmp);
+                                Log2.Debug("award_level: " + gridNewPeakDetectedObject.award_level);
+                                Log2.Debug("game_type: " + gridNewPeakDetectedObject.game_type);
+                            }
+                            else
+                            {
+                                GridPeakDetected.ChangeFlag = false;
+                            }
+
+                            // test the game that is in the variable
+                            JsonGridPeakDetected jsonGridPeakDetected = new JsonGridPeakDetected();
+                            GridPeakDetectedObject gridPeakDetectedObject = jsonGridPeakDetected.Json2GridPeakDetected(GridPeakDetected.Value);
+                            string targetDateTime = gridPeakDetectedObject.start_date_time;
+                            string dateTimeFormat = "MM/dd/yyyy hh:mm:ss tt";
+                            // start_date_time is 5 mins from now, the just do it
+                            DateTime target = DateTime.ParseExact(targetDateTime, dateTimeFormat, CultureInfo.InvariantCulture);
+                            DateTime now = DateTime.Now;
+                            TimeSpan difference = target - now;
+
+                            // Check if the difference is greater than 0 (future) and less than or equal to 5 minutes
+                            if ((difference.TotalMinutes > 0) && (difference.TotalMinutes <= 5))
+                            {
+                                Log2.Debug("LET THE GAMES BEGIN!!!!: {0}", GridPeakDetected.Value);
                                 Log2.Debug("agent_name: " + gridPeakDetectedObject.agent_name);
                                 Log2.Debug("message: " + gridPeakDetectedObject.message);
                                 Log2.Debug("start_date_time: " + gridPeakDetectedObject.start_date_time);
                                 Log2.Debug("duration_mins: " + gridPeakDetectedObject.duration_mins);
                                 Log2.Debug("peak_lmp: " + gridPeakDetectedObject.peak_lmp);
+                                Log2.Debug("award_level: " + gridPeakDetectedObject.award_level);
+                                Log2.Debug("game_type: " + gridPeakDetectedObject.game_type);
 
+                                // if it's time, then start game
                                 if (GameStarter.CreateGameJson(gridPeakDetectedObject))
                                 {
                                     string aiGameEnable = MyAppConfig.GetParameter("AIGameEnable");
                                     if (aiGameEnable == "true")
+                                    {
                                         GameStarter.StartGame();
+                                        Log2.Info("Game Started");
+                                        GridPeakDetected.Value = "";
+                                    }
                                     else
+                                    {
                                         Log2.Info("AIGameEnable is false so game has not been started.");
+                                        GridPeakDetected.Value = "";
+                                    }
                                 }
-                                Log2.Info("Game Started");
                             }
-                        }
-                        else
-                        {
-                            GridPeakDetected.ChangeFlag = false;
                         }
                     }
                     catch (Exception ex)
                     {
                         Log2.Error("GridPeak Error" + ex.Message);
                     }
-                    
-
-
 
                     //---------------------------------
                     BeatThePeak.Value = GameStatus.GetState();
