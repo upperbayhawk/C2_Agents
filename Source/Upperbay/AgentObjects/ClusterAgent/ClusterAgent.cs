@@ -538,7 +538,6 @@ namespace Upperbay.AgentObject
                                 Log2.Debug("duration_mins: " + gridPeakDetectedObject.duration_mins);
                                 Log2.Debug("peak_lmp: " + gridPeakDetectedObject.peak_lmp);
 
-
                                 if (GameStarter.CreateGameJson(gridPeakDetectedObject))
                                 {
                                     string aiGameEnable = MyAppConfig.GetParameter("AIGameEnable");

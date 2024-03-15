@@ -64,8 +64,8 @@ namespace Upperbay.Assistant
 
             _gameEventVariable.GameName = "AI Triggered Game";
             _gameEventVariable.GridZone = "ALL";
-            _gameEventVariable.GameType = "SHEDPOWER";
-            _gameEventVariable.GameAwardRank = "GOLD";
+            _gameEventVariable.GameType = gridPeakDetectedObject.game_type;
+            _gameEventVariable.GameAwardRank = gridPeakDetectedObject.award_level;
 
             DateTime dateTime;
             if (DateTime.TryParse(gridPeakDetectedObject.start_date_time, out dateTime))
@@ -88,7 +88,7 @@ namespace Upperbay.Assistant
             _gameEventVariable.PointsPerPercent = 64;
             _gameEventVariable.BonusPoints = 0;
             _gameEventVariable.BonusPool = 0;
-            _gameEventVariable.PreStartAlert = "true";
+            _gameEventVariable.PreStartAlert = "false";
 
             _gameJson = _jsonGameEventVariable.GameEventVariable2Json(_gameEventVariable);
             return true;

@@ -744,6 +744,10 @@ namespace Upperbay.Agent.Interfaces
 
         public string grid_node;
 
+        public string award_level;
+
+        public string game_type;
+
         public GridPeakDetectedObject()
         {
         }
