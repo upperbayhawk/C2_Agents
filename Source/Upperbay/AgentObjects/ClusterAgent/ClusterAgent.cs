@@ -561,9 +561,9 @@ namespace Upperbay.AgentObject
                             JsonGridPeakDetected jsonGridPeakDetected = new JsonGridPeakDetected();
                             GridPeakDetectedObject gridPeakDetectedObject = jsonGridPeakDetected.Json2GridPeakDetected(GridPeakDetected.Value);
                             string targetDateTime = gridPeakDetectedObject.start_date_time;
-                            string dateTimeFormat = "MM/dd/yyyy hh:mm:ss tt";
+                            //string dateTimeFormat = "MM/dd/yyyy hh:mm:ss tt";
                             // start_date_time is 5 mins from now, the just do it
-                            DateTime target = DateTime.ParseExact(targetDateTime, dateTimeFormat, CultureInfo.InvariantCulture);
+                            DateTime target = DateTime.Parse(targetDateTime, CultureInfo.InvariantCulture);
                             DateTime now = DateTime.Now;
                             TimeSpan difference = target - now;
 
