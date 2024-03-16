@@ -37,9 +37,9 @@ namespace Upperbay.Worker.JSON
         public GridPeakDetectedObject Json2GridPeakDetected(string jsonString)
         {
             GridPeakDetectedObject deserializedData = JsonConvert.DeserializeObject<GridPeakDetectedObject>(jsonString);
-            Log2.Debug("Json2GridPeakDetected: {0} {1}", 
-                deserializedData.agent_name,
-                deserializedData.type_name); 
+            //Log2.Debug("Json2GridPeakDetected: {0} {1}", 
+            //    deserializedData.agent_name,
+            //    deserializedData.type_name); 
             return deserializedData;
         }
     }
