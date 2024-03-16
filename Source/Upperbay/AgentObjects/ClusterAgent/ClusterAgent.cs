@@ -517,82 +517,87 @@ namespace Upperbay.AgentObject
 
                     try
                     {
-                        if (ManualGameReset.Value != ManualGameReset.LastValue)
+                        string adminOnly = MyAppConfig.GetParameter("AdminOnly");
+                        if (adminOnly == "true")
                         {
-                            ManualGameReset.ChangeFlag = true;
-                        }
 
-                        if(ManualGameReset.ChangeFlag == true)
-                        { 
-                            if (ManualGameReset.Value == "true")
+                            if (ManualGameReset.Value != ManualGameReset.LastValue)
                             {
-                                Log2.Debug("NEW ManualGameReset.Value = {0}", ManualGameReset.Value);
-                                GridPeakDetected.Value = "NOGAME";
-                            }
-                            else
-                            {
-                                Log2.Debug("NEW ManualGameReset.Value = {0}", ManualGameReset.Value);
-                            }
-                            ManualGameReset.LastValue = ManualGameReset.Value;
-                            ManualGameReset.ChangeFlag = false;
-                        }
-
-                        if (GridPeakDetected.Value != "NOGAME") 
-                        {
-                            // if the game is new
-                            if (GridPeakDetected.Value != GridPeakDetected.LastValue)
-                            {
-                                GridPeakDetected.ChangeFlag = true;
-                                JsonGridPeakDetected jsonNewGridPeakDetected = new JsonGridPeakDetected();
-                                GridPeakDetectedObject gridNewPeakDetectedObject = jsonNewGridPeakDetected.Json2GridPeakDetected(GridPeakDetected.Value);
-                                Log2.Debug("NEW GridPeakDetected.Value = {0}", GridPeakDetected.Value);
-                                Log2.Debug("agent_name: " + gridNewPeakDetectedObject.agent_name);
-                                Log2.Debug("message: " + gridNewPeakDetectedObject.message);
-                                Log2.Debug("start_date_time: " + gridNewPeakDetectedObject.start_date_time);
-                                Log2.Debug("duration_mins: " + gridNewPeakDetectedObject.duration_mins);
-                                Log2.Debug("peak_lmp: " + gridNewPeakDetectedObject.peak_lmp);
-                                Log2.Debug("award_level: " + gridNewPeakDetectedObject.award_level);
-                                Log2.Debug("game_type: " + gridNewPeakDetectedObject.game_type);
-                                GridPeakDetected.LastValue = GridPeakDetected.Value;
-                                GridPeakDetected.ChangeFlag = false;
+                                ManualGameReset.ChangeFlag = true;
                             }
 
-                            // test the game that is in the variable
-                            JsonGridPeakDetected jsonGridPeakDetected = new JsonGridPeakDetected();
-                            GridPeakDetectedObject gridPeakDetectedObject = jsonGridPeakDetected.Json2GridPeakDetected(GridPeakDetected.Value);
-                            string targetDateTime = gridPeakDetectedObject.start_date_time;
-                            //string dateTimeFormat = "MM/dd/yyyy hh:mm:ss tt";
-                            // start_date_time is 5 mins from now, the just do it
-                            DateTime target = DateTime.Parse(targetDateTime, CultureInfo.InvariantCulture);
-                            DateTime now = DateTime.Now;
-                            TimeSpan difference = target - now;
-
-                            // Check if the difference is greater than 0 (future) and less than or equal to 5 minutes
-                            if ((difference.TotalMinutes > 0) && (difference.TotalMinutes <= 5))
+                            if (ManualGameReset.ChangeFlag == true)
                             {
-                                Log2.Debug("LET THE GAMES BEGIN!!!!: {0}", GridPeakDetected.Value);
-                                Log2.Debug("agent_name: " + gridPeakDetectedObject.agent_name);
-                                Log2.Debug("message: " + gridPeakDetectedObject.message);
-                                Log2.Debug("start_date_time: " + gridPeakDetectedObject.start_date_time);
-                                Log2.Debug("duration_mins: " + gridPeakDetectedObject.duration_mins);
-                                Log2.Debug("peak_lmp: " + gridPeakDetectedObject.peak_lmp);
-                                Log2.Debug("award_level: " + gridPeakDetectedObject.award_level);
-                                Log2.Debug("game_type: " + gridPeakDetectedObject.game_type);
-
-                                // if it's time, then start game
-                                if (GameStarter.CreateGameJson(gridPeakDetectedObject))
+                                if (ManualGameReset.Value == "true")
                                 {
-                                    string aiGameEnable = MyAppConfig.GetParameter("AIGameEnable");
-                                    if (aiGameEnable == "true")
+                                    Log2.Debug("NEW ManualGameReset.Value = {0}", ManualGameReset.Value);
+                                    GridPeakDetected.Value = "NOGAME";
+                                }
+                                else
+                                {
+                                    Log2.Debug("NEW ManualGameReset.Value = {0}", ManualGameReset.Value);
+                                }
+                                ManualGameReset.LastValue = ManualGameReset.Value;
+                                ManualGameReset.ChangeFlag = false;
+                            }
+
+                            if (GridPeakDetected.Value != "NOGAME")
+                            {
+                                // if the game is new
+                                if (GridPeakDetected.Value != GridPeakDetected.LastValue)
+                                {
+                                    GridPeakDetected.ChangeFlag = true;
+                                    JsonGridPeakDetected jsonNewGridPeakDetected = new JsonGridPeakDetected();
+                                    GridPeakDetectedObject gridNewPeakDetectedObject = jsonNewGridPeakDetected.Json2GridPeakDetected(GridPeakDetected.Value);
+                                    Log2.Debug("NEW GridPeakDetected.Value = {0}", GridPeakDetected.Value);
+                                    Log2.Debug("agent_name: " + gridNewPeakDetectedObject.agent_name);
+                                    Log2.Debug("message: " + gridNewPeakDetectedObject.message);
+                                    Log2.Debug("start_date_time: " + gridNewPeakDetectedObject.start_date_time);
+                                    Log2.Debug("duration_mins: " + gridNewPeakDetectedObject.duration_mins);
+                                    Log2.Debug("peak_lmp: " + gridNewPeakDetectedObject.peak_lmp);
+                                    Log2.Debug("award_level: " + gridNewPeakDetectedObject.award_level);
+                                    Log2.Debug("game_type: " + gridNewPeakDetectedObject.game_type);
+                                    GridPeakDetected.LastValue = GridPeakDetected.Value;
+                                    GridPeakDetected.ChangeFlag = false;
+                                }
+
+                                // test the game that is in the variable
+                                JsonGridPeakDetected jsonGridPeakDetected = new JsonGridPeakDetected();
+                                GridPeakDetectedObject gridPeakDetectedObject = jsonGridPeakDetected.Json2GridPeakDetected(GridPeakDetected.Value);
+                                string targetDateTime = gridPeakDetectedObject.start_date_time;
+                                //string dateTimeFormat = "MM/dd/yyyy hh:mm:ss tt";
+                                // start_date_time is 5 mins from now, the just do it
+                                DateTime target = DateTime.Parse(targetDateTime, CultureInfo.InvariantCulture);
+                                DateTime now = DateTime.Now;
+                                TimeSpan difference = target - now;
+
+                                // Check if the difference is greater than 0 (future) and less than or equal to 5 minutes
+                                if ((difference.TotalMinutes > 0) && (difference.TotalMinutes <= 5))
+                                {
+                                    Log2.Debug("LET THE GAMES BEGIN!!!!: {0}", GridPeakDetected.Value);
+                                    Log2.Debug("agent_name: " + gridPeakDetectedObject.agent_name);
+                                    Log2.Debug("message: " + gridPeakDetectedObject.message);
+                                    Log2.Debug("start_date_time: " + gridPeakDetectedObject.start_date_time);
+                                    Log2.Debug("duration_mins: " + gridPeakDetectedObject.duration_mins);
+                                    Log2.Debug("peak_lmp: " + gridPeakDetectedObject.peak_lmp);
+                                    Log2.Debug("award_level: " + gridPeakDetectedObject.award_level);
+                                    Log2.Debug("game_type: " + gridPeakDetectedObject.game_type);
+
+                                    // if it's time, then start game
+                                    if (GameStarter.CreateGameJson(gridPeakDetectedObject))
                                     {
-                                        GameStarter.StartGame();
-                                        Log2.Info("Game Started");
-                                        GridPeakDetected.Value = "NOGAME";
-                                    }
-                                    else
-                                    {
-                                        Log2.Info("AIGameEnable is false so game has not been started.");
-                                        GridPeakDetected.Value = "NOGAME";
+                                        string aiGameEnable = MyAppConfig.GetParameter("AIGameEnable");
+                                        if (aiGameEnable == "true")
+                                        {
+                                            GameStarter.StartGame();
+                                            Log2.Info("Game Started");
+                                            GridPeakDetected.Value = "NOGAME";
+                                        }
+                                        else
+                                        {
+                                            Log2.Info("AIGameEnable is false so game has not been started.");
+                                            GridPeakDetected.Value = "NOGAME";
+                                        }
                                     }
                                 }
                             }
