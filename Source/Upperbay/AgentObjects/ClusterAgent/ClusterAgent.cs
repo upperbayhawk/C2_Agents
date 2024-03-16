@@ -517,10 +517,21 @@ namespace Upperbay.AgentObject
 
                     try
                     {
-                        if (ManualGameReset.Value == "true")
-                        {   
-                            GridPeakDetected.Value = "NOGAME";
-                            ManualGameReset.Value = "false";
+                        if (ManualGameReset.Value != ManualGameReset.LastValue)
+                        {
+                            ManualGameReset.ChangeFlag = true;
+
+                            if (ManualGameReset.Value == "true")
+                            {
+                                Log2.Debug("NEW ManualGameReset.Value = {0}", ManualGameReset.Value);
+                                GridPeakDetected.Value = "NOGAME";
+                            }
+                            else
+                            {
+                                Log2.Debug("NEW ManualGameReset.Value = {0}", ManualGameReset.Value);
+                                ManualGameReset.LastValue = ManualGameReset.Value;
+                                ManualGameReset.ChangeFlag = false;
+                            }
                         }
 
                         if (GridPeakDetected.Value != "NOGAME") 
@@ -528,7 +539,6 @@ namespace Upperbay.AgentObject
                             // if the game is new
                             if (GridPeakDetected.Value != GridPeakDetected.LastValue)
                             {
-                                GridPeakDetected.LastValue = GridPeakDetected.Value;
                                 GridPeakDetected.ChangeFlag = true;
                                 JsonGridPeakDetected jsonNewGridPeakDetected = new JsonGridPeakDetected();
                                 GridPeakDetectedObject gridNewPeakDetectedObject = jsonNewGridPeakDetected.Json2GridPeakDetected(GridPeakDetected.Value);
@@ -540,9 +550,7 @@ namespace Upperbay.AgentObject
                                 Log2.Debug("peak_lmp: " + gridNewPeakDetectedObject.peak_lmp);
                                 Log2.Debug("award_level: " + gridNewPeakDetectedObject.award_level);
                                 Log2.Debug("game_type: " + gridNewPeakDetectedObject.game_type);
-                            }
-                            else
-                            {
+                                GridPeakDetected.LastValue = GridPeakDetected.Value;
                                 GridPeakDetected.ChangeFlag = false;
                             }
 
