@@ -520,7 +520,10 @@ namespace Upperbay.AgentObject
                         if (ManualGameReset.Value != ManualGameReset.LastValue)
                         {
                             ManualGameReset.ChangeFlag = true;
+                        }
 
+                        if(ManualGameReset.ChangeFlag == true)
+                        { 
                             if (ManualGameReset.Value == "true")
                             {
                                 Log2.Debug("NEW ManualGameReset.Value = {0}", ManualGameReset.Value);
@@ -529,9 +532,9 @@ namespace Upperbay.AgentObject
                             else
                             {
                                 Log2.Debug("NEW ManualGameReset.Value = {0}", ManualGameReset.Value);
-                                ManualGameReset.LastValue = ManualGameReset.Value;
-                                ManualGameReset.ChangeFlag = false;
                             }
+                            ManualGameReset.LastValue = ManualGameReset.Value;
+                            ManualGameReset.ChangeFlag = false;
                         }
 
                         if (GridPeakDetected.Value != "NOGAME") 
