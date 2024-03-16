@@ -245,6 +245,10 @@ namespace Upperbay.AgentObject
         [Ua("subscribe")]
         public DataVariable GridPeakDetected { get { return this._gridPeakDetected; } set { this._gridPeakDetected = value; } }
 
+        private DataVariable _manualGameReset = new DataVariable("ManualGameReset", "ManualGameReset", "Reset Game", "Boolean");
+        [Ua("manualinput")]
+        public DataVariable ManualGameReset { get { return this._manualGameReset; } set { this._manualGameReset = value; } }
+
         #endregion
 
 
@@ -353,6 +357,9 @@ namespace Upperbay.AgentObject
             GridPeakDetected.LastValue = "NOGAME";
             GridPeakDetected.ChangeFlag = false;
 
+            ManualGameReset.Value = "false";
+            ManualGameReset.LastValue = "false";
+            ManualGameReset.ChangeFlag = false;
 
             BeatThePeak.Value = "off";
             BeatThePeak.LastValue = "on";
@@ -510,6 +517,12 @@ namespace Upperbay.AgentObject
 
                     try
                     {
+                        if (ManualGameReset.Value == "true")
+                        {   
+                            GridPeakDetected.Value = "NOGAME";
+                            ManualGameReset.Value = "false";
+                        }
+
                         if (GridPeakDetected.Value != "NOGAME") 
                         {
                             // if the game is new
