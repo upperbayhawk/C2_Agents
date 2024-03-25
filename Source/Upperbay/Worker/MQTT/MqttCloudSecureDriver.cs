@@ -130,7 +130,7 @@ namespace Upperbay.Worker.MQTT
                             GamePlayerConfidential pc = new GamePlayerConfidential();
 
                             //Log2.Debug("Topic Received: {0}", receivedTopic);
-                            Log2.Debug("Topic: {0}, Message Received: {1}", receivedTopic, payload);
+                            Log2.Debug("Cloud Secure Topic: {0}, Message Received: {1}", receivedTopic, payload);
                             pc = jpc.Json2GamePlayerConfidential(payload);
 
 
