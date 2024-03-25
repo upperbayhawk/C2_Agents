@@ -160,8 +160,7 @@ namespace Upperbay.Assistant
                             var = (DataVariable)propInfo.GetValue(_myAgentObject, null);
                             if (var.Value == dv.Value)
                                 Log2.Trace("BIGUS!!!!: {0} {1}", prop, dv.Value);
-
-
+                            DataVariableCache.DeleteObject(prop);
                         }
 
                         // _agentData.UpdatePropertyValue(_myAgentObjectName, prop, var.Value, var.Quality, var.UpdateTime);
