@@ -126,7 +126,7 @@ namespace Upperbay.Worker.MQTT
                             JsonGameEventVariable jev = new JsonGameEventVariable();
                             GameEventVariable ev = new GameEventVariable();
 
-                            Log2.Debug("Topic: {0}, Message Received: {1}", receivedTopic, payload);
+                            Log2.Debug("Cloud Topic: {0}, Message Received: {1}", receivedTopic, payload);
                             ev = jev.Json2GameEventVariable(payload);
 
                             if (ev.GridZone.Equals("ALL"))
