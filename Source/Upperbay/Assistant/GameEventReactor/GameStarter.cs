@@ -25,26 +25,26 @@ namespace Upperbay.Assistant
     {
         public static bool StartGame ()
         {
+            // Cloud MQTT already initialized
+            //Log2.Info("Starting Game");
 
-            Log2.Info("Starting Game");
+            //string cluster = MyAppConfig.GetParameter("ClusterName");
+            //string mqttCloudIpAddress = MyAppConfig.GetClusterParameter(cluster, "MqttCloudIpAddress");
+            //string mqttCloudPort = MyAppConfig.GetClusterParameter(cluster, "MqttCloudPort");
+            //string mqttCloudLoginName = MyAppConfig.GetParameter("MqttCloudLoginName");
+            //string mqttCloudPassword = MyAppConfig.GetParameter("MqttCloudPassword");
 
-            string cluster = MyAppConfig.GetParameter("ClusterName");
-            string mqttCloudIpAddress = MyAppConfig.GetClusterParameter(cluster, "MqttCloudIpAddress");
-            string mqttCloudPort = MyAppConfig.GetClusterParameter(cluster, "MqttCloudPort");
-            string mqttCloudLoginName = MyAppConfig.GetParameter("MqttCloudLoginName");
-            string mqttCloudPassword = MyAppConfig.GetParameter("MqttCloudPassword");
+            //Log2.Info("StartGame: {0} {1} {2} {3}", mqttCloudIpAddress,
+            //                             mqttCloudPort,
+            //                             mqttCloudLoginName,
+            //                             mqttCloudPassword);
 
-            Log2.Info("StartGame: {0} {1} {2} {3}", mqttCloudIpAddress,
-                                         mqttCloudPort,
-                                         mqttCloudLoginName,
-                                         mqttCloudPassword);
+            //MqttCloudDriver.MqttInitializeAsync(mqttCloudIpAddress,
+            //                                   mqttCloudLoginName,
+            //                                   mqttCloudPassword,
+            //                                   int.Parse(mqttCloudPort));
 
-            MqttCloudDriver.MqttInitializeAsync(mqttCloudIpAddress,
-                                               mqttCloudLoginName,
-                                               mqttCloudPassword,
-                                               int.Parse(mqttCloudPort));
-
-            MqttCloudDriver.MqttSubscribeAsync(TOPICS.GAME_START_TOPIC);
+            //MqttCloudDriver.MqttSubscribeAsync(TOPICS.GAME_START_TOPIC);
             
             Log2.Info("StartGame: Sending - {0}", _gameJson);
 
