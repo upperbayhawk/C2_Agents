@@ -103,13 +103,12 @@ namespace Upperbay.Worker.MQTT
 
             mqttRemote.UseConnectedHandler (e =>
             {
-               Log2.Debug("Remote Connected successfully with MQTT Broker: {0}", e);
+               Log2.Debug("Remote Connected successfully with MQTT Broker.");
             });
 
             mqttRemote.UseDisconnectedHandler(e =>
             {
-                Log2.Error("Remote Disconnected from MQTT Broker: {0}", 
-                                                          e.Exception);
+                Log2.Error("Remote Disconnected from MQTT Broker.");
             });
 
             mqttRemote.UseApplicationMessageReceivedHandler(e =>

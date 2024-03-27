@@ -86,13 +86,12 @@ namespace Upperbay.Worker.MQTT
 
             mqttLocal.UseConnectedHandler (e =>
             {
-               Log2.Debug("Local Connected successfully with MQTT Broker: {0}", e);
+               Log2.Debug("Local Connected successfully with MQTT Broker.");
             });
 
             mqttLocal.UseDisconnectedHandler(e =>
             {
-                Log2.Error("Local Disconnected from MQTT Broker: {0}", 
-                                                          e.Exception);
+                Log2.Error("Local Disconnected from MQTT Broker.");
             });
 
             mqttLocal.UseApplicationMessageReceivedHandler(e =>
