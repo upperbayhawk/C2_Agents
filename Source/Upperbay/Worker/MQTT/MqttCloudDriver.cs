@@ -80,14 +80,14 @@ namespace Upperbay.Worker.MQTT
             };
 
             var options = new ManagedMqttClientOptionsBuilder()
-                .WithAutoReconnectDelay(TimeSpan.FromSeconds(30))
+                .WithAutoReconnectDelay(TimeSpan.FromSeconds(60))
                 .WithMaxPendingMessages(20)
                 .WithClientOptions(new MqttClientOptionsBuilder()
                     .WithClientId(clientId)
                     .WithCredentials(mymqttUser, mymqttPassword)
                     .WithTcpServer(mymqttURI, mymqttPort)
                     .WithTls()
-                     .WithCommunicationTimeout(TimeSpan.FromSeconds(20))
+                     .WithCommunicationTimeout(TimeSpan.FromSeconds(30))
                      //.WithAuthentication()
                      .WithKeepAlivePeriod(TimeSpan.FromSeconds(10))
                      .WithRequestProblemInformation(true)
