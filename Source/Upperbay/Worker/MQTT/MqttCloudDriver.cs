@@ -121,73 +121,77 @@ namespace Upperbay.Worker.MQTT
                     {
                         if (receivedTopic.Equals(TOPICS.GAME_START_TOPIC))
                         {
-                            string payload = Encoding.UTF8.GetString(e.ApplicationMessage.Payload);
-
-                            JsonGameEventVariable jev = new JsonGameEventVariable();
-                            GameEventVariable ev = new GameEventVariable();
-
-                            Log2.Debug("Cloud Topic: {0}, Message Received: {1}", receivedTopic, payload);
-                            ev = jev.Json2GameEventVariable(payload);
-
-                            if (ev.GridZone.Equals("ALL"))
-                            { 
-                                Log2.Trace("GAMEEVENT for GridZone {0} Queued: {1} {2}", ev.GridZone, ev.GameName, ev.GameId );
-                                GameEventVariableCache.WriteEventQueue(ev);
-                            }
-                            else if (ev.GridZone.Equals(_gamePlayerState))
+                            string adminOnly = MyAppConfig.GetParameter("AdminOnly");
+                            if (adminOnly == "false")
                             {
-                                Log2.Trace("GAMEEVENT for GridZone {0} Queued: {1} {2}", ev.GridZone, ev.GameName, ev.GameId);
-                                GameEventVariableCache.WriteEventQueue(ev);
-                            }
-                            else if (ev.GridZone.Equals(_gamePlayerCity))
-                            {
-                                Log2.Trace("GAMEEVENT for GridZone {0} Queued: {1} {2}", ev.GridZone, ev.GameName, ev.GameId);
-                                GameEventVariableCache.WriteEventQueue(ev);
-                            }
-                            else if (ev.GridZone.Equals(_gamePlayerZipcode))
-                            {
-                                Log2.Trace("GAMEEVENT for GridZone {0} Queued: {1} {2}", ev.GridZone, ev.GameName, ev.GameId);
-                                GameEventVariableCache.WriteEventQueue(ev);
-                            }
-                            else if (ev.GridZone.Equals(_gamePlayerStreet))
-                            {
-                                Log2.Trace("GAMEEVENT for GridZone {0} Queued: {1} {2}", ev.GridZone, ev.GameName, ev.GameId);
-                                GameEventVariableCache.WriteEventQueue(ev);
-                            }
-                            else if (ev.GridZone.Equals(_gamePlayerName))
-                            {
-                                Log2.Trace("GAMEEVENT for GridZone {0} Queued: {1} {2}", ev.GridZone, ev.GameName, ev.GameId);
-                                GameEventVariableCache.WriteEventQueue(ev);
-                            }
-                            else if (ev.GridZone.Equals(_gamePlayerElectricCo))
-                            {
-                                Log2.Trace("GAMEEVENT for GridZone {0} Queued: {1} {2}", ev.GridZone, ev.GameName, ev.GameId);
-                                GameEventVariableCache.WriteEventQueue(ev);
-                            }
-                            else
-                            {
-                                Log2.Trace("GAMEEVENT GridZone {0} UNKNOWN: {1} {2}", ev.GridZone, ev.GameName, ev.GameId);
-                            }
 
-                            //GameEventVariableCache.DumpQueue();
+                                string payload = Encoding.UTF8.GetString(e.ApplicationMessage.Payload);
+
+                                JsonGameEventVariable jev = new JsonGameEventVariable();
+                                GameEventVariable ev = new GameEventVariable();
+
+                                Log2.Debug("Cloud Topic: {0}, Message Received: {1}", receivedTopic, payload);
+                                ev = jev.Json2GameEventVariable(payload);
+
+                                if (ev.GridZone.Equals("ALL"))
+                                {
+                                    Log2.Trace("GAMEEVENT for GridZone {0} Queued: {1} {2}", ev.GridZone, ev.GameName, ev.GameId);
+                                    GameEventVariableCache.WriteEventQueue(ev);
+                                }
+                                else if (ev.GridZone.Equals(_gamePlayerState))
+                                {
+                                    Log2.Trace("GAMEEVENT for GridZone {0} Queued: {1} {2}", ev.GridZone, ev.GameName, ev.GameId);
+                                    GameEventVariableCache.WriteEventQueue(ev);
+                                }
+                                else if (ev.GridZone.Equals(_gamePlayerCity))
+                                {
+                                    Log2.Trace("GAMEEVENT for GridZone {0} Queued: {1} {2}", ev.GridZone, ev.GameName, ev.GameId);
+                                    GameEventVariableCache.WriteEventQueue(ev);
+                                }
+                                else if (ev.GridZone.Equals(_gamePlayerZipcode))
+                                {
+                                    Log2.Trace("GAMEEVENT for GridZone {0} Queued: {1} {2}", ev.GridZone, ev.GameName, ev.GameId);
+                                    GameEventVariableCache.WriteEventQueue(ev);
+                                }
+                                else if (ev.GridZone.Equals(_gamePlayerStreet))
+                                {
+                                    Log2.Trace("GAMEEVENT for GridZone {0} Queued: {1} {2}", ev.GridZone, ev.GameName, ev.GameId);
+                                    GameEventVariableCache.WriteEventQueue(ev);
+                                }
+                                else if (ev.GridZone.Equals(_gamePlayerName))
+                                {
+                                    Log2.Trace("GAMEEVENT for GridZone {0} Queued: {1} {2}", ev.GridZone, ev.GameName, ev.GameId);
+                                    GameEventVariableCache.WriteEventQueue(ev);
+                                }
+                                else if (ev.GridZone.Equals(_gamePlayerElectricCo))
+                                {
+                                    Log2.Trace("GAMEEVENT for GridZone {0} Queued: {1} {2}", ev.GridZone, ev.GameName, ev.GameId);
+                                    GameEventVariableCache.WriteEventQueue(ev);
+                                }
+                                else
+                                {
+                                    Log2.Trace("GAMEEVENT GridZone {0} UNKNOWN: {1} {2}", ev.GridZone, ev.GameName, ev.GameId);
+                                }
+
+                                //GameEventVariableCache.DumpQueue();
 
 
-                            //JsonDataVariable jdv = new JsonDataVariable();
-                            //DataVariable dv = new DataVariable();
-                            //string payload = Encoding.UTF8.GetString(e.ApplicationMessage.Payload);
-                            //Log2.Trace("Remote Topic: {0}. Message Received: {1}", receivedTopic, payload);
-                            ////TODO: Send Data to TankFarm!!!!
-                            ////DataHasher hasher = new DataHasher();
-                            ////int hashCode = hasher.HashDataJson(payload);
-                            //Int32 hash = payload.GetHashCode();
-                            //Log2.Trace("Remote Payload Hash {0}", hash.ToString());
-                            //dv = jdv.Json2DataVariable(payload);
-                            //DataVariableCache.PutObject(dv.ExternalName, dv, (int)hash);
-                            //Log2.Trace("Remote DV Updated {0} {1}", dv.ExternalName, hash);
-                            //Log2.Trace("Remote Now Dumping");
+                                //JsonDataVariable jdv = new JsonDataVariable();
+                                //DataVariable dv = new DataVariable();
+                                //string payload = Encoding.UTF8.GetString(e.ApplicationMessage.Payload);
+                                //Log2.Trace("Remote Topic: {0}. Message Received: {1}", receivedTopic, payload);
+                                ////TODO: Send Data to TankFarm!!!!
+                                ////DataHasher hasher = new DataHasher();
+                                ////int hashCode = hasher.HashDataJson(payload);
+                                //Int32 hash = payload.GetHashCode();
+                                //Log2.Trace("Remote Payload Hash {0}", hash.ToString());
+                                //dv = jdv.Json2DataVariable(payload);
+                                //DataVariableCache.PutObject(dv.ExternalName, dv, (int)hash);
+                                //Log2.Trace("Remote DV Updated {0} {1}", dv.ExternalName, hash);
+                                //Log2.Trace("Remote Now Dumping");
 
-                            //DataVariableCache.DumpCache();
-
+                                //DataVariableCache.DumpCache();
+                            }
                         }
                         else
                         {
