@@ -17,6 +17,7 @@ using System.Threading;
 using Upperbay.Core.Logging;
 using Upperbay.Core.Library;
 using Upperbay.Worker.LMP;
+using Upperbay.Worker.NWS;
 using System.Net.NetworkInformation;
 using Newtonsoft.Json.Linq;
 using System.Security.Claims;
@@ -378,6 +379,13 @@ namespace ChatterBoxGPT
 
                             //TimeSeriesDataAnalyzer.Run(".\\data\\PJMDayAheadHourlyLMP.csv");
                             //LinearRegression.Run(".\\data\\PJMDayAheadHourlyLMP.csv");
+
+                            string LAT = "39.7810";
+                            string LON = "-75.1571";
+                            NWSWeatherForecast weatherForecast = new NWSWeatherForecast();
+                            string weather = weatherForecast.GetWeatherForecastInJson(LAT,LON);
+                            Console.WriteLine("Weather: " + weather);
+                            weatherForecast.WriteWeatherForecastToCsv(weather,".\\data\\NWSWeather.csv");
 
                             Console.WriteLine("Letting GPT analyze the Grid Data");
 

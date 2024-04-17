@@ -161,6 +161,10 @@
       <Project>{ed99da88-8988-4c68-bfd2-ca8744e41fe9}</Project>
       <Name>LMP</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Source\Upperbay\Worker\NWS\NWS.csproj">
+      <Project>{fee8163e-504c-414d-8f9c-ea70981d5d71}</Project>
+      <Name>NWS</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.2">
