@@ -395,4 +395,3 @@ FodyWeavers.xsd
 /bin/Upperbay.Worker.Hasher.dll
 /bin/Upperbay.Worker.ODBC.dll
 /bin/Upperbay.Worker.ThingSpeak.dll
-/Source/Upperbay/Worker/NWS/NWSWeatherForecast.cs
