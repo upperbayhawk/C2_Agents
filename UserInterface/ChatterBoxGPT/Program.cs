@@ -344,7 +344,17 @@ namespace ChatterBoxGPT
 
                     //PJMLoadAndLmp
 
+                    // DOM = 34964545
+                    // PJM = 1
+
                     PJMLoadForecastSevenDay pJMLoadForecastSevenDay = new PJMLoadForecastSevenDay();
+                    string jsonLoadDOM = pJMLoadForecastSevenDay.GetJson("DOMINION", 200);
+                    if (jsonLoadDOM != null)
+                    {
+                        pJMLoadForecastSevenDay.WriteJsonToFile(jsonLoadDOM, ".\\data\\PJMLoadForeCastSevenDayDOM.json");
+                        pJMLoadForecastSevenDay.WriteJsonToCsv(jsonLoadDOM, ".\\data\\PJMLoadForecastSevenDayDOM.csv");
+                    }
+
                     string jsonLoad = pJMLoadForecastSevenDay.GetJson("RTO_COMBINED", 200);
                     if (jsonLoad != null)
                     {
