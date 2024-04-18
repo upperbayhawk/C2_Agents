@@ -375,7 +375,8 @@ namespace ChatterBoxGPT
 
                             //TimeSeriesDataAnalyzer.Run(".\\data\\PJMDayAheadHourlyLMP.csv");
                             //LinearRegression.Run(".\\data\\PJMDayAheadHourlyLMP.csv");
-
+                            
+                            //Coords for Lewes, DE
                             string LAT = "39.7810";
                             string LON = "-75.1571";
                             NWSWeatherForecast weatherForecast = new NWSWeatherForecast();
