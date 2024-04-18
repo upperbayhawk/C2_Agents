@@ -355,6 +355,13 @@ namespace ChatterBoxGPT
                         pJMLoadForecastSevenDay.WriteJsonToCsv(jsonLoadDOM, ".\\data\\PJMLoadForecastSevenDayDOM.csv");
                     }
 
+                    string jsonLoadDPL_ODEC = pJMLoadForecastSevenDay.GetJson("DPL_ODEC", 200);
+                    if (jsonLoadDPL_ODEC != null)
+                    {
+                        pJMLoadForecastSevenDay.WriteJsonToFile(jsonLoadDPL_ODEC, ".\\data\\PJMLoadForeCastSevenDayDPL_ODEC.json");
+                        pJMLoadForecastSevenDay.WriteJsonToCsv(jsonLoadDPL_ODEC, ".\\data\\PJMLoadForecastSevenDayDPL_ODEC.csv");
+                    }
+
                     string jsonLoad = pJMLoadForecastSevenDay.GetJson("RTO_COMBINED", 200);
                     if (jsonLoad != null)
                     {
