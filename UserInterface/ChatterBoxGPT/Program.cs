@@ -353,8 +353,8 @@ namespace ChatterBoxGPT
                         Console.WriteLine("First value: " + dfirstVal.ToString());
                         double dlastVal = pJMLoadForecastSevenDay.GetLastValue(jsonLoad);
                         Console.WriteLine("Last value: " + dlastVal.ToString());
-                        //pJMLoadForecastSevenDay.WriteJsonToCsv(json, ".\\data\\GptPromptDataCSV.txt");
-                        pJMLoadForecastSevenDay.WriteCurrentDayLoadJsonToCsv(jsonLoad, ".\\data\\PJMLoadForecastSevenDay.csv");
+                        pJMLoadForecastSevenDay.WriteJsonToCsv(jsonLoad, ".\\data\\PJMLoadForecastSevenDay.csv");
+                        pJMLoadForecastSevenDay.WriteCurrentDayLoadJsonToCsv(jsonLoad, ".\\data\\PJMLoadForecastToday.csv");
 
                         //PJMDayAheadHourlyLMP
 
@@ -368,7 +368,7 @@ namespace ChatterBoxGPT
                             pJMDayAheadHourlyLMP.WriteCurrentDayAheadHourlyLMPToCsv(jsonLMP, ".\\data\\PJMDayAheadHourlyLMP.csv");
 
                             CsvMergePJMLoadLmp csvMerge = new CsvMergePJMLoadLmp();
-                            csvMerge.MergeFiles(".\\data\\PJMLoadForecastSevenDay.csv",
+                            csvMerge.MergeFiles(".\\data\\PJMLoadForecastToday.csv",
                                                 ".\\data\\PJMDayAheadHourlyLMP.csv",
                                                 ".\\data\\PJMLoadAndLMP.csv");
 
@@ -388,10 +388,10 @@ namespace ChatterBoxGPT
                             CsvMergePJMwNWS csvMergePJMwNWS = new CsvMergePJMwNWS();
                             csvMergePJMwNWS.MergeFiles(".\\data\\PJMLoadAndLmp.csv",
                                                 ".\\data\\NWSWeatherToday.csv",
-                                                ".\\data\\FullPayload.csv");
+                                                ".\\data\\GridWeatherPayload.csv");
 
                             string promptText = File.ReadAllText(".\\prompts\\PromptPJMLoadAndLMP.Txt");
-                            string promptData = File.ReadAllText(".\\data\\FullPayload.csv");
+                            string promptData = File.ReadAllText(".\\data\\GridWeatherPayload.csv");
                             string prompt = promptText + " " + promptData;
                             Log2.Info(prompt);
 
