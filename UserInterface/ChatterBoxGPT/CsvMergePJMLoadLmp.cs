@@ -27,18 +27,18 @@ namespace ChatterBoxGPT
     {
         public DataRecordMap()
         {
-            Map(m => m.Time).Name("time");
-            Map(m => m.Data1).Name("load");
-            Map(m => m.Data2).Name("price");
+            Map(m => m.Time).Name("Time");
+            Map(m => m.Data1).Name("Load");
+            Map(m => m.Data2).Name("Price");
         }
     }
 
     /// <summary>
     /// 
     /// </summary>
-    public class CsvMerge
+    public class CsvMergePJMLoadLmp
     {
-        public CsvMerge()
+        public CsvMergePJMLoadLmp()
         {
         }
 

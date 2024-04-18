@@ -136,7 +136,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChatGptService.cs" />
-    <Compile Include="CsvMerge.cs" />
+    <Compile Include="CsvMergePJMwNWS.cs" />
+    <Compile Include="CsvMergePJMLoadLmp.cs" />
     <Compile Include="FIFOQueue.cs" />
     <Compile Include="MQTTPipe.cs" />
     <Compile Include="LinearRegression.cs" />

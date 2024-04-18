@@ -24,6 +24,7 @@ using Upperbay.Core.Library;
 using System.Net;
 using Newtonsoft.Json.Linq;
 using System.Reflection;
+using System.Globalization;
 
 
 namespace Upperbay.Worker.NWS
@@ -194,7 +195,7 @@ namespace Upperbay.Worker.NWS
                 // Iterate through each employee in the array
                 foreach (JObject period in periods)
                 {
-                    string startTime = (string)period["starttime"];
+                    string startTime = (string)period["startTime"];
                     string temperature = (string)period["temperature"];
                     string temperatureUnit = (string)period["temperatureUnit"];
                     string shortForecast = (string)period["shortForecast"];
@@ -205,7 +206,7 @@ namespace Upperbay.Worker.NWS
 
                 using (TextWriter writer1 = File.CreateText((filename)))
                 {
-                    writer1.WriteLine("time,temp,forecast");
+                    writer1.WriteLine("Time,Temp,Forecast");
                     foreach (JObject period in periods)
                     {
                         string startTime = (string)period["startTime"];
@@ -224,6 +225,73 @@ namespace Upperbay.Worker.NWS
             return true;
         }
 
+        public bool WriteTodaysWeatherForecastToCsv(string jsonString, string filename)
+        {
+            try
+            {
+
+                string archiveDirectory = "C:\\LMP_ARCHIVE";
+                string archivePath = "C:\\LMP_ARCHIVE\\NWSWeather.csv";
+
+
+
+                if (!Directory.Exists(archiveDirectory))
+                {
+                    Directory.CreateDirectory(archiveDirectory);
+                    Log2.Info("Directory created successfully: " + archiveDirectory);
+                }
+
+                if (!File.Exists(archivePath))
+                    File.Create(archivePath).Close();
+
+                JObject json = JObject.Parse(jsonString);
+
+                // Access the 'employees' array
+                JArray periods = (JArray)json["properties"]["periods"];
+
+                // Iterate through each employee in the array
+                foreach (JObject period in periods)
+                {
+                    string startTime = (string)period["startTime"];
+                    string temperature = (string)period["temperature"];
+                    string temperatureUnit = (string)period["temperatureUnit"];
+                    string shortForecast = (string)period["shortForecast"];
+                    Log2.Debug($"Time: {startTime}, Temp: {temperature}, Forecast: {shortForecast}");
+                }
+
+                DateTime myDateTime = DateTime.Now;
+
+                using (TextWriter writer1 = File.CreateText((filename)))
+                {
+                    writer1.WriteLine("Time,Temp,Forecast");
+                    foreach (JObject period in periods)
+                    {
+                        string startTime = (string)period["startTime"];
+                        DateTime parsedDateTime;
+                        bool isValidDate = DateTime.TryParse(startTime, CultureInfo.InvariantCulture, DateTimeStyles.None, out parsedDateTime);
+                        if (isValidDate)
+                        {
+                            // Compare parsed date with today's date
+                            if (parsedDateTime.Date == DateTime.Today)
+                            {
+                                //Console.WriteLine("The date is today.");
+
+                                string temperature = (string)period["temperature"];
+                                string temperatureUnit = (string)period["temperatureUnit"];
+                                string shortForecast = (string)period["shortForecast"];
+                                writer1.WriteLine("\"" + startTime + "\",\"" + temperature + "\",\"" + shortForecast + "\"");
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Log2.Error("WriteCsvToFile ERROR: {0}", ex.ToString());
+                return false;
+            }
+            return true;
+        }
 
 
 

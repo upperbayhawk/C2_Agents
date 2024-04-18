@@ -304,7 +304,7 @@ namespace Upperbay.Worker.LMP
 
                     using (TextWriter writer1 = File.CreateText((filename)))
                     {
-                        writer1.WriteLine("time,load");
+                        writer1.WriteLine("Time,Load");
                         for (int i = 0; i < numOfRows; i++)
                         {
                             string time1 = myRootObject.items[i].forecast_datetime_beginning_ept.ToString();
@@ -366,7 +366,7 @@ namespace Upperbay.Worker.LMP
 
                     using (TextWriter writer1 = File.CreateText((filename)))
                     {
-                        writer1.WriteLine("time,load");
+                        writer1.WriteLine("Time,Load");
                         for (int i = 0; i < numOfRows; i++)
                         {
                             DateTime pjmDateTime = myRootObject.items[i].forecast_datetime_beginning_ept;

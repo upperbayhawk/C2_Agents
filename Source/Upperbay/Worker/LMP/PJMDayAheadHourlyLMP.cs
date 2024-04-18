@@ -303,7 +303,7 @@ namespace Upperbay.Worker.LMP
 
                     using (TextWriter writer1 = File.CreateText((filename)))
                     {
-                        writer1.WriteLine("time,price");
+                        writer1.WriteLine("Time,Price");
                         for (int i = 0; i < numOfRows; i++)
                         {
                             DateTime pjmDateTime = myRootObject.items[i].datetime_beginning_ept;

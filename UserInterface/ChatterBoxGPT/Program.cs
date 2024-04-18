@@ -367,15 +367,11 @@ namespace ChatterBoxGPT
                             Console.WriteLine("First value: " + dFirstVal.ToString());
                             pJMDayAheadHourlyLMP.WriteCurrentDayAheadHourlyLMPToCsv(jsonLMP, ".\\data\\PJMDayAheadHourlyLMP.csv");
 
-                            CsvMerge csvMerge = new CsvMerge();
+                            CsvMergePJMLoadLmp csvMerge = new CsvMergePJMLoadLmp();
                             csvMerge.MergeFiles(".\\data\\PJMLoadForecastSevenDay.csv",
                                                 ".\\data\\PJMDayAheadHourlyLMP.csv",
                                                 ".\\data\\PJMLoadAndLMP.csv");
 
-                            string promptText = File.ReadAllText(".\\prompts\\PromptPJMLoadAndLMP.Txt");
-                            string promptData = File.ReadAllText(".\\data\\PJMLoadAndLMP.csv");
-                            string prompt = promptText + " " + promptData;
-                            Log2.Info(prompt);
 
                             //TimeSeriesDataAnalyzer.Run(".\\data\\PJMDayAheadHourlyLMP.csv");
                             //LinearRegression.Run(".\\data\\PJMDayAheadHourlyLMP.csv");
@@ -385,7 +381,18 @@ namespace ChatterBoxGPT
                             NWSWeatherForecast weatherForecast = new NWSWeatherForecast();
                             string weather = weatherForecast.GetWeatherForecastInJson(LAT,LON);
                             Console.WriteLine("Weather: " + weather);
-                            weatherForecast.WriteWeatherForecastToCsv(weather,".\\data\\NWSWeather.csv");
+                            weatherForecast.WriteTodaysWeatherForecastToCsv(weather,".\\data\\NWSWeatherToday.csv");
+                            weatherForecast.WriteWeatherForecastToCsv(weather, ".\\data\\NWSWeatherSevenDay.csv");
+
+                            CsvMergePJMwNWS csvMergePJMwNWS = new CsvMergePJMwNWS();
+                            csvMergePJMwNWS.MergeFiles(".\\data\\PJMLoadAndLmp.csv",
+                                                ".\\data\\NWSWeatherToday.csv",
+                                                ".\\data\\FullPayload.csv");
+
+                            string promptText = File.ReadAllText(".\\prompts\\PromptPJMLoadAndLMP.Txt");
+                            string promptData = File.ReadAllText(".\\data\\FullPayload.csv");
+                            string prompt = promptText + " " + promptData;
+                            Log2.Info(prompt);
 
                             Console.WriteLine("Letting GPT analyze the Grid Data");
 
