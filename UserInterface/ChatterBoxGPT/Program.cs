@@ -206,7 +206,8 @@ namespace ChatterBoxGPT
                     // DOM = 34964545
                     // PJM = 1
                     // pricing node, 93154, DPL_ODEC
-
+                    // GridPayloadCSV Header Format
+                    // Time, PJMLoad, PJMLmp, LocalLoad, LocalLmp, LocalTemp, LocalForecast, 
 
                     PJMLoadForecastSevenDay pJMLoadForecastSevenDay = new PJMLoadForecastSevenDay();
                     string jsonLoadDOM = pJMLoadForecastSevenDay.GetJson("DOMINION", 200);
