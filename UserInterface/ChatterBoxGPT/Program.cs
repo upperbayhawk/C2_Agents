@@ -127,15 +127,15 @@ namespace ChatterBoxGPT
                        
             // Console.Clear();
             Console.WriteLine("Select PJM dataset to be fed to GPT");
-            Console.WriteLine("1. PJMLoadForecastSevenDay");
-            Console.WriteLine("2. PJMDayAheadHourlyLmp");
-            Console.WriteLine("3. PJMFiveMinLoadForecast");
-            Console.WriteLine("4. PJMUnverifiedFiveMinLmp");
-            Console.WriteLine("5. PJMHourLoadMetered");
-            Console.WriteLine("6. PJMHourLoadPrelim");
-            Console.WriteLine("7. PJMInstLoad");
-            Console.WriteLine("8. PJMOperationsSummary");
-            Console.WriteLine("9. PJMLoadAndLmp");
+            Console.WriteLine("1. PJMLoad_Lmp_Temp");
+            Console.WriteLine("2. PJMLoadForecastSevenDay");
+            Console.WriteLine("3. PJMDayAheadHourlyLmp");
+            Console.WriteLine("4. PJMFiveMinLoadForecast");
+            Console.WriteLine("5. PJMUnverifiedFiveMinLmp");
+            Console.WriteLine("6. PJMHourLoadMetered");
+            Console.WriteLine("7. PJMHourLoadPrelim");
+            Console.WriteLine("8. PJMInstLoad");
+            Console.WriteLine("9. PJMOperationsSummary");
             Console.WriteLine("10. Exit");
 
             Console.Write("Enter your choice (1-10): ");
@@ -146,40 +146,41 @@ namespace ChatterBoxGPT
             {
                 case "1":
                     // Code for Option 3
-                    Console.WriteLine("PJMLoadForecastSevenDay selected.");
+                    Console.WriteLine("PJMLoad_Lmp_Temp selected.");
                     break;
                 case "2":
-                    // Code for Option 1
-                    Console.WriteLine("PJMDayAheadHourlyLMP selected.");
+                    // Code for Option 3
+                    Console.WriteLine("PJMLoadForecastSevenDay selected.");
                     break;
                 case "3":
                     // Code for Option 1
-                    Console.WriteLine("PJMFiveMinLoadForecast selected.");
+                    Console.WriteLine("PJMDayAheadHourlyLMP selected.");
                     break;
                 case "4":
-                    // Code for Option 3
-                    Console.WriteLine("PJMUnverifiedFiveMinLmp selected.");
+                    // Code for Option 1
+                    Console.WriteLine("PJMFiveMinLoadForecast selected.");
                     break;
                 case "5":
                     // Code for Option 3
-                    Console.WriteLine("PJMHourLoadMetered selected.");
+                    Console.WriteLine("PJMUnverifiedFiveMinLmp selected.");
                     break;
                 case "6":
                     // Code for Option 3
-                    Console.WriteLine("PJMHourLoadPrelim selected.");
+                    Console.WriteLine("PJMHourLoadMetered selected.");
                     break;
                 case "7":
                     // Code for Option 3
-                    Console.WriteLine("PJMInstLoad selected.");
+                    Console.WriteLine("PJMHourLoadPrelim selected.");
                     break;
                 case "8":
                     // Code for Option 3
-                    Console.WriteLine("PJMOperationsSummary selected.");
+                    Console.WriteLine("PJMInstLoad selected.");
                     break;
                 case "9":
                     // Code for Option 3
-                    Console.WriteLine("PJMLoadAndLmp selected.");
+                    Console.WriteLine("PJMOperationsSummary selected.");
                     break;
+               
                 case "10":
                     exit = true;
                     break;
@@ -197,8 +198,113 @@ namespace ChatterBoxGPT
 
                 Console.WriteLine("Getting Grid Data");
 
-
                 if (userInput == "1")
+                {
+
+                    //PJMLoadAndLmp
+
+                    // DOM = 34964545
+                    // PJM = 1
+                    // pricing node, 93154, DPL_ODEC
+
+
+                    PJMLoadForecastSevenDay pJMLoadForecastSevenDay = new PJMLoadForecastSevenDay();
+                    string jsonLoadDOM = pJMLoadForecastSevenDay.GetJson("DOMINION", 200);
+                    if (jsonLoadDOM != null)
+                    {
+                        pJMLoadForecastSevenDay.WriteJsonToFile(jsonLoadDOM, ".\\data\\PJMLoadForeCastSevenDayDOM.json");
+                        pJMLoadForecastSevenDay.WriteJsonToCsv(jsonLoadDOM, ".\\data\\PJMLoadForecastSevenDayDOM.csv");
+                    }
+
+                    string jsonLoadDPL_ODEC = pJMLoadForecastSevenDay.GetJson("DPL_ODEC", 200);
+                    if (jsonLoadDPL_ODEC != null)
+                    {
+                        pJMLoadForecastSevenDay.WriteJsonToFile(jsonLoadDPL_ODEC, ".\\data\\PJMLoadForeCastSevenDayDPL_ODEC.json");
+                        pJMLoadForecastSevenDay.WriteJsonToCsv(jsonLoadDPL_ODEC, ".\\data\\PJMLoadForecastSevenDayDPL_ODEC.csv");
+                    }
+
+                    string jsonLoadDPL_MIDATL = pJMLoadForecastSevenDay.GetJson("DP&L/MIDATL", 200);
+                    if (jsonLoadDPL_MIDATL != null)
+                    {
+                        pJMLoadForecastSevenDay.WriteJsonToFile(jsonLoadDPL_MIDATL, ".\\data\\PJMLoadForeCastSevenDayDPL_MIDATL.json");
+                        pJMLoadForecastSevenDay.WriteJsonToCsv(jsonLoadDPL_MIDATL, ".\\data\\PJMLoadForecastSevenDayDPL_MIDATL.csv");
+                    }
+
+                    PJMDayAheadHourlyLMP pJMDayAheadHourlyLMP = new PJMDayAheadHourlyLMP();
+                    string jsonLMPODEC = pJMDayAheadHourlyLMP.GetJson("93154", 24);
+                    if (jsonLMPODEC != null)
+                    {
+                        pJMDayAheadHourlyLMP.WriteJsonToFile(jsonLMPODEC, ".\\data\\PJMDayAheadHourlyLMPODEC.json");
+                        pJMDayAheadHourlyLMP.WriteCurrentDayAheadHourlyLMPToCsv(jsonLMPODEC, ".\\data\\PJMDayAheadHourlyLMPODEC.csv");
+                    }
+
+                    string jsonLoad = pJMLoadForecastSevenDay.GetJson("RTO_COMBINED", 200);
+                    if (jsonLoad != null)
+                    {
+                        pJMLoadForecastSevenDay.WriteJsonToFile(jsonLoad, ".\\data\\PJMLoadForeCastSevenDay.json");
+                        double dfirstVal = pJMLoadForecastSevenDay.GetFirstValue(jsonLoad);
+                        Console.WriteLine("First value: " + dfirstVal.ToString());
+                        double dlastVal = pJMLoadForecastSevenDay.GetLastValue(jsonLoad);
+                        Console.WriteLine("Last value: " + dlastVal.ToString());
+                        pJMLoadForecastSevenDay.WriteJsonToCsv(jsonLoad, ".\\data\\PJMLoadForecastSevenDay.csv");
+                        pJMLoadForecastSevenDay.WriteCurrentDayLoadJsonToCsv(jsonLoad, ".\\data\\PJMLoadForecastToday.csv");
+
+                        //PJMDayAheadHourlyLMP
+
+                        //PJMDayAheadHourlyLMP pJMDayAheadHourlyLMP = new PJMDayAheadHourlyLMP();
+                        string jsonLMP = pJMDayAheadHourlyLMP.GetJson("1", 24);
+                        if (jsonLMP != null)
+                        {
+                            pJMDayAheadHourlyLMP.WriteJsonToFile(jsonLMP, ".\\data\\PJMDayAheadHourlyLMP.json");
+                            double dFirstVal = pJMDayAheadHourlyLMP.GetFirstValue(jsonLMP);
+                            Console.WriteLine("First value: " + dFirstVal.ToString());
+                            pJMDayAheadHourlyLMP.WriteCurrentDayAheadHourlyLMPToCsv(jsonLMP, ".\\data\\PJMDayAheadHourlyLMP.csv");
+
+                            CsvMergePJMLoadLmp csvMerge = new CsvMergePJMLoadLmp();
+                            csvMerge.MergeFiles(".\\data\\PJMLoadForecastToday.csv",
+                                                ".\\data\\PJMDayAheadHourlyLMP.csv",
+                                                ".\\data\\PJMLoadAndLMP.csv");
+
+
+                            //TimeSeriesDataAnalyzer.Run(".\\data\\PJMDayAheadHourlyLMP.csv");
+                            //LinearRegression.Run(".\\data\\PJMDayAheadHourlyLMP.csv");
+
+                            //Coords for Lewes, DE
+                            string LAT = "39.7810";
+                            string LON = "-75.1571";
+                            NWSWeatherForecast weatherForecast = new NWSWeatherForecast();
+                            string weather = weatherForecast.GetWeatherForecastInJson(LAT, LON);
+                            Console.WriteLine("Weather: " + weather);
+                            weatherForecast.WriteTodaysWeatherForecastToCsv(weather, ".\\data\\NWSWeatherToday.csv");
+                            weatherForecast.WriteWeatherForecastToCsv(weather, ".\\data\\NWSWeatherSevenDay.csv");
+
+                            CsvMergePJMwNWS csvMergePJMwNWS = new CsvMergePJMwNWS();
+                            csvMergePJMwNWS.MergeFiles(".\\data\\PJMLoadAndLmp.csv",
+                                                ".\\data\\NWSWeatherToday.csv",
+                                                ".\\data\\GridWeatherPayload.csv");
+
+                            string promptText = File.ReadAllText(".\\prompts\\PromptPJMLoadAndLMP.Txt");
+                            string promptData = File.ReadAllText(".\\data\\GridWeatherPayload.csv");
+                            string prompt = promptText + " " + promptData;
+                            Log2.Info(prompt);
+
+                            Console.WriteLine("Letting GPT analyze the Grid Data");
+
+                            DateTime startGPTDateTime = DateTime.Now;
+                            string customFormat = startGPTDateTime.ToString("yyyy-MM-dd HH:mm:ss");
+
+                            Log2.Info("To Brain: " + customFormat + ": " + prompt);
+                            Console.WriteLine("To Brain: " + customFormat + ": " + prompt);
+                            Console.WriteLine("WAITING...");
+                            MQTTPipe.PublishMessage(prompt);
+                            string response = MQTTPipe.ReadMessage();
+                            Log2.Info("From Brain: " + customFormat + ": " + response);
+                            Console.WriteLine("From Brain: " + customFormat + ": " + response);
+                        }
+                    }
+                }
+
+                if (userInput == "2")
                 {
                     //PJMLoadForecastSevenDay
 
@@ -237,7 +343,7 @@ namespace ChatterBoxGPT
                     }
                 }
 
-                if (userInput == "2")
+                if (userInput == "3")
                 {
                     //PJMDayAheadHourlyLMP
 
@@ -274,7 +380,7 @@ namespace ChatterBoxGPT
                 }
 
 
-                if (userInput == "3")
+                if (userInput == "4")
                 {
                     PJMFiveMinLoadForecast pJMFiveMinLoadForecast = new PJMFiveMinLoadForecast();
                     string json = pJMFiveMinLoadForecast.GetJson("MID_ATLANTIC_REGION", 100);
@@ -284,7 +390,7 @@ namespace ChatterBoxGPT
                     //pJMFiveMinLoadForecast.WriteCsvToFile(json, ".\\data\\PJMFiveMinLoadForcast.csv");
                 }
 
-                if (userInput == "4")
+                if (userInput == "5")
                 {
 
                     PJMUnverifiedFiveMinLmp pJMUnverifiedFiveMinLmp = new PJMUnverifiedFiveMinLmp();
@@ -295,7 +401,7 @@ namespace ChatterBoxGPT
                     //pJMUnverifiedFiveMinLmp.WriteCsvToFile(json, ".\\data\\PJMUnverifiesFiveMinLmp.csv");
                 }
 
-                if (userInput == "5")
+                if (userInput == "6")
                 {
 
                     PJMHourLoadMetered pJMHourLoadMetered = new PJMHourLoadMetered();
@@ -306,7 +412,7 @@ namespace ChatterBoxGPT
                     //pJMHourLoadMetered.WriteCsvToFile(json, ".\\data\\PJMHourLoadMetered.csv");
                 }
 
-                if (userInput == "6")
+                if (userInput == "7")
                 {
 
                     PJMHourLoadPrelim pJMHourLoadPrelim = new PJMHourLoadPrelim();
@@ -317,7 +423,7 @@ namespace ChatterBoxGPT
                     //pJMHourLoadPrelim.WriteCsvToFile(json, ".\\data\\PJMHourLoadPrelim.csv");
                 }
 
-                if (userInput == "7")
+                if (userInput == "8")
                 {
 
                     PJMInstLoad pJMInstLoad = new PJMInstLoad();
@@ -328,7 +434,7 @@ namespace ChatterBoxGPT
                     //pJMInstLoad.WriteCsvToFile(json, ".\\data\\PJMInstLoad.csv");
                 }
 
-                if (userInput == "8")
+                if (userInput == "9")
                 {
 
                     PJMOperationsSummary pJMOperationsSummary = new PJMOperationsSummary();
@@ -339,94 +445,7 @@ namespace ChatterBoxGPT
                     //pJMOperationsSummary.WriteCsvToFile(json, ".\\data\\PJMOperationsSummary.csv");
                 }
 
-                if (userInput == "9")
-                {
-
-                    //PJMLoadAndLmp
-
-                    // DOM = 34964545
-                    // PJM = 1
-
-                    PJMLoadForecastSevenDay pJMLoadForecastSevenDay = new PJMLoadForecastSevenDay();
-                    string jsonLoadDOM = pJMLoadForecastSevenDay.GetJson("DOMINION", 200);
-                    if (jsonLoadDOM != null)
-                    {
-                        pJMLoadForecastSevenDay.WriteJsonToFile(jsonLoadDOM, ".\\data\\PJMLoadForeCastSevenDayDOM.json");
-                        pJMLoadForecastSevenDay.WriteJsonToCsv(jsonLoadDOM, ".\\data\\PJMLoadForecastSevenDayDOM.csv");
-                    }
-
-                    string jsonLoadDPL_ODEC = pJMLoadForecastSevenDay.GetJson("DPL_ODEC", 200);
-                    if (jsonLoadDPL_ODEC != null)
-                    {
-                        pJMLoadForecastSevenDay.WriteJsonToFile(jsonLoadDPL_ODEC, ".\\data\\PJMLoadForeCastSevenDayDPL_ODEC.json");
-                        pJMLoadForecastSevenDay.WriteJsonToCsv(jsonLoadDPL_ODEC, ".\\data\\PJMLoadForecastSevenDayDPL_ODEC.csv");
-                    }
-
-                    string jsonLoad = pJMLoadForecastSevenDay.GetJson("RTO_COMBINED", 200);
-                    if (jsonLoad != null)
-                    {
-                        pJMLoadForecastSevenDay.WriteJsonToFile(jsonLoad, ".\\data\\PJMLoadForeCastSevenDay.json");
-                        double dfirstVal = pJMLoadForecastSevenDay.GetFirstValue(jsonLoad);
-                        Console.WriteLine("First value: " + dfirstVal.ToString());
-                        double dlastVal = pJMLoadForecastSevenDay.GetLastValue(jsonLoad);
-                        Console.WriteLine("Last value: " + dlastVal.ToString());
-                        pJMLoadForecastSevenDay.WriteJsonToCsv(jsonLoad, ".\\data\\PJMLoadForecastSevenDay.csv");
-                        pJMLoadForecastSevenDay.WriteCurrentDayLoadJsonToCsv(jsonLoad, ".\\data\\PJMLoadForecastToday.csv");
-
-                        //PJMDayAheadHourlyLMP
-
-                        PJMDayAheadHourlyLMP pJMDayAheadHourlyLMP = new PJMDayAheadHourlyLMP();
-                        string jsonLMP = pJMDayAheadHourlyLMP.GetJson("1", 24);
-                        if (jsonLMP != null)
-                        {
-                            pJMDayAheadHourlyLMP.WriteJsonToFile(jsonLMP, ".\\data\\PJMDayAheadHourlyLMP.json");
-                            double dFirstVal = pJMDayAheadHourlyLMP.GetFirstValue(jsonLMP);
-                            Console.WriteLine("First value: " + dFirstVal.ToString());
-                            pJMDayAheadHourlyLMP.WriteCurrentDayAheadHourlyLMPToCsv(jsonLMP, ".\\data\\PJMDayAheadHourlyLMP.csv");
-
-                            CsvMergePJMLoadLmp csvMerge = new CsvMergePJMLoadLmp();
-                            csvMerge.MergeFiles(".\\data\\PJMLoadForecastToday.csv",
-                                                ".\\data\\PJMDayAheadHourlyLMP.csv",
-                                                ".\\data\\PJMLoadAndLMP.csv");
-
-
-                            //TimeSeriesDataAnalyzer.Run(".\\data\\PJMDayAheadHourlyLMP.csv");
-                            //LinearRegression.Run(".\\data\\PJMDayAheadHourlyLMP.csv");
-                            
-                            //Coords for Lewes, DE
-                            string LAT = "39.7810";
-                            string LON = "-75.1571";
-                            NWSWeatherForecast weatherForecast = new NWSWeatherForecast();
-                            string weather = weatherForecast.GetWeatherForecastInJson(LAT,LON);
-                            Console.WriteLine("Weather: " + weather);
-                            weatherForecast.WriteTodaysWeatherForecastToCsv(weather,".\\data\\NWSWeatherToday.csv");
-                            weatherForecast.WriteWeatherForecastToCsv(weather, ".\\data\\NWSWeatherSevenDay.csv");
-
-                            CsvMergePJMwNWS csvMergePJMwNWS = new CsvMergePJMwNWS();
-                            csvMergePJMwNWS.MergeFiles(".\\data\\PJMLoadAndLmp.csv",
-                                                ".\\data\\NWSWeatherToday.csv",
-                                                ".\\data\\GridWeatherPayload.csv");
-
-                            string promptText = File.ReadAllText(".\\prompts\\PromptPJMLoadAndLMP.Txt");
-                            string promptData = File.ReadAllText(".\\data\\GridWeatherPayload.csv");
-                            string prompt = promptText + " " + promptData;
-                            Log2.Info(prompt);
-
-                            Console.WriteLine("Letting GPT analyze the Grid Data");
-
-                            DateTime startGPTDateTime = DateTime.Now;
-                            string customFormat = startGPTDateTime.ToString("yyyy-MM-dd HH:mm:ss");
-
-                            Log2.Info("To Brain: " + customFormat + ": " + prompt);
-                            Console.WriteLine("To Brain: " + customFormat + ": " + prompt);
-                            Console.WriteLine("WAITING...");
-                            MQTTPipe.PublishMessage(prompt);
-                            string response = MQTTPipe.ReadMessage();
-                            Log2.Info("From Brain: " + customFormat + ": " + response);
-                            Console.WriteLine("From Brain: " + customFormat + ": " + response);
-                        }
-                    }
-                }
+                
 
                 ///////////////////////////////////////
                 if ((sleepMinutes == 0) && (timeString == null))
