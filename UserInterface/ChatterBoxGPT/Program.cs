@@ -231,6 +231,7 @@ namespace ChatterBoxGPT
                         pJMLoadForecastSevenDay.WriteJsonToCsv(jsonLoadDPL_MIDATL, ".\\data\\PJMLoadForecastSevenDayDPL_MIDATL.csv");
                     }
 
+                    //ODEC
                     PJMDayAheadHourlyLMP pJMDayAheadHourlyLMP = new PJMDayAheadHourlyLMP();
                     string jsonLMPODEC = pJMDayAheadHourlyLMP.GetJson("93154", 24);
                     if (jsonLMPODEC != null)
