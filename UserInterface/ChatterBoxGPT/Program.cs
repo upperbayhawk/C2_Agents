@@ -310,7 +310,8 @@ namespace ChatterBoxGPT
                             string promptText = File.ReadAllText(".\\prompts\\PromptPJMLoadAndLMP.Txt");
                             string promptData = File.ReadAllText(".\\data\\GridWeatherPayload.csv");
                             string promptWeatherData = File.ReadAllText(".\\data\\VisualCrossingWeatherData.csv");
-                            string prompt = promptText + " " + promptData + "\nYesterdays weather data follows: \n" + promptWeatherData;
+                            string prompt = promptText + " " + promptData;
+                            //string prompt = promptText + " " + promptData + "\nYesterdays weather data follows: \n" + promptWeatherData;
                             Log2.Info(prompt);
 
                             Console.WriteLine("Letting GPT analyze the Grid Data");

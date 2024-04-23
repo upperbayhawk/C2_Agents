@@ -124,7 +124,8 @@ namespace Upperbay.Worker.NWS
             //string logitude = MyAppConfig.GetClusterParameter(cluster, "Longitude");
             string APIKEY = "2B6LPNAXBYDFE33F6F87DRF2K";
             string url = baseUrl + location + "/" + "yesterday" + "?key=" + APIKEY;
-            
+            //yesterday
+            //last7days
             try
             {
                 //Log2.Debug("Calling httpClient.GetAsync");
@@ -244,7 +245,7 @@ namespace Upperbay.Worker.NWS
 
                 using (TextWriter writer1 = System.IO.File.CreateText((filename)))
                 {
-                    writer1.WriteLine("Time,Temp,Conition");
+                    writer1.WriteLine("Time,Temp,Condition");
 
                     foreach (var day in weatherData.Days)
                     {
