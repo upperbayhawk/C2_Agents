@@ -224,12 +224,7 @@ namespace ChatterBoxGPT
                         pJMLoadForecastSevenDay.WriteJsonToCsv(jsonLoadDPL_ODEC, ".\\data\\PJMLoadForecastSevenDayDPL_ODEC.csv");
                     }
 
-                    string jsonLoadDPL_MIDATL = pJMLoadForecastSevenDay.GetJson("DP&L/MIDATL", 200);
-                    if (jsonLoadDPL_MIDATL != null)
-                    {
-                        pJMLoadForecastSevenDay.WriteJsonToFile(jsonLoadDPL_MIDATL, ".\\data\\PJMLoadForeCastSevenDayDPL_MIDATL.json");
-                        pJMLoadForecastSevenDay.WriteJsonToCsv(jsonLoadDPL_MIDATL, ".\\data\\PJMLoadForecastSevenDayDPL_MIDATL.csv");
-                    }
+                  
 
                     //ODEC
                     PJMDayAheadHourlyLMP pJMDayAheadHourlyLMP = new PJMDayAheadHourlyLMP();
@@ -283,11 +278,39 @@ namespace ChatterBoxGPT
                             CsvMergePJMwNWS csvMergePJMwNWS = new CsvMergePJMwNWS();
                             csvMergePJMwNWS.MergeFiles(".\\data\\PJMLoadAndLmp.csv",
                                                 ".\\data\\NWSWeatherToday.csv",
-                                                ".\\data\\GridWeatherPayload.csv");
+                                                ".\\data\\GridWeatherPayloadPJMNWS.csv");
 
+
+                            string jsonLoadDPL_MIDATL = pJMLoadForecastSevenDay.GetJson("DP&L/MIDATL", 200);
+                            if (jsonLoadDPL_MIDATL != null)
+                            {
+                                pJMLoadForecastSevenDay.WriteJsonToFile(jsonLoadDPL_MIDATL, ".\\data\\PJMLoadForeCastSevenDayDPL_MIDATL.json");
+                                pJMLoadForecastSevenDay.WriteJsonToCsv(jsonLoadDPL_MIDATL, ".\\data\\PJMLoadForecastSevenDayDPL_MIDATL.csv");
+                                pJMLoadForecastSevenDay.WriteCurrentDayLoadJsonToCsv(jsonLoadDPL_MIDATL, ".\\data\\PJMLoadForecastTodayDPL_MIDATL.csv");
+
+                                // merge with loadandlmp
+                                CsvMergePJMNWSMID csvMergePJMNWSMID = new CsvMergePJMNWSMID();
+                                csvMergePJMNWSMID.MergeFiles(".\\data\\GridWeatherPayloadPJMNWS.csv",
+                                                    ".\\data\\PJMLoadForecastTodayDPL_MIDATL.csv",
+                                                    ".\\data\\GridWeatherPayload.csv");
+                            }
+
+
+                            //Coords for Lewes, DE
+                            string location = "Lewes, Delaware";
+                            VisualCrossingWeatherData weatherData = new VisualCrossingWeatherData();
+                            string weatherJson = weatherData.GetWeatherSevenDayDataInJson(location);
+                            Console.WriteLine("Weather Data: " + weather);
+                            weatherData.WriteJsonToFile(weatherJson, ".\\data\\VisualCrossingWeatherData.json");
+                            weatherData.WriteWeatherDataToCsv(weatherJson, ".\\data\\VisualCrossingWeatherData.csv");
+
+
+
+                            // 
                             string promptText = File.ReadAllText(".\\prompts\\PromptPJMLoadAndLMP.Txt");
                             string promptData = File.ReadAllText(".\\data\\GridWeatherPayload.csv");
-                            string prompt = promptText + " " + promptData;
+                            string promptWeatherData = File.ReadAllText(".\\data\\VisualCrossingWeatherData.csv");
+                            string prompt = promptText + " " + promptData + "\nYesterdays weather data follows: \n" + promptWeatherData;
                             Log2.Info(prompt);
 
                             Console.WriteLine("Letting GPT analyze the Grid Data");
