@@ -235,12 +235,6 @@ namespace ChatterBoxGPT
                         pJMDayAheadHourlyLMP.WriteCurrentDayAheadHourlyLMPToCsv(jsonLMPODEC, ".\\data\\PJMDayAheadHourlyLMPODEC.csv");
                     }
 
-                    string jsonLMPMILFORD = pJMDayAheadHourlyLMP.GetJson("49966", 24);
-                    if (jsonLMPMILFORD != null)
-                    {
-                        pJMDayAheadHourlyLMP.WriteJsonToFile(jsonLMPMILFORD, ".\\data\\PJMDayAheadHourlyLMPMILFORD.json");
-                        pJMDayAheadHourlyLMP.WriteCurrentDayAheadHourlyLMPToCsv(jsonLMPMILFORD, ".\\data\\PJMDayAheadHourlyLMPMILFORD.csv");
-                    }
 
 
 
@@ -303,8 +297,24 @@ namespace ChatterBoxGPT
                                 CsvMergePJMNWSMID csvMergePJMNWSMID = new CsvMergePJMNWSMID();
                                 csvMergePJMNWSMID.MergeFiles(".\\data\\GridWeatherPayloadPJMNWS.csv",
                                                     ".\\data\\PJMLoadForecastTodayDPL_MIDATL.csv",
+                                                    ".\\data\\GridWeatherPayloadPJMNWSMID.csv");
+                            }
+
+
+                            string jsonLMPMILFORD = pJMDayAheadHourlyLMP.GetJson("49966", 24);
+                            if (jsonLMPMILFORD != null)
+                            {
+                                pJMDayAheadHourlyLMP.WriteJsonToFile(jsonLMPMILFORD, ".\\data\\PJMDayAheadHourlyLMPMILFORD.json");
+                                pJMDayAheadHourlyLMP.WriteCurrentDayAheadHourlyLMPToCsv(jsonLMPMILFORD, ".\\data\\PJMDayAheadHourlyLMPMILFORD.csv");
+                                // merge with loadandlmp
+                                CsvMergePJMNWSMIDLOC csvMergePJMNWSMIDLOC = new CsvMergePJMNWSMIDLOC();
+                                csvMergePJMNWSMIDLOC.MergeFiles(".\\data\\GridWeatherPayloadPJMNWSMID.csv",
+                                                    ".\\data\\PJMDayAheadHourlyLMPMILFORD.csv",
                                                     ".\\data\\GridWeatherPayload.csv");
                             }
+                            
+
+
 
 
                             //Coords for Lewes, DE

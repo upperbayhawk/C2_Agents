@@ -136,6 +136,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChatGptService.cs" />
+    <Compile Include="CsvMergePJMNWSMIDLOC.cs" />
     <Compile Include="CsvMergePJMNWSMID.cs" />
     <Compile Include="CsvMergePJMwNWS.cs" />
     <Compile Include="CsvMergePJMLoadLmp.cs" />
