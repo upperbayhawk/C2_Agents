@@ -26,6 +26,7 @@ using Newtonsoft.Json.Linq;
 using System.Reflection;
 using System.Globalization;
 using static System.Net.WebRequestMethods;
+using static Upperbay.Worker.NWS.VisualCrossingWeatherData;
 
 
 namespace Upperbay.Worker.NWS
@@ -49,6 +50,12 @@ namespace Upperbay.Worker.NWS
             [JsonProperty("datetime")]
             public string Datetime { get; set; }
 
+            [JsonProperty("temp")]
+            public double Temp { get; set; }
+
+            [JsonProperty("tempmax")]
+            public double TempMax { get; set; }
+
             [JsonProperty("hours")]
             public Hour[] Hours { get; set; }
         }
@@ -61,8 +68,8 @@ namespace Upperbay.Worker.NWS
             [JsonProperty("temp")]
             public double Temp { get; set; }
         
-            [JsonProperty("condition")]
-            public double Condition { get; set; }
+            [JsonProperty("conditions")]
+            public string Conditions { get; set; }
         }
         
         //public string GetHourlyForecastInJson(string hourlyUrl)
@@ -155,11 +162,11 @@ namespace Upperbay.Worker.NWS
 
                 foreach (var day in weatherData.Days)
                 {
-                    Log2.Debug($"Date: {day.Datetime}");
-                    foreach (var hour in day.Hours)
-                    {
-                        Log2.Debug($" Time: {hour.Datetime}, Temp: {hour.Temp}");
-                    }
+                    Log2.Debug($" Date: {day.Datetime}, Temp: {day.Temp}, MaxTemp: {day.TempMax}");
+                    //foreach (var hour in day.Hours)
+                    //{
+                    //    Log2.Debug($" Time: {hour.Datetime}, Temp: {hour.Temp}");
+                    //}
                 }
 
 
@@ -216,28 +223,14 @@ namespace Upperbay.Worker.NWS
             try
             {
 
-                string archiveDirectory = "C:\\LMP_ARCHIVE";
-                string archivePath = "C:\\LMP_ARCHIVE\\NWSWeather.csv";
-
-
-
-                if (!Directory.Exists(archiveDirectory))
-                {
-                    Directory.CreateDirectory(archiveDirectory);
-                    Log2.Info("Directory created successfully: " + archiveDirectory);
-                }
-
-                if (!System.IO.File.Exists(archivePath))
-                    System.IO.File.Create(archivePath).Close();
-
                 var weatherData = JsonConvert.DeserializeObject<WeatherResponse>(jsonString);
 
                 foreach (var day in weatherData.Days)
                 {
-                    Log2.Debug($"Date: {day.Datetime}");
+                    Log2.Debug($" Date: {day.Datetime}, Temp: {day.Temp}, MaxTemp: {day.TempMax}");
                     foreach (var hour in day.Hours)
                     {
-                        Log2.Debug($" Time: {hour.Datetime}, Temp: {hour.Temp}");
+                        Log2.Debug($" Time: {hour.Datetime}, Temp: {hour.Temp}, Conditions: {hour.Conditions}");
                     }
                 }
 
@@ -253,7 +246,7 @@ namespace Upperbay.Worker.NWS
                         foreach (var hour in day.Hours)
                         {
                             //writer1.WriteLine("\"" + startTime + "\",\"" + temperature + "\",\"" + shortForecast + "\"");
-                            writer1.WriteLine("\"" + hour.Datetime + "\",\"" + hour.Temp + "\",\"" + hour.Condition + "\"");
+                            writer1.WriteLine("\"" + hour.Datetime + "\",\"" + hour.Temp + "\",\"" + hour.Conditions + "\"");
                         }
                     }
                 }
