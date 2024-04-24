@@ -235,6 +235,17 @@ namespace ChatterBoxGPT
                         pJMDayAheadHourlyLMP.WriteCurrentDayAheadHourlyLMPToCsv(jsonLMPODEC, ".\\data\\PJMDayAheadHourlyLMPODEC.csv");
                     }
 
+                    string jsonLMPMILFORD = pJMDayAheadHourlyLMP.GetJson("49966", 24);
+                    if (jsonLMPMILFORD != null)
+                    {
+                        pJMDayAheadHourlyLMP.WriteJsonToFile(jsonLMPMILFORD, ".\\data\\PJMDayAheadHourlyLMPMILFORD.json");
+                        pJMDayAheadHourlyLMP.WriteCurrentDayAheadHourlyLMPToCsv(jsonLMPMILFORD, ".\\data\\PJMDayAheadHourlyLMPMILFORD.csv");
+                    }
+
+
+
+
+
                     string jsonLoad = pJMLoadForecastSevenDay.GetJson("RTO_COMBINED", 200);
                     if (jsonLoad != null)
                     {
