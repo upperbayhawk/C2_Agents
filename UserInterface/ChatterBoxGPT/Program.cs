@@ -340,7 +340,8 @@ namespace ChatterBoxGPT
 
                             PJMOperationsSummary pJMOperationsSummary = new PJMOperationsSummary();
                             //string json = pJMOperationsSummary.GetJson("RTO_COMBINED", 1);
-                            string json = pJMOperationsSummary.GetJson("MIDATL", 1);
+                            
+                            string json = pJMOperationsSummary.GetJson("MIDATL", 1); // overridden for RTO
                             pJMOperationsSummary.WriteJsonToFile(json, ".\\data\\PJMOperationsSummary.json");
 
                             // 

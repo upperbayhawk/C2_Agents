@@ -85,8 +85,8 @@ namespace Upperbay.Worker.LMP
         {
             var jsonResponse = "";
             var queryString = HttpUtility.ParseQueryString(string.Empty);
-            var baseUri = "https://api.pjm.com/api/v1/ops_sum_frcst_peak_area?";
-            //var baseUri = "https://api.pjm.com/api/v1/ops_sum_frcst_peak_rto?";
+            //var baseUri = "https://api.pjm.com/api/v1/ops_sum_frcst_peak_area?";
+            var baseUri = "https://api.pjm.com/api/v1/ops_sum_frcst_peak_rto?";
 
             string cluster = MyAppConfig.GetParameter("ClusterName");
             string subscriptionKey = MyAppConfig.GetClusterParameter(cluster, "LMPKey");
@@ -114,7 +114,7 @@ namespace Upperbay.Worker.LMP
             //Allowed values are: AEP, AP, ATSI, COMED, DAYTON, DEOK, DOM, DUQ, EKPC, MIDATL, OVEC.
 
             // Request parameters
-            queryString["area"] = forecastArea;
+            //queryString["area"] = forecastArea;  // uncork for specific area
             //queryString["download"] = "{boolean}";
             queryString["rowCount"] = rowsRequested.ToString();
             //queryString["sort"] = "{string}";
