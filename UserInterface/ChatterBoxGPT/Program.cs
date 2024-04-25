@@ -338,14 +338,18 @@ namespace ChatterBoxGPT
                             weatherData.WriteJsonToFile(weatherJson, ".\\data\\VisualCrossingWeatherData.json");
                             weatherData.WriteWeatherDataToCsv(weatherJson, ".\\data\\VisualCrossingWeatherData.csv");
 
-
+                            PJMOperationsSummary pJMOperationsSummary = new PJMOperationsSummary();
+                            //string json = pJMOperationsSummary.GetJson("RTO_COMBINED", 1);
+                            string json = pJMOperationsSummary.GetJson("MIDATL", 1);
+                            pJMOperationsSummary.WriteJsonToFile(json, ".\\data\\PJMOperationsSummary.json");
 
                             // 
                             string promptText = File.ReadAllText(".\\prompts\\PromptPJMLoadAndLMP.Txt");
                             string promptData = File.ReadAllText(".\\data\\GridWeatherPayload.csv");
-                            string promptWeatherData = File.ReadAllText(".\\data\\VisualCrossingWeatherData.csv");
-                            string prompt = promptText + " " + promptData;
-                            //string prompt = promptText + " " + promptData + "\nYesterdays weather data follows: \n" + promptWeatherData;
+                            //string promptWeatherData = File.ReadAllText(".\\data\\VisualCrossingWeatherData.csv");
+                            string promptOpsSummary = File.ReadAllText(".\\data\\PJMOperationsSummary.json");
+                            //string prompt = promptText + " " + promptData;
+                            string prompt = promptText + " " + promptData + "\nOperations Summary in JSON follows: \n" + promptOpsSummary;
                             Log2.Info(prompt);
 
                             Console.WriteLine("Letting GPT analyze the Grid Data");
