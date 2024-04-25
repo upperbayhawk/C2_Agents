@@ -130,7 +130,7 @@ namespace Upperbay.Worker.NWS
             //string latitude = MyAppConfig.GetClusterParameter(cluster, "Latitude");
             //string logitude = MyAppConfig.GetClusterParameter(cluster, "Longitude");
             string APIKEY = "2B6LPNAXBYDFE33F6F87DRF2K";
-            string url = baseUrl + location + "/" + "yesterday" + "?key=" + APIKEY;
+            string url = baseUrl + location + "/" + "next10days" + "?key=" + APIKEY;
             //yesterday
             //last7days
             try
@@ -242,11 +242,11 @@ namespace Upperbay.Worker.NWS
 
                     foreach (var day in weatherData.Days)
                     {
-                        Log2.Debug($"Date: {day.Datetime}");
+                        writer1.WriteLine("\"" + day.Datetime + "\",\"" + day.TempMax + "\"");
                         foreach (var hour in day.Hours)
                         {
-                            //writer1.WriteLine("\"" + startTime + "\",\"" + temperature + "\",\"" + shortForecast + "\"");
-                            writer1.WriteLine("\"" + hour.Datetime + "\",\"" + hour.Temp + "\",\"" + hour.Conditions + "\"");
+                            string dayhour = day.Datetime + " " + hour.Datetime;
+                            writer1.WriteLine("\"" + dayhour + "\",\"" + hour.Temp + "\",\"" + hour.Conditions + "\"");
                         }
                     }
                 }
