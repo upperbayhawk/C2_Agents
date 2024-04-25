@@ -209,36 +209,36 @@ namespace ChatterBoxGPT
                     // GridPayloadCSV Header Format
                     // Time, PJMLoad, PJMLmp, LocalLoad, LocalLmp, LocalTemp, LocalForecast, 
 
-                    PJMLoadForecastSevenDay pJMLoadForecastSevenDay = new PJMLoadForecastSevenDay();
-                    string jsonLoadDOM = pJMLoadForecastSevenDay.GetJson("DOMINION", 200);
-                    if (jsonLoadDOM != null)
-                    {
-                        pJMLoadForecastSevenDay.WriteJsonToFile(jsonLoadDOM, ".\\data\\PJMLoadForeCastSevenDayDOM.json");
-                        pJMLoadForecastSevenDay.WriteJsonToCsv(jsonLoadDOM, ".\\data\\PJMLoadForecastSevenDayDOM.csv");
-                    }
+                    //PJMLoadForecastSevenDay pJMLoadForecastSevenDay = new PJMLoadForecastSevenDay();
+                    //string jsonLoadDOM = pJMLoadForecastSevenDay.GetJson("DOMINION", 200);
+                    //if (jsonLoadDOM != null)
+                    //{
+                    //    pJMLoadForecastSevenDay.WriteJsonToFile(jsonLoadDOM, ".\\data\\PJMLoadForeCastSevenDayDOM.json");
+                    //    pJMLoadForecastSevenDay.WriteJsonToCsv(jsonLoadDOM, ".\\data\\PJMLoadForecastSevenDayDOM.csv");
+                    //}
 
-                    string jsonLoadDPL_ODEC = pJMLoadForecastSevenDay.GetJson("DPL_ODEC", 200);
-                    if (jsonLoadDPL_ODEC != null)
-                    {
-                        pJMLoadForecastSevenDay.WriteJsonToFile(jsonLoadDPL_ODEC, ".\\data\\PJMLoadForeCastSevenDayDPL_ODEC.json");
-                        pJMLoadForecastSevenDay.WriteJsonToCsv(jsonLoadDPL_ODEC, ".\\data\\PJMLoadForecastSevenDayDPL_ODEC.csv");
-                    }
-
-                  
+                    //string jsonLoadDPL_ODEC = pJMLoadForecastSevenDay.GetJson("DPL_ODEC", 200);
+                    //if (jsonLoadDPL_ODEC != null)
+                    //{
+                    //    pJMLoadForecastSevenDay.WriteJsonToFile(jsonLoadDPL_ODEC, ".\\data\\PJMLoadForeCastSevenDayDPL_ODEC.json");
+                    //    pJMLoadForecastSevenDay.WriteJsonToCsv(jsonLoadDPL_ODEC, ".\\data\\PJMLoadForecastSevenDayDPL_ODEC.csv");
+                    //}
 
                     //ODEC
+                    //PJMLoadForecastSevenDay pJMLoadForecastSevenDay = new PJMLoadForecastSevenDay();
+                    //PJMDayAheadHourlyLMP pJMDayAheadHourlyLMP = new PJMDayAheadHourlyLMP();
+                    //string jsonLMPODEC = pJMDayAheadHourlyLMP.GetJson("93154", 24);
+                    //if (jsonLMPODEC != null)
+                    //{
+                    //    pJMDayAheadHourlyLMP.WriteJsonToFile(jsonLMPODEC, ".\\data\\PJMDayAheadHourlyLMPODEC.json");
+                    //    pJMDayAheadHourlyLMP.WriteCurrentDayAheadHourlyLMPToCsv(jsonLMPODEC, ".\\data\\PJMDayAheadHourlyLMPODEC.csv");
+                    //}
+
+
+
+
                     PJMDayAheadHourlyLMP pJMDayAheadHourlyLMP = new PJMDayAheadHourlyLMP();
-                    string jsonLMPODEC = pJMDayAheadHourlyLMP.GetJson("93154", 24);
-                    if (jsonLMPODEC != null)
-                    {
-                        pJMDayAheadHourlyLMP.WriteJsonToFile(jsonLMPODEC, ".\\data\\PJMDayAheadHourlyLMPODEC.json");
-                        pJMDayAheadHourlyLMP.WriteCurrentDayAheadHourlyLMPToCsv(jsonLMPODEC, ".\\data\\PJMDayAheadHourlyLMPODEC.csv");
-                    }
-
-
-
-
-
+                    PJMLoadForecastSevenDay pJMLoadForecastSevenDay = new PJMLoadForecastSevenDay();
 
                     string jsonLoad = pJMLoadForecastSevenDay.GetJson("RTO_COMBINED", 200);
                     if (jsonLoad != null)
@@ -300,18 +300,31 @@ namespace ChatterBoxGPT
                                                     ".\\data\\GridWeatherPayloadPJMNWSMID.csv");
                             }
 
+                            //PJMLoadForecastSevenDay pJMLoadForecastSevenDay = new PJMLoadForecastSevenDay();
+                            //PJMDayAheadHourlyLMP pJMDayAheadHourlyLMP = new PJMDayAheadHourlyLMP();
 
-                            string jsonLMPMILFORD = pJMDayAheadHourlyLMP.GetJson("49966", 24);
-                            if (jsonLMPMILFORD != null)
+                            string jsonLMPODEC = pJMDayAheadHourlyLMP.GetJson("93154", 24);
+                            if (jsonLMPODEC != null)
                             {
-                                pJMDayAheadHourlyLMP.WriteJsonToFile(jsonLMPMILFORD, ".\\data\\PJMDayAheadHourlyLMPMILFORD.json");
-                                pJMDayAheadHourlyLMP.WriteCurrentDayAheadHourlyLMPToCsv(jsonLMPMILFORD, ".\\data\\PJMDayAheadHourlyLMPMILFORD.csv");
-                                // merge with loadandlmp
+                                pJMDayAheadHourlyLMP.WriteJsonToFile(jsonLMPODEC, ".\\data\\PJMDayAheadHourlyLMPODEC.json");
+                                pJMDayAheadHourlyLMP.WriteCurrentDayAheadHourlyLMPToCsv(jsonLMPODEC, ".\\data\\PJMDayAheadHourlyLMPODEC.csv");
                                 CsvMergePJMNWSMIDLOC csvMergePJMNWSMIDLOC = new CsvMergePJMNWSMIDLOC();
                                 csvMergePJMNWSMIDLOC.MergeFiles(".\\data\\GridWeatherPayloadPJMNWSMID.csv",
-                                                    ".\\data\\PJMDayAheadHourlyLMPMILFORD.csv",
+                                                    ".\\data\\PJMDayAheadHourlyLMPODEC.csv",
                                                     ".\\data\\GridWeatherPayload.csv");
                             }
+
+                            //string jsonLMPMILFORD = pJMDayAheadHourlyLMP.GetJson("49966", 24);
+                            //if (jsonLMPMILFORD != null)
+                            //{
+                            //    pJMDayAheadHourlyLMP.WriteJsonToFile(jsonLMPMILFORD, ".\\data\\PJMDayAheadHourlyLMPMILFORD.json");
+                            //    pJMDayAheadHourlyLMP.WriteCurrentDayAheadHourlyLMPToCsv(jsonLMPMILFORD, ".\\data\\PJMDayAheadHourlyLMPMILFORD.csv");
+                            //    // merge with loadandlmp
+                            //    CsvMergePJMNWSMIDLOC csvMergePJMNWSMIDLOC = new CsvMergePJMNWSMIDLOC();
+                            //    csvMergePJMNWSMIDLOC.MergeFiles(".\\data\\GridWeatherPayloadPJMNWSMID.csv",
+                            //                        ".\\data\\PJMDayAheadHourlyLMPMILFORD.csv",
+                            //                        ".\\data\\GridWeatherPayload.csv");
+                            //}
                             
 
 
