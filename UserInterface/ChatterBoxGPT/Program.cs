@@ -235,7 +235,7 @@ namespace ChatterBoxGPT
                     //}
 
 
-
+                    bool badData = false;
 
                     PJMDayAheadHourlyLMP pJMDayAheadHourlyLMP = new PJMDayAheadHourlyLMP();
                     PJMLoadForecastSevenDay pJMLoadForecastSevenDay = new PJMLoadForecastSevenDay();
@@ -262,11 +262,17 @@ namespace ChatterBoxGPT
                             Console.WriteLine("First value: " + dFirstVal.ToString());
                             pJMDayAheadHourlyLMP.WriteCurrentDayAheadHourlyLMPToCsv(jsonLMP, ".\\data\\PJMDayAheadHourlyLMP.csv");
 
-                            CsvMergePJMLoadLmp csvMerge = new CsvMergePJMLoadLmp();
-                            csvMerge.MergeFiles(".\\data\\PJMLoadForecastToday.csv",
+                            CsvMergePJMLoadLmp csvMergePJMLoadLmp = new CsvMergePJMLoadLmp();
+                            int csvMergePJMLoadLmpRowCount = csvMergePJMLoadLmp.MergeFiles(".\\data\\PJMLoadForecastToday.csv",
                                                 ".\\data\\PJMDayAheadHourlyLMP.csv",
                                                 ".\\data\\PJMLoadAndLMP.csv");
-
+                            if (csvMergePJMLoadLmpRowCount == 0)
+                            {
+                                //bad data
+                                Log2.Error("Bad Data: csvMergePJMLoadLmpRowCount == 0");
+                                Console.WriteLine("Bad Data: csvMergePJMLoadLmpRowCount == 0");
+                                badData = true;
+                            }
 
                             //TimeSeriesDataAnalyzer.Run(".\\data\\PJMDayAheadHourlyLMP.csv");
                             //LinearRegression.Run(".\\data\\PJMDayAheadHourlyLMP.csv");
@@ -281,9 +287,16 @@ namespace ChatterBoxGPT
                             weatherForecast.WriteWeatherForecastToCsv(weather, ".\\data\\NWSWeatherSevenDay.csv");
 
                             CsvMergePJMwNWS csvMergePJMwNWS = new CsvMergePJMwNWS();
-                            csvMergePJMwNWS.MergeFiles(".\\data\\PJMLoadAndLmp.csv",
+                            int csvMergePJMwNWSRowCount =  csvMergePJMwNWS.MergeFiles(".\\data\\PJMLoadAndLmp.csv",
                                                 ".\\data\\NWSWeatherToday.csv",
                                                 ".\\data\\GridWeatherPayloadPJMNWS.csv");
+                            if (csvMergePJMwNWSRowCount == 0)
+                            {
+                                //bad data
+                                Log2.Error("Bad Data: csvMergePJMwNWSRowCount == 0");
+                                Console.WriteLine("Bad Data: csvMergePJMwNWSRowCount == 0");
+                                badData = true;
+                            }
 
 
                             string jsonLoadDPL_MIDATL = pJMLoadForecastSevenDay.GetJson("DP&L/MIDATL", 200);
@@ -295,9 +308,16 @@ namespace ChatterBoxGPT
 
                                 // merge with loadandlmp
                                 CsvMergePJMNWSMID csvMergePJMNWSMID = new CsvMergePJMNWSMID();
-                                csvMergePJMNWSMID.MergeFiles(".\\data\\GridWeatherPayloadPJMNWS.csv",
+                                int csvMergePJMNWSMIDRowCount = csvMergePJMNWSMID.MergeFiles(".\\data\\GridWeatherPayloadPJMNWS.csv",
                                                     ".\\data\\PJMLoadForecastTodayDPL_MIDATL.csv",
                                                     ".\\data\\GridWeatherPayloadPJMNWSMID.csv");
+                                if (csvMergePJMNWSMIDRowCount == 0)
+                                {
+                                    //bad data
+                                    Log2.Error("Bad Data: csvMergePJMNWSMIDRowCount == 0");
+                                    Console.WriteLine("Bad Data: csvMergePJMNWSMIDRowCount == 0");
+                                    badData = true;
+                                }
                             }
 
                             //PJMLoadForecastSevenDay pJMLoadForecastSevenDay = new PJMLoadForecastSevenDay();
@@ -309,9 +329,16 @@ namespace ChatterBoxGPT
                                 pJMDayAheadHourlyLMP.WriteJsonToFile(jsonLMPODEC, ".\\data\\PJMDayAheadHourlyLMPODEC.json");
                                 pJMDayAheadHourlyLMP.WriteCurrentDayAheadHourlyLMPToCsv(jsonLMPODEC, ".\\data\\PJMDayAheadHourlyLMPODEC.csv");
                                 CsvMergePJMNWSMIDLOC csvMergePJMNWSMIDLOC = new CsvMergePJMNWSMIDLOC();
-                                csvMergePJMNWSMIDLOC.MergeFiles(".\\data\\GridWeatherPayloadPJMNWSMID.csv",
+                                int csvMergePJMNWSMIDLOCRowCount = csvMergePJMNWSMIDLOC.MergeFiles(".\\data\\GridWeatherPayloadPJMNWSMID.csv",
                                                     ".\\data\\PJMDayAheadHourlyLMPODEC.csv",
                                                     ".\\data\\GridWeatherPayload.csv");
+                                if (csvMergePJMNWSMIDLOCRowCount == 0)
+                                {
+                                    //bad data
+                                    Log2.Error("Bad Data: csvMergePJMNWSMIDLOCRowCount == 0");
+                                    Console.WriteLine("Bad Data: csvMergePJMNWSMIDLOCRowCount == 0");
+                                    badData = true;
+                                }
                             }
 
                             //string jsonLMPMILFORD = pJMDayAheadHourlyLMP.GetJson("49966", 24);
@@ -344,27 +371,35 @@ namespace ChatterBoxGPT
                             string json = pJMOperationsSummary.GetJson("MIDATL", 1); // overridden for RTO
                             pJMOperationsSummary.WriteJsonToFile(json, ".\\data\\PJMOperationsSummary.json");
 
-                            // 
-                            string promptText = File.ReadAllText(".\\prompts\\PromptPJMLoadAndLMP.Txt");
-                            string promptData = File.ReadAllText(".\\data\\GridWeatherPayload.csv");
-                            //string promptWeatherData = File.ReadAllText(".\\data\\VisualCrossingWeatherData.csv");
-                            string promptOpsSummary = File.ReadAllText(".\\data\\PJMOperationsSummary.json");
-                            string prompt = promptText + " " + promptData;
-                            //string prompt = promptText + " " + promptData + "\nOperations Summary in JSON follows: \n" + promptOpsSummary;
-                            Log2.Info(prompt);
+                            if (badData == false)
+                            {
+                                string promptText = File.ReadAllText(".\\prompts\\PromptPJMLoadAndLMP.Txt");
+                                string promptData = File.ReadAllText(".\\data\\GridWeatherPayload.csv");
+                                //string promptWeatherData = File.ReadAllText(".\\data\\VisualCrossingWeatherData.csv");
+                                string promptOpsSummary = File.ReadAllText(".\\data\\PJMOperationsSummary.json");
+                                string prompt = promptText + " " + promptData;
+                                //string prompt = promptText + " " + promptData + "\nOperations Summary in JSON follows: \n" + promptOpsSummary;
+                                Log2.Info(prompt);
 
-                            Console.WriteLine("Letting GPT analyze the Grid Data");
+                                Console.WriteLine("Letting GPT analyze the Grid Data");
 
-                            DateTime startGPTDateTime = DateTime.Now;
-                            string customFormat = startGPTDateTime.ToString("yyyy-MM-dd HH:mm:ss");
+                                DateTime startGPTDateTime = DateTime.Now;
+                                string customFormat = startGPTDateTime.ToString("yyyy-MM-dd HH:mm:ss");
 
-                            Log2.Info("To Brain: " + customFormat + ": " + prompt);
-                            Console.WriteLine("To Brain: " + customFormat + ": " + prompt);
-                            Console.WriteLine("WAITING...");
-                            MQTTPipe.PublishMessage(prompt);
-                            string response = MQTTPipe.ReadMessage();
-                            Log2.Info("From Brain: " + customFormat + ": " + response);
-                            Console.WriteLine("From Brain: " + customFormat + ": " + response);
+                                Log2.Info("To Brain: " + customFormat + ": " + prompt);
+                                Console.WriteLine("To Brain: " + customFormat + ": " + prompt);
+                                Console.WriteLine("WAITING...");
+                                MQTTPipe.PublishMessage(prompt);
+                                string response = MQTTPipe.ReadMessage();
+                                Log2.Info("From Brain: " + customFormat + ": " + response);
+                                Console.WriteLine("From Brain: " + customFormat + ": " + response);
+                            }
+                            else
+                            {
+                                Log2.Error("FAILED due to Bad Data");
+                                Console.WriteLine("FAILED due to Bad Data");
+
+                            }
                         }
                     }
                 }

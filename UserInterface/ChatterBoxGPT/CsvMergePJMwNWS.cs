@@ -100,12 +100,13 @@ namespace ChatterBoxGPT
                                 };
 
             Console.WriteLine("merged file row count = " + mergedRecords.Count());
+            int mergedRowCount = mergedRecords.Count();
 
             WriteCsv(mergedRecords, outputFilePath);
 
             Console.WriteLine("The CSV files have been merged successfully.");
 
-            return 0;
+            return mergedRowCount;
         }
 
         List<T> ReadCsv<T>(string filePath)

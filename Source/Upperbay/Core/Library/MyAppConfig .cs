@@ -68,7 +68,7 @@ namespace Upperbay.Core.Library
             switch (parameter)
             {
                 //System Parameters
-                //case "ClusterName": val = "BETA1"; break;
+                //case "ClusterName": val = "VOLTA_BETA3"; break;
                 case "ClusterName": val = "VOLTA_BETA2_HIVE"; break;
                 case "ClusterVersion": val = "0.6.9"; break;
                 //
@@ -304,11 +304,11 @@ namespace Upperbay.Core.Library
                 VOLTA_BETA3.Add("EthereumClusterKey", "0x0949a8d20891952dbc52ec59a2aaf36dcd97b5a114103ba4c949fdc0652a2a7f");
                 VOLTA_BETA3.Add("EthereumClusterAddress", "0x47b03cb6a335A15a87Fb63AE295add5aFB0539ed");
                 VOLTA_BETA3.Add("MqttCloudSecureLoginName", "pearlygates");
-                VOLTA_BETA3.Add("MqttCloudSecurePassword", "pearlygates");
-                VOLTA_BETA3.Add("MqttCloudSecureIpAddress", "spectacular-waiter.cloudmqtt.com");
-                VOLTA_BETA3.Add("MqttCloudSecurePort", "1883");
-                VOLTA_BETA3.Add("MqttCloudIpAddress", "spectacular-waiter.cloudmqtt.com");
-                VOLTA_BETA3.Add("MqttCloudPort", "1883");
+                VOLTA_BETA3.Add("MqttCloudSecurePassword", "!Pearlygates87!");
+                VOLTA_BETA3.Add("MqttCloudSecureIpAddress", "9c41862892f042dea951b2f348b676ec.s1.eu.hivemq.cloud");
+                VOLTA_BETA3.Add("MqttCloudSecurePort", "8883");
+                VOLTA_BETA3.Add("MqttCloudIpAddress", "9c41862892f042dea951b2f348b676ec.s1.eu.hivemq.cloud");
+                VOLTA_BETA3.Add("MqttCloudPort", "8883");
                 VOLTA_BETA3.Add("SMSAccountName", "davidhardin2");
                 VOLTA_BETA3.Add("SMSAccountKey", "eWymWS3pHCqvewP8NqKdc2DnvCABDE");
                 VOLTA_BETA3.Add("LMPRTO", "PJM");
@@ -324,11 +324,11 @@ namespace Upperbay.Core.Library
                 VOLTA_BETA4.Add("EthereumClusterKey", "0x0949a8d20891952dbc52ec59a2aaf36dcd97b5a114103ba4c949fdc0652a2a7f");
                 VOLTA_BETA4.Add("EthereumClusterAddress", "0x47b03cb6a335A15a87Fb63AE295add5aFB0539ed");
                 VOLTA_BETA4.Add("MqttCloudSecureLoginName", "pearlygates");
-                VOLTA_BETA4.Add("MqttCloudSecurePassword", "pearlygates");
-                VOLTA_BETA4.Add("MqttCloudSecureIpAddress", "spectacular-waiter.cloudmqtt.com");
-                VOLTA_BETA4.Add("MqttCloudSecurePort", "1883");
-                VOLTA_BETA4.Add("MqttCloudIpAddress", "spectacular-waiter.cloudmqtt.com");
-                VOLTA_BETA4.Add("MqttCloudPort", "1883");
+                VOLTA_BETA4.Add("MqttCloudSecurePassword", "!Pearlygates87!");
+                VOLTA_BETA4.Add("MqttCloudSecureIpAddress", "9c41862892f042dea951b2f348b676ec.s1.eu.hivemq.cloud");
+                VOLTA_BETA4.Add("MqttCloudSecurePort", "8883");
+                VOLTA_BETA4.Add("MqttCloudIpAddress", "9c41862892f042dea951b2f348b676ec.s1.eu.hivemq.cloud");
+                VOLTA_BETA4.Add("MqttCloudPort", "8883");
                 VOLTA_BETA4.Add("SMSAccountName", "davidhardin2");
                 VOLTA_BETA4.Add("SMSAccountKey", "eWymWS3pHCqvewP8NqKdc2DnvCABDE");
                 VOLTA_BETA4.Add("LMPRTO", "PJM");
@@ -346,9 +346,11 @@ namespace Upperbay.Core.Library
                 VOLTA_BETA5.Add("EthereumClusterKey", "0x0949a8d20891952dbc52ec59a2aaf36dcd97b5a114103ba4c949fdc0652a2a7f");
                 VOLTA_BETA5.Add("EthereumClusterAddress", "0x47b03cb6a335A15a87Fb63AE295add5aFB0539ed");
                 VOLTA_BETA5.Add("MqttCloudSecureLoginName", "pearlygates");
-                VOLTA_BETA5.Add("MqttCloudSecurePassword", "pearlygates");
-                VOLTA_BETA5.Add("MqttCloudSecureIpAddress", "spectacular-waiter.cloudmqtt.com");
-                VOLTA_BETA5.Add("MqttCloudSecurePort", "1883");
+                VOLTA_BETA5.Add("MqttCloudSecurePassword", "!Pearlygates87!");
+                //VOLTA_BETA5.Add("MqttCloudSecureLoginName", "pearlygates");
+                //VOLTA_BETA5.Add("MqttCloudSecurePassword", "pearlygates");
+                //VOLTA_BETA5.Add("MqttCloudSecureIpAddress", "spectacular-waiter.cloudmqtt.com");
+                //VOLTA_BETA5.Add("MqttCloudSecurePort", "1883");
                 VOLTA_BETA5.Add("MqttCloudIpAddress", "spectacular-waiter.cloudmqtt.com");
                 VOLTA_BETA5.Add("MqttCloudPort", "1883");
                 VOLTA_BETA5.Add("SMSAccountName", "davidhardin2");
@@ -368,9 +370,11 @@ namespace Upperbay.Core.Library
                 VOLTA_BETA6.Add("EthereumClusterKey", "0x0949a8d20891952dbc52ec59a2aaf36dcd97b5a114103ba4c949fdc0652a2a7f");
                 VOLTA_BETA6.Add("EthereumClusterAddress", "0x47b03cb6a335A15a87Fb63AE295add5aFB0539ed");
                 VOLTA_BETA6.Add("MqttCloudSecureLoginName", "pearlygates");
-                VOLTA_BETA6.Add("MqttCloudSecurePassword", "pearlygates");
-                VOLTA_BETA6.Add("MqttCloudSecureIpAddress", "spectacular-waiter.cloudmqtt.com");
-                VOLTA_BETA6.Add("MqttCloudSecurePort", "1883");
+                VOLTA_BETA6.Add("MqttCloudSecurePassword", "!Pearlygates87!");
+                //VOLTA_BETA6.Add("MqttCloudSecureLoginName", "pearlygates");
+                //VOLTA_BETA6.Add("MqttCloudSecurePassword", "pearlygates");
+                //VOLTA_BETA6.Add("MqttCloudSecureIpAddress", "spectacular-waiter.cloudmqtt.com");
+                //VOLTA_BETA6.Add("MqttCloudSecurePort", "1883");
                 VOLTA_BETA6.Add("MqttCloudIpAddress", "spectacular-waiter.cloudmqtt.com");
                 VOLTA_BETA6.Add("MqttCloudPort", "1883");
                 VOLTA_BETA6.Add("SMSAccountName", "davidhardin2");
@@ -388,9 +392,11 @@ namespace Upperbay.Core.Library
                 VOLTA_BETA7.Add("EthereumClusterKey", "0x0949a8d20891952dbc52ec59a2aaf36dcd97b5a114103ba4c949fdc0652a2a7f");
                 VOLTA_BETA7.Add("EthereumClusterAddress", "0x47b03cb6a335A15a87Fb63AE295add5aFB0539ed");
                 VOLTA_BETA7.Add("MqttCloudSecureLoginName", "pearlygates");
-                VOLTA_BETA7.Add("MqttCloudSecurePassword", "pearlygates");
-                VOLTA_BETA7.Add("MqttCloudSecureIpAddress", "spectacular-waiter.cloudmqtt.com");
-                VOLTA_BETA7.Add("MqttCloudSecurePort", "1883");
+                VOLTA_BETA7.Add("MqttCloudSecurePassword", "!Pearlygates87!");
+                //VOLTA_BETA7.Add("MqttCloudSecureLoginName", "pearlygates");
+                //VOLTA_BETA7.Add("MqttCloudSecurePassword", "pearlygates");
+                //VOLTA_BETA7.Add("MqttCloudSecureIpAddress", "spectacular-waiter.cloudmqtt.com");
+                //VOLTA_BETA7.Add("MqttCloudSecurePort", "1883");
                 VOLTA_BETA7.Add("MqttCloudIpAddress", "spectacular-waiter.cloudmqtt.com");
                 VOLTA_BETA7.Add("MqttCloudPort", "1883");
                 VOLTA_BETA7.Add("SMSAccountName", "davidhardin2");
@@ -409,9 +415,11 @@ namespace Upperbay.Core.Library
                 EWC_BETA1.Add("EthereumClusterKey", "0x0949a8d20891952dbc52ec59a2aaf36dcd97b5a114103ba4c949fdc0652a2a7f");
                 EWC_BETA1.Add("EthereumClusterAddress", "0x47b03cb6a335A15a87Fb63AE295add5aFB0539ed");
                 EWC_BETA1.Add("MqttCloudSecureLoginName", "pearlygates");
-                EWC_BETA1.Add("MqttCloudSecurePassword", "pearlygates");
-                EWC_BETA1.Add("MqttCloudSecureIpAddress", "spectacular-waiter.cloudmqtt.com");
-                EWC_BETA1.Add("MqttCloudSecurePort", "1883");
+                EWC_BETA1.Add("MqttCloudSecurePassword", "!Pearlygates87!");
+                //EWC_BETA1.Add("MqttCloudSecureLoginName", "pearlygates");
+                //EWC_BETA1.Add("MqttCloudSecurePassword", "pearlygates");
+                //EWC_BETA1.Add("MqttCloudSecureIpAddress", "spectacular-waiter.cloudmqtt.com");
+                //EWC_BETA1.Add("MqttCloudSecurePort", "1883");
                 EWC_BETA1.Add("MqttCloudIpAddress", "spectacular-waiter.cloudmqtt.com");
                 EWC_BETA1.Add("MqttCloudPort", "1883");
                 EWC_BETA1.Add("SMSAccountName", "davidhardin2");
@@ -430,9 +438,11 @@ namespace Upperbay.Core.Library
                 BETA3.Add("EthereumClusterKey", "0x0949a8d20891952dbc52ec59a2aaf36dcd97b5a114103ba4c949fdc0652a2a7f");
                 BETA3.Add("EthereumClusterAddress", "0x47b03cb6a335A15a87Fb63AE295add5aFB0539ed");
                 BETA3.Add("MqttCloudSecureLoginName", "pearlygates");
-                BETA3.Add("MqttCloudSecurePassword", "pearlygates");
-                BETA3.Add("MqttCloudSecureIpAddress", "spectacular-waiter.cloudmqtt.com");
-                BETA3.Add("MqttCloudSecurePort", "1883");
+                BETA3.Add("MqttCloudSecurePassword", "!Pearlygates87!");
+                //BETA3.Add("MqttCloudSecureLoginName", "pearlygates");
+                //BETA3.Add("MqttCloudSecurePassword", "pearlygates");
+                //BETA3.Add("MqttCloudSecureIpAddress", "spectacular-waiter.cloudmqtt.com");
+                //BETA3.Add("MqttCloudSecurePort", "1883");
                 BETA3.Add("MqttCloudIpAddress", "spectacular-waiter.cloudmqtt.com");
                 BETA3.Add("MqttCloudPort", "1883");
                 BETA3.Add("SMSAccountName", "davidhardin2");

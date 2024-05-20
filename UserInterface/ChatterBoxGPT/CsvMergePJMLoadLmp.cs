@@ -69,10 +69,11 @@ namespace ChatterBoxGPT
 
             // Writing the merged data to a new CSV file
             WriteCsv(mergedRecords, outputFile);
+            int mergedRowCount = mergedRecords.Count();
 
             Console.WriteLine("The CSV files have been merged successfully.");
 
-            return 0;
+            return mergedRowCount;
         }
 
         /// <summary>
