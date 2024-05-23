@@ -290,7 +290,7 @@ namespace ChatterBoxGPT
                             int csvMergePJMwNWSRowCount =  csvMergePJMwNWS.MergeFiles(".\\data\\PJMLoadAndLmp.csv",
                                                 ".\\data\\NWSWeatherToday.csv",
                                                 ".\\data\\GridWeatherPayloadPJMNWS.csv");
-                            if (csvMergePJMwNWSRowCount == 0)
+                            if (csvMergePJMwNWSRowCount <= 1)
                             {
                                 //bad data
                                 Log2.Error("Bad Data: csvMergePJMwNWSRowCount == 0");
@@ -311,7 +311,7 @@ namespace ChatterBoxGPT
                                 int csvMergePJMNWSMIDRowCount = csvMergePJMNWSMID.MergeFiles(".\\data\\GridWeatherPayloadPJMNWS.csv",
                                                     ".\\data\\PJMLoadForecastTodayDPL_MIDATL.csv",
                                                     ".\\data\\GridWeatherPayloadPJMNWSMID.csv");
-                                if (csvMergePJMNWSMIDRowCount == 0)
+                                if (csvMergePJMNWSMIDRowCount <= 1)
                                 {
                                     //bad data
                                     Log2.Error("Bad Data: csvMergePJMNWSMIDRowCount == 0");
@@ -332,7 +332,7 @@ namespace ChatterBoxGPT
                                 int csvMergePJMNWSMIDLOCRowCount = csvMergePJMNWSMIDLOC.MergeFiles(".\\data\\GridWeatherPayloadPJMNWSMID.csv",
                                                     ".\\data\\PJMDayAheadHourlyLMPODEC.csv",
                                                     ".\\data\\GridWeatherPayload.csv");
-                                if (csvMergePJMNWSMIDLOCRowCount == 0)
+                                if (csvMergePJMNWSMIDLOCRowCount <= 1)
                                 {
                                     //bad data
                                     Log2.Error("Bad Data: csvMergePJMNWSMIDLOCRowCount == 0");
