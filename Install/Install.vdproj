@@ -33,7 +33,25 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_01841F9F6FB714A70DFFBB694997A1CF"
+        "OwnerKey" = "8:_8C9950A4AA9C49A594CCE3170C1699EE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_01841F9F6FB714A70DFFBB694997A1CF"
+        "OwnerKey" = "8:_FF49AE2A0DF845378EAEEB595D89EF0B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_0252864647694F7081D36EDA42EFD179"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_02B74C80BE4E4EAE98BBACC92F5D281E"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -41,6 +59,18 @@
         {
         "MsmKey" = "8:_04750B3EE9C40624D2CFFF9D6C851D12"
         "OwnerKey" = "8:_19B9BDFA202C4F75AF0095BED8ECF312"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_04750B3EE9C40624D2CFFF9D6C851D12"
+        "OwnerKey" = "8:_8C9950A4AA9C49A594CCE3170C1699EE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_04750B3EE9C40624D2CFFF9D6C851D12"
+        "OwnerKey" = "8:_FF49AE2A0DF845378EAEEB595D89EF0B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -83,6 +113,18 @@
         {
         "MsmKey" = "8:_04F5C4FFC939D404830AE44D0A014D48"
         "OwnerKey" = "8:_2A7B68B962329581B627DEEE32BFC80A"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_04F5C4FFC939D404830AE44D0A014D48"
+        "OwnerKey" = "8:_8C9950A4AA9C49A594CCE3170C1699EE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_04F5C4FFC939D404830AE44D0A014D48"
+        "OwnerKey" = "8:_FF49AE2A0DF845378EAEEB595D89EF0B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -197,6 +239,18 @@
         {
         "MsmKey" = "8:_059A8C33B851CA42F8C881706664C06D"
         "OwnerKey" = "8:_2994956E34A185DD71F0A21B504E6049"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_059A8C33B851CA42F8C881706664C06D"
+        "OwnerKey" = "8:_8C9950A4AA9C49A594CCE3170C1699EE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_059A8C33B851CA42F8C881706664C06D"
+        "OwnerKey" = "8:_FF49AE2A0DF845378EAEEB595D89EF0B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -322,6 +376,18 @@
         "Entry"
         {
         "MsmKey" = "8:_09434FBC6D28D486355A7E73043F7ECB"
+        "OwnerKey" = "8:_8C9950A4AA9C49A594CCE3170C1699EE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_09434FBC6D28D486355A7E73043F7ECB"
+        "OwnerKey" = "8:_FF49AE2A0DF845378EAEEB595D89EF0B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_09434FBC6D28D486355A7E73043F7ECB"
         "OwnerKey" = "8:_EFBCA83C72174BD5BB5A1B5EC5843565"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -394,6 +460,12 @@
         "Entry"
         {
         "MsmKey" = "8:_0B14ECBA1BB23F1BE28466A75A275FB6"
+        "OwnerKey" = "8:_7DC3F334D2984361BE10BEFEF4141890"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_0B14ECBA1BB23F1BE28466A75A275FB6"
         "OwnerKey" = "8:_9418DD86D2E9840699ABD352FAF12EC2"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -401,12 +473,6 @@
         {
         "MsmKey" = "8:_0B14ECBA1BB23F1BE28466A75A275FB6"
         "OwnerKey" = "8:_08F808158FE2AD1B502E21A545F9752E"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_0B14ECBA1BB23F1BE28466A75A275FB6"
-        "OwnerKey" = "8:_7DC3F334D2984361BE10BEFEF4141890"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -580,6 +646,18 @@
         "Entry"
         {
         "MsmKey" = "8:_1855DD5FDB9E384AC9CA7CDDF4D9FC98"
+        "OwnerKey" = "8:_8C9950A4AA9C49A594CCE3170C1699EE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_1855DD5FDB9E384AC9CA7CDDF4D9FC98"
+        "OwnerKey" = "8:_FF49AE2A0DF845378EAEEB595D89EF0B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_1855DD5FDB9E384AC9CA7CDDF4D9FC98"
         "OwnerKey" = "8:_529B302805FC482A9F3E6BB16035C4A7"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -647,6 +725,18 @@
         {
         "MsmKey" = "8:_21E39531075B2FBFD7913A5BD8FE3C0B"
         "OwnerKey" = "8:_D1F51135A28592866639230F4D0B851B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_21E39531075B2FBFD7913A5BD8FE3C0B"
+        "OwnerKey" = "8:_8C9950A4AA9C49A594CCE3170C1699EE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_21E39531075B2FBFD7913A5BD8FE3C0B"
+        "OwnerKey" = "8:_FF49AE2A0DF845378EAEEB595D89EF0B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -760,6 +850,18 @@
         "Entry"
         {
         "MsmKey" = "8:_251FBBBBB1612E883831B1000E2D572C"
+        "OwnerKey" = "8:_8C9950A4AA9C49A594CCE3170C1699EE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_251FBBBBB1612E883831B1000E2D572C"
+        "OwnerKey" = "8:_FF49AE2A0DF845378EAEEB595D89EF0B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_251FBBBBB1612E883831B1000E2D572C"
         "OwnerKey" = "8:_C1962A4C5FAF4CADA375CF0FDCF07805"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -777,8 +879,32 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_2655323524BF391E9E4D7093166EFEBF"
+        "OwnerKey" = "8:_8C9950A4AA9C49A594CCE3170C1699EE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_2655323524BF391E9E4D7093166EFEBF"
+        "OwnerKey" = "8:_FF49AE2A0DF845378EAEEB595D89EF0B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_272EE8C4C86A83258592F22605C07C97"
         "OwnerKey" = "8:_01841F9F6FB714A70DFFBB694997A1CF"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_272EE8C4C86A83258592F22605C07C97"
+        "OwnerKey" = "8:_8C9950A4AA9C49A594CCE3170C1699EE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_272EE8C4C86A83258592F22605C07C97"
+        "OwnerKey" = "8:_FF49AE2A0DF845378EAEEB595D89EF0B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -839,6 +965,18 @@
         {
         "MsmKey" = "8:_2994956E34A185DD71F0A21B504E6049"
         "OwnerKey" = "8:_7E7F7D9F8ABC472CE5459C7B44423642"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_2994956E34A185DD71F0A21B504E6049"
+        "OwnerKey" = "8:_8C9950A4AA9C49A594CCE3170C1699EE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_2994956E34A185DD71F0A21B504E6049"
+        "OwnerKey" = "8:_FF49AE2A0DF845378EAEEB595D89EF0B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -917,6 +1055,18 @@
         {
         "MsmKey" = "8:_2A7B68B962329581B627DEEE32BFC80A"
         "OwnerKey" = "8:_7E7F7D9F8ABC472CE5459C7B44423642"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_2A7B68B962329581B627DEEE32BFC80A"
+        "OwnerKey" = "8:_8C9950A4AA9C49A594CCE3170C1699EE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_2A7B68B962329581B627DEEE32BFC80A"
+        "OwnerKey" = "8:_FF49AE2A0DF845378EAEEB595D89EF0B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -1072,6 +1222,18 @@
         "Entry"
         {
         "MsmKey" = "8:_2FCE8D2B83B5FBD184BAF3AE235B47CE"
+        "OwnerKey" = "8:_8C9950A4AA9C49A594CCE3170C1699EE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_2FCE8D2B83B5FBD184BAF3AE235B47CE"
+        "OwnerKey" = "8:_FF49AE2A0DF845378EAEEB595D89EF0B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_2FCE8D2B83B5FBD184BAF3AE235B47CE"
         "OwnerKey" = "8:_EFBCA83C72174BD5BB5A1B5EC5843565"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -1139,6 +1301,18 @@
         {
         "MsmKey" = "8:_32245469A43B50727486B51E5A80D405"
         "OwnerKey" = "8:_19B9BDFA202C4F75AF0095BED8ECF312"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_32245469A43B50727486B51E5A80D405"
+        "OwnerKey" = "8:_8C9950A4AA9C49A594CCE3170C1699EE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_32245469A43B50727486B51E5A80D405"
+        "OwnerKey" = "8:_FF49AE2A0DF845378EAEEB595D89EF0B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -1402,6 +1576,18 @@
         "Entry"
         {
         "MsmKey" = "8:_3CB801F9CFAB8D2DE6506BB2ABCCCBF9"
+        "OwnerKey" = "8:_8C9950A4AA9C49A594CCE3170C1699EE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_3CB801F9CFAB8D2DE6506BB2ABCCCBF9"
+        "OwnerKey" = "8:_FF49AE2A0DF845378EAEEB595D89EF0B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_3CB801F9CFAB8D2DE6506BB2ABCCCBF9"
         "OwnerKey" = "8:_EFBCA83C72174BD5BB5A1B5EC5843565"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -1545,6 +1731,18 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_3F5F9E732DA27238262CDEE6FC2A716E"
+        "OwnerKey" = "8:_8C9950A4AA9C49A594CCE3170C1699EE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_3F5F9E732DA27238262CDEE6FC2A716E"
+        "OwnerKey" = "8:_FF49AE2A0DF845378EAEEB595D89EF0B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_40612F923C7915D60F87D06AEB7B4ED1"
         "OwnerKey" = "8:_2847ADC988954FFBA474138D2E753D84"
         "MsmSig" = "8:_UNDEFINED"
@@ -1625,6 +1823,18 @@
         {
         "MsmKey" = "8:_47891C304C7F62052686669AAC7BB398"
         "OwnerKey" = "8:_2A7B68B962329581B627DEEE32BFC80A"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_47891C304C7F62052686669AAC7BB398"
+        "OwnerKey" = "8:_8C9950A4AA9C49A594CCE3170C1699EE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_47891C304C7F62052686669AAC7BB398"
+        "OwnerKey" = "8:_FF49AE2A0DF845378EAEEB595D89EF0B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -1731,6 +1941,18 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_47BEA8D5A47C6DFDB2E0FF32D4E7E497"
+        "OwnerKey" = "8:_8C9950A4AA9C49A594CCE3170C1699EE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_47BEA8D5A47C6DFDB2E0FF32D4E7E497"
+        "OwnerKey" = "8:_FF49AE2A0DF845378EAEEB595D89EF0B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_48C47910886F4B2AA452D154F5DDB681"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -1828,6 +2050,18 @@
         "Entry"
         {
         "MsmKey" = "8:_4DD959584694C594804F8B6B634840AD"
+        "OwnerKey" = "8:_8C9950A4AA9C49A594CCE3170C1699EE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_4DD959584694C594804F8B6B634840AD"
+        "OwnerKey" = "8:_FF49AE2A0DF845378EAEEB595D89EF0B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_4DD959584694C594804F8B6B634840AD"
         "OwnerKey" = "8:_EFBCA83C72174BD5BB5A1B5EC5843565"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -1919,6 +2153,18 @@
         {
         "MsmKey" = "8:_51AA8529741ADC4E72D507CC7C99309B"
         "OwnerKey" = "8:_272EE8C4C86A83258592F22605C07C97"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_51AA8529741ADC4E72D507CC7C99309B"
+        "OwnerKey" = "8:_8C9950A4AA9C49A594CCE3170C1699EE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_51AA8529741ADC4E72D507CC7C99309B"
+        "OwnerKey" = "8:_FF49AE2A0DF845378EAEEB595D89EF0B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -2254,6 +2500,18 @@
         "Entry"
         {
         "MsmKey" = "8:_5BF6BBF5B5456E5A053699993B089C4D"
+        "OwnerKey" = "8:_8C9950A4AA9C49A594CCE3170C1699EE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_5BF6BBF5B5456E5A053699993B089C4D"
+        "OwnerKey" = "8:_FF49AE2A0DF845378EAEEB595D89EF0B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_5BF6BBF5B5456E5A053699993B089C4D"
         "OwnerKey" = "8:_EFBCA83C72174BD5BB5A1B5EC5843565"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -2495,6 +2753,18 @@
         {
         "MsmKey" = "8:_6639AA92DCD77F24260117245B68EAE3"
         "OwnerKey" = "8:_9C6A83DAAD809823CA01E01F05FF1713"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_6639AA92DCD77F24260117245B68EAE3"
+        "OwnerKey" = "8:_8C9950A4AA9C49A594CCE3170C1699EE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_6639AA92DCD77F24260117245B68EAE3"
+        "OwnerKey" = "8:_FF49AE2A0DF845378EAEEB595D89EF0B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -2758,6 +3028,18 @@
         "Entry"
         {
         "MsmKey" = "8:_669973A9E3CBFEA70363AEA4D2BDA520"
+        "OwnerKey" = "8:_8C9950A4AA9C49A594CCE3170C1699EE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_669973A9E3CBFEA70363AEA4D2BDA520"
+        "OwnerKey" = "8:_FF49AE2A0DF845378EAEEB595D89EF0B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_669973A9E3CBFEA70363AEA4D2BDA520"
         "OwnerKey" = "8:_EFBCA83C72174BD5BB5A1B5EC5843565"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -2831,6 +3113,18 @@
         {
         "MsmKey" = "8:_69872187D5540210B7422B9E08653094"
         "OwnerKey" = "8:_51AA8529741ADC4E72D507CC7C99309B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_69872187D5540210B7422B9E08653094"
+        "OwnerKey" = "8:_8C9950A4AA9C49A594CCE3170C1699EE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_69872187D5540210B7422B9E08653094"
+        "OwnerKey" = "8:_FF49AE2A0DF845378EAEEB595D89EF0B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -3058,6 +3352,18 @@
         "Entry"
         {
         "MsmKey" = "8:_7952034DE93213C0F4C85487653686B9"
+        "OwnerKey" = "8:_8C9950A4AA9C49A594CCE3170C1699EE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_7952034DE93213C0F4C85487653686B9"
+        "OwnerKey" = "8:_FF49AE2A0DF845378EAEEB595D89EF0B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_7952034DE93213C0F4C85487653686B9"
         "OwnerKey" = "8:_EFBCA83C72174BD5BB5A1B5EC5843565"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -3125,6 +3431,18 @@
         {
         "MsmKey" = "8:_79FDA1E7F10E3DF69773C6D2FC9F8560"
         "OwnerKey" = "8:_DCAD76C5764D38B65344A69C85FD0AEB"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_79FDA1E7F10E3DF69773C6D2FC9F8560"
+        "OwnerKey" = "8:_8C9950A4AA9C49A594CCE3170C1699EE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_79FDA1E7F10E3DF69773C6D2FC9F8560"
+        "OwnerKey" = "8:_FF49AE2A0DF845378EAEEB595D89EF0B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -3215,6 +3533,12 @@
         {
         "MsmKey" = "8:_79FDA1E7F10E3DF69773C6D2FC9F8560"
         "OwnerKey" = "8:_19B9BDFA202C4F75AF0095BED8ECF312"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_7A3CBB7796A677B343D96D76860A3797"
+        "OwnerKey" = "8:_7DC3F334D2984361BE10BEFEF4141890"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -3340,6 +3664,18 @@
         "Entry"
         {
         "MsmKey" = "8:_7E7F7D9F8ABC472CE5459C7B44423642"
+        "OwnerKey" = "8:_8C9950A4AA9C49A594CCE3170C1699EE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_7E7F7D9F8ABC472CE5459C7B44423642"
+        "OwnerKey" = "8:_FF49AE2A0DF845378EAEEB595D89EF0B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_7E7F7D9F8ABC472CE5459C7B44423642"
         "OwnerKey" = "8:_EFBCA83C72174BD5BB5A1B5EC5843565"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -3389,6 +3725,18 @@
         {
         "MsmKey" = "8:_80CB3AF4DBF904CFB7AC9160D96575F5"
         "OwnerKey" = "8:_F325E31671CA9E09B23A031E6E02E2C9"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_80CB3AF4DBF904CFB7AC9160D96575F5"
+        "OwnerKey" = "8:_8C9950A4AA9C49A594CCE3170C1699EE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_80CB3AF4DBF904CFB7AC9160D96575F5"
+        "OwnerKey" = "8:_FF49AE2A0DF845378EAEEB595D89EF0B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -3495,6 +3843,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_826A9737C5074DD3A3D0A0D29610056F"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_833A4E9AA4BF42A7059476F906DAD6DA"
         "OwnerKey" = "8:_2847ADC988954FFBA474138D2E753D84"
         "MsmSig" = "8:_UNDEFINED"
@@ -3521,6 +3875,18 @@
         {
         "MsmKey" = "8:_8454433E517D42323B4504CEE7FD9A04"
         "OwnerKey" = "8:_894D2320BA9C79EA4139324E68BFAE64"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_8454433E517D42323B4504CEE7FD9A04"
+        "OwnerKey" = "8:_8C9950A4AA9C49A594CCE3170C1699EE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_8454433E517D42323B4504CEE7FD9A04"
+        "OwnerKey" = "8:_FF49AE2A0DF845378EAEEB595D89EF0B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -3652,6 +4018,18 @@
         "Entry"
         {
         "MsmKey" = "8:_894D2320BA9C79EA4139324E68BFAE64"
+        "OwnerKey" = "8:_8C9950A4AA9C49A594CCE3170C1699EE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_894D2320BA9C79EA4139324E68BFAE64"
+        "OwnerKey" = "8:_FF49AE2A0DF845378EAEEB595D89EF0B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_894D2320BA9C79EA4139324E68BFAE64"
         "OwnerKey" = "8:_F66C2E2310D1BCF2CD480B07B2211F40"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -3687,6 +4065,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_8C9950A4AA9C49A594CCE3170C1699EE"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_8CE93A3085B608658F216F2DA21581C5"
         "OwnerKey" = "8:_2847ADC988954FFBA474138D2E753D84"
         "MsmSig" = "8:_UNDEFINED"
@@ -3713,6 +4097,18 @@
         {
         "MsmKey" = "8:_8E92BC285BA9C1340B52BED4FF195F9E"
         "OwnerKey" = "8:_80CB3AF4DBF904CFB7AC9160D96575F5"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_8E92BC285BA9C1340B52BED4FF195F9E"
+        "OwnerKey" = "8:_8C9950A4AA9C49A594CCE3170C1699EE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_8E92BC285BA9C1340B52BED4FF195F9E"
+        "OwnerKey" = "8:_FF49AE2A0DF845378EAEEB595D89EF0B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -3755,6 +4151,12 @@
         {
         "MsmKey" = "8:_8E92BC285BA9C1340B52BED4FF195F9E"
         "OwnerKey" = "8:_68411BA7A2F3EE9E06D7D6292C28003D"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_8E92BC285BA9C1340B52BED4FF195F9E"
+        "OwnerKey" = "8:_7A3CBB7796A677B343D96D76860A3797"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -4053,8 +4455,32 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_9434021A1A0275F019E4855B45F0E49D"
+        "OwnerKey" = "8:_8C9950A4AA9C49A594CCE3170C1699EE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_9434021A1A0275F019E4855B45F0E49D"
+        "OwnerKey" = "8:_FF49AE2A0DF845378EAEEB595D89EF0B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_95076C6B0F891123300CA250F9883FE5"
         "OwnerKey" = "8:_19B9BDFA202C4F75AF0095BED8ECF312"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_95076C6B0F891123300CA250F9883FE5"
+        "OwnerKey" = "8:_8C9950A4AA9C49A594CCE3170C1699EE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_95076C6B0F891123300CA250F9883FE5"
+        "OwnerKey" = "8:_FF49AE2A0DF845378EAEEB595D89EF0B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -4067,6 +4493,18 @@
         {
         "MsmKey" = "8:_95E64938678079074EB846E36E971B59"
         "OwnerKey" = "8:_01841F9F6FB714A70DFFBB694997A1CF"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_95E64938678079074EB846E36E971B59"
+        "OwnerKey" = "8:_8C9950A4AA9C49A594CCE3170C1699EE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_95E64938678079074EB846E36E971B59"
+        "OwnerKey" = "8:_FF49AE2A0DF845378EAEEB595D89EF0B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -4119,6 +4557,18 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_9764800CC3C8485E117EB62E82640767"
+        "OwnerKey" = "8:_8C9950A4AA9C49A594CCE3170C1699EE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_9764800CC3C8485E117EB62E82640767"
+        "OwnerKey" = "8:_FF49AE2A0DF845378EAEEB595D89EF0B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_982ADC23854BF498996828A0491F7E0B"
         "OwnerKey" = "8:_2847ADC988954FFBA474138D2E753D84"
         "MsmSig" = "8:_UNDEFINED"
@@ -4149,8 +4599,32 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_9C2B2C0E909F5420C231FEE7D074C86E"
+        "OwnerKey" = "8:_8C9950A4AA9C49A594CCE3170C1699EE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_9C2B2C0E909F5420C231FEE7D074C86E"
+        "OwnerKey" = "8:_FF49AE2A0DF845378EAEEB595D89EF0B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_9C6A83DAAD809823CA01E01F05FF1713"
         "OwnerKey" = "8:_19B9BDFA202C4F75AF0095BED8ECF312"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_9C6A83DAAD809823CA01E01F05FF1713"
+        "OwnerKey" = "8:_8C9950A4AA9C49A594CCE3170C1699EE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_9C6A83DAAD809823CA01E01F05FF1713"
+        "OwnerKey" = "8:_FF49AE2A0DF845378EAEEB595D89EF0B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -4161,8 +4635,32 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_9CE1FBABEAA202ED0D3C6EB35EDEA0FE"
+        "OwnerKey" = "8:_8C9950A4AA9C49A594CCE3170C1699EE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_9CE1FBABEAA202ED0D3C6EB35EDEA0FE"
+        "OwnerKey" = "8:_FF49AE2A0DF845378EAEEB595D89EF0B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_9D942AB4839A16AB620202BA73BE3D6E"
         "OwnerKey" = "8:_F325E31671CA9E09B23A031E6E02E2C9"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_9D942AB4839A16AB620202BA73BE3D6E"
+        "OwnerKey" = "8:_8C9950A4AA9C49A594CCE3170C1699EE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_9D942AB4839A16AB620202BA73BE3D6E"
+        "OwnerKey" = "8:_FF49AE2A0DF845378EAEEB595D89EF0B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -4414,6 +4912,18 @@
         "Entry"
         {
         "MsmKey" = "8:_A002E0B6F90FE13275BA5D1214B2CB7B"
+        "OwnerKey" = "8:_8C9950A4AA9C49A594CCE3170C1699EE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_A002E0B6F90FE13275BA5D1214B2CB7B"
+        "OwnerKey" = "8:_FF49AE2A0DF845378EAEEB595D89EF0B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_A002E0B6F90FE13275BA5D1214B2CB7B"
         "OwnerKey" = "8:_19B9BDFA202C4F75AF0095BED8ECF312"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -4479,6 +4989,18 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_A0F365A9665C174948D0AF49135966AD"
+        "OwnerKey" = "8:_8C9950A4AA9C49A594CCE3170C1699EE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_A0F365A9665C174948D0AF49135966AD"
+        "OwnerKey" = "8:_FF49AE2A0DF845378EAEEB595D89EF0B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_A2E29EAD41434A2B9EB8A70C9E373A70"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -4491,8 +5013,32 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_A446D5F6B98782882E46BA5A09232133"
+        "OwnerKey" = "8:_8C9950A4AA9C49A594CCE3170C1699EE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_A446D5F6B98782882E46BA5A09232133"
+        "OwnerKey" = "8:_FF49AE2A0DF845378EAEEB595D89EF0B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_A50071CB0385CDA97494D40604545915"
         "OwnerKey" = "8:_19B9BDFA202C4F75AF0095BED8ECF312"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_A50071CB0385CDA97494D40604545915"
+        "OwnerKey" = "8:_8C9950A4AA9C49A594CCE3170C1699EE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_A50071CB0385CDA97494D40604545915"
+        "OwnerKey" = "8:_FF49AE2A0DF845378EAEEB595D89EF0B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -4523,6 +5069,18 @@
         {
         "MsmKey" = "8:_B035A3E3C7BD72E8BC8723B0D37D9E18"
         "OwnerKey" = "8:_272EE8C4C86A83258592F22605C07C97"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_B035A3E3C7BD72E8BC8723B0D37D9E18"
+        "OwnerKey" = "8:_8C9950A4AA9C49A594CCE3170C1699EE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_B035A3E3C7BD72E8BC8723B0D37D9E18"
+        "OwnerKey" = "8:_FF49AE2A0DF845378EAEEB595D89EF0B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -4559,6 +5117,18 @@
         {
         "MsmKey" = "8:_B43465BC1A914896F0EE5D43A8E298B5"
         "OwnerKey" = "8:_2FCE8D2B83B5FBD184BAF3AE235B47CE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_B43465BC1A914896F0EE5D43A8E298B5"
+        "OwnerKey" = "8:_8C9950A4AA9C49A594CCE3170C1699EE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_B43465BC1A914896F0EE5D43A8E298B5"
+        "OwnerKey" = "8:_FF49AE2A0DF845378EAEEB595D89EF0B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -4672,6 +5242,18 @@
         "Entry"
         {
         "MsmKey" = "8:_B69F47F08A4A678D8FA05F9461F5C630"
+        "OwnerKey" = "8:_8C9950A4AA9C49A594CCE3170C1699EE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_B69F47F08A4A678D8FA05F9461F5C630"
+        "OwnerKey" = "8:_FF49AE2A0DF845378EAEEB595D89EF0B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_B69F47F08A4A678D8FA05F9461F5C630"
         "OwnerKey" = "8:_EFBCA83C72174BD5BB5A1B5EC5843565"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -4715,6 +5297,18 @@
         {
         "MsmKey" = "8:_B9AB56FC1D9FF9FD2F8B2BB5E804AB29"
         "OwnerKey" = "8:_51AA8529741ADC4E72D507CC7C99309B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_B9AB56FC1D9FF9FD2F8B2BB5E804AB29"
+        "OwnerKey" = "8:_8C9950A4AA9C49A594CCE3170C1699EE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_B9AB56FC1D9FF9FD2F8B2BB5E804AB29"
+        "OwnerKey" = "8:_FF49AE2A0DF845378EAEEB595D89EF0B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -4864,6 +5458,18 @@
         "Entry"
         {
         "MsmKey" = "8:_BE160A182DDAA1F611BD640DC141357F"
+        "OwnerKey" = "8:_8C9950A4AA9C49A594CCE3170C1699EE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_BE160A182DDAA1F611BD640DC141357F"
+        "OwnerKey" = "8:_FF49AE2A0DF845378EAEEB595D89EF0B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_BE160A182DDAA1F611BD640DC141357F"
         "OwnerKey" = "8:_EFBCA83C72174BD5BB5A1B5EC5843565"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -4989,8 +5595,32 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_C0226AA0D0A693C8BD205B1BE3BB109F"
+        "OwnerKey" = "8:_8C9950A4AA9C49A594CCE3170C1699EE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C0226AA0D0A693C8BD205B1BE3BB109F"
+        "OwnerKey" = "8:_FF49AE2A0DF845378EAEEB595D89EF0B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_C1788B873B69D7FA61AF9FE65842D829"
         "OwnerKey" = "8:_D1F51135A28592866639230F4D0B851B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C1788B873B69D7FA61AF9FE65842D829"
+        "OwnerKey" = "8:_8C9950A4AA9C49A594CCE3170C1699EE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C1788B873B69D7FA61AF9FE65842D829"
+        "OwnerKey" = "8:_FF49AE2A0DF845378EAEEB595D89EF0B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -5153,6 +5783,18 @@
         {
         "MsmKey" = "8:_C83AB893CBA745E43D58D3B1E39053EE"
         "OwnerKey" = "8:_7E7F7D9F8ABC472CE5459C7B44423642"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C83AB893CBA745E43D58D3B1E39053EE"
+        "OwnerKey" = "8:_8C9950A4AA9C49A594CCE3170C1699EE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C83AB893CBA745E43D58D3B1E39053EE"
+        "OwnerKey" = "8:_FF49AE2A0DF845378EAEEB595D89EF0B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -5404,6 +6046,18 @@
         "Entry"
         {
         "MsmKey" = "8:_D1F51135A28592866639230F4D0B851B"
+        "OwnerKey" = "8:_8C9950A4AA9C49A594CCE3170C1699EE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_D1F51135A28592866639230F4D0B851B"
+        "OwnerKey" = "8:_FF49AE2A0DF845378EAEEB595D89EF0B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_D1F51135A28592866639230F4D0B851B"
         "OwnerKey" = "8:_EFBCA83C72174BD5BB5A1B5EC5843565"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -5453,6 +6107,18 @@
         {
         "MsmKey" = "8:_D1FAD56B4C166E20EA6A1801362DCF69"
         "OwnerKey" = "8:_7E7F7D9F8ABC472CE5459C7B44423642"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_D1FAD56B4C166E20EA6A1801362DCF69"
+        "OwnerKey" = "8:_8C9950A4AA9C49A594CCE3170C1699EE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_D1FAD56B4C166E20EA6A1801362DCF69"
+        "OwnerKey" = "8:_FF49AE2A0DF845378EAEEB595D89EF0B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -5585,6 +6251,18 @@
         {
         "MsmKey" = "8:_D544733CFE3FFE099CD723DFD6B2BE7C"
         "OwnerKey" = "8:_D1F51135A28592866639230F4D0B851B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_D544733CFE3FFE099CD723DFD6B2BE7C"
+        "OwnerKey" = "8:_8C9950A4AA9C49A594CCE3170C1699EE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_D544733CFE3FFE099CD723DFD6B2BE7C"
+        "OwnerKey" = "8:_FF49AE2A0DF845378EAEEB595D89EF0B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -5782,6 +6460,18 @@
         "Entry"
         {
         "MsmKey" = "8:_DB09A565E92E35E6D0491E0D479BDEC9"
+        "OwnerKey" = "8:_8C9950A4AA9C49A594CCE3170C1699EE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_DB09A565E92E35E6D0491E0D479BDEC9"
+        "OwnerKey" = "8:_FF49AE2A0DF845378EAEEB595D89EF0B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_DB09A565E92E35E6D0491E0D479BDEC9"
         "OwnerKey" = "8:_EFBCA83C72174BD5BB5A1B5EC5843565"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -5866,6 +6556,18 @@
         "Entry"
         {
         "MsmKey" = "8:_DCAD76C5764D38B65344A69C85FD0AEB"
+        "OwnerKey" = "8:_8C9950A4AA9C49A594CCE3170C1699EE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_DCAD76C5764D38B65344A69C85FD0AEB"
+        "OwnerKey" = "8:_FF49AE2A0DF845378EAEEB595D89EF0B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_DCAD76C5764D38B65344A69C85FD0AEB"
         "OwnerKey" = "8:_EFBCA83C72174BD5BB5A1B5EC5843565"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -5927,6 +6629,12 @@
         {
         "MsmKey" = "8:_DCAD76C5764D38B65344A69C85FD0AEB"
         "OwnerKey" = "8:_68411BA7A2F3EE9E06D7D6292C28003D"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_DCAD76C5764D38B65344A69C85FD0AEB"
+        "OwnerKey" = "8:_7A3CBB7796A677B343D96D76860A3797"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -6544,6 +7252,18 @@
         "Entry"
         {
         "MsmKey" = "8:_F325E31671CA9E09B23A031E6E02E2C9"
+        "OwnerKey" = "8:_8C9950A4AA9C49A594CCE3170C1699EE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_F325E31671CA9E09B23A031E6E02E2C9"
+        "OwnerKey" = "8:_FF49AE2A0DF845378EAEEB595D89EF0B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_F325E31671CA9E09B23A031E6E02E2C9"
         "OwnerKey" = "8:_6A5033D7948FA8A1DDC13FE359AB42FD"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -6790,6 +7510,18 @@
         "Entry"
         {
         "MsmKey" = "8:_FCE606EE4DA1D917E614372061530B45"
+        "OwnerKey" = "8:_8C9950A4AA9C49A594CCE3170C1699EE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_FCE606EE4DA1D917E614372061530B45"
+        "OwnerKey" = "8:_FF49AE2A0DF845378EAEEB595D89EF0B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_FCE606EE4DA1D917E614372061530B45"
         "OwnerKey" = "8:_EFBCA83C72174BD5BB5A1B5EC5843565"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -6879,6 +7611,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_FF49AE2A0DF845378EAEEB595D89EF0B"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_F497AADB6FB6461C9D6DB76EC87E2426"
         "MsmSig" = "8:_UNDEFINED"
@@ -6886,37 +7624,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_E094FCAF146ADCCCEE56DF43D6EDE1CD"
+        "OwnerKey" = "8:_8C9950A4AA9C49A594CCE3170C1699EE"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_33640E06828C617B991FF1821A95CD4C"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_CCE4873716EBBC2D6E3341D546E33F72"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_3AC610287B1C89986839C5BDC689EADE"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_967C987C74752F354AE43F77FE511267"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_E148500302C7D009F4E86B0A7043DE24"
+        "OwnerKey" = "8:_FF49AE2A0DF845378EAEEB595D89EF0B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -7006,6 +7720,12 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_7A3CBB7796A677B343D96D76860A3797"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_EF7477945D6A0F7368041A8CF087A634"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -7013,6 +7733,42 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_2A987E4BCE0006B4631D1C0011EDD13C"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_E094FCAF146ADCCCEE56DF43D6EDE1CD"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_33640E06828C617B991FF1821A95CD4C"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_CCE4873716EBBC2D6E3341D546E33F72"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_3AC610287B1C89986839C5BDC689EADE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_967C987C74752F354AE43F77FE511267"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_E148500302C7D009F4E86B0A7043DE24"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -8291,11 +9047,6 @@
             "AssemblyAsmDisplayName" = "8:Upperbay.Assistant.CloudMqttPublisher, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_01841F9F6FB714A70DFFBB694997A1CF"
-                    {
-                    "Name" = "8:Upperbay.Assistant.CloudMqttPublisher.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Upperbay.Assistant.CloudMqttPublisher.dll"
             "TargetName" = "8:"
@@ -8335,6 +9086,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_02B74C80BE4E4EAE98BBACC92F5D281E"
+            {
+            "SourcePath" = "8:..\\bin\\config\\ModelAgent.app.config"
+            "TargetName" = "8:ModelAgent.app.config"
+            "Tag" = "8:"
+            "Folder" = "8:_AAB8F2D0860E4E9181E7133F823D555B"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_04750B3EE9C40624D2CFFF9D6C851D12"
             {
             "AssemblyRegister" = "3:1"
@@ -8342,11 +9113,6 @@
             "AssemblyAsmDisplayName" = "8:Upperbay.Agent.ConfigurationSettings, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_04750B3EE9C40624D2CFFF9D6C851D12"
-                    {
-                    "Name" = "8:Upperbay.Agent.ConfigurationSettings.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Upperbay.Agent.ConfigurationSettings.dll"
             "TargetName" = "8:"
@@ -8404,11 +9170,6 @@
             "AssemblyAsmDisplayName" = "8:Nethereum.Hex, Version=3.8.0.0, Culture=neutral, PublicKeyToken=8768a594786aba4e, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_04F5C4FFC939D404830AE44D0A014D48"
-                    {
-                    "Name" = "8:Nethereum.Hex.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Nethereum.Hex.dll"
             "TargetName" = "8:"
@@ -8435,11 +9196,6 @@
             "AssemblyAsmDisplayName" = "8:Nethereum.BlockchainProcessing, Version=3.8.0.0, Culture=neutral, PublicKeyToken=8768a594786aba4e, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_059A8C33B851CA42F8C881706664C06D"
-                    {
-                    "Name" = "8:Nethereum.BlockchainProcessing.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Nethereum.BlockchainProcessing.dll"
             "TargetName" = "8:"
@@ -8528,11 +9284,6 @@
             "AssemblyAsmDisplayName" = "8:RestSharp, Version=105.1.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_0904D010DD83A2642E0D05D9A45289EA"
-                    {
-                    "Name" = "8:RestSharp.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:RestSharp.dll"
             "TargetName" = "8:"
@@ -8765,11 +9516,6 @@
             "AssemblyAsmDisplayName" = "8:Upperbay.Worker.JSON, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_112CF4AE9B85162A3F08B6BF7F012800"
-                    {
-                    "Name" = "8:Upperbay.Worker.JSON.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Upperbay.Worker.JSON.dll"
             "TargetName" = "8:"
@@ -8816,11 +9562,6 @@
             "AssemblyAsmDisplayName" = "8:Upperbay.Worker.JSON, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_12BE4C4893A149E458A8F51A2F27B21D"
-                    {
-                    "Name" = "8:Upperbay.Worker.JSON.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Upperbay.Worker.JSON.dll"
             "TargetName" = "8:"
@@ -8878,11 +9619,6 @@
             "AssemblyAsmDisplayName" = "8:Upperbay.Assistant.EtherReadAccessor, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_1855DD5FDB9E384AC9CA7CDDF4D9FC98"
-                    {
-                    "Name" = "8:Upperbay.Assistant.EtherReadAccessor.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Upperbay.Assistant.EtherReadAccessor.dll"
             "TargetName" = "8:"
@@ -8991,11 +9727,6 @@
             "AssemblyAsmDisplayName" = "8:Nethereum.RPC, Version=3.8.0.0, Culture=neutral, PublicKeyToken=8768a594786aba4e, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_21E39531075B2FBFD7913A5BD8FE3C0B"
-                    {
-                    "Name" = "8:Nethereum.RPC.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Nethereum.RPC.dll"
             "TargetName" = "8:"
@@ -9073,11 +9804,6 @@
             "AssemblyAsmDisplayName" = "8:Upperbay.Worker.Voice, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_251FBBBBB1612E883831B1000E2D572C"
-                    {
-                    "Name" = "8:Upperbay.Worker.Voice.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Upperbay.Worker.Voice.dll"
             "TargetName" = "8:"
@@ -9104,11 +9830,6 @@
             "AssemblyAsmDisplayName" = "8:Upperbay.Assistant.ThingSpeakWriteAccessor, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_2655323524BF391E9E4D7093166EFEBF"
-                    {
-                    "Name" = "8:Upperbay.Assistant.ThingSpeakWriteAccessor.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Upperbay.Assistant.ThingSpeakWriteAccessor.dll"
             "TargetName" = "8:"
@@ -9135,11 +9856,6 @@
             "AssemblyAsmDisplayName" = "8:Upperbay.Assistant.GameEventReactor, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_272EE8C4C86A83258592F22605C07C97"
-                    {
-                    "Name" = "8:Upperbay.Assistant.GameEventReactor.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Upperbay.Assistant.GameEventReactor.dll"
             "TargetName" = "8:"
@@ -9186,11 +9902,6 @@
             "AssemblyAsmDisplayName" = "8:Nethereum.Web3, Version=3.8.0.0, Culture=neutral, PublicKeyToken=8768a594786aba4e, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_2994956E34A185DD71F0A21B504E6049"
-                    {
-                    "Name" = "8:Nethereum.Web3.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Nethereum.Web3.dll"
             "TargetName" = "8:"
@@ -9248,11 +9959,6 @@
             "AssemblyAsmDisplayName" = "8:Nethereum.ABI, Version=3.8.0.0, Culture=neutral, PublicKeyToken=8768a594786aba4e, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_2A7B68B962329581B627DEEE32BFC80A"
-                    {
-                    "Name" = "8:Nethereum.ABI.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Nethereum.ABI.dll"
             "TargetName" = "8:"
@@ -9443,11 +10149,6 @@
             "AssemblyAsmDisplayName" = "8:Upperbay.Worker.ODBC, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_2FCE8D2B83B5FBD184BAF3AE235B47CE"
-                    {
-                    "Name" = "8:Upperbay.Worker.ODBC.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Upperbay.Worker.ODBC.dll"
             "TargetName" = "8:"
@@ -9505,11 +10206,6 @@
             "AssemblyAsmDisplayName" = "8:Upperbay.Assistant.EtherWriteAccessor, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_32245469A43B50727486B51E5A80D405"
-                    {
-                    "Name" = "8:Upperbay.Assistant.EtherWriteAccessor.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Upperbay.Assistant.EtherWriteAccessor.dll"
             "TargetName" = "8:"
@@ -9968,11 +10664,6 @@
             "AssemblyAsmDisplayName" = "8:Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_3CB801F9CFAB8D2DE6506BB2ABCCCBF9"
-                    {
-                    "Name" = "8:Serilog.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Serilog.dll"
             "TargetName" = "8:"
@@ -10070,11 +10761,6 @@
             "AssemblyAsmDisplayName" = "8:Upperbay.Assistant.ThingSpeakReadAccessor, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_3F5F9E732DA27238262CDEE6FC2A716E"
-                    {
-                    "Name" = "8:Upperbay.Assistant.ThingSpeakReadAccessor.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Upperbay.Assistant.ThingSpeakReadAccessor.dll"
             "TargetName" = "8:"
@@ -10214,11 +10900,6 @@
             "AssemblyAsmDisplayName" = "8:Nethereum.Util, Version=3.8.0.0, Culture=neutral, PublicKeyToken=8768a594786aba4e, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_47891C304C7F62052686669AAC7BB398"
-                    {
-                    "Name" = "8:Nethereum.Util.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Nethereum.Util.dll"
             "TargetName" = "8:"
@@ -10245,11 +10926,6 @@
             "AssemblyAsmDisplayName" = "8:Upperbay.Assistant.VariableProcessor, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_47BEA8D5A47C6DFDB2E0FF32D4E7E497"
-                    {
-                    "Name" = "8:Upperbay.Assistant.VariableProcessor.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Upperbay.Assistant.VariableProcessor.dll"
             "TargetName" = "8:"
@@ -10367,11 +11043,6 @@
             "AssemblyAsmDisplayName" = "8:Upperbay.Worker.Hasher, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_4A898214CD557228BBEDECA24ED6F4A1"
-                    {
-                    "Name" = "8:Upperbay.Worker.Hasher.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Upperbay.Worker.Hasher.dll"
             "TargetName" = "8:"
@@ -10480,11 +11151,6 @@
             "AssemblyAsmDisplayName" = "8:BouncyCastle.Crypto, Version=1.8.2.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_4DD959584694C594804F8B6B634840AD"
-                    {
-                    "Name" = "8:BouncyCastle.Crypto.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:BouncyCastle.Crypto.dll"
             "TargetName" = "8:"
@@ -10511,11 +11177,6 @@
             "AssemblyAsmDisplayName" = "8:Upperbay.Worker.Voice, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_4F4B4E9087903364CCCB51B37E98A672"
-                    {
-                    "Name" = "8:Upperbay.Worker.Voice.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Upperbay.Worker.Voice.dll"
             "TargetName" = "8:"
@@ -10542,11 +11203,6 @@
             "AssemblyAsmDisplayName" = "8:Upperbay.Worker.MQTT, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_51AA8529741ADC4E72D507CC7C99309B"
-                    {
-                    "Name" = "8:Upperbay.Worker.MQTT.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Upperbay.Worker.MQTT.dll"
             "TargetName" = "8:"
@@ -10635,11 +11291,6 @@
             "AssemblyAsmDisplayName" = "8:Upperbay.Agent.Interfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_532AC1B2F981866C28646552B47F0CB9"
-                    {
-                    "Name" = "8:Upperbay.Agent.Interfaces.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Upperbay.Agent.Interfaces.dll"
             "TargetName" = "8:"
@@ -10923,11 +11574,6 @@
             "AssemblyAsmDisplayName" = "8:MQTTnet.Extensions.ManagedClient, Version=3.0.12.0, Culture=neutral, PublicKeyToken=b69712f52770c0a7, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_5BF6BBF5B5456E5A053699993B089C4D"
-                    {
-                    "Name" = "8:MQTTnet.Extensions.ManagedClient.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:MQTTnet.Extensions.ManagedClient.dll"
             "TargetName" = "8:"
@@ -11240,11 +11886,6 @@
             "AssemblyAsmDisplayName" = "8:Upperbay.Core.Library, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_6639AA92DCD77F24260117245B68EAE3"
-                    {
-                    "Name" = "8:Upperbay.Core.Library.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Upperbay.Core.Library.dll"
             "TargetName" = "8:"
@@ -11271,11 +11912,6 @@
             "AssemblyAsmDisplayName" = "8:Nethereum.RLP, Version=3.8.0.0, Culture=neutral, PublicKeyToken=8768a594786aba4e, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_669973A9E3CBFEA70363AEA4D2BDA520"
-                    {
-                    "Name" = "8:Nethereum.RLP.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Nethereum.RLP.dll"
             "TargetName" = "8:"
@@ -11322,11 +11958,6 @@
             "AssemblyAsmDisplayName" = "8:Upperbay.Worker.EtherAccess, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_68411BA7A2F3EE9E06D7D6292C28003D"
-                    {
-                    "Name" = "8:Upperbay.Worker.EtherAccess.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Upperbay.Worker.EtherAccess.dll"
             "TargetName" = "8:"
@@ -11373,11 +12004,6 @@
             "AssemblyAsmDisplayName" = "8:MQTTnet, Version=3.0.12.0, Culture=neutral, PublicKeyToken=b69712f52770c0a7, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_69872187D5540210B7422B9E08653094"
-                    {
-                    "Name" = "8:MQTTnet.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:MQTTnet.dll"
             "TargetName" = "8:"
@@ -11404,11 +12030,6 @@
             "AssemblyAsmDisplayName" = "8:Upperbay.Worker.MQTT, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_6A5033D7948FA8A1DDC13FE359AB42FD"
-                    {
-                    "Name" = "8:Upperbay.Worker.MQTT.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Upperbay.Worker.MQTT.dll"
             "TargetName" = "8:"
@@ -11610,11 +12231,6 @@
             "AssemblyAsmDisplayName" = "8:Nethereum.Signer, Version=3.8.0.0, Culture=neutral, PublicKeyToken=8768a594786aba4e, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_7952034DE93213C0F4C85487653686B9"
-                    {
-                    "Name" = "8:Nethereum.Signer.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Nethereum.Signer.dll"
             "TargetName" = "8:"
@@ -11661,13 +12277,34 @@
             "AssemblyAsmDisplayName" = "8:Serilog.Sinks.File, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_79FDA1E7F10E3DF69773C6D2FC9F8560"
-                    {
-                    "Name" = "8:Serilog.Sinks.File.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Serilog.Sinks.File.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_1750E00EE0164D7887748DED4AE6F7D9"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_7A3CBB7796A677B343D96D76860A3797"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:NWS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                }
+            "SourcePath" = "8:NWS.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_1750E00EE0164D7887748DED4AE6F7D9"
@@ -11876,11 +12513,6 @@
             "AssemblyAsmDisplayName" = "8:Upperbay.Worker.EtherAccess, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_7E7F7D9F8ABC472CE5459C7B44423642"
-                    {
-                    "Name" = "8:Upperbay.Worker.EtherAccess.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Upperbay.Worker.EtherAccess.dll"
             "TargetName" = "8:"
@@ -11907,11 +12539,6 @@
             "AssemblyAsmDisplayName" = "8:Upperbay.Worker.JSON, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_80CB3AF4DBF904CFB7AC9160D96575F5"
-                    {
-                    "Name" = "8:Upperbay.Worker.JSON.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Upperbay.Worker.JSON.dll"
             "TargetName" = "8:"
@@ -11937,6 +12564,26 @@
             "TargetName" = "8:Q4StartShedActions.txt"
             "Tag" = "8:"
             "Folder" = "8:_BB5131E9C16C445BBD14DA333BFF06AE"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_826A9737C5074DD3A3D0A0D29610056F"
+            {
+            "SourcePath" = "8:..\\bin\\config\\ProtoAgent.app.config"
+            "TargetName" = "8:ProtoAgent.app.config"
+            "Tag" = "8:"
+            "Folder" = "8:_AAB8F2D0860E4E9181E7133F823D555B"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -11989,11 +12636,6 @@
             "AssemblyAsmDisplayName" = "8:RestSharp, Version=105.1.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_8454433E517D42323B4504CEE7FD9A04"
-                    {
-                    "Name" = "8:RestSharp.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:RestSharp.dll"
             "TargetName" = "8:"
@@ -12164,11 +12806,6 @@
             "AssemblyAsmDisplayName" = "8:TextmagicRest, Version=1.0.0.5, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_894D2320BA9C79EA4139324E68BFAE64"
-                    {
-                    "Name" = "8:TextmagicRest.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:TextmagicRest.dll"
             "TargetName" = "8:"
@@ -12257,11 +12894,6 @@
             "AssemblyAsmDisplayName" = "8:Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_8E92BC285BA9C1340B52BED4FF195F9E"
-                    {
-                    "Name" = "8:Newtonsoft.Json.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Newtonsoft.Json.dll"
             "TargetName" = "8:"
@@ -12514,11 +13146,6 @@
             "AssemblyAsmDisplayName" = "8:Upperbay.Assistant.MqttPublisher, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_9434021A1A0275F019E4855B45F0E49D"
-                    {
-                    "Name" = "8:Upperbay.Assistant.MqttPublisher.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Upperbay.Assistant.MqttPublisher.dll"
             "TargetName" = "8:"
@@ -12545,11 +13172,6 @@
             "AssemblyAsmDisplayName" = "8:LMP, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_95076C6B0F891123300CA250F9883FE5"
-                    {
-                    "Name" = "8:LMP.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:LMP.dll"
             "TargetName" = "8:"
@@ -12576,11 +13198,6 @@
             "AssemblyAsmDisplayName" = "8:Upperbay.Worker.Timers, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_95E64938678079074EB846E36E971B59"
-                    {
-                    "Name" = "8:Upperbay.Worker.Timers.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Upperbay.Worker.Timers.dll"
             "TargetName" = "8:"
@@ -12638,11 +13255,6 @@
             "AssemblyAsmDisplayName" = "8:Upperbay.Assistant.MqttSubscriber, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_9764800CC3C8485E117EB62E82640767"
-                    {
-                    "Name" = "8:Upperbay.Assistant.MqttSubscriber.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Upperbay.Assistant.MqttSubscriber.dll"
             "TargetName" = "8:"
@@ -12700,11 +13312,6 @@
             "AssemblyAsmDisplayName" = "8:Upperbay.Assistant.WeatherService, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_9C2B2C0E909F5420C231FEE7D074C86E"
-                    {
-                    "Name" = "8:Upperbay.Assistant.WeatherService.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Upperbay.Assistant.WeatherService.dll"
             "TargetName" = "8:"
@@ -12731,11 +13338,6 @@
             "AssemblyAsmDisplayName" = "8:Upperbay.Assistant.Cache, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_9C6A83DAAD809823CA01E01F05FF1713"
-                    {
-                    "Name" = "8:Upperbay.Assistant.Cache.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Upperbay.Assistant.Cache.dll"
             "TargetName" = "8:"
@@ -12762,11 +13364,6 @@
             "AssemblyAsmDisplayName" = "8:Upperbay.Assistant.SmartthingsPublisher, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_9CE1FBABEAA202ED0D3C6EB35EDEA0FE"
-                    {
-                    "Name" = "8:Upperbay.Assistant.SmartthingsPublisher.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Upperbay.Assistant.SmartthingsPublisher.dll"
             "TargetName" = "8:"
@@ -12793,11 +13390,6 @@
             "AssemblyAsmDisplayName" = "8:Upperbay.Agent.Interfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_9D942AB4839A16AB620202BA73BE3D6E"
-                    {
-                    "Name" = "8:Upperbay.Agent.Interfaces.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Upperbay.Agent.Interfaces.dll"
             "TargetName" = "8:"
@@ -12824,11 +13416,6 @@
             "AssemblyAsmDisplayName" = "8:Upperbay.Worker.AstronomyClock, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_A002E0B6F90FE13275BA5D1214B2CB7B"
-                    {
-                    "Name" = "8:Upperbay.Worker.AstronomyClock.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Upperbay.Worker.AstronomyClock.dll"
             "TargetName" = "8:"
@@ -12937,11 +13524,6 @@
             "AssemblyAsmDisplayName" = "8:Upperbay.Assistant.ManualInput, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_A0F365A9665C174948D0AF49135966AD"
-                    {
-                    "Name" = "8:Upperbay.Assistant.ManualInput.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Upperbay.Assistant.ManualInput.dll"
             "TargetName" = "8:"
@@ -12968,11 +13550,6 @@
             "AssemblyAsmDisplayName" = "8:Upperbay.Assistant.Simulator, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_A446D5F6B98782882E46BA5A09232133"
-                    {
-                    "Name" = "8:Upperbay.Assistant.Simulator.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Upperbay.Assistant.Simulator.dll"
             "TargetName" = "8:"
@@ -12999,11 +13576,6 @@
             "AssemblyAsmDisplayName" = "8:Upperbay.Assistant.EventReactor, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_A50071CB0385CDA97494D40604545915"
-                    {
-                    "Name" = "8:Upperbay.Assistant.EventReactor.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Upperbay.Assistant.EventReactor.dll"
             "TargetName" = "8:"
@@ -13061,11 +13633,6 @@
             "AssemblyAsmDisplayName" = "8:Upperbay.Worker.ThingSpeak, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_B035A3E3C7BD72E8BC8723B0D37D9E18"
-                    {
-                    "Name" = "8:Upperbay.Worker.ThingSpeak.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Upperbay.Worker.ThingSpeak.dll"
             "TargetName" = "8:"
@@ -13132,11 +13699,6 @@
             "AssemblyAsmDisplayName" = "8:Upperbay.Worker.PostOffice, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_B43465BC1A914896F0EE5D43A8E298B5"
-                    {
-                    "Name" = "8:Upperbay.Worker.PostOffice.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Upperbay.Worker.PostOffice.dll"
             "TargetName" = "8:"
@@ -13256,11 +13818,6 @@
             "AssemblyAsmDisplayName" = "8:Nethereum.JsonRpc.RpcClient, Version=3.8.0.0, Culture=neutral, PublicKeyToken=8768a594786aba4e, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_B69F47F08A4A678D8FA05F9461F5C630"
-                    {
-                    "Name" = "8:Nethereum.JsonRpc.RpcClient.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Nethereum.JsonRpc.RpcClient.dll"
             "TargetName" = "8:"
@@ -13287,11 +13844,6 @@
             "AssemblyAsmDisplayName" = "8:Upperbay.Worker.Hasher, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_B9AB56FC1D9FF9FD2F8B2BB5E804AB29"
-                    {
-                    "Name" = "8:Upperbay.Worker.Hasher.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Upperbay.Worker.Hasher.dll"
             "TargetName" = "8:"
@@ -13369,11 +13921,6 @@
             "AssemblyAsmDisplayName" = "8:Upperbay.Worker.ODBC, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_BCCA1F3378359C30EA25E559521A6298"
-                    {
-                    "Name" = "8:Upperbay.Worker.ODBC.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Upperbay.Worker.ODBC.dll"
             "TargetName" = "8:"
@@ -13431,11 +13978,6 @@
             "AssemblyAsmDisplayName" = "8:TextmagicRest, Version=1.0.0.5, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_BDD22E24D0B42DBA0187E2820622E459"
-                    {
-                    "Name" = "8:TextmagicRest.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:TextmagicRest.dll"
             "TargetName" = "8:"
@@ -13482,11 +14024,6 @@
             "AssemblyAsmDisplayName" = "8:Common.Logging.Core, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_BE160A182DDAA1F611BD640DC141357F"
-                    {
-                    "Name" = "8:Common.Logging.Core.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Common.Logging.Core.dll"
             "TargetName" = "8:"
@@ -13595,11 +14132,6 @@
             "AssemblyAsmDisplayName" = "8:Upperbay.Assistant.CloudMqttSecureSubscriber, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_C0226AA0D0A693C8BD205B1BE3BB109F"
-                    {
-                    "Name" = "8:Upperbay.Assistant.CloudMqttSecureSubscriber.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Upperbay.Assistant.CloudMqttSecureSubscriber.dll"
             "TargetName" = "8:"
@@ -13626,11 +14158,6 @@
             "AssemblyAsmDisplayName" = "8:Nethereum.JsonRpc.Client, Version=3.8.0.0, Culture=neutral, PublicKeyToken=8768a594786aba4e, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_C1788B873B69D7FA61AF9FE65842D829"
-                    {
-                    "Name" = "8:Nethereum.JsonRpc.Client.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Nethereum.JsonRpc.Client.dll"
             "TargetName" = "8:"
@@ -13677,11 +14204,6 @@
             "AssemblyAsmDisplayName" = "8:Upperbay.Agent.ColonyMatrix, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_C65C3204F6F8A9305B29E4FC7A32F33B"
-                    {
-                    "Name" = "8:Upperbay.Agent.ColonyMatrix.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Upperbay.Agent.ColonyMatrix.dll"
             "TargetName" = "8:"
@@ -13739,11 +14261,6 @@
             "AssemblyAsmDisplayName" = "8:Nethereum.JsonRpc.WebSocketClient, Version=3.8.0.0, Culture=neutral, PublicKeyToken=8768a594786aba4e, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_C83AB893CBA745E43D58D3B1E39053EE"
-                    {
-                    "Name" = "8:Nethereum.JsonRpc.WebSocketClient.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Nethereum.JsonRpc.WebSocketClient.dll"
             "TargetName" = "8:"
@@ -14047,11 +14564,6 @@
             "AssemblyAsmDisplayName" = "8:Upperbay.Agent.Interfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_D1734A527DF20EF7F04AD7E9EDEB2D3B"
-                    {
-                    "Name" = "8:Upperbay.Agent.Interfaces.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Upperbay.Agent.Interfaces.dll"
             "TargetName" = "8:"
@@ -14078,11 +14590,6 @@
             "AssemblyAsmDisplayName" = "8:Nethereum.Accounts, Version=3.8.0.0, Culture=neutral, PublicKeyToken=8768a594786aba4e, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_D1F51135A28592866639230F4D0B851B"
-                    {
-                    "Name" = "8:Nethereum.Accounts.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Nethereum.Accounts.dll"
             "TargetName" = "8:"
@@ -14109,11 +14616,6 @@
             "AssemblyAsmDisplayName" = "8:Nethereum.Contracts, Version=3.8.0.0, Culture=neutral, PublicKeyToken=8768a594786aba4e, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_D1FAD56B4C166E20EA6A1801362DCF69"
-                    {
-                    "Name" = "8:Nethereum.Contracts.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Nethereum.Contracts.dll"
             "TargetName" = "8:"
@@ -14253,11 +14755,6 @@
             "AssemblyAsmDisplayName" = "8:Nethereum.KeyStore, Version=3.8.0.0, Culture=neutral, PublicKeyToken=8768a594786aba4e, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_D544733CFE3FFE099CD723DFD6B2BE7C"
-                    {
-                    "Name" = "8:Nethereum.KeyStore.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Nethereum.KeyStore.dll"
             "TargetName" = "8:"
@@ -14284,11 +14781,6 @@
             "AssemblyAsmDisplayName" = "8:Upperbay.Worker.ThingSpeak, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_D587FB3D9B0EE889EEDA1229233873DF"
-                    {
-                    "Name" = "8:Upperbay.Worker.ThingSpeak.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Upperbay.Worker.ThingSpeak.dll"
             "TargetName" = "8:"
@@ -14459,11 +14951,6 @@
             "AssemblyAsmDisplayName" = "8:Nethereum.Model, Version=3.8.0.0, Culture=neutral, PublicKeyToken=8768a594786aba4e, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_DB09A565E92E35E6D0491E0D479BDEC9"
-                    {
-                    "Name" = "8:Nethereum.Model.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Nethereum.Model.dll"
             "TargetName" = "8:"
@@ -14521,11 +15008,6 @@
             "AssemblyAsmDisplayName" = "8:Upperbay.Core.Logging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_DCAD76C5764D38B65344A69C85FD0AEB"
-                    {
-                    "Name" = "8:Upperbay.Core.Logging.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Upperbay.Core.Logging.dll"
             "TargetName" = "8:"
@@ -14944,11 +15426,6 @@
             "AssemblyAsmDisplayName" = "8:LMP, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_EF7477945D6A0F7368041A8CF087A634"
-                    {
-                    "Name" = "8:LMP.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:LMP.dll"
             "TargetName" = "8:"
@@ -15088,11 +15565,6 @@
             "AssemblyAsmDisplayName" = "8:Upperbay.Agent.ColonyMatrix, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_F325E31671CA9E09B23A031E6E02E2C9"
-                    {
-                    "Name" = "8:Upperbay.Agent.ColonyMatrix.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Upperbay.Agent.ColonyMatrix.dll"
             "TargetName" = "8:"
@@ -15150,11 +15622,6 @@
             "AssemblyAsmDisplayName" = "8:Upperbay.Worker.ODBC, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_F45BF54471C37853CEE5A46D153E384B"
-                    {
-                    "Name" = "8:Upperbay.Worker.ODBC.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Upperbay.Worker.ODBC.dll"
             "TargetName" = "8:"
@@ -15305,11 +15772,6 @@
             "AssemblyAsmDisplayName" = "8:Upperbay.Worker.PostOffice, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_F66C2E2310D1BCF2CD480B07B2211F40"
-                    {
-                    "Name" = "8:Upperbay.Worker.PostOffice.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Upperbay.Worker.PostOffice.dll"
             "TargetName" = "8:"
@@ -15418,11 +15880,6 @@
             "AssemblyAsmDisplayName" = "8:Serilog.Sinks.Debug, Version=1.0.1.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_FCE606EE4DA1D917E614372061530B45"
-                    {
-                    "Name" = "8:Serilog.Sinks.Debug.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Serilog.Sinks.Debug.dll"
             "TargetName" = "8:"
@@ -15576,7 +16033,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:CurrentForCarbon"
         "ProductCode" = "8:{FBE783B0-4C9B-4B87-B1F6-FA6CE842375E}"
-        "PackageCode" = "8:{6FC640B4-628A-4336-9B89-F7B9DC2E8F35}"
+        "PackageCode" = "8:{2F25E899-C973-45EC-97EA-93ADCA689B4C}"
         "UpgradeCode" = "8:{0D811E67-C823-42A8-BF05-C24EDC9A9447}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -16375,6 +16832,34 @@
                 {
                 }
             }
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_8C9950A4AA9C49A594CCE3170C1699EE"
+            {
+            "SourcePath" = "8:..\\Source\\Upperbay\\AgentObjects\\ModelAgent\\obj\\Release\\Upperbay.AgentObject.ModelAgent.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_1750E00EE0164D7887748DED4AE6F7D9"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            "ProjectOutputGroupRegister" = "3:1"
+            "OutputConfiguration" = "8:"
+            "OutputGroupCanonicalName" = "8:Built"
+            "OutputProjectGuid" = "8:{F4B280A2-589E-4D5A-8CC3-C66CA734FAED}"
+            "ShowKeyOutput" = "11:TRUE"
+                "ExcludeFilters"
+                {
+                }
+            }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_A2E29EAD41434A2B9EB8A70C9E373A70"
             {
             "SourcePath" = "8:..\\UserInterface\\GameStarter\\obj\\Release\\GameStarter.exe"
@@ -16566,6 +17051,34 @@
             "OutputConfiguration" = "8:"
             "OutputGroupCanonicalName" = "8:Built"
             "OutputProjectGuid" = "8:{DB2020C8-FBDC-460B-8988-65322D0EFF75}"
+            "ShowKeyOutput" = "11:TRUE"
+                "ExcludeFilters"
+                {
+                }
+            }
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_FF49AE2A0DF845378EAEEB595D89EF0B"
+            {
+            "SourcePath" = "8:..\\Source\\Upperbay\\AgentObjects\\ProtoAgent\\obj\\Release\\Upperbay.AgentObject.ProtoAgent.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_1750E00EE0164D7887748DED4AE6F7D9"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            "ProjectOutputGroupRegister" = "3:1"
+            "OutputConfiguration" = "8:"
+            "OutputGroupCanonicalName" = "8:Built"
+            "OutputProjectGuid" = "8:{357252FB-7FA1-4F0C-98D7-427F73FE7CD5}"
             "ShowKeyOutput" = "11:TRUE"
                 "ExcludeFilters"
                 {

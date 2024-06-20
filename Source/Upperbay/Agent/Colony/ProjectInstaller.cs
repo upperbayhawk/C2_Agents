@@ -24,6 +24,8 @@ namespace Upperbay.Agent.Colony
     [RunInstaller(true)]
 	public class ProjectInstaller : System.Configuration.Install.Installer
 	{
+        //This overides using service name in app.config
+        private bool bUseDirectoryNameForService = true;
 
         private System.ServiceProcess.ServiceInstaller[] serviceInstallers = null;
         private System.ServiceProcess.ServiceProcessInstaller serviceProcessInstaller = null;
@@ -112,27 +114,29 @@ namespace Upperbay.Agent.Colony
                     // 
                     // serviceInstaller1
 
-                    // Service Nmae from config file
-                    //this.serviceInstallers[i].ServiceName = colony.ColonyName + "." + service.ServiceName;
-                    //this.serviceInstallers[i].DisplayName = colony.ColonyName + "." + service.DisplayName;
-                    //this.serviceInstallers[i].Description = service.Description;
-                    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                    /*---------------------------------------*/
-                    // OVERRIDE!! this breaks multiple Services!!!
-                    // Service Name from directory, not from config file!
-                    // Needed for cloning Current For Carbon game agents
-                    string currentDir = Directory.GetCurrentDirectory();
-                    Log2.Debug("Current Dir Name = " + currentDir);
-                    DirectoryInfo dir = new DirectoryInfo(currentDir);
-                    string dirName = dir.Name;
-                    Log2.Debug("Service Dir Name = " + dirName);
+                    if (bUseDirectoryNameForService)
+                    {
+                        // Service Name from directory, not from config file!
+                        // Needed for cloning Current For Carbon game agents
+                        string currentDir = Directory.GetCurrentDirectory();
+                        Log2.Debug("Current Dir Name = " + currentDir);
+                        DirectoryInfo dir = new DirectoryInfo(currentDir);
+                        string dirName = dir.Name;
+                        Log2.Debug("Service Dir Name = " + dirName);
 
-                    this.serviceInstallers[i].ServiceName = dirName;
-                    this.serviceInstallers[i].DisplayName = dirName;
-                    this.serviceInstallers[i].Description = "Grid Game";
-                    /*---------------------------------------*/
-                    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
+                        this.serviceInstallers[i].ServiceName = dirName;
+                        this.serviceInstallers[i].DisplayName = dirName;
+                        this.serviceInstallers[i].Description = service.Description;
+                    }
+                    else
+                    {
+                        // Service Nmae from config file
+                        //this.serviceInstallers[i].ServiceName = colony.ColonyName + "." + service.ServiceName;
+                        //this.serviceInstallers[i].DisplayName = colony.ColonyName + "." + service.DisplayName;
+                        this.serviceInstallers[i].ServiceName = service.ServiceName;
+                        this.serviceInstallers[i].DisplayName = service.DisplayName;
+                        this.serviceInstallers[i].Description = service.Description;
+                    }
                     // this.serviceInstallers[i].ServicesDependedOn = service.Description;
 
                     if (service.StartType == "manual")
