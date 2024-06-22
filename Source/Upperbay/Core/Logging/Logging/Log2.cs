@@ -93,7 +93,12 @@ namespace Upperbay.Core.Logging
             Log.Logger = new LoggerConfiguration()
                   .MinimumLevel.ControlledBy(LevelSwitch)
                   .WriteTo.Debug()
-                  .WriteTo.File(logfilename, rollingInterval: RollingInterval.Day)
+                  //.WriteTo.File(logfilename, rollingInterval: RollingInterval.Day)
+                  .WriteTo.File(logfilename, 
+                                fileSizeLimitBytes: 524288000, 
+                                retainedFileCountLimit: 40, 
+                                rollOnFileSizeLimit: true, 
+                                rollingInterval: RollingInterval.Day)
                   .CreateLogger();
 
             if (level.ToLower() == "debug")
