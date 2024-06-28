@@ -230,7 +230,7 @@ namespace Upperbay.Core.Library
                 cluster = "VOLTA_BETA3";
                 Dictionary<string, string> VOLTA_BETA3 = new Dictionary<string, string>();
                 VOLTA_BETA3.Add("EthereumContractAddress", "0xB99b29a8b95Bd776ef204AF35075E1f44F48aA1E");
-                VOLTA_BETA3.Add("RemoteEthereumServerURL", "http://www.mauiview.com:8545");
+                //VOLTA_BETA3.Add("RemoteEthereumServerURL", "http://www.mauiview.com:8545");
                 VOLTA_BETA3.Add("EthereumChainId", "73799");
                 //VOLTA_BETA3.Add("EthereumClusterKey", "0x0949a8d20891952dbc52ec59a2aaf36dcd97b5a114103ba4c949fdc0652a2a7f");
                 //VOLTA_BETA3.Add("EthereumClusterAddress", "0x47b03cb6a335A15a87Fb63AE295add5aFB0539ed");
