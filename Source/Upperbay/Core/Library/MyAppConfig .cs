@@ -88,19 +88,6 @@ namespace Upperbay.Core.Library
                 case "MqttRemotePassword":val = "";break;
                 //MQTT Cloud Parameters
                 case "MqttCloudEnable": val = "true"; break;
-//CLUSTER PARM                case "MqttCloudIpAddress":val = "spectacular-waiter.cloudmqtt.com";break;
-//CLUSTER PARM                case "MqttCloudPort":val = "1883";break;
-//Ethereum Parameters
-// CLUSTER PARM                case "EthereumContractAddress": val = "0x10a25f0876daf04a35E2b493f61D973Feec01ee3"; break;
-//                              case "LocalEthereumServerURL":val = "http://192.168.0.180:8545";break;
-// CLUSTER PARM                case "RemoteEthereumServerURL": val = "https://rinkeby.infura.io/v3/6c78b6cf1a304229a1d5a70e6febb2e5"; break;
-//case "RemoteEthereumServerURL": "https://goerli.infura.io/v3/6c78b6cf1a304229a1d5a70e6febb2e5"; break;
-// CLUSTER PARM                case "EthereumChainId":val = "4";break;
-//MQTT Cloud Secure Parameters
-// CLUSTER PARM               case "MqttCloudSecureLoginName":val = "pearlygates";break; 
-// CLUSTER PARM                case "MqttCloudSecurePassword":val = "pearlygates";break; 
-// CLUSTER PARM                case "MqttCloudSecureIpAddress":val = "spectacular-waiter.cloudmqtt.com";break;
-// CLUSTER PARM                case "MqttCloudSecurePort":val = "1883";break; 
                 //Thingspeak Parameters
                 case "ThingSpeakReferenceServerURL":val = "https://api.thingspeak.com/channels/"; break;
                 case "WattsMirrorAtCampDavid": val = "channelID=1111475,fieldID=1,writeKey=QN271S8WTAKN3P8S"; break;
@@ -108,9 +95,6 @@ namespace Upperbay.Core.Library
                 case "LowSoilMoistureAtCampDavid": val = "channelID=369308,fieldID=6,writeKey=INDFAI1JLG6LE4F8"; break;
                 case "ThingSpeakWriteTag1": val = "channelID=5252525,fieldID=1,writeKey=kjhhk"; break;
                 case "CalcAveragesFromRawData": val = "true"; break;
-                //SMS Parameters
-                //CLUSTER PARM                case "SMSAccountName":val = "davidhardin2";break;
-                //CLUSTERPARM                case "SMSAccountKey":val = "eWymWS3pHCqvewP8NqKdc2DnvCABDE";break;
                 //Database Parameters
                 case "hasODBCDatabase":val = "true";break;
                 case "ODBCConnectionString":val = "DSN=C2CSYSTEM_LOC"; break;
@@ -161,8 +145,17 @@ namespace Upperbay.Core.Library
                         val = ConfigurationManager.AppSettings[parameter];
                         if ((val == "") || (val == null))
                         {
-                            Log2.Error("CONFIGURATION PARAMETER NOT FOUND: {0}", parameter);
-                            return null;
+                            string value = Environment.GetEnvironmentVariable(parameter);
+                            if (value != null)
+                            {
+                                Log2.Debug("CONFIGURATION PARAMETER IN ENVIRONMENT: {0}", parameter);
+                                return value;
+                            }
+                            else
+                            {
+                                Log2.Error("CONFIGURATION PARAMETER NOT FOUND: {0}", parameter);
+                                return null;
+                            }
                         }
                     }
                     catch (Exception)
@@ -187,7 +180,7 @@ namespace Upperbay.Core.Library
                     }
                     else
                     {
-                        Log2.Info("INTERNAL CONFIGURATION PARAMETER OVERRIDDEN IN CONFIG FILE: {0} = {1}", parameter, fileval);
+                        Log2.Debug("INTERNAL CONFIGURATION PARAMETER OVERRIDDEN IN CONFIG FILE: {0} = {1}", parameter, fileval);
                         val = fileval;
                     }
                 }
@@ -274,25 +267,25 @@ namespace Upperbay.Core.Library
 
                 cluster = "VOLTA_BETA2_HIVE";
                 Dictionary<string, string> VOLTA_BETA2_HIVE = new Dictionary<string, string>();
-                VOLTA_BETA2_HIVE.Add("EthereumContractAddress", "0xaB5B2Cf8D5ba4e58Dd7c1aE3799d6c1a642d2E6a");
-                VOLTA_BETA2_HIVE.Add("RemoteEthereumServerURL", "http://www.mauiview.com:8545");
+                //VOLTA_BETA2_HIVE.Add("EthereumContractAddress", "0xaB5B2Cf8D5ba4e58Dd7c1aE3799d6c1a642d2E6a");
+                //VOLTA_BETA2_HIVE.Add("RemoteEthereumServerURL", "http://www.mauiview.com:8545");
                 VOLTA_BETA2_HIVE.Add("EthereumChainId", "73799");
-                VOLTA_BETA2_HIVE.Add("EthereumClusterKey", "0x0949a8d20891952dbc52ec59a2aaf36dcd97b5a114103ba4c949fdc0652a2a7f");
-                VOLTA_BETA2_HIVE.Add("EthereumClusterAddress", "0x47b03cb6a335A15a87Fb63AE295add5aFB0539ed");
-                VOLTA_BETA2_HIVE.Add("MqttCloudSecureLoginName", "pearlygates");
-                VOLTA_BETA2_HIVE.Add("MqttCloudSecurePassword", "!Pearlygates87!");
-                //VOLTA_BETA2_HIVE.Add("MqttCloudSecureIpAddress", "broker.hivemq.com");
-                //VOLTA_BETA2_HIVE.Add("MqttCloudSecurePort", "1883");
-                //VOLTA_BETA2_HIVE.Add("MqttCloudIpAddress", "broker.hivemq.com");
-                //VOLTA_BETA2_HIVE.Add("MqttCloudPort", "1883");
-                VOLTA_BETA2_HIVE.Add("MqttCloudSecureIpAddress", "9c41862892f042dea951b2f348b676ec.s1.eu.hivemq.cloud");
+                //VOLTA_BETA2_HIVE.Add("EthereumClusterKey", "0x0949a8d20891952dbc52ec59a2aaf36dcd97b5a114103ba4c949fdc0652a2a7f");
+                //VOLTA_BETA2_HIVE.Add("EthereumClusterAddress", "0x47b03cb6a335A15a87Fb63AE295add5aFB0539ed");
+                //VOLTA_BETA2_HIVE.Add("MqttCloudSecureLoginName", "pearlygates");
+                //VOLTA_BETA2_HIVE.Add("MqttCloudSecurePassword", "!Pearlygates87!");
+                        //VOLTA_BETA2_HIVE.Add("MqttCloudSecureIpAddress", "broker.hivemq.com");
+                        //VOLTA_BETA2_HIVE.Add("MqttCloudSecurePort", "1883");
+                        //VOLTA_BETA2_HIVE.Add("MqttCloudIpAddress", "broker.hivemq.com");
+                        //VOLTA_BETA2_HIVE.Add("MqttCloudPort", "1883");
+                //VOLTA_BETA2_HIVE.Add("MqttCloudSecureIpAddress", "9c41862892f042dea951b2f348b676ec.s1.eu.hivemq.cloud");
                 VOLTA_BETA2_HIVE.Add("MqttCloudSecurePort", "8883");
-                VOLTA_BETA2_HIVE.Add("MqttCloudIpAddress", "9c41862892f042dea951b2f348b676ec.s1.eu.hivemq.cloud");
+                //VOLTA_BETA2_HIVE.Add("MqttCloudIpAddress", "9c41862892f042dea951b2f348b676ec.s1.eu.hivemq.cloud");
                 VOLTA_BETA2_HIVE.Add("MqttCloudPort", "8883");
-                VOLTA_BETA2_HIVE.Add("SMSAccountName", "davidhardin2");
-                VOLTA_BETA2_HIVE.Add("SMSAccountKey", "eWymWS3pHCqvewP8NqKdc2DnvCABDE");
+                //VOLTA_BETA2_HIVE.Add("SMSAccountName", "davidhardin2");
+                //VOLTA_BETA2_HIVE.Add("SMSAccountKey", "eWymWS3pHCqvewP8NqKdc2DnvCABDE");
                 VOLTA_BETA2_HIVE.Add("LMPRTO", "PJM");
-                VOLTA_BETA2_HIVE.Add("LMPKey", "312249d38ae6410bbd6ea56f8343eef8");
+                //VOLTA_BETA2_HIVE.Add("LMPKey", "312249d38ae6410bbd6ea56f8343eef8");
                 VOLTA_BETA2_HIVE.Add("LMPNode", "49955");
                 _clusterParameters.Add(cluster, VOLTA_BETA2_HIVE);
 
@@ -494,8 +487,17 @@ namespace Upperbay.Core.Library
                             val = ConfigurationManager.AppSettings[parameter];
                             if (val == null)
                             {
-                                Log2.Error("CLUSTER CONFIGURATION PARAMETER NOT FOUND IN APPSETTINGS: {0} {1}", cluster, parameter);
-                                return null;
+                                string value = Environment.GetEnvironmentVariable(parameter);
+                                if (value != null)
+                                {
+                                    Log2.Debug("CLUSTER CONFIGURATION PARAMETER IN ENVIRONMENT: {0} {1}", cluster, parameter);
+                                    return value;
+                                }
+                                else
+                                {
+                                    Log2.Error("CLUSTER CONFIGURATION PARAMETER NOT FOUND: {0} {1}", cluster, parameter);
+                                    return null;
+                                }
                             }
                         }
                         catch (Exception)
