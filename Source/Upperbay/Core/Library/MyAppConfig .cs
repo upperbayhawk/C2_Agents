@@ -90,9 +90,9 @@ namespace Upperbay.Core.Library
                 case "MqttCloudEnable": val = "true"; break;
                 //Thingspeak Parameters
                 case "ThingSpeakReferenceServerURL":val = "https://api.thingspeak.com/channels/"; break;
-                //case "WattsMirrorAtCampDavid": val = "channelID=1111475,fieldID=1,writeKey=QN271S8WTAKN3P8SX"; break;
-                //case "SoilMoistureAtCampDavid": val = "channelID=369308,fieldID=1,readKey=SEQU2LPFM2JEFWUR"; break;
-                //case "LowSoilMoistureAtCampDavid": val = "channelID=369308,fieldID=6,writeKey=INDFAI1JLG6LE4F8X"; break;
+                //case "WattsMirrorAtCampDavid": val = "channelID=1111475,fieldID=1,writeKey=QN27xxxxxxxx3P8SX"; break;
+                //case "SoilMoistureAtCampDavid": val = "channelID=369308,fieldID=1,readKey=SEQxxxxxx2JEFWUR"; break;
+                //case "LowSoilMoistureAtCampDavid": val = "channelID=369308,fieldID=6,writeKey=INDFAxxxxxxxx4F8X"; break;
                 case "ThingSpeakWriteTag1": val = "channelID=5252525,fieldID=1,writeKey=kjhhk"; break;
                 case "CalcAveragesFromRawData": val = "true"; break;
                 //Database Parameters
@@ -212,7 +212,7 @@ namespace Upperbay.Core.Library
                 VOLTA_BETA2_HIVE.Add("LMPNode", "49955");
                 // The following cluster variables in the environment
                 //VOLTA_BETA2_HIVE.Add("EthereumContractAddress", "0xaB5B2Cf8D5ba4e58Dd7c1aE3799d6c1a642d2E6a");
-                //VOLTA_BETA2_HIVE.Add("RemoteEthereumServerURL", "http://www.mauiview.com:8545");
+                //VOLTA_BETA2_HIVE.Add("RemoteEthereumServerURL", "http:/xxxxxxxxxxxxx.com:8545");
                 //VOLTA_BETA2_HIVE.Add("EthereumClusterKey", "0x0949a8d20891952dbc52ec59a2aaf36dcd97b5a114103ba4c949fdc0652a2a7f");
                 //VOLTA_BETA2_HIVE.Add("EthereumClusterAddress", "0x47b03cb6a335A15a87Fb63AE295add5aFB0539ed");
                 //VOLTA_BETA2_HIVE.Add("MqttCloudSecureLoginName", "pearlygates");
@@ -237,37 +237,37 @@ namespace Upperbay.Core.Library
                 VOLTA_BETA3.Add("LMPRTO", "PJM");
                 VOLTA_BETA3.Add("LMPNode", "49955");
                 // The following cluster variables in the environment
-                //VOLTA_BETA3.Add("RemoteEthereumServerURL", "http://www.mauiview.com:8545");
-                //VOLTA_BETA3.Add("EthereumClusterKey", "0x0949a8d20891952dbc52ec59a2aaf36dcd97b5a114103ba4c949fdc0652a2a7f");
-                //VOLTA_BETA3.Add("EthereumClusterAddress", "0x47b03cb6a335A15a87Fb63AE295add5aFB0539ed");
-                //VOLTA_BETA3.Add("MqttCloudSecureLoginName", "pearlygates");
-                //VOLTA_BETA3.Add("MqttCloudSecurePassword", "!Pearlygates87!");
-                //VOLTA_BETA3.Add("MqttCloudSecureIpAddress", "9c41862892f042dea951b2f348b676ec.s1.eu.hivemq.cloud");
-                //VOLTA_BETA3.Add("MqttCloudIpAddress", "9c41862892f042dea951b2f348b676ec.s1.eu.hivemq.cloud");
-                //VOLTA_BETA3.Add("SMSAccountName", "davidhardin2");
-                //VOLTA_BETA3.Add("SMSAccountKey", "eWymWS3pHCqvewP8NqKdc2DnvCABDE");
-                //VOLTA_BETA3.Add("LMPKey", "312249d38ae6410bbd6ea56f8343eef8");
+                //VOLTA_BETA3.Add("RemoteEthereumServerURL", "httpxxxxxxxxxxxxxew.com:8545");
+                //VOLTA_BETA3.Add("EthereumClusterKey", "0x09xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxa7f");
+                //VOLTA_BETA3.Add("EthereumClusterAddress", "0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx39ed");
+                //VOLTA_BETA3.Add("MqttCloudSecureLoginName", "xxxxxxxxxxs");
+                //VOLTA_BETA3.Add("MqttCloudSecurePassword", "xxxxxxxxxxxxxx!");
+                //VOLTA_BETA3.Add("MqttCloudSecureIpAddress", "9xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxloud");
+                //VOLTA_BETA3.Add("MqttCloudIpAddress", "9cxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxloud");
+                //VOLTA_BETA3.Add("SMSAccountName", "xxxxxxxxxxn2");
+                //VOLTA_BETA3.Add("SMSAccountKey", "exxxxxxxxxxxxxxxxxxxxxxxxxxrDE");
+                //VOLTA_BETA3.Add("LMPKey", "3xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx8");
                 _clusterParameters.Add(cluster, VOLTA_BETA3);
 
                 cluster = "VOLTA_BETA4";
                 Dictionary<string, string> VOLTA_BETA4 = new Dictionary<string, string>();
                 VOLTA_BETA4.Add("EthereumContractAddress", "0x5B8C0a8914c8ebA00dA4328ba5F02d719D3e053c");
-                VOLTA_BETA4.Add("RemoteEthereumServerURL", "http://www.mauiview.com:8545");
                 VOLTA_BETA4.Add("EthereumChainId", "73799");
                 VOLTA_BETA4.Add("MqttCloudSecurePort", "8883");
                 VOLTA_BETA4.Add("MqttCloudPort", "8883");
                 VOLTA_BETA4.Add("LMPRTO", "PJM");
                 VOLTA_BETA4.Add("LMPNode", "49955");
                 // The following cluster variables in the environment
-                //VOLTA_BETA4.Add("EthereumClusterKey", "0x0949a8d20891952dbc52ec59a2aaf36dcd97b5a114103ba4c949fdc0652a2a7f");
-                //VOLTA_BETA4.Add("EthereumClusterAddress", "0x47b03cb6a335A15a87Fb63AE295add5aFB0539ed");
-                //VOLTA_BETA4.Add("MqttCloudSecureLoginName", "pearlygates");
-                //VOLTA_BETA4.Add("MqttCloudSecurePassword", "!Pearlygates87!");
-                //VOLTA_BETA4.Add("MqttCloudSecureIpAddress", "9c41862892f042dea951b2f348b676ec.s1.eu.hivemq.cloud");
-                //VOLTA_BETA4.Add("MqttCloudIpAddress", "9c41862892f042dea951b2f348b676ec.s1.eu.hivemq.cloud");
-                //VOLTA_BETA4.Add("SMSAccountName", "davidhardin2");
-                //VOLTA_BETA4.Add("SMSAccountKey", "eWymWS3pHCqvewP8NqKdc2DnvCABDE");
-                //VOLTA_BETA4.Add("LMPKey", "312249d38ae6410bbd6ea56f8343eef8");
+                //VOLTA_BETA4.Add("RemoteEthereumServerURL", "http:/xxxxxxxxxxxxx.com:8545");
+                //VOLTA_BETA4.Add("EthereumClusterKey", "0x0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx2a7f");
+                //VOLTA_BETA4.Add("EthereumClusterAddress", "0x4xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxed");
+                //VOLTA_BETA4.Add("MqttCloudSecureLoginName", "xxxxxxxxxxs");
+                //VOLTA_BETA4.Add("MqttCloudSecurePassword", "xxxxxxxxxxxxxx!");
+                //VOLTA_BETA4.Add("MqttCloudSecureIpAddress", "9xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxd");
+                //VOLTA_BETA4.Add("MqttCloudIpAddress", "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxloud");
+                //VOLTA_BETA4.Add("SMSAccountName", "xxxxxxxxxxx2");
+                //VOLTA_BETA4.Add("SMSAccountKey", "xxxxxxxxxxxxxxxxxxxxxxxxxxxxDE");
+                //VOLTA_BETA4.Add("LMPKey", "3xxxxxxxxxxxxxxxxxxxxxxxxxxxxxf8");
                 _clusterParameters.Add(cluster, VOLTA_BETA4);
 
 
@@ -275,22 +275,22 @@ namespace Upperbay.Core.Library
                 cluster = "VOLTA_BETA5";
                 Dictionary<string, string> VOLTA_BETA5 = new Dictionary<string, string>();
                 VOLTA_BETA5.Add("EthereumContractAddress", "0x36228475Bf4ed21ACb0EEBbF943192d2d657ce5A");
-                VOLTA_BETA5.Add("RemoteEthereumServerURL", "http://www.mauiview.com:8545");
                 VOLTA_BETA5.Add("EthereumChainId", "73799");
                 VOLTA_BETA5.Add("MqttCloudSecurePort", "8883");
                 VOLTA_BETA5.Add("MqttCloudPort", "8883");
                 VOLTA_BETA5.Add("LMPRTO", "PJM");
                 VOLTA_BETA5.Add("LMPNode", "49955");
                 // The following cluster variables in the environment
-                //VOLTA_BETA5.Add("EthereumClusterKey", "0x0949a8d20891952dbc52ec59a2aaf36dcd97b5a114103ba4c949fdc0652a2a7f");
-                //VOLTA_BETA5.Add("EthereumClusterAddress", "0x47b03cb6a335A15a87Fb63AE295add5aFB0539ed");
-                //VOLTA_BETA5.Add("MqttCloudSecureLoginName", "pearlygates");
-                //VOLTA_BETA5.Add("MqttCloudSecurePassword", "!Pearlygates87!");
-                //VOLTA_BETA5.Add("MqttCloudSecureIpAddress", "spectacular-waiter.cloudmqtt.com");
-                //VOLTA_BETA5.Add("MqttCloudIpAddress", "9c41862892f042dea951b2f348b676ec.s1.eu.hivemq.cloud");
-                //VOLTA_BETA5.Add("SMSAccountName", "davidhardin2");
-                //VOLTA_BETA5.Add("SMSAccountKey", "eWymWS3pHCqvewP8NqKdc2DnvCABDE");
-                //VOLTA_BETA5.Add("LMPKey", "312249d38ae6410bbd6ea56f8343eef8");
+                //VOLTA_BETA5.Add("RemoteEthereumServerURL", "http:/xxxxxxxxxxxxxxxom:8545");
+                //VOLTA_BETA5.Add("EthereumClusterKey", "0x09xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxcxxxxxxa7f");
+                //VOLTA_BETA5.Add("EthereumClusterAddress", "0x47xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx9ed");
+                //VOLTA_BETA5.Add("MqttCloudSecureLoginName", "xxxxxxxxxes");
+                //VOLTA_BETA5.Add("MqttCloudSecurePassword", "xxxxxxxxxxxxxx!");
+                //VOLTA_BETA5.Add("MqttCloudSecureIpAddress", "xxxxxxxxxxxxxxxxxxxxxxxxxxtt.com");
+                //VOLTA_BETA5.Add("MqttCloudIpAddress", "9c4xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxoud");
+                //VOLTA_BETA5.Add("SMSAccountName", "xxxxxxxxxn2");
+                //VOLTA_BETA5.Add("SMSAccountKey", "exxxxxxxxxxxxxxxxxxxxxxxxxxBDE");
+                //VOLTA_BETA5.Add("LMPKey", "31xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
                 _clusterParameters.Add(cluster, VOLTA_BETA5);
 
 
@@ -298,44 +298,44 @@ namespace Upperbay.Core.Library
                 cluster = "VOLTA_BETA6";
                 Dictionary<string, string> VOLTA_BETA6 = new Dictionary<string, string>();
                 VOLTA_BETA6.Add("EthereumContractAddress", "0xb1066c5A5f580d3BCFb415B9862De886ab716D55");
-                VOLTA_BETA6.Add("RemoteEthereumServerURL", "http://www.mauiview.com:8545");
                 VOLTA_BETA6.Add("EthereumChainId", "73799");
                 VOLTA_BETA6.Add("MqttCloudSecurePort", "8883");
                 VOLTA_BETA6.Add("MqttCloudPort", "8883");
                 VOLTA_BETA6.Add("LMPRTO", "PJM");
                 VOLTA_BETA6.Add("LMPNode", "49955");
                 // The following cluster variables in the environment
-                //VOLTA_BETA6.Add("EthereumClusterKey", "0x0949a8d20891952dbc52ec59a2aaf36dcd97b5a114103ba4c949fdc0652a2a7f");
-                //VOLTA_BETA6.Add("EthereumClusterAddress", "0x47b03cb6a335A15a87Fb63AE295add5aFB0539ed");
-                //VOLTA_BETA6.Add("MqttCloudSecureLoginName", "pearlygates");
-                //VOLTA_BETA6.Add("MqttCloudSecurePassword", "!Pearlygates87!");
-                //VOLTA_BETA6.Add("MqttCloudIpAddress", "spectacular-waiter.cloudmqtt.com");
-                //VOLTA_BETA6.Add("SMSAccountName", "davidhardin2");
-                //VOLTA_BETA6.Add("SMSAccountKey", "eWymWS3pHCqvewP8NqKdc2DnvCABDE");
-                //VOLTA_BETA6.Add("LMPKey", "312249d38ae6410bbd6ea56f8343eef8");
+                //VOLTA_BETA6.Add("RemoteEthereumServerURL", "http://xxxxxxxxxxxxxxom:8545");
+                //VOLTA_BETA6.Add("EthereumClusterKey", "0x0949axxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxa2a7f");
+                //VOLTA_BETA6.Add("EthereumClusterAddress", "0x47bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxed");
+                //VOLTA_BETA6.Add("MqttCloudSecureLoginName", "xxxxxxxxxxs");
+                //VOLTA_BETA6.Add("MqttCloudSecurePassword", "xxxxxxxxxxxxx7!");
+                //VOLTA_BETA6.Add("MqttCloudIpAddress", "xxxxxxxxxxxxxxxxxxxxxxxxmqtt.com");
+                //VOLTA_BETA6.Add("SMSAccountName", "xxxxxxxxxxx2");
+                //VOLTA_BETA6.Add("SMSAccountKey", "xxxxxxxxxxxxxxxxxxxxxxxxvCABDE");
+                //VOLTA_BETA6.Add("LMPKey", "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
                 _clusterParameters.Add(cluster, VOLTA_BETA6);
 
                 cluster = "VOLTA_BETA7";
                 Dictionary<string, string> VOLTA_BETA7 = new Dictionary<string, string>();
                 VOLTA_BETA7.Add("EthereumContractAddress", "0x1fE012B3664914725a4CB86952341fF9fe84319E");
-                VOLTA_BETA7.Add("RemoteEthereumServerURL", "http://www.mauiview.com:8545");
                 VOLTA_BETA7.Add("EthereumChainId", "73799");
                 VOLTA_BETA7.Add("MqttCloudSecurePort", "8883");
                 VOLTA_BETA7.Add("MqttCloudPort", "8883");
                 VOLTA_BETA7.Add("LMPRTO", "PJM");
                 VOLTA_BETA7.Add("LMPNode", "49955");
                 // The following cluster variables in the environment
-                //VOLTA_BETA7.Add("EthereumClusterKey", "0x0949a8d20891952dbc52ec59a2aaf36dcd97b5a114103ba4c949fdc0652a2a7f");
-                //VOLTA_BETA7.Add("EthereumClusterAddress", "0x47b03cb6a335A15a87Fb63AE295add5aFB0539ed");
-                //VOLTA_BETA7.Add("MqttCloudSecureLoginName", "pearlygates");
-                //VOLTA_BETA7.Add("MqttCloudSecurePassword", "!Pearlygates87!");
-                //VOLTA_BETA7.Add("MqttCloudSecureLoginName", "pearlygates");
-                //VOLTA_BETA7.Add("MqttCloudSecurePassword", "pearlygates");
-                //VOLTA_BETA7.Add("MqttCloudSecureIpAddress", "spectacular-waiter.cloudmqtt.com");
-                //VOLTA_BETA7.Add("MqttCloudIpAddress", "spectacular-waiter.cloudmqtt.com");
-                //VOLTA_BETA7.Add("SMSAccountName", "davidhardin2");
-                //VOLTA_BETA7.Add("SMSAccountKey", "eWymWS3pHCqvewP8NqKdc2DnvCABDE");
-                //VOLTA_BETA7.Add("LMPKey", "312249d38ae6410bbd6ea56f8343eef8");
+                //VOLTA_BETA7.Add("RemoteEthereumServerURL", "http://wxxxxxxxxxxx.com:8545");
+                //VOLTA_BETA7.Add("EthereumClusterKey", "0x0949a8d20891952dxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx52a2a7f");
+                //VOLTA_BETA7.Add("EthereumClusterAddress", "0x4xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                //VOLTA_BETA7.Add("MqttCloudSecureLoginName", "pexxxxxxxxs");
+                //VOLTA_BETA7.Add("MqttCloudSecurePassword", "!Pearlxxxxxxxx!");
+                //VOLTA_BETA7.Add("MqttCloudSecureLoginName", "pearxxxxxxs");
+                //VOLTA_BETA7.Add("MqttCloudSecurePassword", "pxxxxxxxxxs");
+                //VOLTA_BETA7.Add("MqttCloudSecureIpAddress", "specxxxxxxxxxxxxxr.cloudmqtt.com");
+                //VOLTA_BETA7.Add("MqttCloudIpAddress", "specxxxxxxxxxxxxxr.cloudmqtt.com");
+                //VOLTA_BETA7.Add("SMSAccountName", "dxxxxxxxxxx2");
+                //VOLTA_BETA7.Add("SMSAccountKey", "eWyxxxxxxxxxxxxxxxxxxxxxxCABDE");
+                //VOLTA_BETA7.Add("LMPKey", "3122xxxxxxxxxxxxxxxxxxxxxxx3eef8");
                 _clusterParameters.Add(cluster, VOLTA_BETA7);
 
 
@@ -346,11 +346,11 @@ namespace Upperbay.Core.Library
                 EWC_BETA1.Add("EthereumChainId", "0xf6");
                 EWC_BETA1.Add("EthereumClusterKey", "0x0949a8d20891952dbc52ec59a2xxxxxxxxxxxx52a2a7f");
                 EWC_BETA1.Add("EthereumClusterAddress", "0x47b03cb6a335A15a87FbxxxxxxxxxxxaFB0539ed");
-                EWC_BETA1.Add("MqttCloudSecureLoginName", "pearlygates");
-                EWC_BETA1.Add("MqttCloudSecurePassword", "!Pearlyxxxxxx7!");
-                EWC_BETA1.Add("MqttCloudIpAddress", "spectacular-waiter.cloudmqtt.com");
+                EWC_BETA1.Add("MqttCloudSecureLoginName", "xxxxxxxxxes");
+                EWC_BETA1.Add("MqttCloudSecurePassword", "!Peaxxxxxxxxx7!");
+                EWC_BETA1.Add("MqttCloudIpAddress", "xxxxxxxxxxxxxxxxxxxxxxxxxxxx.com");
                 EWC_BETA1.Add("MqttCloudPort", "1883");
-                EWC_BETA1.Add("SMSAccountName", "davidhardin2");
+                EWC_BETA1.Add("SMSAccountName", "dxxxxxxxxxx2");
                 EWC_BETA1.Add("SMSAccountKey", "eWymWSxxxxxxxxxxNqKdc2DnvCABDE");
                 EWC_BETA1.Add("LMPRTO", "PJM");
                 EWC_BETA1.Add("LMPKey", "312249d38ae6410bbxxxxxxxf8");
