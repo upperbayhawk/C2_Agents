@@ -90,9 +90,9 @@ namespace Upperbay.Core.Library
                 case "MqttCloudEnable": val = "true"; break;
                 //Thingspeak Parameters
                 case "ThingSpeakReferenceServerURL":val = "https://api.thingspeak.com/channels/"; break;
-                case "WattsMirrorAtCampDavid": val = "channelID=1111475,fieldID=1,writeKey=QN271S8WTAKN3P8S"; break;
-                case "SoilMoistureAtCampDavid": val = "channelID=369308,fieldID=1,readKey=SEQU2LPFM2JEFWUR"; break;
-                case "LowSoilMoistureAtCampDavid": val = "channelID=369308,fieldID=6,writeKey=INDFAI1JLG6LE4F8"; break;
+                //case "WattsMirrorAtCampDavid": val = "channelID=1111475,fieldID=1,writeKey=QN271S8WTAKN3P8SX"; break;
+                //case "SoilMoistureAtCampDavid": val = "channelID=369308,fieldID=1,readKey=SEQU2LPFM2JEFWUR"; break;
+                //case "LowSoilMoistureAtCampDavid": val = "channelID=369308,fieldID=6,writeKey=INDFAI1JLG6LE4F8X"; break;
                 case "ThingSpeakWriteTag1": val = "channelID=5252525,fieldID=1,writeKey=kjhhk"; break;
                 case "CalcAveragesFromRawData": val = "true"; break;
                 //Database Parameters
