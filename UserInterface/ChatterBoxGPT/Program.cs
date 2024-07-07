@@ -116,7 +116,7 @@ namespace ChatterBoxGPT
             //---------------------------------------
            
 
-            MQTTPipe.MqttInitializeAsync("192.168.0.114",
+            MQTTPipe.MqttInitializeAsync("192.168.0.111",
                                              "",
                                              "",
                                              1883);
