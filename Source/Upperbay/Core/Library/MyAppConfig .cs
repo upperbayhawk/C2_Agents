@@ -82,7 +82,7 @@ namespace Upperbay.Core.Library
                 case "MqttLocalPassword": val = ""; break;//Dave
                 //MQTT Remote Parameters
                 case "MqttRemoteEnable": val = "true"; break;
-                case "MqttRemoteIpAddress": val = "192.168.0.114"; break;
+                case "MqttRemoteIpAddress": val = "192.168.0.111"; break;
                 case "MqttRemotePort":val = "1883";break;
                 case "MqttRemoteLoginName": val = "";break;
                 case "MqttRemotePassword":val = "";break;
