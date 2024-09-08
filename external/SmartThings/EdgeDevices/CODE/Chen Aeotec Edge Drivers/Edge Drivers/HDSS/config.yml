@@ -1,4 +1,0 @@
-name: 'Aeotec Heavy Duty'
-packageKey: 'aeotec-heavy-duty'
-permissions:
-  zwave: {}

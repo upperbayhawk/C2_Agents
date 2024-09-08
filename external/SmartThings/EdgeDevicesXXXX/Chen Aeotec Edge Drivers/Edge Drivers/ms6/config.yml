@@ -1,4 +1,0 @@
-name: 'Aeotec MultiSensor 6'
-packageKey: 'aeotec-ms6'
-permissions:
-  zwave: {}

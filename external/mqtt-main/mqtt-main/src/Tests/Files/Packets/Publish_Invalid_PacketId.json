@@ -1,8 +1,0 @@
-﻿{
-    "qualityOfService": "0",
-    "duplicated": "false",
-    "retain": "true",
-    "topic": "",
-    "packetId": "10",
-    "payload": "this is the payload of this test packet"
-}

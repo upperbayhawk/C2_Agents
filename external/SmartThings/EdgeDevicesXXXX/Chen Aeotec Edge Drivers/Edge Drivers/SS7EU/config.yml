@@ -1,4 +1,0 @@
-name: 'Aeotec Smart Switch 7 EU'
-packageKey: 'aeotec-smart-switch-7-eu'
-permissions:
-  zwave: {}

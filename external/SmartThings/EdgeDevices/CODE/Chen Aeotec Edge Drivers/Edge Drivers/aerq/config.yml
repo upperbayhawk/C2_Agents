@@ -1,4 +1,0 @@
-name: 'Aeotec AerQ'
-packageKey: 'aeotec-aerq'
-permissions:
-  zwave: {}

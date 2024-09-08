@@ -1,5 +1,0 @@
-name: 'bose'
-packageKey: 'bose'
-permissions:
-  lan: {}
-  discovery: {}

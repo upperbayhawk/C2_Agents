@@ -1,4 +1,0 @@
-name: 'Matter Lock'
-packageKey: 'matter-lock'
-permissions:
-  matter: {}

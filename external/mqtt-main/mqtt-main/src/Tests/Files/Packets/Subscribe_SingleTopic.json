@@ -1,9 +1,0 @@
-﻿{
-    "packetId": "10",
-    "subscriptions": [
-        {
-            "topicFilter": "foo/bar",
-            "maximumQualityOfService":  "2"
-        }
-    ]
-}

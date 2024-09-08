@@ -1,4 +1,0 @@
-name: 'Aeotec WallMote Quad'
-packageKey: 'aeotec-wallmote'
-permissions:
-  zwave: {}

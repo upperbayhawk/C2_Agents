@@ -1,4 +1,0 @@
-name: 'Aeotec Smart Switch Gen5'
-packageKey: 'aeotec-smart-switch-gen5'
-permissions:
-  zwave: {}

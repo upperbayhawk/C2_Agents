@@ -1,4 +1,0 @@
-name: 'Aeotec Fast Electric Meter Gen5'
-packageKey: 'aeotec-home-energy-meter-gen5'
-permissions:
-  zwave: {}

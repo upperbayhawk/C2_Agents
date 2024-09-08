@@ -1,4 +1,0 @@
-name: 'Z-Wave Lagacy Switch'
-packageKey: 'zwave-legacy-switch'
-permissions:
-  zwave: {}

@@ -1,4 +1,0 @@
-name: 'Matter Sensor'
-packageKey: 'matter-sensor'
-permissions:
-  matter: {}

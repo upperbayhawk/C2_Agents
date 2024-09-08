@@ -1,4 +1,0 @@
-name: 'Z-Wave Fast Electric Meter'
-packageKey: 'zwave-fast-electric-meter'
-permissions:
-  zwave: {}
