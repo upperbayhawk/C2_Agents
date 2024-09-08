@@ -6,6 +6,7 @@
 externalLocal/
 ConfigurationsLocal/
 SmartContractslocal/
+TestLocal/
 
 # User-specific files
 *.rsuser
