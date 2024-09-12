@@ -452,10 +452,10 @@ namespace Upperbay.Worker.ThingSpeak
                 _serverUrl + chan + "/fields/" + fld + ".json?api_key=" + key + "&start=" + beginTimeString + "&end=" + endTimeString + "&average=" + avg + "&timezone=" + timeZone;
 
                 //sReadURI =
-                ////    "https://api.thingspeak.com/channels/317026/fields/1.json?api_key=O8T9QT01Y4WUKTJ8&results=3000";
-                //"https://api.thingspeak.com/channels/317026/fields/1.json?api_key=O8T9QT01Y4WUKTJ8&start=2020-07-21%2010:00:00&end=2020-07-21%2011:00:00&results=3000";
+                ////    "https://api.thingspeak.com/channels/31xxx6/fields/1.json?api_key=O8xxxxxxxxWUKTJ8&results=3000";
+                //"https://api.thingspeak.com/channels/3xxx26/fields/1.json?api_key=O8T9QxxxxxxxxTJ8&start=2020-07-21%2010:00:00&end=2020-07-21%2011:00:00&results=3000";
                 //sReadURI =
-                //"https://api.thingspeak.com/channels/1114974/fields/1.json?api_key=USI884Q84ANQ0HBX&start=2020-08-25%2012:00:00&end=2020-08-25%2012:10:00&results=1200&average=10";
+                //"https://api.thingspeak.com/channels/1xxx974/fields/1.json?api_key=USI884xxxxxx0HBX&start=2020-08-25%2012:00:00&end=2020-08-25%2012:10:00&results=1200&average=10";
 
                 Log2.Debug(sReadURI);
 
@@ -698,10 +698,10 @@ namespace Upperbay.Worker.ThingSpeak
                 _serverUrl + chan + "/fields/" + fld + ".json?api_key=" + key + "&start=" + beginTimeString + "&end=" + endTimeString + "&timezone=" + timeZone;
 
                 //sReadURI =
-                ////    "https://api.thingspeak.com/channels/317026/fields/1.json?api_key=O8T9QT01Y4WUKTJ8&results=3000";
-                //"https://api.thingspeak.com/channels/317026/fields/1.json?api_key=O8T9QT01Y4WUKTJ8&start=2020-07-21%2010:00:00&end=2020-07-21%2011:00:00&results=3000";
+                ////    "https://api.thingspeak.com/channels/3xxx26/fields/1.json?api_key=O8xxxxxxxxxxxTJ8&results=3000";
+                //"https://api.thingspeak.com/channels/3xxx26/fields/1.json?api_key=O8xxxxxxxxxxKTJ8&start=2020-07-21%2010:00:00&end=2020-07-21%2011:00:00&results=3000";
                 //sReadURI =
-                //"https://api.thingspeak.com/channels/1114974/fields/1.json?api_key=USI884Q84ANQ0HBX&start=2020-08-25%2012:00:00&end=2020-08-25%2012:10:00&results=1200&average=10";
+                //"https://api.thingspeak.com/channels/11xxxx4/fields/1.json?api_key=USI884xxxxxx0HBX&start=2020-08-25%2012:00:00&end=2020-08-25%2012:10:00&results=1200&average=10";
 
                 Log2.Debug(sReadURI);
 
@@ -856,10 +856,10 @@ namespace Upperbay.Worker.ThingSpeak
                 _serverUrl + chan + "/fields/" + fld + ".json?api_key=" + key + "&start=" + beginTimeString + "&end=" + endTimeString + "&timezone=" + timeZone;
 
                 //sReadURI =
-                ////    "https://api.thingspeak.com/channels/317026/fields/1.json?api_key=O8T9QT01Y4WUKTJ8&results=3000";
-                //"https://api.thingspeak.com/channels/317026/fields/1.json?api_key=O8T9QT01Y4WUKTJ8&start=2020-07-21%2010:00:00&end=2020-07-21%2011:00:00&results=3000";
+                ////    "https://api.thingspeak.com/channels/317xxx/fields/1.json?api_key=O8T9xxxxxxxxKTJ8&results=3000";
+                //"https://api.thingspeak.com/channels/3xxx26/fields/1.json?api_key=O8T9xxxxxxxxxTJ8&start=2020-07-21%2010:00:00&end=2020-07-21%2011:00:00&results=3000";
                 //sReadURI =
-                //"https://api.thingspeak.com/channels/1114974/fields/1.json?api_key=USI884Q84ANQ0HBX&start=2020-08-25%2012:00:00&end=2020-08-25%2012:10:00&results=1200&average=10";
+                //"https://api.thingspeak.com/channels/11xxxx4/fields/1.json?api_key=USI8xxxxxxxx0HBX&start=2020-08-25%2012:00:00&end=2020-08-25%2012:10:00&results=1200&average=10";
 
                 Log2.Debug("SaveRawValues: {0}", sReadURI);
 
@@ -1028,8 +1028,8 @@ namespace Upperbay.Worker.ThingSpeak
 
                 Log2.Debug("8000 values");
                 sReadURI =
-   "https://api.thingspeak.com/channels/317026/fields/1.json?api_key=O8T9QT01Y4WUKTJ8&results=1000&average=60";
-//"https://api.thingspeak.com/channels/317026/fields/1.json?api_key=O8T9QT01Y4WUKTJ8&start=2020-07-21%2010:00:00&end=2020-07-21%2011:00:00&results=3000";
+   "https://api.thingspeak.com/channels/31xx26/fields/1.json?api_key=O8T9xxxxx4WUKTJ8&results=1000&average=60";
+//"https://api.thingspeak.com/channels/31xx26/fields/1.json?api_key=O8TxxxxxY4WUKTJ8&start=2020-07-21%2010:00:00&end=2020-07-21%2011:00:00&results=3000";
 
                 Log2.Debug(sReadURI);
 
@@ -1075,8 +1075,8 @@ namespace Upperbay.Worker.ThingSpeak
                 Log2.Debug("End: {0}", endTimeString);
 
                 sReadURI =
-                //    "https://api.thingspeak.com/channels/317026/fields/1.json?api_key=O8T9QT01Y4WUKTJ8&results=3000";
-                "https://api.thingspeak.com/channels/317026/fields/1.json?api_key=O8T9QT01Y4WUKTJ8&start=2020-07-21%2010:00:00&end=2020-07-21%2011:00:00&results=3000";
+                //    "https://api.thingspeak.com/channels/317026/fields/1.json?api_key=O8T9xxxxx4WUKTxx&results=3000";
+                "https://api.thingspeak.com/channels/31xx26/fields/1.json?api_key=O8xxxxxxx4WUKTJ8&start=2020-07-21%2010:00:00&end=2020-07-21%2011:00:00&results=3000";
 
                 Log2.Debug(sReadURI);
 
@@ -1199,7 +1199,7 @@ namespace Upperbay.Worker.ThingSpeak
         {
                 // Sample Code
 
-                //const string WRITEKEY = "GJY2ZF62BCTA2V5X";
+                //const string WRITEKEY = "GJY2ZFxxxxxxxV5X";
                 //string strUpdateBase = "http://api.thingspeak.com/update";
                 //string strUpdateURI = strUpdateBase + "?key=" + WRITEKEY;
                 //string strField1 = "18";
@@ -1284,7 +1284,7 @@ namespace Upperbay.Worker.ThingSpeak
         public bool SetValue(string configString, DataVariable var)
         {
 
-            // example string -> "channelID=5252525,fieldID=1,readKey=767687634"
+            // example string -> "channelID=525xxx5,fieldID=1,readKey=76xxxxx34"
             //ReadKey
             //Channel
             //Field
