@@ -123,9 +123,9 @@ namespace Upperbay.Worker.ThingSpeak
         //            string responseFromServer;
         //            try
         //            {
-        //                const string READKEY = "O8T9QT01Y4WUKTJ8";
+        //                const string READKEY = "O8T9QTxxxxxxxxJ8";
         //                string sReadBaseURI = "https://api.thingspeak.com/channels/";
-        //                string sChannelID = "317026";
+        //                string sChannelID = "3xxxx6";
         ////                string sfield = "PowerMeter.W_L1_L2";
         //                string sfield = "1.json";
         //               // string sFormat = ".csv";
@@ -318,7 +318,7 @@ namespace Upperbay.Worker.ThingSpeak
         public DataVariable GetValue(string configString)
         {
 
-            // example string -> "channelID=5252525,fieldID=1,readKey=767687634"
+            // example string -> "channelID=525xxxx,fieldID=1,readKey=76xxx7634"
             //ReadKey
             //Channel
             //Field
