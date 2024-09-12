@@ -26,7 +26,7 @@ namespace ChatterBoxGPT
 
         private readonly HttpClient _httpClient;
         private string _url = "https://api.openai.com/v1/chat/completions";
-        private string _apiKey = "Bearer " + "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";
+        private string _apiKey = "Bearer " + "sk-y2s4DiRE6R1xxxxxxxxxxxxxxxTMmc2il90X";
 
         public ChatGptService()
         {
