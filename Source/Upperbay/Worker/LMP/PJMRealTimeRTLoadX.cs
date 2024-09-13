@@ -88,7 +88,7 @@ namespace Upperbay.Worker.LMP
             string pnode = MyAppConfig.GetClusterParameter(cluster, "LMPNode");
 
             // Request headers
-            //httpClient.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", "312249d38ae6410bbd6ea56f8343eef8");
+            //httpClient.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", "312xxxxxxxxxxxxxxxxxxxxxxxxxxef8");
             httpClient.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", subscriptionKey);
 
             // Request parameters
@@ -158,7 +158,7 @@ namespace Upperbay.Worker.LMP
             var jsonResponse = "";
 
             // Request headers
-            //httpClient.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", "312249d38ae6410bbd6ea56f8343eef8");
+            //httpClient.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", "312249d38xxxxxxxxxxxxxxxx343eef8");
             //httpClient.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", subscriptionKey);
 
             // Request parameters
@@ -245,7 +245,7 @@ namespace Upperbay.Worker.LMP
 
 
             // Request headers
-            //httpClient.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", "312249d38ae6410bbd6ea56f8343eef8");
+            //httpClient.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", "3122xxxxxxxxxxxxxxxxxxxxxx43eef8");
             //httpClient.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", subscriptionKey);
 
             // Request parameters

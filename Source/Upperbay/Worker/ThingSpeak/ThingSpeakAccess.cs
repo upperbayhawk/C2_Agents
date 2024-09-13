@@ -117,7 +117,7 @@ namespace Upperbay.Worker.ThingSpeak
         //            //ReadKey
         //            //Channel
         //            //Field
-        //            //            const string WRITEKEY = "GJY2ZF62BCTA2V5X";
+        //            //            const string WRITEKEY = "GJYxxxxxxxxxxV5X";
         //            string sResult = null;
         //            string sReadURI = null;
         //            string responseFromServer;

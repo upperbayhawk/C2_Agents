@@ -53,9 +53,8 @@ namespace EtherUtils
             this.textBoxKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxKey.Location = new System.Drawing.Point(46, 116);
             this.textBoxKey.Name = "textBoxKey";
-            this.textBoxKey.Size = new System.Drawing.Size(729, 29);
+            this.textBoxKey.Size = new System.Drawing.Size(729, 34);
             this.textBoxKey.TabIndex = 0;
-            this.textBoxKey.Text = "0x0949a8d20891952dbc52ec59a2aaf36dcd97b5a114103ba4c949fdc0652a2a7f";
             this.textBoxKey.TextChanged += new System.EventHandler(this.textBoxKey_TextChanged);
             // 
             // textBoxAddress
@@ -63,7 +62,7 @@ namespace EtherUtils
             this.textBoxAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxAddress.Location = new System.Drawing.Point(46, 272);
             this.textBoxAddress.Name = "textBoxAddress";
-            this.textBoxAddress.Size = new System.Drawing.Size(723, 29);
+            this.textBoxAddress.Size = new System.Drawing.Size(723, 34);
             this.textBoxAddress.TabIndex = 1;
             this.textBoxAddress.TextChanged += new System.EventHandler(this.textBoxAddress_TextChanged);
             // 
@@ -72,7 +71,7 @@ namespace EtherUtils
             this.textBoxEth.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxEth.Location = new System.Drawing.Point(294, 193);
             this.textBoxEth.Name = "textBoxEth";
-            this.textBoxEth.Size = new System.Drawing.Size(239, 29);
+            this.textBoxEth.Size = new System.Drawing.Size(239, 34);
             this.textBoxEth.TabIndex = 2;
             this.textBoxEth.Text = "0.00000000001";
             this.textBoxEth.TextChanged += new System.EventHandler(this.textBoxEth_TextChanged);
@@ -94,7 +93,7 @@ namespace EtherUtils
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(352, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(133, 31);
+            this.label1.Size = new System.Drawing.Size(165, 39);
             this.label1.TabIndex = 4;
             this.label1.Text = "EtherUtils";
             // 
@@ -104,7 +103,7 @@ namespace EtherUtils
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(389, 89);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 24);
+            this.label2.Size = new System.Drawing.Size(54, 29);
             this.label2.TabIndex = 5;
             this.label2.Text = "Key";
             // 
@@ -114,7 +113,7 @@ namespace EtherUtils
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(389, 166);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 24);
+            this.label3.Size = new System.Drawing.Size(62, 29);
             this.label3.TabIndex = 6;
             this.label3.Text = "ETH";
             // 
@@ -124,7 +123,7 @@ namespace EtherUtils
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(375, 245);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(80, 24);
+            this.label4.Size = new System.Drawing.Size(102, 29);
             this.label4.TabIndex = 7;
             this.label4.Text = "Address";
             // 

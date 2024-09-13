@@ -96,7 +96,7 @@ namespace Upperbay.Worker.LMP
             string subscriptionKey = MyAppConfig.GetClusterParameter(cluster, "LMPKey");
 
             // Request headers
-            //httpClient.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", "312249d38ae6410bbd6ea56f8343eef8");
+            //httpClient.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", "31224xxxxxxxxxxxxxxxxxxxxxxxeef8");
             //httpClient.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", subscriptionKey);
 
             // Request parameters

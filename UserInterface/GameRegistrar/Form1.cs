@@ -814,9 +814,9 @@ namespace CurrentForCarbon
         {
             //string _ethereumNodeURL = "HTTP://127.0.0.1:8545";
 
-            //string _ethereumExternalAddress = "0xcf982bBA0C60C6bF50da0FC0A697f2dF7E2de438";
-            //string _ethereumExternalPrivateKey = "0x522490c9df56df00037624294be65d730a65670b31c8b5cf95ab32b489381585";
-            //string _dataConnectString = "channelID=1114974,fieldID=1,readKey=USI884Q84ANQ0HBX";
+            //string _ethereumExternalAddress = "0xcf982xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+            //string _ethereumExternalPrivateKey = "0x522490c9xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx381585";
+            //string _dataConnectString = "channelID=1114974,fieldID=1,readKey=USIxxxxxxxxxxHBX";
             //string _playerId = "theman";
 
             //string _ethereumContractAddress = this.textBoxContractAddress.Text;
