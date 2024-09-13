@@ -129,7 +129,10 @@ namespace Upperbay.Worker.NWS
             //string cluster = MyAppConfig.GetParameter("ClusterName");
             //string latitude = MyAppConfig.GetClusterParameter(cluster, "Latitude");
             //string logitude = MyAppConfig.GetClusterParameter(cluster, "Longitude");
-            string APIKEY = "2B6LPNAXBYDFE33F6F87DRF2K";
+            //string APIKEY = "2B6LPxxxxxxxxxxxxxRF2K";
+            string cluster = MyAppConfig.GetParameter("ClusterName");
+            string APIKEY = MyAppConfig.GetClusterParameter(cluster, "VisualCrossingKey");
+
             string url = baseUrl + location + "/" + "next10days" + "?key=" + APIKEY;
             //yesterday
             //last7days

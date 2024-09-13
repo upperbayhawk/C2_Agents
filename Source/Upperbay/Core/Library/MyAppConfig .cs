@@ -222,6 +222,7 @@ namespace Upperbay.Core.Library
                 //VOLTA_BETA2_HIVE.Add("SMSAccountName", "davidhardin2");
                 //VOLTA_BETA2_HIVE.Add("SMSAccountKey", "eWymWS3xxxxxxxxxxxxxxxDnvCABDE");
                 //VOLTA_BETA2_HIVE.Add("LMPKey", "312249d38xxxxxxxxxxxxxxxxxxxeef8");
+                //VOLTA_BETA2_HIVE.Add("VisualCrossingKey", "312249d38xxxxxxxxxxxxxxxxxxxeef8");
                 _clusterParameters.Add(cluster, VOLTA_BETA2_HIVE);
 
                 cluster = "VOLTA_BETA3";
@@ -243,6 +244,7 @@ namespace Upperbay.Core.Library
                 //VOLTA_BETA3.Add("SMSAccountName", "xxxxxxxxxxn2");
                 //VOLTA_BETA3.Add("SMSAccountKey", "exxxxxxxxxxxxxxxxxxxxxxxxxxrDE");
                 //VOLTA_BETA3.Add("LMPKey", "3xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx8");
+                //VOLTA_BETA3.Add("VisualCrossingKey", "312249d38xxxxxxxxxxxxxxxxxxxeef8");
                 _clusterParameters.Add(cluster, VOLTA_BETA3);
 
                 cluster = "VOLTA_BETA4";
@@ -264,6 +266,7 @@ namespace Upperbay.Core.Library
                 //VOLTA_BETA4.Add("SMSAccountName", "xxxxxxxxxxx2");
                 //VOLTA_BETA4.Add("SMSAccountKey", "xxxxxxxxxxxxxxxxxxxxxxxxxxxxDE");
                 //VOLTA_BETA4.Add("LMPKey", "3xxxxxxxxxxxxxxxxxxxxxxxxxxxxxf8");
+                //VOLTA_BETA4.Add("VisualCrossingKey", "312249d38xxxxxxxxxxxxxxxxxxxeef8");
                 _clusterParameters.Add(cluster, VOLTA_BETA4);
 
 
@@ -287,6 +290,7 @@ namespace Upperbay.Core.Library
                 //VOLTA_BETA5.Add("SMSAccountName", "xxxxxxxxxn2");
                 //VOLTA_BETA5.Add("SMSAccountKey", "exxxxxxxxxxxxxxxxxxxxxxxxxxBDE");
                 //VOLTA_BETA5.Add("LMPKey", "31xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+                //VOLTA_BETA5.Add("VisualCrossingKey", "312249d38xxxxxxxxxxxxxxxxxxxeef8");
                 _clusterParameters.Add(cluster, VOLTA_BETA5);
 
 
@@ -310,6 +314,7 @@ namespace Upperbay.Core.Library
                 //VOLTA_BETA6.Add("SMSAccountName", "xxxxxxxxxxx2");
                 //VOLTA_BETA6.Add("SMSAccountKey", "xxxxxxxxxxxxxxxxxxxxxxxxvCABDE");
                 //VOLTA_BETA6.Add("LMPKey", "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+                //VOLTA_BETA6.Add("VisualCrossingKey", "312249d38xxxxxxxxxxxxxxxxxxxeef8");
                 _clusterParameters.Add(cluster, VOLTA_BETA6);
 
                 cluster = "VOLTA_BETA7";
@@ -331,6 +336,7 @@ namespace Upperbay.Core.Library
                 //VOLTA_BETA7.Add("SMSAccountName", "dxxxxxxxxxx2");
                 //VOLTA_BETA7.Add("SMSAccountKey", "eWyxxxxxxxxxxxxxxxxxxxxxxCABDE");
                 //VOLTA_BETA7.Add("LMPKey", "3122xxxxxxxxxxxxxxxxxxxxxxx3eef8");
+                //VOLTA_BETA7.Add("VisualCrossingKey", "312249d38xxxxxxxxxxxxxxxxxxxeef8");
                 _clusterParameters.Add(cluster, VOLTA_BETA7);
 
 
@@ -353,7 +359,7 @@ namespace Upperbay.Core.Library
                 //EWC_BETA1.Add("SMSAccountName", "dxxxxxxxxxx2");
                 //EWC_BETA1.Add("SMSAccountKey", "eWymWSxxxxxxxxxxNqKdc2DnvCABDE");
                 //EWC_BETA1.Add("LMPKey", "312249d38xxxxxxxbxxxxxxxf8");
-                // The following cluster variables in the environment
+                //EWC_BETA1.Add("VisualCrossingKey", "312249d38xxxxxxxxxxxxxxxxxxxeef8");
                 _clusterParameters.Add(cluster, EWC_BETA1);
              
             }
