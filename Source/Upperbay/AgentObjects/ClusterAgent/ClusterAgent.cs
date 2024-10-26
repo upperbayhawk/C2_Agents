@@ -567,6 +567,7 @@ namespace Upperbay.AgentObject
                                 string targetDateTime = gridPeakDetectedObject.start_date_time;
                                 //string dateTimeFormat = "MM/dd/yyyy hh:mm:ss tt";
                                 // start_date_time is 5 mins from now, the just do it
+                                //DateTime target = DateTime.Parse(targetDateTime, CultureInfo.CurrentCulture);
                                 DateTime target = DateTime.Parse(targetDateTime, CultureInfo.InvariantCulture);
                                 DateTime now = DateTime.Now;
                                 TimeSpan difference = target - now;

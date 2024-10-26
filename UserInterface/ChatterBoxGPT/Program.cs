@@ -380,6 +380,8 @@ namespace ChatterBoxGPT
                                 string prompt = promptText + " " + promptData;
                                 //string prompt = promptText + " " + promptData + "\nOperations Summary in JSON follows: \n" + promptOpsSummary;
                                 Log2.Info(prompt);
+                                File.WriteAllText(".\\data\\FullPromptToAgent.txt", prompt);
+
 
                                 Console.WriteLine("Letting GPT analyze the Grid Data");
 
