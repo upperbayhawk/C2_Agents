@@ -63,7 +63,7 @@ namespace GameStarter
             ConfigurationManager.RefreshSection("appSettings");
             ConfigurationManager.GetSection("appSettings");
 
-            MyAppConfig.SetMyAppConfig("ClusterAgent");
+            //MyAppConfig.SetMyAppConfig("ClusterAgent");
 
             _gameEventVariable.GameName = this.GameNameText.Text;
             _gameEventVariable.GridZone = this.GridZoneText.Text;
